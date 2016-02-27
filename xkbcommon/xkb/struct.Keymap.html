@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Keymap` struct in crate `xkbcommon`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Keymap">
+
+    <title>xkbcommon::xkb::Keymap - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>xkbcommon</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'Keymap', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>xkbcommon</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class='struct' href=''>Keymap</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-2904' class='srclink' href='../../src/xkbcommon/xkb/mod.rs.html#596-598' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Keymap {
+    // some fields omitted
+}</pre><div class='docblock'><p>Compiled keymap object.</p>
+
+<p>The keymap object holds all of the static keyboard information obtained
+from compiling XKB files.</p>
+
+<p>A keymap is immutable after it is created (besides reference counts, etc.);
+if you need to change it, you must create a new one.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../../xkbcommon/xkb/struct.Keymap.html' title='xkbcommon::xkb::Keymap'>Keymap</a></code></h3><div class='impl-items'><h4 id='method.from_raw_ptr' class='method'><code>unsafe fn <a href='#method.from_raw_ptr' class='fnname'>from_raw_ptr</a>(ptr: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../xkbcommon/xkb/ffi/enum.xkb_keymap.html' title='xkbcommon::xkb::ffi::xkb_keymap'>xkb_keymap</a>) -&gt; <a class='struct' href='../../xkbcommon/xkb/struct.Keymap.html' title='xkbcommon::xkb::Keymap'>Keymap</a></code></h4>
+<h4 id='method.get_raw_ptr' class='method'><code>fn <a href='#method.get_raw_ptr' class='fnname'>get_raw_ptr</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../xkbcommon/xkb/ffi/enum.xkb_keymap.html' title='xkbcommon::xkb::ffi::xkb_keymap'>xkb_keymap</a></code></h4>
+<h4 id='method.new_from_names' class='method'><code>fn <a href='#method.new_from_names' class='fnname'>new_from_names</a>&lt;S: <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html' title='core::convert::AsRef'>AsRef</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt; + ?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='core::marker::Sized'>Sized</a>&gt;(context: &amp;<a class='struct' href='../../xkbcommon/xkb/struct.Context.html' title='xkbcommon::xkb::Context'>Context</a>, rules: &amp;S, model: &amp;S, layout: &amp;S, variant: &amp;S, options: &amp;S, flags: <a class='type' href='../../xkbcommon/xkb/type.KeymapCompileFlags.html' title='xkbcommon::xkb::KeymapCompileFlags'>KeymapCompileFlags</a>) -&gt; <a class='struct' href='../../xkbcommon/xkb/struct.Keymap.html' title='xkbcommon::xkb::Keymap'>Keymap</a></code></h4>
+<div class='docblock'><p>Create a keymap from RMLVO names.</p>
+
+<p>The primary keymap entry point: creates a new XKB keymap from a set of
+RMLVO (Rules + Model + Layouts + Variants + Options) names.</p>
+
+<p>context The context in which to create the keymap.
+ names   The RMLVO names to use.  See xkb_rule_names.
+ flags   Optional flags for the keymap, or 0.</p>
+
+<p>Returns A keymap compiled according to the RMLVO names, or NULL if
+the compilation failed.</p>
+</div><h4 id='method.new_from_string' class='method'><code>fn <a href='#method.new_from_string' class='fnname'>new_from_string</a>&lt;S: <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html' title='core::convert::AsRef'>AsRef</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt; + ?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='core::marker::Sized'>Sized</a>&gt;(context: &amp;<a class='struct' href='../../xkbcommon/xkb/struct.Context.html' title='xkbcommon::xkb::Context'>Context</a>, string: &amp;S, rules: &amp;S, model: &amp;S, layout: &amp;S, variant: &amp;S, options: &amp;S, flags: <a class='type' href='../../xkbcommon/xkb/type.KeymapCompileFlags.html' title='xkbcommon::xkb::KeymapCompileFlags'>KeymapCompileFlags</a>) -&gt; <a class='struct' href='../../xkbcommon/xkb/struct.Keymap.html' title='xkbcommon::xkb::Keymap'>Keymap</a></code></h4>
+<div class='docblock'><p>Create a keymap from a keymap string.</p>
+
+<p>This is just like xkb_keymap_new_from_file(), but instead of a file, gets
+the keymap as one enormous string.</p>
+
+<p>@see xkb_keymap_new_from_string()
+@memberof xkb_keymap</p>
+</div><h4 id='method.get_as_string' class='method'><code>fn <a href='#method.get_as_string' class='fnname'>get_as_string</a>(&amp;self, format: <a class='type' href='../../xkbcommon/xkb/type.KeymapFormat.html' title='xkbcommon::xkb::KeymapFormat'>KeymapFormat</a>) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code></h4>
+<div class='docblock'><p>Get the compiled keymap as a string.</p>
+
+<p>keymap The keymap to get as a string.
+ format The keymap format to use for the string.  You can pass
+in the special value xkb::KEYMAP_USE_ORIGINAL_FORMAT to use the format
+from which the keymap was originally created.</p>
+
+<p>Returns The keymap as a NUL-terminated string, or NULL if unsuccessful.</p>
+
+<p>The returned string may be fed back into xkb_map_new_from_string() to get
+the exact same keymap (possibly in another process, etc.).</p>
+
+<p>The returned string is dynamically allocated and should be freed by the
+caller.</p>
+
+<p>@memberof xkb_keymap</p>
+</div><h4 id='method.min_keycode' class='method'><code>fn <a href='#method.min_keycode' class='fnname'>min_keycode</a>(&amp;self) -&gt; <a class='type' href='../../xkbcommon/xkb/type.Keycode.html' title='xkbcommon::xkb::Keycode'>Keycode</a></code></h4>
+<div class='docblock'><p>Get the minimum keycode in the keymap.</p>
+
+<p>@sa xkb_keycode_t
+@memberof xkb_keymap</p>
+</div><h4 id='method.max_keycode' class='method'><code>fn <a href='#method.max_keycode' class='fnname'>max_keycode</a>(&amp;self) -&gt; <a class='type' href='../../xkbcommon/xkb/type.Keycode.html' title='xkbcommon::xkb::Keycode'>Keycode</a></code></h4>
+<div class='docblock'><p>Get the maximum keycode in the keymap.</p>
+
+<p>@sa xkb_keycode_t
+@memberof xkb_keymap</p>
+</div><h4 id='method.mods' class='method'><code>fn <a href='#method.mods' class='fnname'>mods</a>&lt;'a&gt;(&amp;'a self) -&gt; <a class='struct' href='../../xkbcommon/xkb/struct.KeymapMods.html' title='xkbcommon::xkb::KeymapMods'>KeymapMods</a>&lt;'a&gt;</code></h4>
+<h4 id='method.num_mods' class='method'><code>fn <a href='#method.num_mods' class='fnname'>num_mods</a>(&amp;self) -&gt; <a class='type' href='../../xkbcommon/xkb/type.ModIndex.html' title='xkbcommon::xkb::ModIndex'>ModIndex</a></code></h4>
+<div class='docblock'><p>Get the number of modifiers in the keymap.</p>
+
+<p>@sa xkb_mod_index_t
+@memberof xkb_keymap</p>
+</div><h4 id='method.mod_get_name' class='method'><code>fn <a href='#method.mod_get_name' class='fnname'>mod_get_name</a>&lt;'a&gt;(&amp;'a self, idx: <a class='type' href='../../xkbcommon/xkb/type.ModIndex.html' title='xkbcommon::xkb::ModIndex'>ModIndex</a>) -&gt; &amp;'a <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a></code></h4>
+<div class='docblock'><p>Get the name of a modifier by index.</p>
+
+<p>Returns The name.  If the index is invalid, returns NULL.</p>
+
+<p>@sa xkb_mod_index_t
+@memberof xkb_keymap</p>
+</div><h4 id='method.mod_get_index' class='method'><code>fn <a href='#method.mod_get_index' class='fnname'>mod_get_index</a>&lt;S: <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html' title='core::convert::AsRef'>AsRef</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt; + ?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='core::marker::Sized'>Sized</a>&gt;(&amp;self, name: &amp;S) -&gt; <a class='type' href='../../xkbcommon/xkb/type.ModIndex.html' title='xkbcommon::xkb::ModIndex'>ModIndex</a></code></h4>
+<div class='docblock'><p>Get the index of a modifier by name.</p>
+
+<p>Returns The index.  If no modifier with this name exists, returns
+xkb::MOD_INVALID.</p>
+
+<p>@sa xkb_mod_index_t
+@memberof xkb_keymap</p>
+</div><h4 id='method.layouts' class='method'><code>fn <a href='#method.layouts' class='fnname'>layouts</a>&lt;'a&gt;(&amp;'a self) -&gt; <a class='struct' href='../../xkbcommon/xkb/struct.KeymapLayouts.html' title='xkbcommon::xkb::KeymapLayouts'>KeymapLayouts</a>&lt;'a&gt;</code></h4>
+<h4 id='method.num_layouts' class='method'><code>fn <a href='#method.num_layouts' class='fnname'>num_layouts</a>(&amp;self) -&gt; <a class='type' href='../../xkbcommon/xkb/type.LayoutIndex.html' title='xkbcommon::xkb::LayoutIndex'>LayoutIndex</a></code></h4>
+<div class='docblock'><p>Get the number of layouts in the keymap.</p>
+
+<p>@sa xkb_layout_index_t xkb_rule_names xkb_keymap_num_layouts_for_key()
+@memberof xkb_keymap</p>
+</div><h4 id='method.layout_get_name' class='method'><code>fn <a href='#method.layout_get_name' class='fnname'>layout_get_name</a>&lt;'a&gt;(&amp;'a self, idx: <a class='type' href='../../xkbcommon/xkb/type.LayoutIndex.html' title='xkbcommon::xkb::LayoutIndex'>LayoutIndex</a>) -&gt; &amp;'a <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a></code></h4>
+<div class='docblock'><p>Get the name of a layout by index.</p>
+
+<p>Returns The name.  If the index is invalid, or the layout does not have
+a name, returns NULL.</p>
+
+<p>@sa xkb_layout_index_t
+@memberof xkb_keymap</p>
+</div><h4 id='method.layout_get_index' class='method'><code>fn <a href='#method.layout_get_index' class='fnname'>layout_get_index</a>&lt;S: <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html' title='core::convert::AsRef'>AsRef</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt; + ?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='core::marker::Sized'>Sized</a>&gt;(&amp;self, name: &amp;S) -&gt; <a class='type' href='../../xkbcommon/xkb/type.LayoutIndex.html' title='xkbcommon::xkb::LayoutIndex'>LayoutIndex</a></code></h4>
+<div class='docblock'><p>Get the index of a layout by name.</p>
+
+<p>Returns The index.  If no layout exists with this name, returns
+xkb::LAYOUT_INVALID.  If more than one layout in the keymap has this name,
+returns the lowest index among them.</p>
+
+<p>@memberof xkb_keymap</p>
+</div><h4 id='method.leds' class='method'><code>fn <a href='#method.leds' class='fnname'>leds</a>&lt;'a&gt;(&amp;'a self) -&gt; <a class='struct' href='../../xkbcommon/xkb/struct.KeymapLeds.html' title='xkbcommon::xkb::KeymapLeds'>KeymapLeds</a>&lt;'a&gt;</code></h4>
+<h4 id='method.num_leds' class='method'><code>fn <a href='#method.num_leds' class='fnname'>num_leds</a>(&amp;self) -&gt; <a class='type' href='../../xkbcommon/xkb/type.LedIndex.html' title='xkbcommon::xkb::LedIndex'>LedIndex</a></code></h4>
+<div class='docblock'><p>Get the number of LEDs in the keymap.</p>
+
+<p>@warning The range [ 0...xkb_keymap_num_leds() ) includes all of the LEDs
+in the keymap, but may also contain inactive LEDs.  When iterating over
+this range, you need the handle this case when calling functions such as
+xkb_keymap_led_get_name() or xkb_state_led_index_is_active().</p>
+
+<p>@sa xkb_led_index_t
+@memberof xkb_keymap</p>
+</div><h4 id='method.led_get_name' class='method'><code>fn <a href='#method.led_get_name' class='fnname'>led_get_name</a>&lt;'a&gt;(&amp;'a self, idx: <a class='type' href='../../xkbcommon/xkb/type.LedIndex.html' title='xkbcommon::xkb::LedIndex'>LedIndex</a>) -&gt; &amp;'a <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a></code></h4>
+<div class='docblock'><p>Get the name of a LED by index.</p>
+
+<p>Returns The name.  If the index is invalid, returns NULL.</p>
+
+<p>@memberof xkb_keymap</p>
+</div><h4 id='method.led_get_index' class='method'><code>fn <a href='#method.led_get_index' class='fnname'>led_get_index</a>&lt;S: <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html' title='core::convert::AsRef'>AsRef</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt; + ?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='core::marker::Sized'>Sized</a>&gt;(&amp;self, name: &amp;S) -&gt; <a class='type' href='../../xkbcommon/xkb/type.LedIndex.html' title='xkbcommon::xkb::LedIndex'>LedIndex</a></code></h4>
+<div class='docblock'><p>Get the index of a LED by name.</p>
+
+<p>Returns The index.  If no LED with this name exists, returns
+xkb::LED_INVALID.</p>
+
+<p>@memberof xkb_keymap</p>
+</div><h4 id='method.num_layouts_for_key' class='method'><code>fn <a href='#method.num_layouts_for_key' class='fnname'>num_layouts_for_key</a>(&amp;self, key: <a class='type' href='../../xkbcommon/xkb/type.Keycode.html' title='xkbcommon::xkb::Keycode'>Keycode</a>) -&gt; <a class='type' href='../../xkbcommon/xkb/type.LayoutIndex.html' title='xkbcommon::xkb::LayoutIndex'>LayoutIndex</a></code></h4>
+<div class='docblock'><p>Get the number of layouts for a specific key.</p>
+
+<p>This number can be different from xkb_keymap_num_layouts(), but is always
+smaller.  It is the appropriate value to use when iterating over the
+layouts of a key.</p>
+
+<p>@sa xkb_layout_index_t
+@memberof xkb_keymap</p>
+</div><h4 id='method.num_levels_for_key' class='method'><code>fn <a href='#method.num_levels_for_key' class='fnname'>num_levels_for_key</a>(&amp;self, key: <a class='type' href='../../xkbcommon/xkb/type.Keycode.html' title='xkbcommon::xkb::Keycode'>Keycode</a>) -&gt; <a class='type' href='../../xkbcommon/xkb/type.LevelIndex.html' title='xkbcommon::xkb::LevelIndex'>LevelIndex</a></code></h4>
+<div class='docblock'><p>Get the number of shift levels for a specific key and layout.</p>
+
+<p>If @c layout is out of range for this key (that is, larger or equal to
+the value returned by xkb_keymap_num_layouts_for_key()), it is brought
+back into range in a manner consistent with xkb_state_key_get_layout().</p>
+
+<p>@sa xkb_level_index_t
+@memberof xkb_keymap</p>
+</div><h4 id='method.key_get_syms_by_level' class='method'><code>fn <a href='#method.key_get_syms_by_level' class='fnname'>key_get_syms_by_level</a>&lt;'a&gt;(&amp;'a self, key: <a class='type' href='../../xkbcommon/xkb/type.Keycode.html' title='xkbcommon::xkb::Keycode'>Keycode</a>, layout: <a class='type' href='../../xkbcommon/xkb/type.LayoutIndex.html' title='xkbcommon::xkb::LayoutIndex'>LayoutIndex</a>, level: <a class='type' href='../../xkbcommon/xkb/type.LevelIndex.html' title='xkbcommon::xkb::LevelIndex'>LevelIndex</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;'a [</a><a class='type' href='../../xkbcommon/xkb/type.Keysym.html' title='xkbcommon::xkb::Keysym'>Keysym</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a></code></h4>
+<div class='docblock'><p>Get the keysyms obtained from pressing a key in a given layout and
+shift level.</p>
+
+<p>This function is like xkb_state_key_get_syms(), only the layout and
+shift level are not derived from the keyboard state but are instead
+specified explicitly.</p>
+
+<p>@param[in] keymap    The keymap.
+@param[in] key       The keycode of the key.
+@param[in] layout    The layout for which to get the keysyms.
+@param[in] level     The shift level in the layout for which to get the
+keysyms. This must be smaller than:
+@code xkb_keymap_num_layouts_for_key(keymap, key) @endcode
+@param[out] syms_out An immutible array of keysyms corresponding to the
+key in the given layout and shift level.</p>
+
+<p>If @c layout is out of range for this key (that is, larger or equal to
+the value returned by xkb_keymap_num_layouts_for_key()), it is brought
+back into range in a manner consistent with xkb_state_key_get_layout().</p>
+
+<p>Returns The number of keysyms in the syms_out array.  If no keysyms
+are produced by the key in the given layout and shift level, returns 0
+and sets syms_out to NULL.</p>
+
+<p>@sa xkb_state_key_get_syms()
+@memberof xkb_keymap</p>
+</div><h4 id='method.key_repeats' class='method'><code>fn <a href='#method.key_repeats' class='fnname'>key_repeats</a>(&amp;self, key: <a class='type' href='../../xkbcommon/xkb/type.Keycode.html' title='xkbcommon::xkb::Keycode'>Keycode</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Determine whether a key should repeat or not.</p>
+
+<p>A keymap may specify different repeat behaviors for different keys.
+Most keys should generally exhibit repeat behavior; for example, holding
+the &#39;a&#39; key down in a text editor should normally insert a single &#39;a&#39;
+character every few milliseconds, until the key is released.  However,
+there are keys which should not or do not need to be repeated.  For
+example, repeating modifier keys such as Left/Right Shift or Caps Lock
+is not generally useful or desired.</p>
+
+<p>Returns 1 if the key should repeat, 0 otherwise.</p>
+
+<p>@memberof xkb_keymap</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../xkbcommon/xkb/struct.Keymap.html' title='xkbcommon::xkb::Keymap'>Keymap</a></code></h3><div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../xkbcommon/xkb/struct.Keymap.html' title='xkbcommon::xkb::Keymap'>Keymap</a></code></h4>
+<h4 id='method.clone_from' class='method'><span class="since">1.0.0</span><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../xkbcommon/xkb/struct.Keymap.html' title='xkbcommon::xkb::Keymap'>Keymap</a></code></h3><div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#method.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "xkbcommon";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>
