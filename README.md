@@ -9,7 +9,7 @@ xkbcommon = { version = "0.1", features = ["x11"] }
 
 # documentation
 
-https://rtbo.github.io/xkbcommon-rs
+https://rtbo.github.io/xkbcommon-rs/xkbcommon
 
 
 # example

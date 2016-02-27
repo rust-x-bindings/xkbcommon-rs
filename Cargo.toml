@@ -5,7 +5,7 @@ authors = ["Remi THEBAULT <remi.thebault@gmail.com>"]
 description = "Rust bindings and wrappers for libxkbcommon"
 repository = "https://github.com/rtbo/xkbcommon-rs"
 readme = "README.md"
-documentation = "https://rtbo.github.io/xkbcommon-rs"
+documentation = "https://rtbo.github.io/xkbcommon-rs/xkbcommon"
 keywords = ["keyboard", "x11", "wayland", "xcb", "input"]
 license = "MIT"
 
