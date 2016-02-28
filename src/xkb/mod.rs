@@ -10,12 +10,15 @@ use xkb::ffi::*;
 
 use libc::{self, c_int, c_uint, c_char, c_void};
 use std::ffi::{CStr, CString};
-use std::ptr::null_mut;
+use std::ptr::{null, null_mut};
 use std::str;
 use std::slice;
 use std::mem;
+use std::fs;
+use std::io::Read;
 use std::iter::Iterator;
 use std::path::{Path};
+use std::borrow::Borrow;
 
 
 /// A number used to represent a physical key on a keyboard.
@@ -484,12 +487,8 @@ impl Context {
 
     /// Set the current logging level.
     ///
-    ///  context The context in which to set the logging level.
-    ///  level   The logging level to use.  Only messages from this level
-    /// and below will be logged.
-    ///
-    /// The default level is xkb::LOG_LEVEL_ERROR.  The environment variable
-    /// xkb::LOG_LEVEL, if set in the time the context was created, overrides the
+    /// The default level is xkb::LogLevel::Error.  The environment variable
+    /// XKB_LOG_LEVEL, if set in the time the context was created, overrides the
     /// default value.  It may be specified as a level number or name.
     pub fn set_log_level(&mut self, level: LogLevel) {
         unsafe {
@@ -511,17 +510,13 @@ impl Context {
     /// ordinary users of the library.  The verbosity may be increased if more
     /// information is desired (e.g. when developing a new keymap).
     ///
-    /// The default verbosity is 0.  The environment variable xkb::LOG_VERBOSITY,
+    /// The default verbosity is 0.  The environment variable XKB_LOG_VERBOSITY,
     /// if set in the time the context was created, overrides the default value.
     ///
-    ///  context   The context in which to use the set verbosity.
-    ///  verbosity The verbosity to use.  Currently used values are
-    /// 1 to 10, higher values being more verbose.  0 would result in no verbose
-    /// messages being logged.
+    /// verbosity can be set from 1 to 10, higher values being more verbose.
+    /// 0 would result in no verbose messages being logged.
     ///
-    /// Most verbose messages are of level xkb::LOG_LEVEL_WARNING or lower.
-    ///
-    /// @memberof xkb_context
+    /// Most verbose messages are of level xkb::LogLevel::Warning or lower.
     pub fn set_log_verbosity(&mut self, verbosity: i32) {
         unsafe {
             xkb_context_set_log_verbosity(self.ptr,
@@ -555,6 +550,7 @@ impl Drop for Context {
     }
 }
 
+/// Iterator to a Context include paths
 pub struct ContextIncludePaths<'a> {
     context: &'a Context,
     ind: c_uint,
@@ -615,75 +611,136 @@ impl Keymap {
     /// The primary keymap entry point: creates a new XKB keymap from a set of
     /// RMLVO (Rules + Model + Layouts + Variants + Options) names.
     ///
-    ///  context The context in which to create the keymap.
-    ///  names   The RMLVO names to use.  See xkb_rule_names.
-    ///  flags   Optional flags for the keymap, or 0.
+    /// __context__
+    ///  The context in which to create the keymap.
     ///
-    /// Returns A keymap compiled according to the RMLVO names, or NULL if
+    /// __rules__
+    ///  The rules file to use. The rules file describes how to interpret
+    ///  the values of the model, layout, variant and options fields.
+    ///
+    ///  If empty string "", a default value is used.
+    ///  If the XKB_DEFAULT_RULES environment variable is set, it is used
+    ///  as the default.  Otherwise the system default is used.
+    ///
+    /// __model__
+    ///  The keyboard model by which to interpret keycodes and LEDs.
+    ///
+    ///  If empty string "", a default value is used.
+    ///  If the XKB_DEFAULT_MODEL environment variable is set, it is used
+    ///  as the default.  Otherwise the system default is used.
+    ///
+    /// __layout__
+    ///  A comma separated list of layouts (languages) to include in the
+    ///  keymap.
+    ///
+    ///  If empty string "", a default value is used.
+    ///  If the XKB_DEFAULT_LAYOUT environment variable is set, it is used
+    ///  as the default.  Otherwise the system default is used.
+    ///
+    /// __variant__
+    ///  A comma separated list of variants, one per layout, which may
+    ///  modify or augment the respective layout in various ways.
+    ///
+    ///  If empty string "", and a default value is also used
+    ///  for the layout, a default value is used.  Otherwise no variant is
+    ///  used.
+    ///  If the XKB_DEFAULT_VARIANT environment variable is set, it is used
+    ///  as the default.  Otherwise the system default is used.
+    ///
+    /// __options__
+    ///  A comma separated list of options, through which the user specifies
+    ///  non-layout related preferences, like which key combinations are used
+    ///  for switching layouts, or which key is the Compose key.
+    ///
+    ///  If `None`, a default value is used.  If `Some("")` (empty string), no
+    ///  options are used.
+    ///  If the XKB_DEFAULT_OPTIONS environment variable is set, it is used
+    ///  as the default.  Otherwise the system default is used.
+    ///
+    /// __flags__
+    ///  Optional flags for the keymap, or 0.
+    ///
+    /// Returns a keymap compiled according to the RMLVO names, or `None` if
     /// the compilation failed.
-    pub fn new_from_names<S: AsRef<str>+?Sized>(context: &Context,
-                                                rules: &S,
-                                                model: &S,
-                                                layout: &S,
-                                                variant: &S,
-                                                options: &S,
-                                                flags: KeymapCompileFlags)
-            -> Keymap {
-        let crules = CString::new(rules.as_ref().as_bytes()).unwrap();
-        let cmodel = CString::new(model.as_ref().as_bytes()).unwrap();
-        let clayout = CString::new(layout.as_ref().as_bytes()).unwrap();
-        let cvariant = CString::new(variant.as_ref().as_bytes()).unwrap();
-        let coptions = CString::new(options.as_ref().as_bytes()).unwrap();
+    pub fn new_from_names<S: Borrow<str>>(context: &Context,
+                                          rules: &S,
+                                          model: &S,
+                                          layout: &S,
+                                          variant: &S,
+                                          options: Option<String>,
+                                          flags: KeymapCompileFlags)
+            -> Option<Keymap> {
+        let crules = CString::new(rules.borrow().as_bytes()).unwrap();
+        let cmodel = CString::new(model.borrow().as_bytes()).unwrap();
+        let clayout = CString::new(layout.borrow().as_bytes()).unwrap();
+        let cvariant = CString::new(variant.borrow().as_bytes()).unwrap();
+        let (_, poptions) = match options {
+            None => (CString::new(Vec::new()).unwrap(), null()),
+            Some(s) => {
+                let coptions = CString::new(s.into_bytes()).unwrap();
+                let poptions = coptions.as_ptr();
+                (coptions, poptions)
+            }
+        };
         let rule_names = xkb_rule_names {
             rules: crules.as_ptr(),
             model: cmodel.as_ptr(),
             layout: clayout.as_ptr(),
             variant: cvariant.as_ptr(),
-            options: coptions.as_ptr(),
+            options: poptions,
         };
         unsafe {
-            Keymap {
-                ptr: xkb_keymap_new_from_names(context.ptr,
-                        &rule_names, flags)
+            let pkeymap = xkb_keymap_new_from_names(context.ptr, &rule_names, flags);
+            if pkeymap.is_null() {
+                None
+            } else {
+                Some(Keymap { ptr: pkeymap })
             }
         }
     }
 
+    ///  Create a keymap from a keymap file.
+    ///
+    ///  Returns `None` if compilation fails.
+    ///
+    ///  The file must contain a complete keymap.  For example, in the
+    ///  XKB_KEYMAP_FORMAT_TEXT_V1 format, this means the file must contain one
+    ///  top level '%xkb_keymap' section, which in turn contains other required
+    ///  sections.
+    ///
+    ///  bindings implementation get the content in a `String`
+    ///  and call `new_from_string()``
+    pub fn new_from_file(context: &Context,
+                         file: &mut fs::File,
+                         format: KeymapFormat,
+                         flags: KeymapCompileFlags)
+            -> Option<Keymap> {
+        let mut string = String::new();
+        if let Ok(_) = file.read_to_string(&mut string) {
+            Keymap::new_from_string(&context, string, format, flags)
+        }
+        else {
+            None
+        }
+    }
 
-    /// Create a keymap from a keymap string.
+
+    ///  Create a keymap from a keymap string.
     ///
-    /// This is just like xkb_keymap_new_from_file(), but instead of a file, gets
-    /// the keymap as one enormous string.
-    ///
-    /// @see xkb_keymap_new_from_string()
-    /// @memberof xkb_keymap
-    pub fn new_from_string<S: AsRef<str>+?Sized>(context: &Context,
-                                                string: &S,
-                                                rules: &S,
-                                                model: &S,
-                                                layout: &S,
-                                                variant: &S,
-                                                options: &S,
-                                                flags: KeymapCompileFlags)
-            -> Keymap {
-        let cstring = CString::new(string.as_ref().as_bytes()).unwrap();
-        let crules = CString::new(rules.as_ref().as_bytes()).unwrap();
-        let cmodel = CString::new(model.as_ref().as_bytes()).unwrap();
-        let clayout = CString::new(layout.as_ref().as_bytes()).unwrap();
-        let cvariant = CString::new(variant.as_ref().as_bytes()).unwrap();
-        let coptions = CString::new(options.as_ref().as_bytes()).unwrap();
-        let rule_names = xkb_rule_names {
-            rules: crules.as_ptr(),
-            model: cmodel.as_ptr(),
-            layout: clayout.as_ptr(),
-            variant: cvariant.as_ptr(),
-            options: coptions.as_ptr(),
-        };
+    ///  This is just like xkb_keymap_new_from_file(), but instead of a file, gets
+    ///  the keymap as one enormous string.
+    pub fn new_from_string(context: &Context, string: String,
+                           format: KeymapFormat,
+                           flags: KeymapCompileFlags)
+            -> Option<Keymap> {
         unsafe {
-            Keymap {
-                ptr: xkb_keymap_new_from_string(context.ptr,
-                        cstring.as_ptr(),
-                        &rule_names, flags)
+            let cstr = CString::new(string.into_bytes()).unwrap();
+            let ptr = xkb_keymap_new_from_string(context.ptr,
+                        cstr.as_ptr(), format, flags);
+            if ptr.is_null() {
+                None
+            } else {
+                Some( Keymap {ptr: ptr} )
             }
         }
     }
@@ -703,8 +760,6 @@ impl Keymap {
     ///
     /// The returned string is dynamically allocated and should be freed by the
     /// caller.
-    ///
-    /// @memberof xkb_keymap
     pub fn get_as_string(&self, format: KeymapFormat) -> String {
         unsafe {
             let ffistr = xkb_keymap_get_as_string(self.ptr, format);
@@ -717,9 +772,6 @@ impl Keymap {
 
 
     /// Get the minimum keycode in the keymap.
-    ///
-    /// @sa xkb_keycode_t
-    /// @memberof xkb_keymap
     pub fn min_keycode(&self) -> Keycode {
         unsafe {
             xkb_keymap_min_keycode(self.ptr)
@@ -728,15 +780,13 @@ impl Keymap {
 
 
     /// Get the maximum keycode in the keymap.
-    ///
-    /// @sa xkb_keycode_t
-    /// @memberof xkb_keymap
     pub fn max_keycode(&self) -> Keycode {
         unsafe {
             xkb_keymap_max_keycode(self.ptr)
         }
     }
 
+    /// Get an iterator to the modifiers of this keymap
     pub fn mods<'a>(&'a self) -> KeymapMods<'a> {
         unsafe {
             KeymapMods {
@@ -748,9 +798,6 @@ impl Keymap {
 
 
     /// Get the number of modifiers in the keymap.
-    ///
-    /// @sa xkb_mod_index_t
-    /// @memberof xkb_keymap
     pub fn num_mods(&self) -> ModIndex {
         unsafe {
             xkb_keymap_num_mods(self.ptr)
@@ -760,15 +807,16 @@ impl Keymap {
 
     /// Get the name of a modifier by index.
     ///
-    /// Returns The name.  If the index is invalid, returns NULL.
-    ///
-    /// @sa xkb_mod_index_t
-    /// @memberof xkb_keymap
+    /// Returns The name.  If the index is invalid, returns "".
     pub fn mod_get_name<'a>(&'a self, idx: ModIndex) -> &'a str {
         unsafe {
             let ptr = xkb_keymap_mod_get_name(self.ptr, idx);
-            let cstr = CStr::from_ptr(ptr);
-            str::from_utf8_unchecked(cstr.to_bytes())
+            if !ptr.is_null() {
+                let cstr = CStr::from_ptr(ptr);
+                str::from_utf8_unchecked(cstr.to_bytes())
+            } else {
+                ""
+            }
         }
     }
 
@@ -777,17 +825,15 @@ impl Keymap {
     ///
     /// Returns The index.  If no modifier with this name exists, returns
     /// xkb::MOD_INVALID.
-    ///
-    /// @sa xkb_mod_index_t
-    /// @memberof xkb_keymap
-    pub fn mod_get_index<S: AsRef<str>+?Sized>(&self, name: &S) -> ModIndex {
+    pub fn mod_get_index<S: Borrow<str>>(&self, name: &S) -> ModIndex {
         unsafe {
-            let cstr = CString::new(name.as_ref().as_bytes()).unwrap();
+            let cstr = CString::new(name.borrow().as_bytes()).unwrap();
             xkb_keymap_mod_get_index(self.ptr, cstr.as_ptr())
         }
     }
 
 
+    /// Returns an iterator to the layouts in this keymap
     pub fn layouts<'a>(&'a self) -> KeymapLayouts<'a> {
         unsafe {
             KeymapLayouts {
@@ -799,9 +845,6 @@ impl Keymap {
 
 
     /// Get the number of layouts in the keymap.
-    ///
-    /// @sa xkb_layout_index_t xkb_rule_names xkb_keymap_num_layouts_for_key()
-    /// @memberof xkb_keymap
     pub fn num_layouts(&self) -> LayoutIndex {
         unsafe {
             xkb_keymap_num_layouts(self.ptr)
@@ -812,15 +855,16 @@ impl Keymap {
     /// Get the name of a layout by index.
     ///
     /// Returns The name.  If the index is invalid, or the layout does not have
-    /// a name, returns NULL.
-    ///
-    /// @sa xkb_layout_index_t
-    /// @memberof xkb_keymap
+    /// a name, returns "".
     pub fn layout_get_name<'a>(&'a self, idx: LayoutIndex) -> &'a str {
         unsafe {
             let ptr = xkb_keymap_layout_get_name(self.ptr, idx);
-            let cstr = CStr::from_ptr(ptr);
-            str::from_utf8_unchecked(cstr.to_bytes())
+            if !ptr.is_null() {
+                let cstr = CStr::from_ptr(ptr);
+                str::from_utf8_unchecked(cstr.to_bytes())
+            } else {
+                ""
+            }
         }
     }
 
@@ -830,16 +874,15 @@ impl Keymap {
     /// Returns The index.  If no layout exists with this name, returns
     /// xkb::LAYOUT_INVALID.  If more than one layout in the keymap has this name,
     /// returns the lowest index among them.
-    ///
-    /// @memberof xkb_keymap
-    pub fn layout_get_index<S: AsRef<str>+?Sized>(&self, name: &S) -> LayoutIndex {
+    pub fn layout_get_index<S: Borrow<str>>(&self, name: &S) -> LayoutIndex {
         unsafe {
-            let cstr = CString::new(name.as_ref().as_bytes()).unwrap();
+            let cstr = CString::new(name.borrow().as_bytes()).unwrap();
             xkb_keymap_layout_get_index(self.ptr, cstr.as_ptr())
         }
     }
 
 
+    /// Returns an iterator to the leds in this keymap
     pub fn leds<'a>(&'a self) -> KeymapLeds<'a> {
         unsafe {
             KeymapLeds {
@@ -852,13 +895,11 @@ impl Keymap {
 
     /// Get the number of LEDs in the keymap.
     ///
-    /// @warning The range [ 0...xkb_keymap_num_leds() ) includes all of the LEDs
+    /// # warning
+    /// The range [ 0..num_leds() ) includes all of the LEDs
     /// in the keymap, but may also contain inactive LEDs.  When iterating over
     /// this range, you need the handle this case when calling functions such as
-    /// xkb_keymap_led_get_name() or xkb_state_led_index_is_active().
-    ///
-    /// @sa xkb_led_index_t
-    /// @memberof xkb_keymap
+    /// led_get_name() or led_index_is_active().
     pub fn num_leds(&self) -> LedIndex {
         unsafe {
             xkb_keymap_num_leds(self.ptr)
@@ -868,14 +909,16 @@ impl Keymap {
 
     /// Get the name of a LED by index.
     ///
-    /// Returns The name.  If the index is invalid, returns NULL.
-    ///
-    /// @memberof xkb_keymap
+    /// Returns the name.  If the index is invalid, returns "".
     pub fn led_get_name<'a>(&'a self, idx: LedIndex) -> &'a str {
         unsafe {
             let ptr = xkb_keymap_led_get_name(self.ptr, idx);
-            let cstr = CStr::from_ptr(ptr);
-            str::from_utf8_unchecked(cstr.to_bytes())
+            if !ptr.is_null() {
+                let cstr = CStr::from_ptr(ptr);
+                str::from_utf8_unchecked(cstr.to_bytes())
+            } else {
+                ""
+            }
         }
     }
 
@@ -884,11 +927,9 @@ impl Keymap {
     ///
     /// Returns The index.  If no LED with this name exists, returns
     /// xkb::LED_INVALID.
-    ///
-    /// @memberof xkb_keymap
-    pub fn led_get_index<S: AsRef<str>+?Sized>(&self, name: &S) -> LedIndex {
+    pub fn led_get_index<S: Borrow<str>>(&self, name: &S) -> LedIndex {
         unsafe {
-            let cstr = CString::new(name.as_ref().as_bytes()).unwrap();
+            let cstr = CString::new(name.borrow().as_bytes()).unwrap();
             xkb_keymap_led_get_index(self.ptr, cstr.as_ptr())
         }
     }
@@ -896,12 +937,9 @@ impl Keymap {
 
     /// Get the number of layouts for a specific key.
     ///
-    /// This number can be different from xkb_keymap_num_layouts(), but is always
+    /// This number can be different from num_layouts(), but is always
     /// smaller.  It is the appropriate value to use when iterating over the
     /// layouts of a key.
-    ///
-    /// @sa xkb_layout_index_t
-    /// @memberof xkb_keymap
     pub fn num_layouts_for_key(&self, key: Keycode) -> LayoutIndex {
         unsafe {
             xkb_keymap_num_layouts_for_key(self.ptr, key)
@@ -911,12 +949,9 @@ impl Keymap {
 
     /// Get the number of shift levels for a specific key and layout.
     ///
-    /// If @c layout is out of range for this key (that is, larger or equal to
-    /// the value returned by xkb_keymap_num_layouts_for_key()), it is brought
-    /// back into range in a manner consistent with xkb_state_key_get_layout().
-    ///
-    /// @sa xkb_level_index_t
-    /// @memberof xkb_keymap
+    /// If layout is out of range for this key (that is, larger or equal to
+    /// the value returned by num_layouts_for_key()), it is brought
+    /// back into range in a manner consistent with State::key_get_layout().
     pub fn num_levels_for_key(&self, key: Keycode) -> LevelIndex {
         unsafe {
             xkb_keymap_num_levels_for_key(self.ptr, key)
@@ -931,25 +966,9 @@ impl Keymap {
     /// shift level are not derived from the keyboard state but are instead
     /// specified explicitly.
     ///
-    /// @param[in] keymap    The keymap.
-    /// @param[in] key       The keycode of the key.
-    /// @param[in] layout    The layout for which to get the keysyms.
-    /// @param[in] level     The shift level in the layout for which to get the
-    /// keysyms. This must be smaller than:
-    /// @code xkb_keymap_num_layouts_for_key(keymap, key) @endcode
-    /// @param[out] syms_out An immutible array of keysyms corresponding to the
-    /// key in the given layout and shift level.
-    ///
-    /// If @c layout is out of range for this key (that is, larger or equal to
-    /// the value returned by xkb_keymap_num_layouts_for_key()), it is brought
-    /// back into range in a manner consistent with xkb_state_key_get_layout().
-    ///
-    /// Returns The number of keysyms in the syms_out array.  If no keysyms
-    /// are produced by the key in the given layout and shift level, returns 0
-    /// and sets syms_out to NULL.
-    ///
-    /// @sa xkb_state_key_get_syms()
-    /// @memberof xkb_keymap
+    /// If layout is out of range for this key (that is, larger or equal to
+    /// the value returned by num_layouts_for_key()), it is brought
+    /// back into range in a manner consistent with State::key_get_layout().
     pub fn key_get_syms_by_level<'a>(&'a self, key: Keycode,
                                      layout: LayoutIndex,
                                      level: LevelIndex)
@@ -959,7 +978,11 @@ impl Keymap {
             let len = xkb_keymap_key_get_syms_by_level(self.ptr,
                                 key, layout, level,
                                 &mut syms_out);
-            slice::from_raw_parts(syms_out, len as usize)
+            if syms_out.is_null() {
+                &[]
+            } else {
+                slice::from_raw_parts(syms_out, len as usize)
+            }
         }
     }
 
@@ -973,10 +996,6 @@ impl Keymap {
     /// there are keys which should not or do not need to be repeated.  For
     /// example, repeating modifier keys such as Left/Right Shift or Caps Lock
     /// is not generally useful or desired.
-    ///
-    /// Returns 1 if the key should repeat, 0 otherwise.
-    ///
-    /// @memberof xkb_keymap
     pub fn key_repeats(&self, key: Keycode) -> bool {
         unsafe {
             xkb_keymap_key_repeats(self.ptr, key) != 0
@@ -1002,6 +1021,7 @@ impl Drop for Keymap {
     }
 }
 
+/// iterator to the modifiers in a Keymap
 pub struct KeymapMods<'a> {
     keymap: &'a Keymap,
     ind: ModIndex,
@@ -1024,6 +1044,7 @@ impl<'a> Iterator for KeymapMods<'a> {
 }
 
 
+/// iterator to the layouts in Keymap
 pub struct KeymapLayouts<'a> {
     keymap: &'a Keymap,
     ind: LayoutIndex,
@@ -1046,6 +1067,7 @@ impl<'a> Iterator for KeymapLayouts<'a> {
 }
 
 
+/// iterator to the leds in a Keymap
 pub struct KeymapLeds<'a> {
     keymap: &'a Keymap,
     ind: LedIndex,
@@ -1091,13 +1113,7 @@ impl State {
     }
 
 
-    /// Create a new keyboard state object.
-    ///
-    ///  keymap The keymap which the state will use.
-    ///
-    /// Returns A new keyboard state object, or NULL on failure.
-    ///
-    /// @memberof xkb_state
+    /// Create a new keyboard state object from a keymap.
     pub fn new(keymap: &Keymap) -> State {
         unsafe {
             State {
@@ -1109,14 +1125,10 @@ impl State {
 
     /// Get the keymap which a keyboard state object is using.
     ///
-    /// Returns The keymap which was passed to xkb_state_new() when creating
+    /// Returns the keymap which was passed to xkb_state_new() when creating
     /// this state object.
     ///
-    /// This function does not take a new reference on the keymap; you must
-    /// explicitly reference it yourself if you plan to use it beyond the
-    /// lifetime of the state.
-    ///
-    /// @memberof xkb_state
+    /// This keymap can safely be used beyond the lifetime of this state
     pub fn get_keymap(&self) -> Keymap {
         unsafe {
             let keymap = xkb_state_get_keymap(self.ptr);
@@ -1149,10 +1161,6 @@ impl State {
     ///
     /// Returns A mask of state components that have changed as a result of
     /// the update.  If nothing in the state has changed, returns 0.
-    ///
-    /// @memberof xkb_state
-    ///
-    /// @sa xkb_state_update_mask()
     pub fn update_key(&mut self,
                       key: Keycode,
                       direction: KeyDirection)
@@ -1182,13 +1190,8 @@ impl State {
     /// xkb_state_update_key() instead.  The two functions should not generally be
     /// used together.
     ///
-    /// Returns A mask of state components that have changed as a result of
+    /// Returns a mask of state components that have changed as a result of
     /// the update.  If nothing in the state has changed, returns 0.
-    ///
-    /// @memberof xkb_state
-    ///
-    /// @sa xkb_state_component
-    /// @sa xkb_state_update_key
     pub fn update_mask(&mut self,
                        depressed_mods: ModMask,
                        latched_mods: ModMask,
@@ -1224,49 +1227,29 @@ impl State {
     /// If you do not want to handle this case, you should use
     /// xkb_state_key_get_one_sym(), which additionally performs transformations
     /// which are specific to the one-keysym case.
-    ///
-    /// Returns The number of keysyms in the syms_out array.  If no keysyms
-    /// are produced by the key in the given keyboard state, returns 0 and sets
-    /// syms_out to NULL.
-    ///
-    /// @memberof xkb_state
     pub fn key_get_syms<'a>(&'a self, key: Keycode)
             -> &'a [Keysym] {
         unsafe {
             let mut syms_out: *const Keysym = null_mut();
             let len = xkb_state_key_get_syms(self.ptr,
                                 key, &mut syms_out);
-            slice::from_raw_parts(syms_out, len as usize)
+            if syms_out.is_null() {
+                &[]
+            } else {
+                slice::from_raw_parts(syms_out, len as usize)
+            }
         }
     }
 
 
     /// Get the Unicode/UTF-8 string obtained from pressing a particular key
     /// in a given keyboard state.
-    ///
-    /// @param[in]  state  The keyboard state object.
-    /// @param[in]  key    The keycode of the key.
-    /// @param[out] buffer A buffer to write the string into.
-    /// @param[in]  size   Size of the buffer.
-    ///
-    /// @warning If the buffer passed is too small, the string is truncated
-    /// (though still NUL-terminated).
-    ///
-    /// Returns The number of bytes required for the string, excluding the
-    /// NUL byte.  If there is nothing to write, returns 0.
-    ///
-    /// You may check if truncation has occurred by comparing the return value
-    /// with the size of @p buffer, similarly to the snprintf(3) function.
-    /// You may safely pass NULL and 0 to @p buffer and @p size to find the
-    /// required size (without the NUL-byte).
-    ///
-    /// @memberof xkb_state
     pub fn key_get_utf8(&self, key: Keycode) -> String {
         unsafe {
-            let mut buf: &mut [c_char] = &mut [0; 32];
+            let mut buf: &mut [c_char] = &mut [0; 64];
             let ptr = &mut buf[0] as *mut c_char;
             let len = xkb_state_key_get_utf8(self.ptr, key,
-                        ptr, 32);
+                        ptr, 64);
             let slice: &[u8] = slice::from_raw_parts(
                         mem::transmute(ptr), len as usize);
             String::from_utf8_unchecked(slice.to_owned())
@@ -1279,8 +1262,6 @@ impl State {
     ///
     /// Returns The UTF-32 representation for the key, if it consists of only
     /// a single codepoint.  Otherwise, returns 0.
-    ///
-    /// @memberof xkb_state
     pub fn key_get_utf32(&self, key: Keycode) -> u32 {
         unsafe {
             xkb_state_key_get_utf32(self.ptr, key)
@@ -1296,11 +1277,8 @@ impl State {
     /// multiple keysyms are returned (in which case this function is
     /// preferred).
     ///
-    /// Returns The keysym.  If the key does not have exactly one keysym,
+    /// Returns the keysym.  If the key does not have exactly one keysym,
     /// returns xkb::KEY_NoSymbol
-    ///
-    /// @sa xkb_state_key_get_syms()
-    /// @memberof xkb_state
     pub fn key_get_one_sym(&self, key: Keycode) -> Keysym {
         unsafe {
             xkb_state_key_get_one_sym(self.ptr, key)
@@ -1310,16 +1288,9 @@ impl State {
 
     /// Get the effective layout index for a key in a given keyboard state.
     ///
-    /// Returns The layout index for the key in the given keyboard state.  If
+    /// Returns the layout index for the key in the given keyboard state.  If
     /// the given keycode is invalid, or if the key is not included in any
     /// layout at all, returns xkb::LAYOUT_INVALID.
-    ///
-    /// @invariant If the returned layout is valid, the following always holds:
-    /// @code
-    /// xkb_state_key_get_layout(state, key) < xkb_keymap_num_layouts_for_key(keymap, key)
-    /// @endcode
-    ///
-    /// @memberof xkb_state
     pub fn key_get_layout(&self, key: Keycode) -> LayoutIndex {
         unsafe {
             xkb_state_key_get_layout(self.ptr, key)
@@ -1329,14 +1300,6 @@ impl State {
 
     /// Get the effective shift level for a key in a given keyboard state and
     /// layout.
-    ///
-    /// - state:  The keyboard state.
-    /// - key:    The keycode of the key.
-    /// - layout: The layout for which to get the shift level.  This must be
-    /// smaller than:
-    /// xkb::Keymap::num_layouts_for_key(keymap, key)
-    /// usually it would be:
-    /// xkb::State::key_get_layout(state, key)
     ///
     /// Return the shift level index.  If the key or layout are invalid,
     /// returns xkb::LEVEL_INVALID.
@@ -1350,14 +1313,11 @@ impl State {
     /// The counterpart to xkb_state_update_mask for modifiers, to be used on
     /// the server side of serialization.
     ///
-    /// - state:      The keyboard state.
-    /// - components: A mask of the modifier state components to serialize.
-    ///
     /// State components other than xkb::STATE_MODS_* are ignored.
     /// If xkb::STATE_MODS_EFFECTIVE is included, all other state components are
     /// ignored.
     ///
-    ///Returns a ModMask representing the given components of the
+    /// Returns a ModMask representing the given components of the
     /// modifier state.
     ///
     /// This function should not be used in regular clients; please use the
@@ -1377,12 +1337,12 @@ impl State {
 
 
     /// Test whether a modifier is active in a given keyboard state by name.
-    pub fn mod_name_is_active<S: AsRef<str>+?Sized>(&self,
-                                                    name: &S,
-                                                    type_: StateComponent)
+    pub fn mod_name_is_active<S: Borrow<str>>(&self,
+                                              name: &S,
+                                              type_: StateComponent)
             -> bool {
         unsafe {
-            let cname = CString::new(name.as_ref().as_bytes()).unwrap();
+            let cname = CString::new(name.borrow().as_bytes()).unwrap();
             xkb_state_mod_name_is_active(self.ptr, cname.as_ptr(), type_) == 1
         }
     }
@@ -1439,12 +1399,6 @@ impl State {
     ///    Effectively, this means that consumed modifiers (Shift in this example)
     ///    are masked out as well, before doing the comparison.
     ///
-    /// To summarize, this is how the matching would be performed:
-    /// @code
-    ///   (keysym == shortcut_keysym) &&
-    ///   ((state_modifiers & ~consumed_modifiers & significant_modifiers) == shortcut_modifiers)
-    /// @endcode
-    ///
     /// state_modifiers are the modifiers reported by
     /// xkb::State::mod_index_is_active() and similar functions.
     /// consumed_modifiers are the modifiers reported by
@@ -1486,12 +1440,12 @@ impl State {
     ///
     /// If multiple layouts in the keymap have this name, the one with the lowest
     /// index is tested.
-    pub fn layout_name_is_active<S: AsRef<str>+?Sized>(&self,
-                                                       name: &S,
-                                                       type_: StateComponent)
+    pub fn layout_name_is_active<S: Borrow<str>>(&self,
+                                                 name: &S,
+                                                 type_: StateComponent)
             -> bool {
         unsafe {
-            let cname = CString::new(name.as_ref().as_bytes()).unwrap();
+            let cname = CString::new(name.borrow().as_bytes()).unwrap();
             xkb_state_layout_name_is_active(self.ptr, cname.as_ptr(), type_) != 0
         }
     }
@@ -1508,10 +1462,10 @@ impl State {
 
 
     /// Test whether a LED is active in a given keyboard state by name.
-    pub fn led_name_is_active<S: AsRef<str>+?Sized>(&self, name: &S)
+    pub fn led_name_is_active<S: Borrow<str>>(&self, name: &S)
             -> bool {
         unsafe {
-            let cname = CString::new(name.as_ref().as_bytes()).unwrap();
+            let cname = CString::new(name.borrow().as_bytes()).unwrap();
             xkb_state_led_name_is_active(self.ptr, cname.as_ptr()) != 0
         }
     }

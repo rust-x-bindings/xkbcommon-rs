@@ -194,9 +194,10 @@ extern {
                                     flags: xkb_keymap_compile_flags)
             -> *mut xkb_keymap;
 
-    pub fn xkb_keymap_new_from_string(context: *mut xkb_context, s: *const c_char,
-                                     names: *const xkb_rule_names,
-                                     flags: xkb_keymap_compile_flags)
+    pub fn xkb_keymap_new_from_string(context: *mut xkb_context,
+                                      s: *const c_char,
+                                      format: xkb_keymap_format,
+                                      flags: xkb_keymap_compile_flags)
             -> *mut xkb_keymap;
 
 
