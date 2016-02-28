@@ -431,6 +431,7 @@
 <span id="388">388</span>
 <span id="389">389</span>
 <span id="390">390</span>
+<span id="391">391</span>
 </pre><pre class='rust '>
 
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>allow</span>(<span class='ident'>non_camel_case_types</span>)]</span>
@@ -628,9 +629,10 @@
                                     <span class='ident'>flags</span>: <span class='ident'>xkb_keymap_compile_flags</span>)
             <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>xkb_keymap</span>;
 
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>xkb_keymap_new_from_string</span>(<span class='ident'>context</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>xkb_context</span>, <span class='ident'>s</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>c_char</span>,
-                                     <span class='ident'>names</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>xkb_rule_names</span>,
-                                     <span class='ident'>flags</span>: <span class='ident'>xkb_keymap_compile_flags</span>)
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>xkb_keymap_new_from_string</span>(<span class='ident'>context</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>xkb_context</span>,
+                                      <span class='ident'>s</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>c_char</span>,
+                                      <span class='ident'>format</span>: <span class='ident'>xkb_keymap_format</span>,
+                                      <span class='ident'>flags</span>: <span class='ident'>xkb_keymap_compile_flags</span>)
             <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>xkb_keymap</span>;
 
 

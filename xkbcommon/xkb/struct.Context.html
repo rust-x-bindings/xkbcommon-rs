@@ -46,7 +46,7 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-2853' class='srclink' href='../../src/xkbcommon/xkb/mod.rs.html#374-376' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-2856' class='srclink' href='../../src/xkbcommon/xkb/mod.rs.html#377-379' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct Context {
     // some fields omitted
 }</pre><div class='docblock'><p>Top level library context object.</p>
@@ -91,12 +91,8 @@ default paths.</p>
 </div><h4 id='method.set_log_level' class='method'><code>fn <a href='#method.set_log_level' class='fnname'>set_log_level</a>(&amp;mut self, level: <a class='enum' href='../../xkbcommon/xkb/enum.LogLevel.html' title='xkbcommon::xkb::LogLevel'>LogLevel</a>)</code></h4>
 <div class='docblock'><p>Set the current logging level.</p>
 
-<p>context The context in which to set the logging level.
- level   The logging level to use.  Only messages from this level
-and below will be logged.</p>
-
-<p>The default level is xkb::LOG_LEVEL_ERROR.  The environment variable
-xkb::LOG_LEVEL, if set in the time the context was created, overrides the
+<p>The default level is xkb::LogLevel::Error.  The environment variable
+XKB_LOG_LEVEL, if set in the time the context was created, overrides the
 default value.  It may be specified as a level number or name.</p>
 </div><h4 id='method.get_log_level' class='method'><code>fn <a href='#method.get_log_level' class='fnname'>get_log_level</a>(&amp;self) -&gt; <a class='enum' href='../../xkbcommon/xkb/enum.LogLevel.html' title='xkbcommon::xkb::LogLevel'>LogLevel</a></code></h4>
 <h4 id='method.set_log_verbosity' class='method'><code>fn <a href='#method.set_log_verbosity' class='fnname'>set_log_verbosity</a>(&amp;mut self, verbosity: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>)</code></h4>
@@ -106,17 +102,13 @@ default value.  It may be specified as a level number or name.</p>
 ordinary users of the library.  The verbosity may be increased if more
 information is desired (e.g. when developing a new keymap).</p>
 
-<p>The default verbosity is 0.  The environment variable xkb::LOG_VERBOSITY,
+<p>The default verbosity is 0.  The environment variable XKB_LOG_VERBOSITY,
 if set in the time the context was created, overrides the default value.</p>
 
-<p>context   The context in which to use the set verbosity.
- verbosity The verbosity to use.  Currently used values are
-1 to 10, higher values being more verbose.  0 would result in no verbose
-messages being logged.</p>
+<p>verbosity can be set from 1 to 10, higher values being more verbose.
+0 would result in no verbose messages being logged.</p>
 
-<p>Most verbose messages are of level xkb::LOG_LEVEL_WARNING or lower.</p>
-
-<p>@memberof xkb_context</p>
+<p>Most verbose messages are of level xkb::LogLevel::Warning or lower.</p>
 </div><h4 id='method.get_log_verbosity' class='method'><code>fn <a href='#method.get_log_verbosity' class='fnname'>get_log_verbosity</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code></h4>
 </div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../xkbcommon/xkb/struct.Context.html' title='xkbcommon::xkb::Context'>Context</a></code></h3><div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../xkbcommon/xkb/struct.Context.html' title='xkbcommon::xkb::Context'>Context</a></code></h4>
 <h4 id='method.clone_from' class='method'><span class="since">1.0.0</span><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code></h4>

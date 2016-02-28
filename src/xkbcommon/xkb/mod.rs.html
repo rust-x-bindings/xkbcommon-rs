@@ -1541,52 +1541,6 @@
 <span id="1498">1498</span>
 <span id="1499">1499</span>
 <span id="1500">1500</span>
-<span id="1501">1501</span>
-<span id="1502">1502</span>
-<span id="1503">1503</span>
-<span id="1504">1504</span>
-<span id="1505">1505</span>
-<span id="1506">1506</span>
-<span id="1507">1507</span>
-<span id="1508">1508</span>
-<span id="1509">1509</span>
-<span id="1510">1510</span>
-<span id="1511">1511</span>
-<span id="1512">1512</span>
-<span id="1513">1513</span>
-<span id="1514">1514</span>
-<span id="1515">1515</span>
-<span id="1516">1516</span>
-<span id="1517">1517</span>
-<span id="1518">1518</span>
-<span id="1519">1519</span>
-<span id="1520">1520</span>
-<span id="1521">1521</span>
-<span id="1522">1522</span>
-<span id="1523">1523</span>
-<span id="1524">1524</span>
-<span id="1525">1525</span>
-<span id="1526">1526</span>
-<span id="1527">1527</span>
-<span id="1528">1528</span>
-<span id="1529">1529</span>
-<span id="1530">1530</span>
-<span id="1531">1531</span>
-<span id="1532">1532</span>
-<span id="1533">1533</span>
-<span id="1534">1534</span>
-<span id="1535">1535</span>
-<span id="1536">1536</span>
-<span id="1537">1537</span>
-<span id="1538">1538</span>
-<span id="1539">1539</span>
-<span id="1540">1540</span>
-<span id="1541">1541</span>
-<span id="1542">1542</span>
-<span id="1543">1543</span>
-<span id="1544">1544</span>
-<span id="1545">1545</span>
-<span id="1546">1546</span>
 </pre><pre class='rust '>
 
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>ffi</span>;
@@ -1600,12 +1554,15 @@
 
 <span class='kw'>use</span> <span class='ident'>libc</span>::{<span class='self'>self</span>, <span class='ident'>c_int</span>, <span class='ident'>c_uint</span>, <span class='ident'>c_char</span>, <span class='ident'>c_void</span>};
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>ffi</span>::{<span class='ident'>CStr</span>, <span class='ident'>CString</span>};
-<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>ptr</span>::<span class='ident'>null_mut</span>;
+<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>ptr</span>::{<span class='ident'>null</span>, <span class='ident'>null_mut</span>};
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>str</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>slice</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>mem</span>;
+<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>fs</span>;
+<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>io</span>::<span class='ident'>Read</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>iter</span>::<span class='ident'>Iterator</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>path</span>::{<span class='ident'>Path</span>};
+<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>borrow</span>::<span class='ident'>Borrow</span>;
 
 
 <span class='doccomment'>/// A number used to represent a physical key on a keyboard.</span>
@@ -2074,12 +2031,8 @@
 
     <span class='doccomment'>/// Set the current logging level.</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>///  context The context in which to set the logging level.</span>
-    <span class='doccomment'>///  level   The logging level to use.  Only messages from this level</span>
-    <span class='doccomment'>/// and below will be logged.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// The default level is xkb::LOG_LEVEL_ERROR.  The environment variable</span>
-    <span class='doccomment'>/// xkb::LOG_LEVEL, if set in the time the context was created, overrides the</span>
+    <span class='doccomment'>/// The default level is xkb::LogLevel::Error.  The environment variable</span>
+    <span class='doccomment'>/// XKB_LOG_LEVEL, if set in the time the context was created, overrides the</span>
     <span class='doccomment'>/// default value.  It may be specified as a level number or name.</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>set_log_level</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>level</span>: <span class='ident'>LogLevel</span>) {
         <span class='kw'>unsafe</span> {
@@ -2101,17 +2054,13 @@
     <span class='doccomment'>/// ordinary users of the library.  The verbosity may be increased if more</span>
     <span class='doccomment'>/// information is desired (e.g. when developing a new keymap).</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// The default verbosity is 0.  The environment variable xkb::LOG_VERBOSITY,</span>
+    <span class='doccomment'>/// The default verbosity is 0.  The environment variable XKB_LOG_VERBOSITY,</span>
     <span class='doccomment'>/// if set in the time the context was created, overrides the default value.</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>///  context   The context in which to use the set verbosity.</span>
-    <span class='doccomment'>///  verbosity The verbosity to use.  Currently used values are</span>
-    <span class='doccomment'>/// 1 to 10, higher values being more verbose.  0 would result in no verbose</span>
-    <span class='doccomment'>/// messages being logged.</span>
+    <span class='doccomment'>/// verbosity can be set from 1 to 10, higher values being more verbose.</span>
+    <span class='doccomment'>/// 0 would result in no verbose messages being logged.</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// Most verbose messages are of level xkb::LOG_LEVEL_WARNING or lower.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @memberof xkb_context</span>
+    <span class='doccomment'>/// Most verbose messages are of level xkb::LogLevel::Warning or lower.</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>set_log_verbosity</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>verbosity</span>: <span class='ident'>i32</span>) {
         <span class='kw'>unsafe</span> {
             <span class='ident'>xkb_context_set_log_verbosity</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>,
@@ -2145,6 +2094,7 @@
     }
 }
 
+<span class='doccomment'>/// Iterator to a Context include paths</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>ContextIncludePaths</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
     <span class='ident'>context</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>Context</span>,
     <span class='ident'>ind</span>: <span class='ident'>c_uint</span>,
@@ -2205,75 +2155,136 @@
     <span class='doccomment'>/// The primary keymap entry point: creates a new XKB keymap from a set of</span>
     <span class='doccomment'>/// RMLVO (Rules + Model + Layouts + Variants + Options) names.</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>///  context The context in which to create the keymap.</span>
-    <span class='doccomment'>///  names   The RMLVO names to use.  See xkb_rule_names.</span>
-    <span class='doccomment'>///  flags   Optional flags for the keymap, or 0.</span>
+    <span class='doccomment'>/// __context__</span>
+    <span class='doccomment'>///  The context in which to create the keymap.</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// Returns A keymap compiled according to the RMLVO names, or NULL if</span>
+    <span class='doccomment'>/// __rules__</span>
+    <span class='doccomment'>///  The rules file to use. The rules file describes how to interpret</span>
+    <span class='doccomment'>///  the values of the model, layout, variant and options fields.</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>///  If empty string &quot;&quot;, a default value is used.</span>
+    <span class='doccomment'>///  If the XKB_DEFAULT_RULES environment variable is set, it is used</span>
+    <span class='doccomment'>///  as the default.  Otherwise the system default is used.</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>/// __model__</span>
+    <span class='doccomment'>///  The keyboard model by which to interpret keycodes and LEDs.</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>///  If empty string &quot;&quot;, a default value is used.</span>
+    <span class='doccomment'>///  If the XKB_DEFAULT_MODEL environment variable is set, it is used</span>
+    <span class='doccomment'>///  as the default.  Otherwise the system default is used.</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>/// __layout__</span>
+    <span class='doccomment'>///  A comma separated list of layouts (languages) to include in the</span>
+    <span class='doccomment'>///  keymap.</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>///  If empty string &quot;&quot;, a default value is used.</span>
+    <span class='doccomment'>///  If the XKB_DEFAULT_LAYOUT environment variable is set, it is used</span>
+    <span class='doccomment'>///  as the default.  Otherwise the system default is used.</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>/// __variant__</span>
+    <span class='doccomment'>///  A comma separated list of variants, one per layout, which may</span>
+    <span class='doccomment'>///  modify or augment the respective layout in various ways.</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>///  If empty string &quot;&quot;, and a default value is also used</span>
+    <span class='doccomment'>///  for the layout, a default value is used.  Otherwise no variant is</span>
+    <span class='doccomment'>///  used.</span>
+    <span class='doccomment'>///  If the XKB_DEFAULT_VARIANT environment variable is set, it is used</span>
+    <span class='doccomment'>///  as the default.  Otherwise the system default is used.</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>/// __options__</span>
+    <span class='doccomment'>///  A comma separated list of options, through which the user specifies</span>
+    <span class='doccomment'>///  non-layout related preferences, like which key combinations are used</span>
+    <span class='doccomment'>///  for switching layouts, or which key is the Compose key.</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>///  If `None`, a default value is used.  If `Some(&quot;&quot;)` (empty string), no</span>
+    <span class='doccomment'>///  options are used.</span>
+    <span class='doccomment'>///  If the XKB_DEFAULT_OPTIONS environment variable is set, it is used</span>
+    <span class='doccomment'>///  as the default.  Otherwise the system default is used.</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>/// __flags__</span>
+    <span class='doccomment'>///  Optional flags for the keymap, or 0.</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>/// Returns a keymap compiled according to the RMLVO names, or `None` if</span>
     <span class='doccomment'>/// the compilation failed.</span>
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new_from_names</span><span class='op'>&lt;</span><span class='ident'>S</span>: <span class='ident'>AsRef</span><span class='op'>&lt;</span><span class='ident'>str</span><span class='op'>&gt;</span><span class='op'>+</span>?<span class='ident'>Sized</span><span class='op'>&gt;</span>(<span class='ident'>context</span>: <span class='kw-2'>&amp;</span><span class='ident'>Context</span>,
-                                                <span class='ident'>rules</span>: <span class='kw-2'>&amp;</span><span class='ident'>S</span>,
-                                                <span class='ident'>model</span>: <span class='kw-2'>&amp;</span><span class='ident'>S</span>,
-                                                <span class='ident'>layout</span>: <span class='kw-2'>&amp;</span><span class='ident'>S</span>,
-                                                <span class='ident'>variant</span>: <span class='kw-2'>&amp;</span><span class='ident'>S</span>,
-                                                <span class='ident'>options</span>: <span class='kw-2'>&amp;</span><span class='ident'>S</span>,
-                                                <span class='ident'>flags</span>: <span class='ident'>KeymapCompileFlags</span>)
-            <span class='op'>-&gt;</span> <span class='ident'>Keymap</span> {
-        <span class='kw'>let</span> <span class='ident'>crules</span> <span class='op'>=</span> <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>rules</span>.<span class='ident'>as_ref</span>().<span class='ident'>as_bytes</span>()).<span class='ident'>unwrap</span>();
-        <span class='kw'>let</span> <span class='ident'>cmodel</span> <span class='op'>=</span> <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>model</span>.<span class='ident'>as_ref</span>().<span class='ident'>as_bytes</span>()).<span class='ident'>unwrap</span>();
-        <span class='kw'>let</span> <span class='ident'>clayout</span> <span class='op'>=</span> <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>layout</span>.<span class='ident'>as_ref</span>().<span class='ident'>as_bytes</span>()).<span class='ident'>unwrap</span>();
-        <span class='kw'>let</span> <span class='ident'>cvariant</span> <span class='op'>=</span> <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>variant</span>.<span class='ident'>as_ref</span>().<span class='ident'>as_bytes</span>()).<span class='ident'>unwrap</span>();
-        <span class='kw'>let</span> <span class='ident'>coptions</span> <span class='op'>=</span> <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>options</span>.<span class='ident'>as_ref</span>().<span class='ident'>as_bytes</span>()).<span class='ident'>unwrap</span>();
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new_from_names</span><span class='op'>&lt;</span><span class='ident'>S</span>: <span class='ident'>Borrow</span><span class='op'>&lt;</span><span class='ident'>str</span><span class='op'>&gt;&gt;</span>(<span class='ident'>context</span>: <span class='kw-2'>&amp;</span><span class='ident'>Context</span>,
+                                          <span class='ident'>rules</span>: <span class='kw-2'>&amp;</span><span class='ident'>S</span>,
+                                          <span class='ident'>model</span>: <span class='kw-2'>&amp;</span><span class='ident'>S</span>,
+                                          <span class='ident'>layout</span>: <span class='kw-2'>&amp;</span><span class='ident'>S</span>,
+                                          <span class='ident'>variant</span>: <span class='kw-2'>&amp;</span><span class='ident'>S</span>,
+                                          <span class='ident'>options</span>: <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>String</span><span class='op'>&gt;</span>,
+                                          <span class='ident'>flags</span>: <span class='ident'>KeymapCompileFlags</span>)
+            <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>Keymap</span><span class='op'>&gt;</span> {
+        <span class='kw'>let</span> <span class='ident'>crules</span> <span class='op'>=</span> <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>rules</span>.<span class='ident'>borrow</span>().<span class='ident'>as_bytes</span>()).<span class='ident'>unwrap</span>();
+        <span class='kw'>let</span> <span class='ident'>cmodel</span> <span class='op'>=</span> <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>model</span>.<span class='ident'>borrow</span>().<span class='ident'>as_bytes</span>()).<span class='ident'>unwrap</span>();
+        <span class='kw'>let</span> <span class='ident'>clayout</span> <span class='op'>=</span> <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>layout</span>.<span class='ident'>borrow</span>().<span class='ident'>as_bytes</span>()).<span class='ident'>unwrap</span>();
+        <span class='kw'>let</span> <span class='ident'>cvariant</span> <span class='op'>=</span> <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>variant</span>.<span class='ident'>borrow</span>().<span class='ident'>as_bytes</span>()).<span class='ident'>unwrap</span>();
+        <span class='kw'>let</span> (_, <span class='ident'>poptions</span>) <span class='op'>=</span> <span class='kw'>match</span> <span class='ident'>options</span> {
+            <span class='prelude-val'>None</span> <span class='op'>=&gt;</span> (<span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>Vec</span>::<span class='ident'>new</span>()).<span class='ident'>unwrap</span>(), <span class='ident'>null</span>()),
+            <span class='prelude-val'>Some</span>(<span class='ident'>s</span>) <span class='op'>=&gt;</span> {
+                <span class='kw'>let</span> <span class='ident'>coptions</span> <span class='op'>=</span> <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>s</span>.<span class='ident'>into_bytes</span>()).<span class='ident'>unwrap</span>();
+                <span class='kw'>let</span> <span class='ident'>poptions</span> <span class='op'>=</span> <span class='ident'>coptions</span>.<span class='ident'>as_ptr</span>();
+                (<span class='ident'>coptions</span>, <span class='ident'>poptions</span>)
+            }
+        };
         <span class='kw'>let</span> <span class='ident'>rule_names</span> <span class='op'>=</span> <span class='ident'>xkb_rule_names</span> {
             <span class='ident'>rules</span>: <span class='ident'>crules</span>.<span class='ident'>as_ptr</span>(),
             <span class='ident'>model</span>: <span class='ident'>cmodel</span>.<span class='ident'>as_ptr</span>(),
             <span class='ident'>layout</span>: <span class='ident'>clayout</span>.<span class='ident'>as_ptr</span>(),
             <span class='ident'>variant</span>: <span class='ident'>cvariant</span>.<span class='ident'>as_ptr</span>(),
-            <span class='ident'>options</span>: <span class='ident'>coptions</span>.<span class='ident'>as_ptr</span>(),
+            <span class='ident'>options</span>: <span class='ident'>poptions</span>,
         };
         <span class='kw'>unsafe</span> {
-            <span class='ident'>Keymap</span> {
-                <span class='ident'>ptr</span>: <span class='ident'>xkb_keymap_new_from_names</span>(<span class='ident'>context</span>.<span class='ident'>ptr</span>,
-                        <span class='kw-2'>&amp;</span><span class='ident'>rule_names</span>, <span class='ident'>flags</span>)
+            <span class='kw'>let</span> <span class='ident'>pkeymap</span> <span class='op'>=</span> <span class='ident'>xkb_keymap_new_from_names</span>(<span class='ident'>context</span>.<span class='ident'>ptr</span>, <span class='kw-2'>&amp;</span><span class='ident'>rule_names</span>, <span class='ident'>flags</span>);
+            <span class='kw'>if</span> <span class='ident'>pkeymap</span>.<span class='ident'>is_null</span>() {
+                <span class='prelude-val'>None</span>
+            } <span class='kw'>else</span> {
+                <span class='prelude-val'>Some</span>(<span class='ident'>Keymap</span> { <span class='ident'>ptr</span>: <span class='ident'>pkeymap</span> })
             }
         }
     }
 
+    <span class='doccomment'>///  Create a keymap from a keymap file.</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>///  Returns `None` if compilation fails.</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>///  The file must contain a complete keymap.  For example, in the</span>
+    <span class='doccomment'>///  XKB_KEYMAP_FORMAT_TEXT_V1 format, this means the file must contain one</span>
+    <span class='doccomment'>///  top level &#39;%xkb_keymap&#39; section, which in turn contains other required</span>
+    <span class='doccomment'>///  sections.</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>///  bindings implementation get the content in a `String`</span>
+    <span class='doccomment'>///  and call `new_from_string()``</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new_from_file</span>(<span class='ident'>context</span>: <span class='kw-2'>&amp;</span><span class='ident'>Context</span>,
+                         <span class='ident'>file</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>fs</span>::<span class='ident'>File</span>,
+                         <span class='ident'>format</span>: <span class='ident'>KeymapFormat</span>,
+                         <span class='ident'>flags</span>: <span class='ident'>KeymapCompileFlags</span>)
+            <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>Keymap</span><span class='op'>&gt;</span> {
+        <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>string</span> <span class='op'>=</span> <span class='ident'>String</span>::<span class='ident'>new</span>();
+        <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Ok</span>(_) <span class='op'>=</span> <span class='ident'>file</span>.<span class='ident'>read_to_string</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>string</span>) {
+            <span class='ident'>Keymap</span>::<span class='ident'>new_from_string</span>(<span class='kw-2'>&amp;</span><span class='ident'>context</span>, <span class='ident'>string</span>, <span class='ident'>format</span>, <span class='ident'>flags</span>)
+        }
+        <span class='kw'>else</span> {
+            <span class='prelude-val'>None</span>
+        }
+    }
 
-    <span class='doccomment'>/// Create a keymap from a keymap string.</span>
+
+    <span class='doccomment'>///  Create a keymap from a keymap string.</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// This is just like xkb_keymap_new_from_file(), but instead of a file, gets</span>
-    <span class='doccomment'>/// the keymap as one enormous string.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @see xkb_keymap_new_from_string()</span>
-    <span class='doccomment'>/// @memberof xkb_keymap</span>
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new_from_string</span><span class='op'>&lt;</span><span class='ident'>S</span>: <span class='ident'>AsRef</span><span class='op'>&lt;</span><span class='ident'>str</span><span class='op'>&gt;</span><span class='op'>+</span>?<span class='ident'>Sized</span><span class='op'>&gt;</span>(<span class='ident'>context</span>: <span class='kw-2'>&amp;</span><span class='ident'>Context</span>,
-                                                <span class='ident'>string</span>: <span class='kw-2'>&amp;</span><span class='ident'>S</span>,
-                                                <span class='ident'>rules</span>: <span class='kw-2'>&amp;</span><span class='ident'>S</span>,
-                                                <span class='ident'>model</span>: <span class='kw-2'>&amp;</span><span class='ident'>S</span>,
-                                                <span class='ident'>layout</span>: <span class='kw-2'>&amp;</span><span class='ident'>S</span>,
-                                                <span class='ident'>variant</span>: <span class='kw-2'>&amp;</span><span class='ident'>S</span>,
-                                                <span class='ident'>options</span>: <span class='kw-2'>&amp;</span><span class='ident'>S</span>,
-                                                <span class='ident'>flags</span>: <span class='ident'>KeymapCompileFlags</span>)
-            <span class='op'>-&gt;</span> <span class='ident'>Keymap</span> {
-        <span class='kw'>let</span> <span class='ident'>cstring</span> <span class='op'>=</span> <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>string</span>.<span class='ident'>as_ref</span>().<span class='ident'>as_bytes</span>()).<span class='ident'>unwrap</span>();
-        <span class='kw'>let</span> <span class='ident'>crules</span> <span class='op'>=</span> <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>rules</span>.<span class='ident'>as_ref</span>().<span class='ident'>as_bytes</span>()).<span class='ident'>unwrap</span>();
-        <span class='kw'>let</span> <span class='ident'>cmodel</span> <span class='op'>=</span> <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>model</span>.<span class='ident'>as_ref</span>().<span class='ident'>as_bytes</span>()).<span class='ident'>unwrap</span>();
-        <span class='kw'>let</span> <span class='ident'>clayout</span> <span class='op'>=</span> <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>layout</span>.<span class='ident'>as_ref</span>().<span class='ident'>as_bytes</span>()).<span class='ident'>unwrap</span>();
-        <span class='kw'>let</span> <span class='ident'>cvariant</span> <span class='op'>=</span> <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>variant</span>.<span class='ident'>as_ref</span>().<span class='ident'>as_bytes</span>()).<span class='ident'>unwrap</span>();
-        <span class='kw'>let</span> <span class='ident'>coptions</span> <span class='op'>=</span> <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>options</span>.<span class='ident'>as_ref</span>().<span class='ident'>as_bytes</span>()).<span class='ident'>unwrap</span>();
-        <span class='kw'>let</span> <span class='ident'>rule_names</span> <span class='op'>=</span> <span class='ident'>xkb_rule_names</span> {
-            <span class='ident'>rules</span>: <span class='ident'>crules</span>.<span class='ident'>as_ptr</span>(),
-            <span class='ident'>model</span>: <span class='ident'>cmodel</span>.<span class='ident'>as_ptr</span>(),
-            <span class='ident'>layout</span>: <span class='ident'>clayout</span>.<span class='ident'>as_ptr</span>(),
-            <span class='ident'>variant</span>: <span class='ident'>cvariant</span>.<span class='ident'>as_ptr</span>(),
-            <span class='ident'>options</span>: <span class='ident'>coptions</span>.<span class='ident'>as_ptr</span>(),
-        };
+    <span class='doccomment'>///  This is just like xkb_keymap_new_from_file(), but instead of a file, gets</span>
+    <span class='doccomment'>///  the keymap as one enormous string.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new_from_string</span>(<span class='ident'>context</span>: <span class='kw-2'>&amp;</span><span class='ident'>Context</span>, <span class='ident'>string</span>: <span class='ident'>String</span>,
+                           <span class='ident'>format</span>: <span class='ident'>KeymapFormat</span>,
+                           <span class='ident'>flags</span>: <span class='ident'>KeymapCompileFlags</span>)
+            <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>Keymap</span><span class='op'>&gt;</span> {
         <span class='kw'>unsafe</span> {
-            <span class='ident'>Keymap</span> {
-                <span class='ident'>ptr</span>: <span class='ident'>xkb_keymap_new_from_string</span>(<span class='ident'>context</span>.<span class='ident'>ptr</span>,
-                        <span class='ident'>cstring</span>.<span class='ident'>as_ptr</span>(),
-                        <span class='kw-2'>&amp;</span><span class='ident'>rule_names</span>, <span class='ident'>flags</span>)
+            <span class='kw'>let</span> <span class='ident'>cstr</span> <span class='op'>=</span> <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>string</span>.<span class='ident'>into_bytes</span>()).<span class='ident'>unwrap</span>();
+            <span class='kw'>let</span> <span class='ident'>ptr</span> <span class='op'>=</span> <span class='ident'>xkb_keymap_new_from_string</span>(<span class='ident'>context</span>.<span class='ident'>ptr</span>,
+                        <span class='ident'>cstr</span>.<span class='ident'>as_ptr</span>(), <span class='ident'>format</span>, <span class='ident'>flags</span>);
+            <span class='kw'>if</span> <span class='ident'>ptr</span>.<span class='ident'>is_null</span>() {
+                <span class='prelude-val'>None</span>
+            } <span class='kw'>else</span> {
+                <span class='prelude-val'>Some</span>( <span class='ident'>Keymap</span> {<span class='ident'>ptr</span>: <span class='ident'>ptr</span>} )
             }
         }
     }
@@ -2293,8 +2304,6 @@
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// The returned string is dynamically allocated and should be freed by the</span>
     <span class='doccomment'>/// caller.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @memberof xkb_keymap</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_as_string</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>format</span>: <span class='ident'>KeymapFormat</span>) <span class='op'>-&gt;</span> <span class='ident'>String</span> {
         <span class='kw'>unsafe</span> {
             <span class='kw'>let</span> <span class='ident'>ffistr</span> <span class='op'>=</span> <span class='ident'>xkb_keymap_get_as_string</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>, <span class='ident'>format</span>);
@@ -2307,9 +2316,6 @@
 
 
     <span class='doccomment'>/// Get the minimum keycode in the keymap.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @sa xkb_keycode_t</span>
-    <span class='doccomment'>/// @memberof xkb_keymap</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>min_keycode</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>Keycode</span> {
         <span class='kw'>unsafe</span> {
             <span class='ident'>xkb_keymap_min_keycode</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>)
@@ -2318,15 +2324,13 @@
 
 
     <span class='doccomment'>/// Get the maximum keycode in the keymap.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @sa xkb_keycode_t</span>
-    <span class='doccomment'>/// @memberof xkb_keymap</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>max_keycode</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>Keycode</span> {
         <span class='kw'>unsafe</span> {
             <span class='ident'>xkb_keymap_max_keycode</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>)
         }
     }
 
+    <span class='doccomment'>/// Get an iterator to the modifiers of this keymap</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>mods</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>KeymapMods</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
         <span class='kw'>unsafe</span> {
             <span class='ident'>KeymapMods</span> {
@@ -2338,9 +2342,6 @@
 
 
     <span class='doccomment'>/// Get the number of modifiers in the keymap.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @sa xkb_mod_index_t</span>
-    <span class='doccomment'>/// @memberof xkb_keymap</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>num_mods</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>ModIndex</span> {
         <span class='kw'>unsafe</span> {
             <span class='ident'>xkb_keymap_num_mods</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>)
@@ -2350,15 +2351,16 @@
 
     <span class='doccomment'>/// Get the name of a modifier by index.</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// Returns The name.  If the index is invalid, returns NULL.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @sa xkb_mod_index_t</span>
-    <span class='doccomment'>/// @memberof xkb_keymap</span>
+    <span class='doccomment'>/// Returns The name.  If the index is invalid, returns &quot;&quot;.</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>mod_get_name</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>idx</span>: <span class='ident'>ModIndex</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>str</span> {
         <span class='kw'>unsafe</span> {
             <span class='kw'>let</span> <span class='ident'>ptr</span> <span class='op'>=</span> <span class='ident'>xkb_keymap_mod_get_name</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>, <span class='ident'>idx</span>);
-            <span class='kw'>let</span> <span class='ident'>cstr</span> <span class='op'>=</span> <span class='ident'>CStr</span>::<span class='ident'>from_ptr</span>(<span class='ident'>ptr</span>);
-            <span class='ident'>str</span>::<span class='ident'>from_utf8_unchecked</span>(<span class='ident'>cstr</span>.<span class='ident'>to_bytes</span>())
+            <span class='kw'>if</span> <span class='op'>!</span><span class='ident'>ptr</span>.<span class='ident'>is_null</span>() {
+                <span class='kw'>let</span> <span class='ident'>cstr</span> <span class='op'>=</span> <span class='ident'>CStr</span>::<span class='ident'>from_ptr</span>(<span class='ident'>ptr</span>);
+                <span class='ident'>str</span>::<span class='ident'>from_utf8_unchecked</span>(<span class='ident'>cstr</span>.<span class='ident'>to_bytes</span>())
+            } <span class='kw'>else</span> {
+                <span class='string'>&quot;&quot;</span>
+            }
         }
     }
 
@@ -2367,17 +2369,15 @@
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// Returns The index.  If no modifier with this name exists, returns</span>
     <span class='doccomment'>/// xkb::MOD_INVALID.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @sa xkb_mod_index_t</span>
-    <span class='doccomment'>/// @memberof xkb_keymap</span>
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>mod_get_index</span><span class='op'>&lt;</span><span class='ident'>S</span>: <span class='ident'>AsRef</span><span class='op'>&lt;</span><span class='ident'>str</span><span class='op'>&gt;</span><span class='op'>+</span>?<span class='ident'>Sized</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>name</span>: <span class='kw-2'>&amp;</span><span class='ident'>S</span>) <span class='op'>-&gt;</span> <span class='ident'>ModIndex</span> {
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>mod_get_index</span><span class='op'>&lt;</span><span class='ident'>S</span>: <span class='ident'>Borrow</span><span class='op'>&lt;</span><span class='ident'>str</span><span class='op'>&gt;&gt;</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>name</span>: <span class='kw-2'>&amp;</span><span class='ident'>S</span>) <span class='op'>-&gt;</span> <span class='ident'>ModIndex</span> {
         <span class='kw'>unsafe</span> {
-            <span class='kw'>let</span> <span class='ident'>cstr</span> <span class='op'>=</span> <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>name</span>.<span class='ident'>as_ref</span>().<span class='ident'>as_bytes</span>()).<span class='ident'>unwrap</span>();
+            <span class='kw'>let</span> <span class='ident'>cstr</span> <span class='op'>=</span> <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>name</span>.<span class='ident'>borrow</span>().<span class='ident'>as_bytes</span>()).<span class='ident'>unwrap</span>();
             <span class='ident'>xkb_keymap_mod_get_index</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>, <span class='ident'>cstr</span>.<span class='ident'>as_ptr</span>())
         }
     }
 
 
+    <span class='doccomment'>/// Returns an iterator to the layouts in this keymap</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>layouts</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>KeymapLayouts</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
         <span class='kw'>unsafe</span> {
             <span class='ident'>KeymapLayouts</span> {
@@ -2389,9 +2389,6 @@
 
 
     <span class='doccomment'>/// Get the number of layouts in the keymap.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @sa xkb_layout_index_t xkb_rule_names xkb_keymap_num_layouts_for_key()</span>
-    <span class='doccomment'>/// @memberof xkb_keymap</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>num_layouts</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>LayoutIndex</span> {
         <span class='kw'>unsafe</span> {
             <span class='ident'>xkb_keymap_num_layouts</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>)
@@ -2402,15 +2399,16 @@
     <span class='doccomment'>/// Get the name of a layout by index.</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// Returns The name.  If the index is invalid, or the layout does not have</span>
-    <span class='doccomment'>/// a name, returns NULL.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @sa xkb_layout_index_t</span>
-    <span class='doccomment'>/// @memberof xkb_keymap</span>
+    <span class='doccomment'>/// a name, returns &quot;&quot;.</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>layout_get_name</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>idx</span>: <span class='ident'>LayoutIndex</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>str</span> {
         <span class='kw'>unsafe</span> {
             <span class='kw'>let</span> <span class='ident'>ptr</span> <span class='op'>=</span> <span class='ident'>xkb_keymap_layout_get_name</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>, <span class='ident'>idx</span>);
-            <span class='kw'>let</span> <span class='ident'>cstr</span> <span class='op'>=</span> <span class='ident'>CStr</span>::<span class='ident'>from_ptr</span>(<span class='ident'>ptr</span>);
-            <span class='ident'>str</span>::<span class='ident'>from_utf8_unchecked</span>(<span class='ident'>cstr</span>.<span class='ident'>to_bytes</span>())
+            <span class='kw'>if</span> <span class='op'>!</span><span class='ident'>ptr</span>.<span class='ident'>is_null</span>() {
+                <span class='kw'>let</span> <span class='ident'>cstr</span> <span class='op'>=</span> <span class='ident'>CStr</span>::<span class='ident'>from_ptr</span>(<span class='ident'>ptr</span>);
+                <span class='ident'>str</span>::<span class='ident'>from_utf8_unchecked</span>(<span class='ident'>cstr</span>.<span class='ident'>to_bytes</span>())
+            } <span class='kw'>else</span> {
+                <span class='string'>&quot;&quot;</span>
+            }
         }
     }
 
@@ -2420,16 +2418,15 @@
     <span class='doccomment'>/// Returns The index.  If no layout exists with this name, returns</span>
     <span class='doccomment'>/// xkb::LAYOUT_INVALID.  If more than one layout in the keymap has this name,</span>
     <span class='doccomment'>/// returns the lowest index among them.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @memberof xkb_keymap</span>
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>layout_get_index</span><span class='op'>&lt;</span><span class='ident'>S</span>: <span class='ident'>AsRef</span><span class='op'>&lt;</span><span class='ident'>str</span><span class='op'>&gt;</span><span class='op'>+</span>?<span class='ident'>Sized</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>name</span>: <span class='kw-2'>&amp;</span><span class='ident'>S</span>) <span class='op'>-&gt;</span> <span class='ident'>LayoutIndex</span> {
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>layout_get_index</span><span class='op'>&lt;</span><span class='ident'>S</span>: <span class='ident'>Borrow</span><span class='op'>&lt;</span><span class='ident'>str</span><span class='op'>&gt;&gt;</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>name</span>: <span class='kw-2'>&amp;</span><span class='ident'>S</span>) <span class='op'>-&gt;</span> <span class='ident'>LayoutIndex</span> {
         <span class='kw'>unsafe</span> {
-            <span class='kw'>let</span> <span class='ident'>cstr</span> <span class='op'>=</span> <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>name</span>.<span class='ident'>as_ref</span>().<span class='ident'>as_bytes</span>()).<span class='ident'>unwrap</span>();
+            <span class='kw'>let</span> <span class='ident'>cstr</span> <span class='op'>=</span> <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>name</span>.<span class='ident'>borrow</span>().<span class='ident'>as_bytes</span>()).<span class='ident'>unwrap</span>();
             <span class='ident'>xkb_keymap_layout_get_index</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>, <span class='ident'>cstr</span>.<span class='ident'>as_ptr</span>())
         }
     }
 
 
+    <span class='doccomment'>/// Returns an iterator to the leds in this keymap</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>leds</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>KeymapLeds</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
         <span class='kw'>unsafe</span> {
             <span class='ident'>KeymapLeds</span> {
@@ -2442,13 +2439,11 @@
 
     <span class='doccomment'>/// Get the number of LEDs in the keymap.</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @warning The range [ 0...xkb_keymap_num_leds() ) includes all of the LEDs</span>
+    <span class='doccomment'>/// # warning</span>
+    <span class='doccomment'>/// The range [ 0..num_leds() ) includes all of the LEDs</span>
     <span class='doccomment'>/// in the keymap, but may also contain inactive LEDs.  When iterating over</span>
     <span class='doccomment'>/// this range, you need the handle this case when calling functions such as</span>
-    <span class='doccomment'>/// xkb_keymap_led_get_name() or xkb_state_led_index_is_active().</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @sa xkb_led_index_t</span>
-    <span class='doccomment'>/// @memberof xkb_keymap</span>
+    <span class='doccomment'>/// led_get_name() or led_index_is_active().</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>num_leds</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>LedIndex</span> {
         <span class='kw'>unsafe</span> {
             <span class='ident'>xkb_keymap_num_leds</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>)
@@ -2458,14 +2453,16 @@
 
     <span class='doccomment'>/// Get the name of a LED by index.</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// Returns The name.  If the index is invalid, returns NULL.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @memberof xkb_keymap</span>
+    <span class='doccomment'>/// Returns the name.  If the index is invalid, returns &quot;&quot;.</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>led_get_name</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>idx</span>: <span class='ident'>LedIndex</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>str</span> {
         <span class='kw'>unsafe</span> {
             <span class='kw'>let</span> <span class='ident'>ptr</span> <span class='op'>=</span> <span class='ident'>xkb_keymap_led_get_name</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>, <span class='ident'>idx</span>);
-            <span class='kw'>let</span> <span class='ident'>cstr</span> <span class='op'>=</span> <span class='ident'>CStr</span>::<span class='ident'>from_ptr</span>(<span class='ident'>ptr</span>);
-            <span class='ident'>str</span>::<span class='ident'>from_utf8_unchecked</span>(<span class='ident'>cstr</span>.<span class='ident'>to_bytes</span>())
+            <span class='kw'>if</span> <span class='op'>!</span><span class='ident'>ptr</span>.<span class='ident'>is_null</span>() {
+                <span class='kw'>let</span> <span class='ident'>cstr</span> <span class='op'>=</span> <span class='ident'>CStr</span>::<span class='ident'>from_ptr</span>(<span class='ident'>ptr</span>);
+                <span class='ident'>str</span>::<span class='ident'>from_utf8_unchecked</span>(<span class='ident'>cstr</span>.<span class='ident'>to_bytes</span>())
+            } <span class='kw'>else</span> {
+                <span class='string'>&quot;&quot;</span>
+            }
         }
     }
 
@@ -2474,11 +2471,9 @@
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// Returns The index.  If no LED with this name exists, returns</span>
     <span class='doccomment'>/// xkb::LED_INVALID.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @memberof xkb_keymap</span>
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>led_get_index</span><span class='op'>&lt;</span><span class='ident'>S</span>: <span class='ident'>AsRef</span><span class='op'>&lt;</span><span class='ident'>str</span><span class='op'>&gt;</span><span class='op'>+</span>?<span class='ident'>Sized</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>name</span>: <span class='kw-2'>&amp;</span><span class='ident'>S</span>) <span class='op'>-&gt;</span> <span class='ident'>LedIndex</span> {
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>led_get_index</span><span class='op'>&lt;</span><span class='ident'>S</span>: <span class='ident'>Borrow</span><span class='op'>&lt;</span><span class='ident'>str</span><span class='op'>&gt;&gt;</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>name</span>: <span class='kw-2'>&amp;</span><span class='ident'>S</span>) <span class='op'>-&gt;</span> <span class='ident'>LedIndex</span> {
         <span class='kw'>unsafe</span> {
-            <span class='kw'>let</span> <span class='ident'>cstr</span> <span class='op'>=</span> <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>name</span>.<span class='ident'>as_ref</span>().<span class='ident'>as_bytes</span>()).<span class='ident'>unwrap</span>();
+            <span class='kw'>let</span> <span class='ident'>cstr</span> <span class='op'>=</span> <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>name</span>.<span class='ident'>borrow</span>().<span class='ident'>as_bytes</span>()).<span class='ident'>unwrap</span>();
             <span class='ident'>xkb_keymap_led_get_index</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>, <span class='ident'>cstr</span>.<span class='ident'>as_ptr</span>())
         }
     }
@@ -2486,12 +2481,9 @@
 
     <span class='doccomment'>/// Get the number of layouts for a specific key.</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// This number can be different from xkb_keymap_num_layouts(), but is always</span>
+    <span class='doccomment'>/// This number can be different from num_layouts(), but is always</span>
     <span class='doccomment'>/// smaller.  It is the appropriate value to use when iterating over the</span>
     <span class='doccomment'>/// layouts of a key.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @sa xkb_layout_index_t</span>
-    <span class='doccomment'>/// @memberof xkb_keymap</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>num_layouts_for_key</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>key</span>: <span class='ident'>Keycode</span>) <span class='op'>-&gt;</span> <span class='ident'>LayoutIndex</span> {
         <span class='kw'>unsafe</span> {
             <span class='ident'>xkb_keymap_num_layouts_for_key</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>, <span class='ident'>key</span>)
@@ -2501,12 +2493,9 @@
 
     <span class='doccomment'>/// Get the number of shift levels for a specific key and layout.</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// If @c layout is out of range for this key (that is, larger or equal to</span>
-    <span class='doccomment'>/// the value returned by xkb_keymap_num_layouts_for_key()), it is brought</span>
-    <span class='doccomment'>/// back into range in a manner consistent with xkb_state_key_get_layout().</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @sa xkb_level_index_t</span>
-    <span class='doccomment'>/// @memberof xkb_keymap</span>
+    <span class='doccomment'>/// If layout is out of range for this key (that is, larger or equal to</span>
+    <span class='doccomment'>/// the value returned by num_layouts_for_key()), it is brought</span>
+    <span class='doccomment'>/// back into range in a manner consistent with State::key_get_layout().</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>num_levels_for_key</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>key</span>: <span class='ident'>Keycode</span>) <span class='op'>-&gt;</span> <span class='ident'>LevelIndex</span> {
         <span class='kw'>unsafe</span> {
             <span class='ident'>xkb_keymap_num_levels_for_key</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>, <span class='ident'>key</span>)
@@ -2521,25 +2510,9 @@
     <span class='doccomment'>/// shift level are not derived from the keyboard state but are instead</span>
     <span class='doccomment'>/// specified explicitly.</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @param[in] keymap    The keymap.</span>
-    <span class='doccomment'>/// @param[in] key       The keycode of the key.</span>
-    <span class='doccomment'>/// @param[in] layout    The layout for which to get the keysyms.</span>
-    <span class='doccomment'>/// @param[in] level     The shift level in the layout for which to get the</span>
-    <span class='doccomment'>/// keysyms. This must be smaller than:</span>
-    <span class='doccomment'>/// @code xkb_keymap_num_layouts_for_key(keymap, key) @endcode</span>
-    <span class='doccomment'>/// @param[out] syms_out An immutible array of keysyms corresponding to the</span>
-    <span class='doccomment'>/// key in the given layout and shift level.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// If @c layout is out of range for this key (that is, larger or equal to</span>
-    <span class='doccomment'>/// the value returned by xkb_keymap_num_layouts_for_key()), it is brought</span>
-    <span class='doccomment'>/// back into range in a manner consistent with xkb_state_key_get_layout().</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// Returns The number of keysyms in the syms_out array.  If no keysyms</span>
-    <span class='doccomment'>/// are produced by the key in the given layout and shift level, returns 0</span>
-    <span class='doccomment'>/// and sets syms_out to NULL.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @sa xkb_state_key_get_syms()</span>
-    <span class='doccomment'>/// @memberof xkb_keymap</span>
+    <span class='doccomment'>/// If layout is out of range for this key (that is, larger or equal to</span>
+    <span class='doccomment'>/// the value returned by num_layouts_for_key()), it is brought</span>
+    <span class='doccomment'>/// back into range in a manner consistent with State::key_get_layout().</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>key_get_syms_by_level</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>key</span>: <span class='ident'>Keycode</span>,
                                      <span class='ident'>layout</span>: <span class='ident'>LayoutIndex</span>,
                                      <span class='ident'>level</span>: <span class='ident'>LevelIndex</span>)
@@ -2549,7 +2522,11 @@
             <span class='kw'>let</span> <span class='ident'>len</span> <span class='op'>=</span> <span class='ident'>xkb_keymap_key_get_syms_by_level</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>,
                                 <span class='ident'>key</span>, <span class='ident'>layout</span>, <span class='ident'>level</span>,
                                 <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>syms_out</span>);
-            <span class='ident'>slice</span>::<span class='ident'>from_raw_parts</span>(<span class='ident'>syms_out</span>, <span class='ident'>len</span> <span class='kw'>as</span> <span class='ident'>usize</span>)
+            <span class='kw'>if</span> <span class='ident'>syms_out</span>.<span class='ident'>is_null</span>() {
+                <span class='kw-2'>&amp;</span>[]
+            } <span class='kw'>else</span> {
+                <span class='ident'>slice</span>::<span class='ident'>from_raw_parts</span>(<span class='ident'>syms_out</span>, <span class='ident'>len</span> <span class='kw'>as</span> <span class='ident'>usize</span>)
+            }
         }
     }
 
@@ -2563,10 +2540,6 @@
     <span class='doccomment'>/// there are keys which should not or do not need to be repeated.  For</span>
     <span class='doccomment'>/// example, repeating modifier keys such as Left/Right Shift or Caps Lock</span>
     <span class='doccomment'>/// is not generally useful or desired.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// Returns 1 if the key should repeat, 0 otherwise.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @memberof xkb_keymap</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>key_repeats</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>key</span>: <span class='ident'>Keycode</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span> {
         <span class='kw'>unsafe</span> {
             <span class='ident'>xkb_keymap_key_repeats</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>, <span class='ident'>key</span>) <span class='op'>!=</span> <span class='number'>0</span>
@@ -2592,6 +2565,7 @@
     }
 }
 
+<span class='doccomment'>/// iterator to the modifiers in a Keymap</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>KeymapMods</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
     <span class='ident'>keymap</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>Keymap</span>,
     <span class='ident'>ind</span>: <span class='ident'>ModIndex</span>,
@@ -2614,6 +2588,7 @@
 }
 
 
+<span class='doccomment'>/// iterator to the layouts in Keymap</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>KeymapLayouts</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
     <span class='ident'>keymap</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>Keymap</span>,
     <span class='ident'>ind</span>: <span class='ident'>LayoutIndex</span>,
@@ -2636,6 +2611,7 @@
 }
 
 
+<span class='doccomment'>/// iterator to the leds in a Keymap</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>KeymapLeds</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
     <span class='ident'>keymap</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>Keymap</span>,
     <span class='ident'>ind</span>: <span class='ident'>LedIndex</span>,
@@ -2681,13 +2657,7 @@
     }
 
 
-    <span class='doccomment'>/// Create a new keyboard state object.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>///  keymap The keymap which the state will use.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// Returns A new keyboard state object, or NULL on failure.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @memberof xkb_state</span>
+    <span class='doccomment'>/// Create a new keyboard state object from a keymap.</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>(<span class='ident'>keymap</span>: <span class='kw-2'>&amp;</span><span class='ident'>Keymap</span>) <span class='op'>-&gt;</span> <span class='ident'>State</span> {
         <span class='kw'>unsafe</span> {
             <span class='ident'>State</span> {
@@ -2699,14 +2669,10 @@
 
     <span class='doccomment'>/// Get the keymap which a keyboard state object is using.</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// Returns The keymap which was passed to xkb_state_new() when creating</span>
+    <span class='doccomment'>/// Returns the keymap which was passed to xkb_state_new() when creating</span>
     <span class='doccomment'>/// this state object.</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// This function does not take a new reference on the keymap; you must</span>
-    <span class='doccomment'>/// explicitly reference it yourself if you plan to use it beyond the</span>
-    <span class='doccomment'>/// lifetime of the state.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @memberof xkb_state</span>
+    <span class='doccomment'>/// This keymap can safely be used beyond the lifetime of this state</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_keymap</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>Keymap</span> {
         <span class='kw'>unsafe</span> {
             <span class='kw'>let</span> <span class='ident'>keymap</span> <span class='op'>=</span> <span class='ident'>xkb_state_get_keymap</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>);
@@ -2739,10 +2705,6 @@
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// Returns A mask of state components that have changed as a result of</span>
     <span class='doccomment'>/// the update.  If nothing in the state has changed, returns 0.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @memberof xkb_state</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @sa xkb_state_update_mask()</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>update_key</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>,
                       <span class='ident'>key</span>: <span class='ident'>Keycode</span>,
                       <span class='ident'>direction</span>: <span class='ident'>KeyDirection</span>)
@@ -2772,13 +2734,8 @@
     <span class='doccomment'>/// xkb_state_update_key() instead.  The two functions should not generally be</span>
     <span class='doccomment'>/// used together.</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// Returns A mask of state components that have changed as a result of</span>
+    <span class='doccomment'>/// Returns a mask of state components that have changed as a result of</span>
     <span class='doccomment'>/// the update.  If nothing in the state has changed, returns 0.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @memberof xkb_state</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @sa xkb_state_component</span>
-    <span class='doccomment'>/// @sa xkb_state_update_key</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>update_mask</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>,
                        <span class='ident'>depressed_mods</span>: <span class='ident'>ModMask</span>,
                        <span class='ident'>latched_mods</span>: <span class='ident'>ModMask</span>,
@@ -2814,49 +2771,29 @@
     <span class='doccomment'>/// If you do not want to handle this case, you should use</span>
     <span class='doccomment'>/// xkb_state_key_get_one_sym(), which additionally performs transformations</span>
     <span class='doccomment'>/// which are specific to the one-keysym case.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// Returns The number of keysyms in the syms_out array.  If no keysyms</span>
-    <span class='doccomment'>/// are produced by the key in the given keyboard state, returns 0 and sets</span>
-    <span class='doccomment'>/// syms_out to NULL.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @memberof xkb_state</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>key_get_syms</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>key</span>: <span class='ident'>Keycode</span>)
             <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> [<span class='ident'>Keysym</span>] {
         <span class='kw'>unsafe</span> {
             <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>syms_out</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>Keysym</span> <span class='op'>=</span> <span class='ident'>null_mut</span>();
             <span class='kw'>let</span> <span class='ident'>len</span> <span class='op'>=</span> <span class='ident'>xkb_state_key_get_syms</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>,
                                 <span class='ident'>key</span>, <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>syms_out</span>);
-            <span class='ident'>slice</span>::<span class='ident'>from_raw_parts</span>(<span class='ident'>syms_out</span>, <span class='ident'>len</span> <span class='kw'>as</span> <span class='ident'>usize</span>)
+            <span class='kw'>if</span> <span class='ident'>syms_out</span>.<span class='ident'>is_null</span>() {
+                <span class='kw-2'>&amp;</span>[]
+            } <span class='kw'>else</span> {
+                <span class='ident'>slice</span>::<span class='ident'>from_raw_parts</span>(<span class='ident'>syms_out</span>, <span class='ident'>len</span> <span class='kw'>as</span> <span class='ident'>usize</span>)
+            }
         }
     }
 
 
     <span class='doccomment'>/// Get the Unicode/UTF-8 string obtained from pressing a particular key</span>
     <span class='doccomment'>/// in a given keyboard state.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @param[in]  state  The keyboard state object.</span>
-    <span class='doccomment'>/// @param[in]  key    The keycode of the key.</span>
-    <span class='doccomment'>/// @param[out] buffer A buffer to write the string into.</span>
-    <span class='doccomment'>/// @param[in]  size   Size of the buffer.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @warning If the buffer passed is too small, the string is truncated</span>
-    <span class='doccomment'>/// (though still NUL-terminated).</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// Returns The number of bytes required for the string, excluding the</span>
-    <span class='doccomment'>/// NUL byte.  If there is nothing to write, returns 0.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// You may check if truncation has occurred by comparing the return value</span>
-    <span class='doccomment'>/// with the size of @p buffer, similarly to the snprintf(3) function.</span>
-    <span class='doccomment'>/// You may safely pass NULL and 0 to @p buffer and @p size to find the</span>
-    <span class='doccomment'>/// required size (without the NUL-byte).</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @memberof xkb_state</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>key_get_utf8</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>key</span>: <span class='ident'>Keycode</span>) <span class='op'>-&gt;</span> <span class='ident'>String</span> {
         <span class='kw'>unsafe</span> {
-            <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>buf</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> [<span class='ident'>c_char</span>] <span class='op'>=</span> <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> [<span class='number'>0</span>; <span class='number'>32</span>];
+            <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>buf</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> [<span class='ident'>c_char</span>] <span class='op'>=</span> <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> [<span class='number'>0</span>; <span class='number'>64</span>];
             <span class='kw'>let</span> <span class='ident'>ptr</span> <span class='op'>=</span> <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>buf</span>[<span class='number'>0</span>] <span class='kw'>as</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>c_char</span>;
             <span class='kw'>let</span> <span class='ident'>len</span> <span class='op'>=</span> <span class='ident'>xkb_state_key_get_utf8</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>, <span class='ident'>key</span>,
-                        <span class='ident'>ptr</span>, <span class='number'>32</span>);
+                        <span class='ident'>ptr</span>, <span class='number'>64</span>);
             <span class='kw'>let</span> <span class='ident'>slice</span>: <span class='kw-2'>&amp;</span>[<span class='ident'>u8</span>] <span class='op'>=</span> <span class='ident'>slice</span>::<span class='ident'>from_raw_parts</span>(
                         <span class='ident'>mem</span>::<span class='ident'>transmute</span>(<span class='ident'>ptr</span>), <span class='ident'>len</span> <span class='kw'>as</span> <span class='ident'>usize</span>);
             <span class='ident'>String</span>::<span class='ident'>from_utf8_unchecked</span>(<span class='ident'>slice</span>.<span class='ident'>to_owned</span>())
@@ -2869,8 +2806,6 @@
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// Returns The UTF-32 representation for the key, if it consists of only</span>
     <span class='doccomment'>/// a single codepoint.  Otherwise, returns 0.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @memberof xkb_state</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>key_get_utf32</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>key</span>: <span class='ident'>Keycode</span>) <span class='op'>-&gt;</span> <span class='ident'>u32</span> {
         <span class='kw'>unsafe</span> {
             <span class='ident'>xkb_state_key_get_utf32</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>, <span class='ident'>key</span>)
@@ -2886,11 +2821,8 @@
     <span class='doccomment'>/// multiple keysyms are returned (in which case this function is</span>
     <span class='doccomment'>/// preferred).</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// Returns The keysym.  If the key does not have exactly one keysym,</span>
+    <span class='doccomment'>/// Returns the keysym.  If the key does not have exactly one keysym,</span>
     <span class='doccomment'>/// returns xkb::KEY_NoSymbol</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @sa xkb_state_key_get_syms()</span>
-    <span class='doccomment'>/// @memberof xkb_state</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>key_get_one_sym</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>key</span>: <span class='ident'>Keycode</span>) <span class='op'>-&gt;</span> <span class='ident'>Keysym</span> {
         <span class='kw'>unsafe</span> {
             <span class='ident'>xkb_state_key_get_one_sym</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>, <span class='ident'>key</span>)
@@ -2900,16 +2832,9 @@
 
     <span class='doccomment'>/// Get the effective layout index for a key in a given keyboard state.</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// Returns The layout index for the key in the given keyboard state.  If</span>
+    <span class='doccomment'>/// Returns the layout index for the key in the given keyboard state.  If</span>
     <span class='doccomment'>/// the given keycode is invalid, or if the key is not included in any</span>
     <span class='doccomment'>/// layout at all, returns xkb::LAYOUT_INVALID.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @invariant If the returned layout is valid, the following always holds:</span>
-    <span class='doccomment'>/// @code</span>
-    <span class='doccomment'>/// xkb_state_key_get_layout(state, key) &lt; xkb_keymap_num_layouts_for_key(keymap, key)</span>
-    <span class='doccomment'>/// @endcode</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// @memberof xkb_state</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>key_get_layout</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>key</span>: <span class='ident'>Keycode</span>) <span class='op'>-&gt;</span> <span class='ident'>LayoutIndex</span> {
         <span class='kw'>unsafe</span> {
             <span class='ident'>xkb_state_key_get_layout</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>, <span class='ident'>key</span>)
@@ -2919,14 +2844,6 @@
 
     <span class='doccomment'>/// Get the effective shift level for a key in a given keyboard state and</span>
     <span class='doccomment'>/// layout.</span>
-    <span class='doccomment'>///</span>
-    <span class='doccomment'>/// - state:  The keyboard state.</span>
-    <span class='doccomment'>/// - key:    The keycode of the key.</span>
-    <span class='doccomment'>/// - layout: The layout for which to get the shift level.  This must be</span>
-    <span class='doccomment'>/// smaller than:</span>
-    <span class='doccomment'>/// xkb::Keymap::num_layouts_for_key(keymap, key)</span>
-    <span class='doccomment'>/// usually it would be:</span>
-    <span class='doccomment'>/// xkb::State::key_get_layout(state, key)</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// Return the shift level index.  If the key or layout are invalid,</span>
     <span class='doccomment'>/// returns xkb::LEVEL_INVALID.</span>
@@ -2940,14 +2857,11 @@
     <span class='doccomment'>/// The counterpart to xkb_state_update_mask for modifiers, to be used on</span>
     <span class='doccomment'>/// the server side of serialization.</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// - state:      The keyboard state.</span>
-    <span class='doccomment'>/// - components: A mask of the modifier state components to serialize.</span>
-    <span class='doccomment'>///</span>
     <span class='doccomment'>/// State components other than xkb::STATE_MODS_* are ignored.</span>
     <span class='doccomment'>/// If xkb::STATE_MODS_EFFECTIVE is included, all other state components are</span>
     <span class='doccomment'>/// ignored.</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>///Returns a ModMask representing the given components of the</span>
+    <span class='doccomment'>/// Returns a ModMask representing the given components of the</span>
     <span class='doccomment'>/// modifier state.</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// This function should not be used in regular clients; please use the</span>
@@ -2967,12 +2881,12 @@
 
 
     <span class='doccomment'>/// Test whether a modifier is active in a given keyboard state by name.</span>
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>mod_name_is_active</span><span class='op'>&lt;</span><span class='ident'>S</span>: <span class='ident'>AsRef</span><span class='op'>&lt;</span><span class='ident'>str</span><span class='op'>&gt;</span><span class='op'>+</span>?<span class='ident'>Sized</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>,
-                                                    <span class='ident'>name</span>: <span class='kw-2'>&amp;</span><span class='ident'>S</span>,
-                                                    <span class='ident'>type_</span>: <span class='ident'>StateComponent</span>)
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>mod_name_is_active</span><span class='op'>&lt;</span><span class='ident'>S</span>: <span class='ident'>Borrow</span><span class='op'>&lt;</span><span class='ident'>str</span><span class='op'>&gt;&gt;</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>,
+                                              <span class='ident'>name</span>: <span class='kw-2'>&amp;</span><span class='ident'>S</span>,
+                                              <span class='ident'>type_</span>: <span class='ident'>StateComponent</span>)
             <span class='op'>-&gt;</span> <span class='ident'>bool</span> {
         <span class='kw'>unsafe</span> {
-            <span class='kw'>let</span> <span class='ident'>cname</span> <span class='op'>=</span> <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>name</span>.<span class='ident'>as_ref</span>().<span class='ident'>as_bytes</span>()).<span class='ident'>unwrap</span>();
+            <span class='kw'>let</span> <span class='ident'>cname</span> <span class='op'>=</span> <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>name</span>.<span class='ident'>borrow</span>().<span class='ident'>as_bytes</span>()).<span class='ident'>unwrap</span>();
             <span class='ident'>xkb_state_mod_name_is_active</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>, <span class='ident'>cname</span>.<span class='ident'>as_ptr</span>(), <span class='ident'>type_</span>) <span class='op'>==</span> <span class='number'>1</span>
         }
     }
@@ -3029,12 +2943,6 @@
     <span class='doccomment'>///    Effectively, this means that consumed modifiers (Shift in this example)</span>
     <span class='doccomment'>///    are masked out as well, before doing the comparison.</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// To summarize, this is how the matching would be performed:</span>
-    <span class='doccomment'>/// @code</span>
-    <span class='doccomment'>///   (keysym == shortcut_keysym) &amp;&amp;</span>
-    <span class='doccomment'>///   ((state_modifiers &amp; ~consumed_modifiers &amp; significant_modifiers) == shortcut_modifiers)</span>
-    <span class='doccomment'>/// @endcode</span>
-    <span class='doccomment'>///</span>
     <span class='doccomment'>/// state_modifiers are the modifiers reported by</span>
     <span class='doccomment'>/// xkb::State::mod_index_is_active() and similar functions.</span>
     <span class='doccomment'>/// consumed_modifiers are the modifiers reported by</span>
@@ -3076,12 +2984,12 @@
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// If multiple layouts in the keymap have this name, the one with the lowest</span>
     <span class='doccomment'>/// index is tested.</span>
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>layout_name_is_active</span><span class='op'>&lt;</span><span class='ident'>S</span>: <span class='ident'>AsRef</span><span class='op'>&lt;</span><span class='ident'>str</span><span class='op'>&gt;</span><span class='op'>+</span>?<span class='ident'>Sized</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>,
-                                                       <span class='ident'>name</span>: <span class='kw-2'>&amp;</span><span class='ident'>S</span>,
-                                                       <span class='ident'>type_</span>: <span class='ident'>StateComponent</span>)
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>layout_name_is_active</span><span class='op'>&lt;</span><span class='ident'>S</span>: <span class='ident'>Borrow</span><span class='op'>&lt;</span><span class='ident'>str</span><span class='op'>&gt;&gt;</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>,
+                                                 <span class='ident'>name</span>: <span class='kw-2'>&amp;</span><span class='ident'>S</span>,
+                                                 <span class='ident'>type_</span>: <span class='ident'>StateComponent</span>)
             <span class='op'>-&gt;</span> <span class='ident'>bool</span> {
         <span class='kw'>unsafe</span> {
-            <span class='kw'>let</span> <span class='ident'>cname</span> <span class='op'>=</span> <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>name</span>.<span class='ident'>as_ref</span>().<span class='ident'>as_bytes</span>()).<span class='ident'>unwrap</span>();
+            <span class='kw'>let</span> <span class='ident'>cname</span> <span class='op'>=</span> <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>name</span>.<span class='ident'>borrow</span>().<span class='ident'>as_bytes</span>()).<span class='ident'>unwrap</span>();
             <span class='ident'>xkb_state_layout_name_is_active</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>, <span class='ident'>cname</span>.<span class='ident'>as_ptr</span>(), <span class='ident'>type_</span>) <span class='op'>!=</span> <span class='number'>0</span>
         }
     }
@@ -3098,10 +3006,10 @@
 
 
     <span class='doccomment'>/// Test whether a LED is active in a given keyboard state by name.</span>
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>led_name_is_active</span><span class='op'>&lt;</span><span class='ident'>S</span>: <span class='ident'>AsRef</span><span class='op'>&lt;</span><span class='ident'>str</span><span class='op'>&gt;</span><span class='op'>+</span>?<span class='ident'>Sized</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>name</span>: <span class='kw-2'>&amp;</span><span class='ident'>S</span>)
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>led_name_is_active</span><span class='op'>&lt;</span><span class='ident'>S</span>: <span class='ident'>Borrow</span><span class='op'>&lt;</span><span class='ident'>str</span><span class='op'>&gt;&gt;</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>name</span>: <span class='kw-2'>&amp;</span><span class='ident'>S</span>)
             <span class='op'>-&gt;</span> <span class='ident'>bool</span> {
         <span class='kw'>unsafe</span> {
-            <span class='kw'>let</span> <span class='ident'>cname</span> <span class='op'>=</span> <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>name</span>.<span class='ident'>as_ref</span>().<span class='ident'>as_bytes</span>()).<span class='ident'>unwrap</span>();
+            <span class='kw'>let</span> <span class='ident'>cname</span> <span class='op'>=</span> <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>name</span>.<span class='ident'>borrow</span>().<span class='ident'>as_bytes</span>()).<span class='ident'>unwrap</span>();
             <span class='ident'>xkb_state_led_name_is_active</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>, <span class='ident'>cname</span>.<span class='ident'>as_ptr</span>()) <span class='op'>!=</span> <span class='number'>0</span>
         }
     }

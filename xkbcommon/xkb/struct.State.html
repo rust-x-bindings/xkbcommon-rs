@@ -46,7 +46,7 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-3060' class='srclink' href='../../src/xkbcommon/xkb/mod.rs.html#1077-1079' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-3064' class='srclink' href='../../src/xkbcommon/xkb/mod.rs.html#1099-1101' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct State {
     // some fields omitted
 }</pre><div class='docblock'><p>Keyboard state object.</p>
@@ -58,24 +58,14 @@ key symbols (keysyms) are the output.</p>
 </div><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../../xkbcommon/xkb/struct.State.html' title='xkbcommon::xkb::State'>State</a></code></h3><div class='impl-items'><h4 id='method.from_raw_ptr' class='method'><code>unsafe fn <a href='#method.from_raw_ptr' class='fnname'>from_raw_ptr</a>(ptr: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../xkbcommon/xkb/ffi/enum.xkb_state.html' title='xkbcommon::xkb::ffi::xkb_state'>xkb_state</a>) -&gt; <a class='struct' href='../../xkbcommon/xkb/struct.State.html' title='xkbcommon::xkb::State'>State</a></code></h4>
 <h4 id='method.get_raw_ptr' class='method'><code>fn <a href='#method.get_raw_ptr' class='fnname'>get_raw_ptr</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../xkbcommon/xkb/ffi/enum.xkb_state.html' title='xkbcommon::xkb::ffi::xkb_state'>xkb_state</a></code></h4>
 <h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(keymap: &amp;<a class='struct' href='../../xkbcommon/xkb/struct.Keymap.html' title='xkbcommon::xkb::Keymap'>Keymap</a>) -&gt; <a class='struct' href='../../xkbcommon/xkb/struct.State.html' title='xkbcommon::xkb::State'>State</a></code></h4>
-<div class='docblock'><p>Create a new keyboard state object.</p>
-
-<p>keymap The keymap which the state will use.</p>
-
-<p>Returns A new keyboard state object, or NULL on failure.</p>
-
-<p>@memberof xkb_state</p>
+<div class='docblock'><p>Create a new keyboard state object from a keymap.</p>
 </div><h4 id='method.get_keymap' class='method'><code>fn <a href='#method.get_keymap' class='fnname'>get_keymap</a>(&amp;self) -&gt; <a class='struct' href='../../xkbcommon/xkb/struct.Keymap.html' title='xkbcommon::xkb::Keymap'>Keymap</a></code></h4>
 <div class='docblock'><p>Get the keymap which a keyboard state object is using.</p>
 
-<p>Returns The keymap which was passed to xkb_state_new() when creating
+<p>Returns the keymap which was passed to xkb_state_new() when creating
 this state object.</p>
 
-<p>This function does not take a new reference on the keymap; you must
-explicitly reference it yourself if you plan to use it beyond the
-lifetime of the state.</p>
-
-<p>@memberof xkb_state</p>
+<p>This keymap can safely be used beyond the lifetime of this state</p>
 </div><h4 id='method.update_key' class='method'><code>fn <a href='#method.update_key' class='fnname'>update_key</a>(&amp;mut self, key: <a class='type' href='../../xkbcommon/xkb/type.Keycode.html' title='xkbcommon::xkb::Keycode'>Keycode</a>, direction: <a class='enum' href='../../xkbcommon/xkb/enum.KeyDirection.html' title='xkbcommon::xkb::KeyDirection'>KeyDirection</a>) -&gt; <a class='type' href='../../xkbcommon/xkb/type.StateComponent.html' title='xkbcommon::xkb::StateComponent'>StateComponent</a></code></h4>
 <div class='docblock'><p>Update the keyboard state to reflect a given key being pressed or
 released.</p>
@@ -100,10 +90,6 @@ conventional behavior.</p>
 
 <p>Returns A mask of state components that have changed as a result of
 the update.  If nothing in the state has changed, returns 0.</p>
-
-<p>@memberof xkb_state</p>
-
-<p>@sa xkb_state_update_mask()</p>
 </div><h4 id='method.update_mask' class='method'><code>fn <a href='#method.update_mask' class='fnname'>update_mask</a>(&amp;mut self, depressed_mods: <a class='type' href='../../xkbcommon/xkb/type.ModMask.html' title='xkbcommon::xkb::ModMask'>ModMask</a>, latched_mods: <a class='type' href='../../xkbcommon/xkb/type.ModMask.html' title='xkbcommon::xkb::ModMask'>ModMask</a>, locked_mods: <a class='type' href='../../xkbcommon/xkb/type.ModMask.html' title='xkbcommon::xkb::ModMask'>ModMask</a>, depressed_layout: <a class='type' href='../../xkbcommon/xkb/type.LayoutIndex.html' title='xkbcommon::xkb::LayoutIndex'>LayoutIndex</a>, latched_layout: <a class='type' href='../../xkbcommon/xkb/type.LayoutIndex.html' title='xkbcommon::xkb::LayoutIndex'>LayoutIndex</a>, locked_layout: <a class='type' href='../../xkbcommon/xkb/type.LayoutIndex.html' title='xkbcommon::xkb::LayoutIndex'>LayoutIndex</a>) -&gt; <a class='type' href='../../xkbcommon/xkb/type.StateComponent.html' title='xkbcommon::xkb::StateComponent'>StateComponent</a></code></h4>
 <div class='docblock'><p>Update a keyboard state from a set of explicit masks.</p>
 
@@ -123,13 +109,8 @@ master state.</p>
 xkb_state_update_key() instead.  The two functions should not generally be
 used together.</p>
 
-<p>Returns A mask of state components that have changed as a result of
+<p>Returns a mask of state components that have changed as a result of
 the update.  If nothing in the state has changed, returns 0.</p>
-
-<p>@memberof xkb_state</p>
-
-<p>@sa xkb_state_component
-@sa xkb_state_update_key</p>
 </div><h4 id='method.key_get_syms' class='method'><code>fn <a href='#method.key_get_syms' class='fnname'>key_get_syms</a>&lt;'a&gt;(&amp;'a self, key: <a class='type' href='../../xkbcommon/xkb/type.Keycode.html' title='xkbcommon::xkb::Keycode'>Keycode</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;'a [</a><a class='type' href='../../xkbcommon/xkb/type.Keysym.html' title='xkbcommon::xkb::Keysym'>Keysym</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a></code></h4>
 <div class='docblock'><p>Get the keysyms obtained from pressing a particular key in a given
 keyboard state.</p>
@@ -147,41 +128,15 @@ key in the given keyboard state.</p>
 If you do not want to handle this case, you should use
 xkb_state_key_get_one_sym(), which additionally performs transformations
 which are specific to the one-keysym case.</p>
-
-<p>Returns The number of keysyms in the syms_out array.  If no keysyms
-are produced by the key in the given keyboard state, returns 0 and sets
-syms_out to NULL.</p>
-
-<p>@memberof xkb_state</p>
 </div><h4 id='method.key_get_utf8' class='method'><code>fn <a href='#method.key_get_utf8' class='fnname'>key_get_utf8</a>(&amp;self, key: <a class='type' href='../../xkbcommon/xkb/type.Keycode.html' title='xkbcommon::xkb::Keycode'>Keycode</a>) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code></h4>
 <div class='docblock'><p>Get the Unicode/UTF-8 string obtained from pressing a particular key
 in a given keyboard state.</p>
-
-<p>@param[in]  state  The keyboard state object.
-@param[in]  key    The keycode of the key.
-@param[out] buffer A buffer to write the string into.
-@param[in]  size   Size of the buffer.</p>
-
-<p>@warning If the buffer passed is too small, the string is truncated
-(though still NUL-terminated).</p>
-
-<p>Returns The number of bytes required for the string, excluding the
-NUL byte.  If there is nothing to write, returns 0.</p>
-
-<p>You may check if truncation has occurred by comparing the return value
-with the size of @p buffer, similarly to the snprintf(3) function.
-You may safely pass NULL and 0 to @p buffer and @p size to find the
-required size (without the NUL-byte).</p>
-
-<p>@memberof xkb_state</p>
 </div><h4 id='method.key_get_utf32' class='method'><code>fn <a href='#method.key_get_utf32' class='fnname'>key_get_utf32</a>(&amp;self, key: <a class='type' href='../../xkbcommon/xkb/type.Keycode.html' title='xkbcommon::xkb::Keycode'>Keycode</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></h4>
 <div class='docblock'><p>Get the Unicode/UTF-32 codepoint obtained from pressing a particular
 key in a a given keyboard state.</p>
 
 <p>Returns The UTF-32 representation for the key, if it consists of only
 a single codepoint.  Otherwise, returns 0.</p>
-
-<p>@memberof xkb_state</p>
 </div><h4 id='method.key_get_one_sym' class='method'><code>fn <a href='#method.key_get_one_sym' class='fnname'>key_get_one_sym</a>(&amp;self, key: <a class='type' href='../../xkbcommon/xkb/type.Keycode.html' title='xkbcommon::xkb::Keycode'>Keycode</a>) -&gt; <a class='type' href='../../xkbcommon/xkb/type.Keysym.html' title='xkbcommon::xkb::Keysym'>Keysym</a></code></h4>
 <div class='docblock'><p>Get the single keysym obtained from pressing a particular key in a
 given keyboard state.</p>
@@ -191,60 +146,35 @@ for users which cannot or do not want to handle the case where
 multiple keysyms are returned (in which case this function is
 preferred).</p>
 
-<p>Returns The keysym.  If the key does not have exactly one keysym,
+<p>Returns the keysym.  If the key does not have exactly one keysym,
 returns xkb::KEY_NoSymbol</p>
-
-<p>@sa xkb_state_key_get_syms()
-@memberof xkb_state</p>
 </div><h4 id='method.key_get_layout' class='method'><code>fn <a href='#method.key_get_layout' class='fnname'>key_get_layout</a>(&amp;self, key: <a class='type' href='../../xkbcommon/xkb/type.Keycode.html' title='xkbcommon::xkb::Keycode'>Keycode</a>) -&gt; <a class='type' href='../../xkbcommon/xkb/type.LayoutIndex.html' title='xkbcommon::xkb::LayoutIndex'>LayoutIndex</a></code></h4>
 <div class='docblock'><p>Get the effective layout index for a key in a given keyboard state.</p>
 
-<p>Returns The layout index for the key in the given keyboard state.  If
+<p>Returns the layout index for the key in the given keyboard state.  If
 the given keycode is invalid, or if the key is not included in any
 layout at all, returns xkb::LAYOUT_INVALID.</p>
-
-<p>@invariant If the returned layout is valid, the following always holds:
-@code
-xkb_state_key_get_layout(state, key) &lt; xkb_keymap_num_layouts_for_key(keymap, key)
-@endcode</p>
-
-<p>@memberof xkb_state</p>
 </div><h4 id='method.key_get_level' class='method'><code>fn <a href='#method.key_get_level' class='fnname'>key_get_level</a>(&amp;self, key: <a class='type' href='../../xkbcommon/xkb/type.Keycode.html' title='xkbcommon::xkb::Keycode'>Keycode</a>, layout: <a class='type' href='../../xkbcommon/xkb/type.LayoutIndex.html' title='xkbcommon::xkb::LayoutIndex'>LayoutIndex</a>) -&gt; <a class='type' href='../../xkbcommon/xkb/type.LevelIndex.html' title='xkbcommon::xkb::LevelIndex'>LevelIndex</a></code></h4>
 <div class='docblock'><p>Get the effective shift level for a key in a given keyboard state and
 layout.</p>
-
-<ul>
-<li>state:  The keyboard state.</li>
-<li>key:    The keycode of the key.</li>
-<li>layout: The layout for which to get the shift level.  This must be
-smaller than:
-xkb::Keymap::num_layouts_for_key(keymap, key)
-usually it would be:
-xkb::State::key_get_layout(state, key)</li>
-</ul>
 
 <p>Return the shift level index.  If the key or layout are invalid,
 returns xkb::LEVEL_INVALID.</p>
 </div><h4 id='method.serialize_mods' class='method'><code>fn <a href='#method.serialize_mods' class='fnname'>serialize_mods</a>(&amp;self, components: <a class='type' href='../../xkbcommon/xkb/type.StateComponent.html' title='xkbcommon::xkb::StateComponent'>StateComponent</a>) -&gt; <a class='type' href='../../xkbcommon/xkb/type.ModMask.html' title='xkbcommon::xkb::ModMask'>ModMask</a></code></h4>
 <div class='docblock'><p>The counterpart to xkb_state_update_mask for modifiers, to be used on
- the server side of serialization.</p>
-
-<ul>
-<li>state:      The keyboard state.</li>
-<li><p>components: A mask of the modifier state components to serialize.</p>
+the server side of serialization.</p>
 
 <p>State components other than xkb::STATE_MODS_* are ignored.
 If xkb::STATE_MODS_EFFECTIVE is included, all other state components are
-ignored.</p></li>
-</ul>
+ignored.</p>
 
 <p>Returns a ModMask representing the given components of the
- modifier state.</p>
+modifier state.</p>
 
 <p>This function should not be used in regular clients; please use the
- xkb::State::mod_*_is_active API instead.</p>
+xkb::State::mod_*_is_active API instead.</p>
 </div><h4 id='method.serialize_layout' class='method'><code>fn <a href='#method.serialize_layout' class='fnname'>serialize_layout</a>(&amp;self, components: <a class='type' href='../../xkbcommon/xkb/type.StateComponent.html' title='xkbcommon::xkb::StateComponent'>StateComponent</a>) -&gt; <a class='type' href='../../xkbcommon/xkb/type.LayoutIndex.html' title='xkbcommon::xkb::LayoutIndex'>LayoutIndex</a></code></h4>
-<h4 id='method.mod_name_is_active' class='method'><code>fn <a href='#method.mod_name_is_active' class='fnname'>mod_name_is_active</a>&lt;S: <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html' title='core::convert::AsRef'>AsRef</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt; + ?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='core::marker::Sized'>Sized</a>&gt;(&amp;self, name: &amp;S, type_: <a class='type' href='../../xkbcommon/xkb/type.StateComponent.html' title='xkbcommon::xkb::StateComponent'>StateComponent</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.mod_name_is_active' class='method'><code>fn <a href='#method.mod_name_is_active' class='fnname'>mod_name_is_active</a>&lt;S: <a class='trait' href='https://doc.rust-lang.org/nightly/core/borrow/trait.Borrow.html' title='core::borrow::Borrow'>Borrow</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;&gt;(&amp;self, name: &amp;S, type_: <a class='type' href='../../xkbcommon/xkb/type.StateComponent.html' title='xkbcommon::xkb::StateComponent'>StateComponent</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
 <div class='docblock'><p>Test whether a modifier is active in a given keyboard state by name.</p>
 </div><h4 id='method.mod_index_is_active' class='method'><code>fn <a href='#method.mod_index_is_active' class='fnname'>mod_index_is_active</a>(&amp;self, idx: <a class='type' href='../../xkbcommon/xkb/type.ModIndex.html' title='xkbcommon::xkb::ModIndex'>ModIndex</a>, type_: <a class='type' href='../../xkbcommon/xkb/type.StateComponent.html' title='xkbcommon::xkb::StateComponent'>StateComponent</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
 <div class='docblock'><p>Test whether a modifier is active in a given keyboard state by index.</p>
@@ -293,12 +223,6 @@ Effectively, this means that consumed modifiers (Shift in this example)
 are masked out as well, before doing the comparison.</li>
 </ol>
 
-<p>To summarize, this is how the matching would be performed:
-@code
-  (keysym == shortcut_keysym) &amp;&amp;
-  ((state_modifiers &amp; ~consumed_modifiers &amp; significant_modifiers) == shortcut_modifiers)
-@endcode</p>
-
 <p>state_modifiers are the modifiers reported by
 xkb::State::mod_index_is_active() and similar functions.
 consumed_modifiers are the modifiers reported by
@@ -314,14 +238,14 @@ consumed for that particular key (as in xkb_state_mod_index_is_consumed()).</p>
 <div class='docblock'><p>Get the mask of modifiers consumed by translating a given key.</p>
 
 <p>Returns a mask of the consumed modifiers.</p>
-</div><h4 id='method.layout_name_is_active' class='method'><code>fn <a href='#method.layout_name_is_active' class='fnname'>layout_name_is_active</a>&lt;S: <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html' title='core::convert::AsRef'>AsRef</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt; + ?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='core::marker::Sized'>Sized</a>&gt;(&amp;self, name: &amp;S, type_: <a class='type' href='../../xkbcommon/xkb/type.StateComponent.html' title='xkbcommon::xkb::StateComponent'>StateComponent</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h4 id='method.layout_name_is_active' class='method'><code>fn <a href='#method.layout_name_is_active' class='fnname'>layout_name_is_active</a>&lt;S: <a class='trait' href='https://doc.rust-lang.org/nightly/core/borrow/trait.Borrow.html' title='core::borrow::Borrow'>Borrow</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;&gt;(&amp;self, name: &amp;S, type_: <a class='type' href='../../xkbcommon/xkb/type.StateComponent.html' title='xkbcommon::xkb::StateComponent'>StateComponent</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
 <div class='docblock'><p>Test whether a layout is active in a given keyboard state by name.</p>
 
 <p>If multiple layouts in the keymap have this name, the one with the lowest
 index is tested.</p>
 </div><h4 id='method.layout_index_is_active' class='method'><code>fn <a href='#method.layout_index_is_active' class='fnname'>layout_index_is_active</a>(&amp;self, idx: <a class='type' href='../../xkbcommon/xkb/type.LayoutIndex.html' title='xkbcommon::xkb::LayoutIndex'>LayoutIndex</a>, type_: <a class='type' href='../../xkbcommon/xkb/type.StateComponent.html' title='xkbcommon::xkb::StateComponent'>StateComponent</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
 <div class='docblock'><p>Test whether a layout is active in a given keyboard state by index.</p>
-</div><h4 id='method.led_name_is_active' class='method'><code>fn <a href='#method.led_name_is_active' class='fnname'>led_name_is_active</a>&lt;S: <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html' title='core::convert::AsRef'>AsRef</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt; + ?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='core::marker::Sized'>Sized</a>&gt;(&amp;self, name: &amp;S) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h4 id='method.led_name_is_active' class='method'><code>fn <a href='#method.led_name_is_active' class='fnname'>led_name_is_active</a>&lt;S: <a class='trait' href='https://doc.rust-lang.org/nightly/core/borrow/trait.Borrow.html' title='core::borrow::Borrow'>Borrow</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;&gt;(&amp;self, name: &amp;S) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
 <div class='docblock'><p>Test whether a LED is active in a given keyboard state by name.</p>
 </div><h4 id='method.led_index_is_active' class='method'><code>fn <a href='#method.led_index_is_active' class='fnname'>led_index_is_active</a>(&amp;self, idx: <a class='type' href='../../xkbcommon/xkb/type.LedIndex.html' title='xkbcommon::xkb::LedIndex'>LedIndex</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
 <div class='docblock'><p>Test whether a LED is active in a given keyboard state by index.</p>
