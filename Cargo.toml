@@ -1,6 +1,6 @@
 [package]
 name = "xkbcommon"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["Remi THEBAULT <remi.thebault@gmail.com>"]
 description = "Rust bindings and wrappers for libxkbcommon"
 repository = "https://github.com/rtbo/xkbcommon-rs"
@@ -12,7 +12,7 @@ license = "MIT"
 [dependencies]
 libc = "0.2"
 log = "0.3"
-xcb = { version = "0.6", features = ["xkb"], optional=true }
+xcb = { version = "0.7", features = ["xkb"], optional=true }
 
 [features]
 x11 = ["xcb"]
