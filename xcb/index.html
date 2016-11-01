@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `xcb` crate.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, xcb">
+
+    <title>xcb - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'></p><script>window.sidebarCurrent = {name: 'xcb', ty: 'mod', relpath: '../'};</script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Crate <a class='mod' href=''>xcb</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-0' class='srclink' href='../src/xcb/lib.rs.html#32-272' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Rust bindings to the XCB library.</p>
+
+<p>The X protocol C-language Binding (XCB - <a href="https://xcb.freedesktop.org/">https://xcb.freedesktop.org/</a>) is a
+replacement for Xlib featuring a small footprint, latency hiding,
+direct access to the protocol, improved threading support, and extensibility.</p>
+
+<p>The communication is established with the X server by the creation of a
+<code>Connection</code> object.</p>
+
+<p>A client communicates with the server by sending requests. There are 2 types
+of requests:</p>
+
+<ul>
+<li>void requests: requests that do not expect an answer (e.g. <code>ChangeProperty</code>)</li>
+<li>non-void requests: requests that need a <code>Reply</code> (e.g. <code>GetProperty</code>)</li>
+</ul>
+
+<p>Void requests are normally unchecked. They are issued by the client, that
+will normally not do anything else about it. For each such request, it exists
+a variant with <code>_checked</code> suffix (e.g. <code>change_property</code> and <code>change_property_checked</code>)
+that allows to receive a confirmation reply from the server via
+<code>Connection::request_check</code>.</p>
+
+<p>Conversely, non-void requests are normally checked. When the client retrieves
+the <code>Reply</code>, it can check for an <code>Error</code>. For each such request, it exists a variant
+with <code>_unchecked</code> suffix (e.g. <code>get_property</code> and <code>get_property_unchecked</code>).
+If this variant is used, the <code>Reply</code> is retrieved assuming that there was no error.</p>
+
+<p>The server can also communicate with clients by sending <code>Event</code>s.
+The client listens to events with calls such as <code>Connection::wait_for_event</code>
+(blocking) or <code>Connection::poll_for_event</code> (non-blocking).</p>
+
+<p>API documentation is detailed in modules <code>base</code> and <code>xproto</code>.</p>
+
+<ul>
+<li><code>base</code>: contains <code>Connection</code> and a few utils</li>
+<li><code>xproto</code>: X protocol requests and events</li>
+</ul>
+
+<p>X protocol extensions are activated with cargo features</p>
+</div><h2 id='reexports' class='section-header'><a href="#reexports">Reexports</a></h2>
+<table><tr><td><code>pub use <a class='mod' href='../xcb/base/index.html' title='xcb::base'>base</a>::*;</code></td></tr><tr><td><code>pub use <a class='mod' href='../xcb/xproto/index.html' title='xcb::xproto'>xproto</a>::*;</code></td></tr></table><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='base/index.html'
+                                  title='xcb::base'>base</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='big_requests/index.html'
+                                  title='xcb::big_requests'>big_requests</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='ffi/index.html'
+                                  title='xcb::ffi'>ffi</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='xc_misc/index.html'
+                                  title='xcb::xc_misc'>xc_misc</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='xkb/index.html'
+                                  title='xcb::xkb'>xkb</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='xproto/index.html'
+                                  title='xcb::xproto'>xproto</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "xcb";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 (function() {var implementors = {};
-implementors['xcb'] = [];
+implementors["xcb"] = [];
 
             if (window.register_implementors) {
                 window.register_implementors(implementors);
