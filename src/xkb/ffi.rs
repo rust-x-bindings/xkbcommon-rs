@@ -389,3 +389,99 @@ extern {
             -> c_int;
 
 }
+
+#[cfg(feature = "compose")]
+mod compose {
+    use libc::{FILE, c_char, c_int, size_t};
+    use super::{xkb_context, xkb_keysym_t};
+
+    pub enum xkb_compose_table {}
+
+    pub enum xkb_compose_state {}
+
+    pub type xkb_compose_compile_flags = u32;
+    pub const XKB_COMPOSE_COMPILE_NO_FLAGS: u32 = 0;
+
+    pub type xkb_compose_format = u32;
+    pub const XKB_COMPOSE_FORMAT_TEXT_V1: u32 = 1;
+
+    pub type xkb_compose_state_flags = u32;
+    pub const XKB_COMPOSE_STATE_NO_FLAGS: u32 = 0;
+
+    #[repr(C)]
+    #[derive(Eq, PartialEq, Copy, Clone, Debug)]
+    pub enum xkb_compose_status {
+        NOTHING,
+        COMPOSING,
+        COMPOSED,
+        CANCELLED,
+    }
+
+    #[repr(C)]
+    #[derive(Eq, PartialEq, Copy, Clone, Debug)]
+    pub enum xkb_compose_feed_result {
+        IGNORED,
+        ACCEPTED,
+    }
+
+    extern "C" {
+
+        pub fn xkb_compose_table_new_from_locale(context: *mut xkb_context,
+                                                 locale: *const c_char,
+                                                 flags: xkb_compose_compile_flags)
+            -> *mut xkb_compose_table;
+
+        pub fn xkb_compose_table_new_from_file(context: *mut xkb_context,
+                                               file: *mut FILE,
+                                               locale: *const c_char,
+                                               format: xkb_compose_format,
+                                               flags: xkb_compose_compile_flags)
+            -> *mut xkb_compose_table;
+
+        pub fn xkb_compose_table_new_from_buffer(context: *mut xkb_context,
+                                                 buffer: *const c_char,
+                                                 length: size_t,
+                                                 locale: *const c_char,
+                                                 format: xkb_compose_format,
+                                                 flags: xkb_compose_compile_flags)
+            -> *mut xkb_compose_table;
+
+        pub fn xkb_compose_table_ref(table: *mut xkb_compose_table)
+            -> *mut xkb_compose_table;
+
+        pub fn xkb_compose_table_unref(table: *mut xkb_compose_table);
+
+        pub fn xkb_compose_state_new(table: *mut xkb_compose_table,
+                                     flags: xkb_compose_state_flags)
+            -> *mut xkb_compose_state;
+
+        pub fn xkb_compose_state_ref(state: *mut xkb_compose_state)
+            -> *mut xkb_compose_state;
+
+        pub fn xkb_compose_state_unref(state: *mut xkb_compose_state);
+
+        pub fn xkb_compose_state_get_compose_table(state: *mut xkb_compose_state)
+            -> *mut xkb_compose_table;
+
+        pub fn xkb_compose_state_feed(state: *mut xkb_compose_state,
+                                      keysym: xkb_keysym_t)
+            -> xkb_compose_feed_result;
+
+        pub fn xkb_compose_state_reset(state: *mut xkb_compose_state);
+
+        pub fn xkb_compose_state_get_status(state: *mut xkb_compose_state)
+            -> xkb_compose_status;
+
+        pub fn xkb_compose_state_get_utf8(state: *mut xkb_compose_state,
+                                          buffer: *mut c_char,
+                                          size: size_t)
+            -> c_int;
+
+        pub fn xkb_compose_state_get_one_sym(state: *mut xkb_compose_state)
+            -> xkb_keysym_t;
+
+    }
+}
+
+#[cfg(feature = "compose")]
+pub use self::compose::*;
