@@ -662,13 +662,13 @@ impl Keymap {
     ///
     /// Returns a keymap compiled according to the RMLVO names, or `None` if
     /// the compilation failed.
-    pub fn new_from_names<S: Borrow<str>>(context: &Context,
-                                          rules: &S,
-                                          model: &S,
-                                          layout: &S,
-                                          variant: &S,
-                                          options: Option<String>,
-                                          flags: KeymapCompileFlags)
+    pub fn new_from_names<S: Borrow<str> + ?Sized>(context: &Context,
+                                                   rules: &S,
+                                                   model: &S,
+                                                   layout: &S,
+                                                   variant: &S,
+                                                   options: Option<String>,
+                                                   flags: KeymapCompileFlags)
             -> Option<Keymap> {
         let crules = CString::new(rules.borrow().as_bytes()).unwrap();
         let cmodel = CString::new(model.borrow().as_bytes()).unwrap();
@@ -825,7 +825,7 @@ impl Keymap {
     ///
     /// Returns The index.  If no modifier with this name exists, returns
     /// xkb::MOD_INVALID.
-    pub fn mod_get_index<S: Borrow<str>>(&self, name: &S) -> ModIndex {
+    pub fn mod_get_index<S: Borrow<str> + ?Sized>(&self, name: &S) -> ModIndex {
         unsafe {
             let cstr = CString::new(name.borrow().as_bytes()).unwrap();
             xkb_keymap_mod_get_index(self.ptr, cstr.as_ptr())
@@ -874,7 +874,7 @@ impl Keymap {
     /// Returns The index.  If no layout exists with this name, returns
     /// xkb::LAYOUT_INVALID.  If more than one layout in the keymap has this name,
     /// returns the lowest index among them.
-    pub fn layout_get_index<S: Borrow<str>>(&self, name: &S) -> LayoutIndex {
+    pub fn layout_get_index<S: Borrow<str> + ?Sized>(&self, name: &S) -> LayoutIndex {
         unsafe {
             let cstr = CString::new(name.borrow().as_bytes()).unwrap();
             xkb_keymap_layout_get_index(self.ptr, cstr.as_ptr())
@@ -927,7 +927,7 @@ impl Keymap {
     ///
     /// Returns The index.  If no LED with this name exists, returns
     /// xkb::LED_INVALID.
-    pub fn led_get_index<S: Borrow<str>>(&self, name: &S) -> LedIndex {
+    pub fn led_get_index<S: Borrow<str> + ?Sized>(&self, name: &S) -> LedIndex {
         unsafe {
             let cstr = CString::new(name.borrow().as_bytes()).unwrap();
             xkb_keymap_led_get_index(self.ptr, cstr.as_ptr())
@@ -1337,9 +1337,9 @@ impl State {
 
 
     /// Test whether a modifier is active in a given keyboard state by name.
-    pub fn mod_name_is_active<S: Borrow<str>>(&self,
-                                              name: &S,
-                                              type_: StateComponent)
+    pub fn mod_name_is_active<S: Borrow<str> + ?Sized>(&self,
+                                                       name: &S,
+                                                       type_: StateComponent)
             -> bool {
         unsafe {
             let cname = CString::new(name.borrow().as_bytes()).unwrap();
@@ -1440,9 +1440,9 @@ impl State {
     ///
     /// If multiple layouts in the keymap have this name, the one with the lowest
     /// index is tested.
-    pub fn layout_name_is_active<S: Borrow<str>>(&self,
-                                                 name: &S,
-                                                 type_: StateComponent)
+    pub fn layout_name_is_active<S: Borrow<str> + ?Sized>(&self,
+                                                          name: &S,
+                                                          type_: StateComponent)
             -> bool {
         unsafe {
             let cname = CString::new(name.borrow().as_bytes()).unwrap();
@@ -1462,7 +1462,7 @@ impl State {
 
 
     /// Test whether a LED is active in a given keyboard state by name.
-    pub fn led_name_is_active<S: Borrow<str>>(&self, name: &S)
+    pub fn led_name_is_active<S: Borrow<str> + ?Sized>(&self, name: &S)
             -> bool {
         unsafe {
             let cname = CString::new(name.borrow().as_bytes()).unwrap();
