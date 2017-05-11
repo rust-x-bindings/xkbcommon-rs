@@ -3,6 +3,8 @@ pub mod ffi;
 
 #[cfg(feature = "x11")]
 pub mod x11;
+#[cfg(feature = "compose")]
+pub mod compose;
 pub mod keysyms;
 
 pub use xkb::keysyms::*;
