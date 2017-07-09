@@ -267,7 +267,8 @@ extern {
             -> xkb_layout_index_t;
 
     pub fn xkb_keymap_num_levels_for_key(keymap: *mut xkb_keymap,
-                                         key: xkb_keycode_t)
+                                         key: xkb_keycode_t,
+                                         layout: xkb_layout_index_t)
             -> xkb_level_index_t;
 
     pub fn xkb_keymap_key_get_syms_by_level(keymap: *mut xkb_keymap,

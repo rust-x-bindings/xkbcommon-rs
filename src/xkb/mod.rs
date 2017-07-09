@@ -952,9 +952,9 @@ impl Keymap {
     /// If layout is out of range for this key (that is, larger or equal to
     /// the value returned by num_layouts_for_key()), it is brought
     /// back into range in a manner consistent with State::key_get_layout().
-    pub fn num_levels_for_key(&self, key: Keycode) -> LevelIndex {
+    pub fn num_levels_for_key(&self, key: Keycode, layout: LayoutIndex) -> LevelIndex {
         unsafe {
-            xkb_keymap_num_levels_for_key(self.ptr, key)
+            xkb_keymap_num_levels_for_key(self.ptr, key, layout)
         }
     }
 
