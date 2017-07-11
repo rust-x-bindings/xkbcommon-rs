@@ -4,7 +4,7 @@ xkbcommon-rs is a set of bindings and safe wrappers for [libxkbcommon](http://xk
 
 ```toml
 [dependencies]
-xkbcommon = { version = "0.2", features = ["x11"] }
+xkbcommon = { version = "0.3", features = ["x11"] }
 ```
 
 # documentation
