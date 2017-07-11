@@ -14,4 +14,4 @@ https://rtbo.github.io/xkbcommon-rs/xkbcommon
 
 # example
 
-Living example here: https://github.com/rtbo/clue-rs/blob/master/src/platform/xcbplatform/xcbkeyboard.rs
+Living example here: https://github.com/rtbo/toy_xcb/blob/master/src/keyboard.rs
