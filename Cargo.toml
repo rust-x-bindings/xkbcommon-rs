@@ -16,3 +16,4 @@ xcb = { version = "0.7", features = ["xkb"], optional=true }
 
 [features]
 x11 = ["xcb"]
+compose = []

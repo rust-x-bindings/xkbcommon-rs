@@ -20,6 +20,10 @@ use std::iter::Iterator;
 use std::path::{Path};
 use std::borrow::Borrow;
 
+#[cfg(feature = "compose")]
+pub mod compose;
+#[cfg(feature = "compose")]
+pub use self::compose::*;
 
 /// A number used to represent a physical key on a keyboard.
 ///
