@@ -793,21 +793,20 @@ impl Keymap {
 
     /// Run a specified closure for every valid keycode in the keymap.
     pub fn key_for_each<F>(&self, closure: F) where F: FnMut(&Keymap, Keycode) {
-        let data = (self, Box::new(closure));
-        let data_box = Box::new(data);
+        let data_box = Box::new((self, closure));
         let data_ptr = Box::into_raw(data_box) as *mut raw::c_void;
 
         unsafe {
             ffi::xkb_keymap_key_for_each(self.get_raw_ptr(),
-                                              callback::<F>, data_ptr);
-            let _ = Box::from_raw(data_ptr as *mut (&Keymap, Box<F>));
+                                         callback::<F>, data_ptr);
+            let _ = Box::from_raw(data_ptr as *mut (&Keymap, F));
         }
 
         #[allow(unused_variables)]
         unsafe extern "C" fn callback<F>(pkeymap: *mut ffi::xkb_keymap, key: ffi::xkb_keycode_t,
                                          data: *mut raw::c_void) where F: FnMut(&Keymap, Keycode) {
 
-            let mut data_box: Box<(&Keymap, Box<F>)> = mem::transmute(Box::from_raw(data));
+            let mut data_box: Box<(&Keymap, F)> = mem::transmute(Box::from_raw(data));
             {
                 let (keymap, ref mut closure) = *data_box;
                 closure(keymap, key as Keycode);
