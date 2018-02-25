@@ -306,7 +306,7 @@ pub fn keycode_is_legal_x11(key: u32) -> bool {
 /// Get the name of a keysym.
 pub fn keysym_get_name(keysym: Keysym) -> String {
     unsafe {
-        let mut buf: &mut [c_char] = &mut [0; 64];
+        let buf: &mut [c_char] = &mut [0; 64];
         let ptr = &mut buf[0] as *mut c_char;
         let len = xkb_keysym_get_name(keysym, ptr, 64);
         let slice: &[u8] = slice::from_raw_parts(
@@ -347,7 +347,7 @@ pub fn keysym_from_name(name: &str, flags: KeysymFlags) -> Keysym {
 /// xkb_state.  In this case, use xkb_state_key_get_utf8() instead.
 pub fn keysym_to_utf8(keysym: Keysym) -> String {
     unsafe {
-        let mut buf: &mut [c_char] = &mut [0; 8];
+        let buf: &mut [c_char] = &mut [0; 8];
         let ptr = &mut buf[0] as *mut c_char;
         let len = xkb_keysym_to_utf8(keysym, ptr, 8);
         let slice: &[u8] = slice::from_raw_parts(
@@ -1275,7 +1275,7 @@ impl State {
     /// in a given keyboard state.
     pub fn key_get_utf8(&self, key: Keycode) -> String {
         unsafe {
-            let mut buf: &mut [c_char] = &mut [0; 64];
+            let buf: &mut [c_char] = &mut [0; 64];
             let ptr = &mut buf[0] as *mut c_char;
             let len = xkb_state_key_get_utf8(self.ptr, key,
                         ptr, 64);
