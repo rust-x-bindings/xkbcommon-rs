@@ -15,11 +15,15 @@ use std::str;
 use std::slice;
 use std::mem;
 use std::os::raw;
+use std::os::unix::io::{FromRawFd, RawFd};
 use std::fs;
 use std::io::Read;
 use std::iter::Iterator;
 use std::path::{Path};
 use std::borrow::Borrow;
+
+#[cfg(feature = "wayland")]
+use memmap::MmapOptions;
 
 #[cfg(feature = "compose")]
 pub mod compose;
@@ -742,6 +746,28 @@ impl Keymap {
             let cstr = CString::new(string.into_bytes()).unwrap();
             let ptr = xkb_keymap_new_from_string(context.ptr,
                         cstr.as_ptr(), format, flags);
+            if ptr.is_null() {
+                None
+            } else {
+                Some( Keymap {ptr: ptr} )
+            }
+        }
+    }
+
+
+    #[cfg(feature = "wayland")]
+    /// Create a keymap from a file descriptor
+    pub fn new_from_fd(context: &Context, fd: RawFd, size: usize,
+                       format: KeymapFormat,
+                       flags: KeymapCompileFlags)
+        -> Option<Keymap> {
+        unsafe {
+            let map = MmapOptions::new()
+                .len(size as usize)
+                .map(&fs::File::from_raw_fd(fd))
+                .unwrap();
+            let ptr = xkb_keymap_new_from_buffer(
+                context.ptr, map.as_ptr() as *const _, size - 1, format, flags);
             if ptr.is_null() {
                 None
             } else {
