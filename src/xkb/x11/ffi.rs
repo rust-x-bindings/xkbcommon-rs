@@ -9,6 +9,7 @@ pub const XKB_X11_MIN_MINOR_XKB_VERSION: u16 = 0;
 
 
 #[repr(C)]
+#[allow(non_camel_case_types)]
 pub enum xkb_x11_setup_xkb_extension_flags {
     /** Do not apply any flags. */
     NO_FLAGS = 0
