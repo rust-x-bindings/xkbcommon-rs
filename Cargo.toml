@@ -17,4 +17,3 @@ xcb = { version = "0.8", features = ["xkb"], optional=true }
 [features]
 x11 = ["xcb"]
 wayland = ["memmap"]
-compose = []

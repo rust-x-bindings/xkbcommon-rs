@@ -1,12 +1,19 @@
 
 pub mod ffi;
+pub mod compose;
+pub mod keysyms;
 
 #[cfg(feature = "x11")]
 pub mod x11;
-pub mod keysyms;
 
 pub use xkb::keysyms::*;
 use xkb::ffi::*;
+pub use self::compose::*;
+
+#[cfg(feature = "wayland")]
+use std::os::unix::io::{FromRawFd, RawFd};
+#[cfg(feature = "wayland")]
+use memmap::MmapOptions;
 
 use libc::{self, c_int, c_uint, c_char, c_void};
 use std::ffi::{CStr, CString};
@@ -15,20 +22,11 @@ use std::str;
 use std::slice;
 use std::mem;
 use std::os::raw;
-use std::os::unix::io::{FromRawFd, RawFd};
 use std::fs;
 use std::io::Read;
 use std::iter::Iterator;
 use std::path::{Path};
 use std::borrow::Borrow;
-
-#[cfg(feature = "wayland")]
-use memmap::MmapOptions;
-
-#[cfg(feature = "compose")]
-pub mod compose;
-#[cfg(feature = "compose")]
-pub use self::compose::*;
 
 /// A number used to represent a physical key on a keyboard.
 ///
