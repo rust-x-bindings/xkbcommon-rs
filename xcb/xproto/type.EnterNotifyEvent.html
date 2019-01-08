@@ -9,6 +9,7 @@
 
     <title>xcb::xproto::EnterNotifyEvent - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc type">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xproto</a></p><script>window.sidebarCurrent = {name: 'EnterNotifyEvent', ty: 'type', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Type Definition EnterNotifyEvent</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.detail">detail</a><a href="#method.time">time</a><a href="#method.root">root</a><a href="#method.event">event</a><a href="#method.child">child</a><a href="#method.root_x">root_x</a><a href="#method.root_y">root_y</a><a href="#method.event_x">event_x</a><a href="#method.event_y">event_y</a><a href="#method.state">state</a><a href="#method.mode">mode</a><a href="#method.same_screen_focus">same_screen_focus</a><a href="#method.new">new</a></div></div><p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xproto</a></p><script>window.sidebarCurrent = {name: 'EnterNotifyEvent', ty: 'type', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -42,14 +44,46 @@
         </form>
     </nav>
 
-    <section id='main' class="content type">
-<h1 class='fqn'><span class='in-band'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xproto</a>::<wbr><a class='type' href=''>EnterNotifyEvent</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Type Definition <a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xproto</a>::<wbr><a class="type" href=''>EnterNotifyEvent</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-1217' class='srclink' href='../../src/xcb/xproto.rs.html#2006' title='goto source code'>[src]</a></span></h1>
-<pre class='rust typedef'>type EnterNotifyEvent = <a class='struct' href='../../xcb/base/struct.Event.html' title='xcb::base::Event'>Event</a>&lt;<a class='struct' href='../../xcb/ffi/xproto/struct.xcb_enter_notify_event_t.html' title='xcb::ffi::xproto::xcb_enter_notify_event_t'>xcb_enter_notify_event_t</a>&gt;;</pre><div class='docblock'><p>the pointer is in a different window</p>
-</div></section>
+               </span><a class='srclink' href='../../src/xcb/xproto.rs.html#2056' title='goto source code'>[src]</a></span></h1>
+<pre class='rust typedef'>type EnterNotifyEvent = <a class="struct" href="../../xcb/base/struct.Event.html" title="struct xcb::base::Event">Event</a>&lt;<a class="struct" href="../../xcb/ffi/xproto/struct.xcb_enter_notify_event_t.html" title="struct xcb::ffi::xproto::xcb_enter_notify_event_t">xcb_enter_notify_event_t</a>&gt;;</pre><div class='docblock'><p>the pointer is in a different window</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="type" href="../../xcb/xproto/type.EnterNotifyEvent.html" title="type xcb::xproto::EnterNotifyEvent">EnterNotifyEvent</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#2058-2171' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.detail' class="method"><span id='detail.v' class='invisible'><code>pub fn <a href='#method.detail' class='fnname'>detail</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#2059-2063' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.time' class="method"><span id='time.v' class='invisible'><code>pub fn <a href='#method.time' class='fnname'>time</a>(&amp;self) -&gt; <a class="type" href="../../xcb/xproto/type.Timestamp.html" title="type xcb::xproto::Timestamp">Timestamp</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#2064-2068' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.root' class="method"><span id='root.v' class='invisible'><code>pub fn <a href='#method.root' class='fnname'>root</a>(&amp;self) -&gt; <a class="type" href="../../xcb/xproto/type.Window.html" title="type xcb::xproto::Window">Window</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#2070-2074' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>The root window for the final cursor position.</p>
+</div><h4 id='method.event' class="method"><span id='event.v' class='invisible'><code>pub fn <a href='#method.event' class='fnname'>event</a>(&amp;self) -&gt; <a class="type" href="../../xcb/xproto/type.Window.html" title="type xcb::xproto::Window">Window</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#2076-2080' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>The window on which the event was generated.</p>
+</div><h4 id='method.child' class="method"><span id='child.v' class='invisible'><code>pub fn <a href='#method.child' class='fnname'>child</a>(&amp;self) -&gt; <a class="type" href="../../xcb/xproto/type.Window.html" title="type xcb::xproto::Window">Window</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#2083-2087' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>If the <code>event</code> window has subwindows and the final pointer position is in one
+of them, then <code>child</code> is set to that subwindow, <code>XCB_WINDOW_NONE</code> otherwise.</p>
+</div><h4 id='method.root_x' class="method"><span id='root_x.v' class='invisible'><code>pub fn <a href='#method.root_x' class='fnname'>root_x</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#2089-2093' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>The pointer X coordinate relative to <code>root</code>&#39;s origin at the time of the event.</p>
+</div><h4 id='method.root_y' class="method"><span id='root_y.v' class='invisible'><code>pub fn <a href='#method.root_y' class='fnname'>root_y</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#2095-2099' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>The pointer Y coordinate relative to <code>root</code>&#39;s origin at the time of the event.</p>
+</div><h4 id='method.event_x' class="method"><span id='event_x.v' class='invisible'><code>pub fn <a href='#method.event_x' class='fnname'>event_x</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#2102-2106' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>If <code>event</code> is on the same screen as <code>root</code>, this is the pointer X coordinate
+relative to the event window&#39;s origin.</p>
+</div><h4 id='method.event_y' class="method"><span id='event_y.v' class='invisible'><code>pub fn <a href='#method.event_y' class='fnname'>event_y</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#2109-2113' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>If <code>event</code> is on the same screen as <code>root</code>, this is the pointer Y coordinate
+relative to the event window&#39;s origin.</p>
+</div><h4 id='method.state' class="method"><span id='state.v' class='invisible'><code>pub fn <a href='#method.state' class='fnname'>state</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#2114-2118' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.mode' class="method"><span id='mode.v' class='invisible'><code>pub fn <a href='#method.mode' class='fnname'>mode</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#2120-2124' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'></div><h4 id='method.same_screen_focus' class="method"><span id='same_screen_focus.v' class='invisible'><code>pub fn <a href='#method.same_screen_focus' class='fnname'>same_screen_focus</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#2125-2129' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;response_type: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;detail: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;time: <a class="type" href="../../xcb/xproto/type.Timestamp.html" title="type xcb::xproto::Timestamp">Timestamp</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;root: <a class="type" href="../../xcb/xproto/type.Window.html" title="type xcb::xproto::Window">Window</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;event: <a class="type" href="../../xcb/xproto/type.Window.html" title="type xcb::xproto::Window">Window</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;child: <a class="type" href="../../xcb/xproto/type.Window.html" title="type xcb::xproto::Window">Window</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;root_x: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;root_y: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;event_x: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;event_y: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;state: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;mode: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;same_screen_focus: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><br>) -&gt; <a class="type" href="../../xcb/xproto/type.EnterNotifyEvent.html" title="type xcb::xproto::EnterNotifyEvent">EnterNotifyEvent</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#2134-2170' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Constructs a new EnterNotifyEvent
+<code>response_type</code> must be set to one of:
+    - <code>ENTER_NOTIFY</code>
+    - <code>LEAVE_NOTIFY</code></p>
+</div></div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
@@ -66,13 +100,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -105,11 +141,8 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

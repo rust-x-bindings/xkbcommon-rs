@@ -9,6 +9,7 @@
 
     <title>xcb::ffi::xkb::xcb_xkb_get_map_map_t - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc struct">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'><a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'xcb_xkb_get_map_map_t', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Struct xcb_xkb_get_map_map_t</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.types_rtrn">types_rtrn</a><a href="#structfield.syms_rtrn">syms_rtrn</a><a href="#structfield.acts_rtrn_count">acts_rtrn_count</a><a href="#structfield.pad2">pad2</a><a href="#structfield.acts_rtrn_acts">acts_rtrn_acts</a><a href="#structfield.behaviors_rtrn">behaviors_rtrn</a><a href="#structfield.vmods_rtrn">vmods_rtrn</a><a href="#structfield.pad3">pad3</a><a href="#structfield.explicit_rtrn">explicit_rtrn</a><a href="#structfield.pad4">pad4</a><a href="#structfield.modmap_rtrn">modmap_rtrn</a><a href="#structfield.pad5">pad5</a><a href="#structfield.vmodmap_rtrn">vmodmap_rtrn</a></div></div><p class='location'><a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'xcb_xkb_get_map_map_t', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -42,40 +44,81 @@
         </form>
     </nav>
 
-    <section id='main' class="content struct">
-<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class='struct' href=''>xcb_xkb_get_map_map_t</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class="struct" href=''>xcb_xkb_get_map_map_t</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-14819' class='srclink' href='../../../src/xcb/ffi/xkb.rs.html#1900-1914' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct xcb_xkb_get_map_map_t {
-    pub types_rtrn: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../../xcb/ffi/xkb/struct.xcb_xkb_key_type_t.html' title='xcb::ffi::xkb::xcb_xkb_key_type_t'>xcb_xkb_key_type_t</a>,
-    pub syms_rtrn: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../../xcb/ffi/xkb/struct.xcb_xkb_key_sym_map_t.html' title='xcb::ffi::xkb::xcb_xkb_key_sym_map_t'>xcb_xkb_key_sym_map_t</a>,
-    pub acts_rtrn_count: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub pad2: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub acts_rtrn_acts: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../../xcb/ffi/xkb/struct.xcb_xkb_action_t.html' title='xcb::ffi::xkb::xcb_xkb_action_t'>xcb_xkb_action_t</a>,
-    pub behaviors_rtrn: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../../xcb/ffi/xkb/struct.xcb_xkb_set_behavior_t.html' title='xcb::ffi::xkb::xcb_xkb_set_behavior_t'>xcb_xkb_set_behavior_t</a>,
-    pub vmods_rtrn: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub pad3: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub explicit_rtrn: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../../xcb/ffi/xkb/struct.xcb_xkb_set_explicit_t.html' title='xcb::ffi::xkb::xcb_xkb_set_explicit_t'>xcb_xkb_set_explicit_t</a>,
-    pub pad4: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub modmap_rtrn: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../../xcb/ffi/xkb/struct.xcb_xkb_key_mod_map_t.html' title='xcb::ffi::xkb::xcb_xkb_key_mod_map_t'>xcb_xkb_key_mod_map_t</a>,
-    pub pad5: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub vmodmap_rtrn: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../../xcb/ffi/xkb/struct.xcb_xkb_key_v_mod_map_t.html' title='xcb::ffi::xkb::xcb_xkb_key_v_mod_map_t'>xcb_xkb_key_v_mod_map_t</a>,
-}</pre><h2 class='fields'>Fields</h2><span id='structfield.types_rtrn' class='structfield'><code>types_rtrn: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../../xcb/ffi/xkb/struct.xcb_xkb_key_type_t.html' title='xcb::ffi::xkb::xcb_xkb_key_type_t'>xcb_xkb_key_type_t</a></code>
-                           </span><span class='stab '></span><span id='structfield.syms_rtrn' class='structfield'><code>syms_rtrn: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../../xcb/ffi/xkb/struct.xcb_xkb_key_sym_map_t.html' title='xcb::ffi::xkb::xcb_xkb_key_sym_map_t'>xcb_xkb_key_sym_map_t</a></code>
-                           </span><span class='stab '></span><span id='structfield.acts_rtrn_count' class='structfield'><code>acts_rtrn_count: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.pad2' class='structfield'><code>pad2: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.acts_rtrn_acts' class='structfield'><code>acts_rtrn_acts: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../../xcb/ffi/xkb/struct.xcb_xkb_action_t.html' title='xcb::ffi::xkb::xcb_xkb_action_t'>xcb_xkb_action_t</a></code>
-                           </span><span class='stab '></span><span id='structfield.behaviors_rtrn' class='structfield'><code>behaviors_rtrn: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../../xcb/ffi/xkb/struct.xcb_xkb_set_behavior_t.html' title='xcb::ffi::xkb::xcb_xkb_set_behavior_t'>xcb_xkb_set_behavior_t</a></code>
-                           </span><span class='stab '></span><span id='structfield.vmods_rtrn' class='structfield'><code>vmods_rtrn: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.pad3' class='structfield'><code>pad3: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.explicit_rtrn' class='structfield'><code>explicit_rtrn: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../../xcb/ffi/xkb/struct.xcb_xkb_set_explicit_t.html' title='xcb::ffi::xkb::xcb_xkb_set_explicit_t'>xcb_xkb_set_explicit_t</a></code>
-                           </span><span class='stab '></span><span id='structfield.pad4' class='structfield'><code>pad4: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.modmap_rtrn' class='structfield'><code>modmap_rtrn: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../../xcb/ffi/xkb/struct.xcb_xkb_key_mod_map_t.html' title='xcb::ffi::xkb::xcb_xkb_key_mod_map_t'>xcb_xkb_key_mod_map_t</a></code>
-                           </span><span class='stab '></span><span id='structfield.pad5' class='structfield'><code>pad5: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.vmodmap_rtrn' class='structfield'><code>vmodmap_rtrn: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../../xcb/ffi/xkb/struct.xcb_xkb_key_v_mod_map_t.html' title='xcb::ffi::xkb::xcb_xkb_key_v_mod_map_t'>xcb_xkb_key_v_mod_map_t</a></code>
-                           </span><span class='stab '></span></section>
+               </span><a class='srclink' href='../../../src/xcb/ffi/xkb.rs.html#1878-1892' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct xcb_xkb_get_map_map_t {
+    pub types_rtrn: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../../xcb/ffi/xkb/struct.xcb_xkb_key_type_t.html" title="struct xcb::ffi::xkb::xcb_xkb_key_type_t">xcb_xkb_key_type_t</a>,
+    pub syms_rtrn: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../../xcb/ffi/xkb/struct.xcb_xkb_key_sym_map_t.html" title="struct xcb::ffi::xkb::xcb_xkb_key_sym_map_t">xcb_xkb_key_sym_map_t</a>,
+    pub acts_rtrn_count: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub pad2: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub acts_rtrn_acts: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../../xcb/ffi/xkb/struct.xcb_xkb_action_t.html" title="struct xcb::ffi::xkb::xcb_xkb_action_t">xcb_xkb_action_t</a>,
+    pub behaviors_rtrn: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../../xcb/ffi/xkb/struct.xcb_xkb_set_behavior_t.html" title="struct xcb::ffi::xkb::xcb_xkb_set_behavior_t">xcb_xkb_set_behavior_t</a>,
+    pub vmods_rtrn: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub pad3: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub explicit_rtrn: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../../xcb/ffi/xkb/struct.xcb_xkb_set_explicit_t.html" title="struct xcb::ffi::xkb::xcb_xkb_set_explicit_t">xcb_xkb_set_explicit_t</a>,
+    pub pad4: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub modmap_rtrn: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../../xcb/ffi/xkb/struct.xcb_xkb_key_mod_map_t.html" title="struct xcb::ffi::xkb::xcb_xkb_key_mod_map_t">xcb_xkb_key_mod_map_t</a>,
+    pub pad5: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub vmodmap_rtrn: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../../xcb/ffi/xkb/struct.xcb_xkb_key_v_mod_map_t.html" title="struct xcb::ffi::xkb::xcb_xkb_key_v_mod_map_t">xcb_xkb_key_v_mod_map_t</a>,
+}</pre><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.types_rtrn" class="structfield small-section-header">
+                           <a href="#structfield.types_rtrn" class="anchor field"></a>
+                           <span id="types_rtrn.v" class='invisible'>
+                           <code>types_rtrn: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../../xcb/ffi/xkb/struct.xcb_xkb_key_type_t.html" title="struct xcb::ffi::xkb::xcb_xkb_key_type_t">xcb_xkb_key_type_t</a></code>
+                           </span></span><span id="structfield.syms_rtrn" class="structfield small-section-header">
+                           <a href="#structfield.syms_rtrn" class="anchor field"></a>
+                           <span id="syms_rtrn.v" class='invisible'>
+                           <code>syms_rtrn: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../../xcb/ffi/xkb/struct.xcb_xkb_key_sym_map_t.html" title="struct xcb::ffi::xkb::xcb_xkb_key_sym_map_t">xcb_xkb_key_sym_map_t</a></code>
+                           </span></span><span id="structfield.acts_rtrn_count" class="structfield small-section-header">
+                           <a href="#structfield.acts_rtrn_count" class="anchor field"></a>
+                           <span id="acts_rtrn_count.v" class='invisible'>
+                           <code>acts_rtrn_count: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.pad2" class="structfield small-section-header">
+                           <a href="#structfield.pad2" class="anchor field"></a>
+                           <span id="pad2.v" class='invisible'>
+                           <code>pad2: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.acts_rtrn_acts" class="structfield small-section-header">
+                           <a href="#structfield.acts_rtrn_acts" class="anchor field"></a>
+                           <span id="acts_rtrn_acts.v" class='invisible'>
+                           <code>acts_rtrn_acts: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../../xcb/ffi/xkb/struct.xcb_xkb_action_t.html" title="struct xcb::ffi::xkb::xcb_xkb_action_t">xcb_xkb_action_t</a></code>
+                           </span></span><span id="structfield.behaviors_rtrn" class="structfield small-section-header">
+                           <a href="#structfield.behaviors_rtrn" class="anchor field"></a>
+                           <span id="behaviors_rtrn.v" class='invisible'>
+                           <code>behaviors_rtrn: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../../xcb/ffi/xkb/struct.xcb_xkb_set_behavior_t.html" title="struct xcb::ffi::xkb::xcb_xkb_set_behavior_t">xcb_xkb_set_behavior_t</a></code>
+                           </span></span><span id="structfield.vmods_rtrn" class="structfield small-section-header">
+                           <a href="#structfield.vmods_rtrn" class="anchor field"></a>
+                           <span id="vmods_rtrn.v" class='invisible'>
+                           <code>vmods_rtrn: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.pad3" class="structfield small-section-header">
+                           <a href="#structfield.pad3" class="anchor field"></a>
+                           <span id="pad3.v" class='invisible'>
+                           <code>pad3: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.explicit_rtrn" class="structfield small-section-header">
+                           <a href="#structfield.explicit_rtrn" class="anchor field"></a>
+                           <span id="explicit_rtrn.v" class='invisible'>
+                           <code>explicit_rtrn: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../../xcb/ffi/xkb/struct.xcb_xkb_set_explicit_t.html" title="struct xcb::ffi::xkb::xcb_xkb_set_explicit_t">xcb_xkb_set_explicit_t</a></code>
+                           </span></span><span id="structfield.pad4" class="structfield small-section-header">
+                           <a href="#structfield.pad4" class="anchor field"></a>
+                           <span id="pad4.v" class='invisible'>
+                           <code>pad4: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.modmap_rtrn" class="structfield small-section-header">
+                           <a href="#structfield.modmap_rtrn" class="anchor field"></a>
+                           <span id="modmap_rtrn.v" class='invisible'>
+                           <code>modmap_rtrn: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../../xcb/ffi/xkb/struct.xcb_xkb_key_mod_map_t.html" title="struct xcb::ffi::xkb::xcb_xkb_key_mod_map_t">xcb_xkb_key_mod_map_t</a></code>
+                           </span></span><span id="structfield.pad5" class="structfield small-section-header">
+                           <a href="#structfield.pad5" class="anchor field"></a>
+                           <span id="pad5.v" class='invisible'>
+                           <code>pad5: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.vmodmap_rtrn" class="structfield small-section-header">
+                           <a href="#structfield.vmodmap_rtrn" class="anchor field"></a>
+                           <span id="vmodmap_rtrn.v" class='invisible'>
+                           <code>vmodmap_rtrn: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../../xcb/ffi/xkb/struct.xcb_xkb_key_v_mod_map_t.html" title="struct xcb::ffi::xkb::xcb_xkb_key_v_mod_map_t">xcb_xkb_key_v_mod_map_t</a></code>
+                           </span></span></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
@@ -92,13 +135,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -131,11 +176,8 @@
     <script>
         window.rootPath = "../../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../../jquery.js"></script>
     <script src="../../../main.js"></script>
-    
     <script defer src="../../../search-index.js"></script>
 </body>
 </html>

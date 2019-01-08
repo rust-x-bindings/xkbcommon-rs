@@ -9,6 +9,7 @@
 
     <title>xcb::base::ConnError - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc enum">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>base</a></p><script>window.sidebarCurrent = {name: 'ConnError', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Enum ConnError</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#variants">Variants</a><div class="sidebar-links"><a href="#variant.Connection">Connection</a><a href="#variant.ClosedExtNotSupported">ClosedExtNotSupported</a><a href="#variant.ClosedMemInsufficient">ClosedMemInsufficient</a><a href="#variant.ClosedReqLenExceed">ClosedReqLenExceed</a><a href="#variant.ClosedParseErr">ClosedParseErr</a><a href="#variant.ClosedInvalidScreen">ClosedInvalidScreen</a><a href="#variant.ClosedFdPassingFailed">ClosedFdPassingFailed</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Debug">Debug</a><a href="#impl-Display">Display</a><a href="#impl-Error">Error</a></div></div><p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>base</a></p><script>window.sidebarCurrent = {name: 'ConnError', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -42,12 +44,12 @@
         </form>
     </nav>
 
-    <section id='main' class="content enum">
-<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>xcb</a>::<wbr><a href='index.html'>base</a>::<wbr><a class='enum' href=''>ConnError</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>xcb</a>::<wbr><a href='index.html'>base</a>::<wbr><a class="enum" href=''>ConnError</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-109' class='srclink' href='../../src/xcb/base.rs.html#249-265' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../../src/xcb/base.rs.html#260-276' title='goto source code'>[src]</a></span></h1>
 <pre class='rust enum'>pub enum ConnError {
     Connection,
     ClosedExtNotSupported,
@@ -57,18 +59,31 @@
     ClosedInvalidScreen,
     ClosedFdPassingFailed,
 }</pre><div class='docblock'><p>Error type that is returned by <code>Connection::has_error</code></p>
-</div><h2 class='variants'>Variants</h2>
-<span id='variant.Connection' class='variant'><code>Connection</code></span><div class='docblock'><p>xcb connection errors because of socket, pipe and other stream errors.</p>
-</div><span id='variant.ClosedExtNotSupported' class='variant'><code>ClosedExtNotSupported</code></span><div class='docblock'><p>xcb connection shutdown because of extension not supported</p>
-</div><span id='variant.ClosedMemInsufficient' class='variant'><code>ClosedMemInsufficient</code></span><div class='docblock'><p>malloc(), calloc() and realloc() error upon failure, for eg ENOMEM</p>
-</div><span id='variant.ClosedReqLenExceed' class='variant'><code>ClosedReqLenExceed</code></span><div class='docblock'><p>Connection closed, exceeding request length that server accepts.</p>
-</div><span id='variant.ClosedParseErr' class='variant'><code>ClosedParseErr</code></span><div class='docblock'><p>Connection closed, error during parsing display string.</p>
-</div><span id='variant.ClosedInvalidScreen' class='variant'><code>ClosedInvalidScreen</code></span><div class='docblock'><p>Connection closed because the server does not have a screen
+</div><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id="variant.Connection" class="variant small-section-header"><a href="#variant.Connection" class="anchor field"></a><span id='Connection.v' class='invisible'><code>Connection</code></span></span><div class='docblock'><p>xcb connection errors because of socket, pipe and other stream errors.</p>
+</div><span id="variant.ClosedExtNotSupported" class="variant small-section-header"><a href="#variant.ClosedExtNotSupported" class="anchor field"></a><span id='ClosedExtNotSupported.v' class='invisible'><code>ClosedExtNotSupported</code></span></span><div class='docblock'><p>xcb connection shutdown because of extension not supported</p>
+</div><span id="variant.ClosedMemInsufficient" class="variant small-section-header"><a href="#variant.ClosedMemInsufficient" class="anchor field"></a><span id='ClosedMemInsufficient.v' class='invisible'><code>ClosedMemInsufficient</code></span></span><div class='docblock'><p>malloc(), calloc() and realloc() error upon failure, for eg ENOMEM</p>
+</div><span id="variant.ClosedReqLenExceed" class="variant small-section-header"><a href="#variant.ClosedReqLenExceed" class="anchor field"></a><span id='ClosedReqLenExceed.v' class='invisible'><code>ClosedReqLenExceed</code></span></span><div class='docblock'><p>Connection closed, exceeding request length that server accepts.</p>
+</div><span id="variant.ClosedParseErr" class="variant small-section-header"><a href="#variant.ClosedParseErr" class="anchor field"></a><span id='ClosedParseErr.v' class='invisible'><code>ClosedParseErr</code></span></span><div class='docblock'><p>Connection closed, error during parsing display string.</p>
+</div><span id="variant.ClosedInvalidScreen" class="variant small-section-header"><a href="#variant.ClosedInvalidScreen" class="anchor field"></a><span id='ClosedInvalidScreen.v' class='invisible'><code>ClosedInvalidScreen</code></span></span><div class='docblock'><p>Connection closed because the server does not have a screen
 matching the display.</p>
-</div><span id='variant.ClosedFdPassingFailed' class='variant'><code>ClosedFdPassingFailed</code></span><div class='docblock'><p>Connection closed because some FD passing operation failed</p>
-</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../../xcb/base/enum.ConnError.html' title='xcb::base::ConnError'>ConnError</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-98' class='srclink' href='../../src/xcb/base.rs.html#248' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
-<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div><span id="variant.ClosedFdPassingFailed" class="variant small-section-header"><a href="#variant.ClosedFdPassingFailed" class="anchor field"></a><span id='ClosedFdPassingFailed.v' class='invisible'><code>ClosedFdPassingFailed</code></span></span><div class='docblock'><p>Connection closed because some FD passing operation failed</p>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="enum" href="../../xcb/base/enum.ConnError.html" title="enum xcb::base::ConnError">ConnError</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/base.rs.html#259' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/base.rs.html#259' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-Display' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html" title="trait core::fmt::Display">Display</a> for <a class="enum" href="../../xcb/base/enum.ConnError.html" title="enum xcb::base::ConnError">ConnError</a></code><a href='#impl-Display' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/base.rs.html#292-296' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt-1' class="method"><span id='fmt.v-1' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/base.rs.html#293-295' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-Error' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/std/error/trait.Error.html" title="trait std::error::Error">Error</a> for <a class="enum" href="../../xcb/base/enum.ConnError.html" title="enum xcb::base::ConnError">ConnError</a></code><a href='#impl-Error' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/base.rs.html#298-302' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.description' class="method"><span id='description.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/std/error/trait.Error.html#tymethod.description' class='fnname'>description</a>(&amp;self) -&gt; &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/base.rs.html#299-301' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>A short description of the error. <a href="https://doc.rust-lang.org/nightly/std/error/trait.Error.html#tymethod.description">Read more</a></p>
+</div><h4 id='method.cause' class="method"><span id='cause.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/std/error/trait.Error.html#method.cause' class='fnname'>cause</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="trait" href="https://doc.rust-lang.org/nightly/std/error/trait.Error.html" title="trait std::error::Error">Error</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/std/error.rs.html#154' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>The lower-level cause of this error, if any. <a href="https://doc.rust-lang.org/nightly/std/error/trait.Error.html#method.cause">Read more</a></p>
 </div></div></section>
     <section id='search' class="content hidden"></section>
 
@@ -86,13 +101,15 @@ matching the display.</p>
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -125,11 +142,8 @@ matching the display.</p>
     <script>
         window.rootPath = "../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

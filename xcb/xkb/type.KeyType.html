@@ -9,6 +9,7 @@
 
     <title>xcb::xkb::KeyType - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc type">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'KeyType', ty: 'type', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Type Definition KeyType</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.mods_mask">mods_mask</a><a href="#method.mods_mods">mods_mods</a><a href="#method.mods_vmods">mods_vmods</a><a href="#method.num_levels">num_levels</a><a href="#method.n_map_entries">n_map_entries</a><a href="#method.has_preserve">has_preserve</a><a href="#method.map">map</a><a href="#method.preserve">preserve</a></div></div><p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'KeyType', ty: 'type', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -42,13 +44,26 @@
         </form>
     </nav>
 
-    <section id='main' class="content type">
-<h1 class='fqn'><span class='in-band'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class='type' href=''>KeyType</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Type Definition <a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class="type" href=''>KeyType</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-5312' class='srclink' href='../../src/xcb/xkb.rs.html#721' title='goto source code'>[src]</a></span></h1>
-<pre class='rust typedef'>type KeyType&lt;'a&gt; = <a class='struct' href='../../xcb/base/struct.StructPtr.html' title='xcb::base::StructPtr'>StructPtr</a>&lt;'a,&nbsp;<a class='struct' href='../../xcb/ffi/xkb/struct.xcb_xkb_key_type_t.html' title='xcb::ffi::xkb::xcb_xkb_key_type_t'>xcb_xkb_key_type_t</a>&gt;;</pre></section>
+               </span><a class='srclink' href='../../src/xcb/xkb.rs.html#746' title='goto source code'>[src]</a></span></h1>
+<pre class='rust typedef'>type KeyType&lt;'a&gt; = <a class="struct" href="../../xcb/base/struct.StructPtr.html" title="struct xcb::base::StructPtr">StructPtr</a>&lt;'a, <a class="struct" href="../../xcb/ffi/xkb/struct.xcb_xkb_key_type_t.html" title="struct xcb::ffi::xkb::xcb_xkb_key_type_t">xcb_xkb_key_type_t</a>&gt;;</pre>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="type" href="../../xcb/xkb/type.KeyType.html" title="type xcb::xkb::KeyType">KeyType</a>&lt;'a&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#748-789' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.mods_mask' class="method"><span id='mods_mask.v' class='invisible'><code>pub fn <a href='#method.mods_mask' class='fnname'>mods_mask</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#749-753' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.mods_mods' class="method"><span id='mods_mods.v' class='invisible'><code>pub fn <a href='#method.mods_mods' class='fnname'>mods_mods</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#754-758' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.mods_vmods' class="method"><span id='mods_vmods.v' class='invisible'><code>pub fn <a href='#method.mods_vmods' class='fnname'>mods_vmods</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#759-763' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.num_levels' class="method"><span id='num_levels.v' class='invisible'><code>pub fn <a href='#method.num_levels' class='fnname'>num_levels</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#764-768' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.n_map_entries' class="method"><span id='n_map_entries.v' class='invisible'><code>pub fn <a href='#method.n_map_entries' class='fnname'>n_map_entries</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#769-773' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.has_preserve' class="method"><span id='has_preserve.v' class='invisible'><code>pub fn <a href='#method.has_preserve' class='fnname'>has_preserve</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#774-778' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.map' class="method"><div class="important-traits"><div class='tooltip'>ⓘ<span class='tooltiptext'>Important traits for <a class="type" href="../../xcb/xkb/type.KtMapEntryIterator.html" title="type xcb::xkb::KtMapEntryIterator">KtMapEntryIterator</a></span></div><div class="content hidden"><h3 class="important">Important traits for <a class="type" href="../../xcb/xkb/type.KtMapEntryIterator.html" title="type xcb::xkb::KtMapEntryIterator">KtMapEntryIterator</a></h3><code class="content"><span class="where fmt-newline">impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html" title="trait core::iter::iterator::Iterator">Iterator</a> for <a class="type" href="../../xcb/xkb/type.KtMapEntryIterator.html" title="type xcb::xkb::KtMapEntryIterator">KtMapEntryIterator</a></span><span class="where fmt-newline">    type <a href='https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html#associatedtype.Item' class="type">Item</a> = <a class="struct" href="../../xcb/xkb/struct.KtMapEntry.html" title="struct xcb::xkb::KtMapEntry">KtMapEntry</a>;</span></code></div></div><span id='map.v' class='invisible'><code>pub fn <a href='#method.map' class='fnname'>map</a>(&amp;self) -&gt; <a class="type" href="../../xcb/xkb/type.KtMapEntryIterator.html" title="type xcb::xkb::KtMapEntryIterator">KtMapEntryIterator</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#779-783' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.preserve' class="method"><div class="important-traits"><div class='tooltip'>ⓘ<span class='tooltiptext'>Important traits for <a class="type" href="../../xcb/xkb/type.ModDefIterator.html" title="type xcb::xkb::ModDefIterator">ModDefIterator</a></span></div><div class="content hidden"><h3 class="important">Important traits for <a class="type" href="../../xcb/xkb/type.ModDefIterator.html" title="type xcb::xkb::ModDefIterator">ModDefIterator</a></h3><code class="content"><span class="where fmt-newline">impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html" title="trait core::iter::iterator::Iterator">Iterator</a> for <a class="type" href="../../xcb/xkb/type.ModDefIterator.html" title="type xcb::xkb::ModDefIterator">ModDefIterator</a></span><span class="where fmt-newline">    type <a href='https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html#associatedtype.Item' class="type">Item</a> = <a class="struct" href="../../xcb/xkb/struct.ModDef.html" title="struct xcb::xkb::ModDef">ModDef</a>;</span></code></div></div><span id='preserve.v' class='invisible'><code>pub fn <a href='#method.preserve' class='fnname'>preserve</a>(&amp;self) -&gt; <a class="type" href="../../xcb/xkb/type.ModDefIterator.html" title="type xcb::xkb::ModDefIterator">ModDefIterator</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#784-788' title='goto source code'>[src]</a></span></h4>
+</div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
@@ -65,13 +80,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -104,11 +121,8 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

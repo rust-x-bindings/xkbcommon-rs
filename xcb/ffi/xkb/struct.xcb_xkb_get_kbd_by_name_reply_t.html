@@ -9,6 +9,7 @@
 
     <title>xcb::ffi::xkb::xcb_xkb_get_kbd_by_name_reply_t - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc struct">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'><a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'xcb_xkb_get_kbd_by_name_reply_t', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Struct xcb_xkb_get_kbd_by_name_reply_t</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.response_type">response_type</a><a href="#structfield.deviceID">deviceID</a><a href="#structfield.sequence">sequence</a><a href="#structfield.length">length</a><a href="#structfield.minKeyCode">minKeyCode</a><a href="#structfield.maxKeyCode">maxKeyCode</a><a href="#structfield.loaded">loaded</a><a href="#structfield.newKeyboard">newKeyboard</a><a href="#structfield.found">found</a><a href="#structfield.reported">reported</a><a href="#structfield.pad0">pad0</a></div></div><p class='location'><a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'xcb_xkb_get_kbd_by_name_reply_t', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -42,36 +44,71 @@
         </form>
     </nav>
 
-    <section id='main' class="content struct">
-<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class='struct' href=''>xcb_xkb_get_kbd_by_name_reply_t</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class="struct" href=''>xcb_xkb_get_kbd_by_name_reply_t</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-15412' class='srclink' href='../../../src/xcb/ffi/xkb.rs.html#2589-2601' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct xcb_xkb_get_kbd_by_name_reply_t {
-    pub response_type: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub deviceID: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub sequence: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub length: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
-    pub minKeyCode: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_keycode_t.html' title='xcb::ffi::xproto::xcb_keycode_t'>xcb_keycode_t</a>,
-    pub maxKeyCode: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_keycode_t.html' title='xcb::ffi::xproto::xcb_keycode_t'>xcb_keycode_t</a>,
-    pub loaded: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub newKeyboard: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub found: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub reported: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub pad0: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 16]</a>,
-}</pre><h2 class='fields'>Fields</h2><span id='structfield.response_type' class='structfield'><code>response_type: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.deviceID' class='structfield'><code>deviceID: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.sequence' class='structfield'><code>sequence: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.length' class='structfield'><code>length: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code>
-                           </span><span class='stab '></span><span id='structfield.minKeyCode' class='structfield'><code>minKeyCode: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_keycode_t.html' title='xcb::ffi::xproto::xcb_keycode_t'>xcb_keycode_t</a></code>
-                           </span><span class='stab '></span><span id='structfield.maxKeyCode' class='structfield'><code>maxKeyCode: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_keycode_t.html' title='xcb::ffi::xproto::xcb_keycode_t'>xcb_keycode_t</a></code>
-                           </span><span class='stab '></span><span id='structfield.loaded' class='structfield'><code>loaded: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.newKeyboard' class='structfield'><code>newKeyboard: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.found' class='structfield'><code>found: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.reported' class='structfield'><code>reported: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.pad0' class='structfield'><code>pad0: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 16]</a></code>
-                           </span><span class='stab '></span></section>
+               </span><a class='srclink' href='../../../src/xcb/ffi/xkb.rs.html#2567-2579' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct xcb_xkb_get_kbd_by_name_reply_t {
+    pub response_type: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub deviceID: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub sequence: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub length: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub minKeyCode: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_keycode_t.html" title="type xcb::ffi::xproto::xcb_keycode_t">xcb_keycode_t</a>,
+    pub maxKeyCode: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_keycode_t.html" title="type xcb::ffi::xproto::xcb_keycode_t">xcb_keycode_t</a>,
+    pub loaded: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub newKeyboard: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub found: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub reported: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub pad0: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 16]</a>,
+}</pre><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.response_type" class="structfield small-section-header">
+                           <a href="#structfield.response_type" class="anchor field"></a>
+                           <span id="response_type.v" class='invisible'>
+                           <code>response_type: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.deviceID" class="structfield small-section-header">
+                           <a href="#structfield.deviceID" class="anchor field"></a>
+                           <span id="deviceID.v" class='invisible'>
+                           <code>deviceID: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.sequence" class="structfield small-section-header">
+                           <a href="#structfield.sequence" class="anchor field"></a>
+                           <span id="sequence.v" class='invisible'>
+                           <code>sequence: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.length" class="structfield small-section-header">
+                           <a href="#structfield.length" class="anchor field"></a>
+                           <span id="length.v" class='invisible'>
+                           <code>length: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><span id="structfield.minKeyCode" class="structfield small-section-header">
+                           <a href="#structfield.minKeyCode" class="anchor field"></a>
+                           <span id="minKeyCode.v" class='invisible'>
+                           <code>minKeyCode: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_keycode_t.html" title="type xcb::ffi::xproto::xcb_keycode_t">xcb_keycode_t</a></code>
+                           </span></span><span id="structfield.maxKeyCode" class="structfield small-section-header">
+                           <a href="#structfield.maxKeyCode" class="anchor field"></a>
+                           <span id="maxKeyCode.v" class='invisible'>
+                           <code>maxKeyCode: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_keycode_t.html" title="type xcb::ffi::xproto::xcb_keycode_t">xcb_keycode_t</a></code>
+                           </span></span><span id="structfield.loaded" class="structfield small-section-header">
+                           <a href="#structfield.loaded" class="anchor field"></a>
+                           <span id="loaded.v" class='invisible'>
+                           <code>loaded: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.newKeyboard" class="structfield small-section-header">
+                           <a href="#structfield.newKeyboard" class="anchor field"></a>
+                           <span id="newKeyboard.v" class='invisible'>
+                           <code>newKeyboard: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.found" class="structfield small-section-header">
+                           <a href="#structfield.found" class="anchor field"></a>
+                           <span id="found.v" class='invisible'>
+                           <code>found: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.reported" class="structfield small-section-header">
+                           <a href="#structfield.reported" class="anchor field"></a>
+                           <span id="reported.v" class='invisible'>
+                           <code>reported: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.pad0" class="structfield small-section-header">
+                           <a href="#structfield.pad0" class="anchor field"></a>
+                           <span id="pad0.v" class='invisible'>
+                           <code>pad0: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 16]</a></code>
+                           </span></span></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
@@ -88,13 +125,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -127,11 +166,8 @@
     <script>
         window.rootPath = "../../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../../jquery.js"></script>
     <script src="../../../main.js"></script>
-    
     <script defer src="../../../search-index.js"></script>
 </body>
 </html>

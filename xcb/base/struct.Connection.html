@@ -9,6 +9,7 @@
 
     <title>xcb::base::Connection - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc struct">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>base</a></p><script>window.sidebarCurrent = {name: 'Connection', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Struct Connection</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.flush">flush</a><a href="#method.get_maximum_request_length">get_maximum_request_length</a><a href="#method.prefetch_maximum_request_length">prefetch_maximum_request_length</a><a href="#method.wait_for_event">wait_for_event</a><a href="#method.poll_for_event">poll_for_event</a><a href="#method.poll_for_queued_event">poll_for_queued_event</a><a href="#method.get_setup">get_setup</a><a href="#method.has_error">has_error</a><a href="#method.generate_id">generate_id</a><a href="#method.get_raw_conn">get_raw_conn</a><a href="#method.into_raw_conn">into_raw_conn</a><a href="#method.prefetch_extension_data">prefetch_extension_data</a><a href="#method.get_extension_data">get_extension_data</a><a href="#method.connect">connect</a><a href="#method.connect_with_auth_info">connect_with_auth_info</a><a href="#method.from_raw_conn">from_raw_conn</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-AsRawFd">AsRawFd</a><a href="#impl-Drop">Drop</a></div></div><p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>base</a></p><script>window.sidebarCurrent = {name: 'Connection', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -42,24 +44,26 @@
         </form>
     </nav>
 
-    <section id='main' class="content struct">
-<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>xcb</a>::<wbr><a href='index.html'>base</a>::<wbr><a class='struct' href=''>Connection</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>xcb</a>::<wbr><a href='index.html'>base</a>::<wbr><a class="struct" href=''>Connection</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-119' class='srclink' href='../../src/xcb/base.rs.html#273-277' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct Connection {
-    // some fields omitted
-}</pre><div class='docblock'><p>xcb::Connection handles communication with the X server.
+               </span><a class='srclink' href='../../src/xcb/base.rs.html#310-314' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Connection { /* fields omitted */ }</pre><div class='docblock'><p>xcb::Connection handles communication with the X server.
 It wraps an <code>xcb_connection_t</code> object and
 will call <code>xcb_disconnect</code> when the <code>Connection</code> goes out of scope</p>
-</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../xcb/base/struct.Connection.html' title='xcb::base::Connection'>Connection</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-121' class='srclink' href='../../src/xcb/base.rs.html#285-619' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.flush' class='method'><code>fn <a href='#method.flush' class='fnname'>flush</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../xcb/base/struct.Connection.html" title="struct xcb::base::Connection">Connection</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/base.rs.html#322-666' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.flush' class="method"><span id='flush.v' class='invisible'><code>pub fn <a href='#method.flush' class='fnname'>flush</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/base.rs.html#328-332' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Forces any buffered output to be written to the server. Blocks
 until the write is complete.</p>
 
 <p>Return <code>true</code> on success, <code>false</code> otherwise.</p>
-</div><h4 id='method.get_maximum_request_length' class='method'><code>fn <a href='#method.get_maximum_request_length' class='fnname'>get_maximum_request_length</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></h4>
+</div><h4 id='method.get_maximum_request_length' class="method"><span id='get_maximum_request_length.v' class='invisible'><code>pub fn <a href='#method.get_maximum_request_length' class='fnname'>get_maximum_request_length</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/base.rs.html#345-349' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Returns the maximum request length that this server accepts.</p>
 
 <p>In the absence of the BIG-REQUESTS extension, returns the
@@ -71,7 +75,7 @@ BigRequestsEnable request will be returned instead.</p>
 <p>Note that this length is measured in four-byte units, making the
 theoretical maximum lengths roughly 256kB without BIG-REQUESTS and
 16GB with.</p>
-</div><h4 id='method.prefetch_maximum_request_length' class='method'><code>fn <a href='#method.prefetch_maximum_request_length' class='fnname'>prefetch_maximum_request_length</a>(&amp;self)</code></h4>
+</div><h4 id='method.prefetch_maximum_request_length' class="method"><span id='prefetch_maximum_request_length.v' class='invisible'><code>pub fn <a href='#method.prefetch_maximum_request_length' class='fnname'>prefetch_maximum_request_length</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/base.rs.html#365-369' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Prefetch the maximum request length without blocking.</p>
 
 <p>Without blocking, does as much work as possible toward computing
@@ -86,13 +90,13 @@ after possibly blocking while the reply is retrieved.</p>
 application must previously have called
 <code>c.prefetch_extension_data(xcb::big_requests::id())</code> and the reply
 must have already arrived.</p>
-</div><h4 id='method.wait_for_event' class='method'><code>fn <a href='#method.wait_for_event' class='fnname'>wait_for_event</a>(&amp;self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../xcb/base/type.GenericEvent.html' title='xcb::base::GenericEvent'>GenericEvent</a>&gt;</code></h4>
+</div><h4 id='method.wait_for_event' class="method"><span id='wait_for_event.v' class='invisible'><code>pub fn <a href='#method.wait_for_event' class='fnname'>wait_for_event</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../../xcb/base/type.GenericEvent.html" title="type xcb::base::GenericEvent">GenericEvent</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/base.rs.html#376-385' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Returns the next event or error from the server.</p>
 
 <p>Returns the next event or error from the server, or returns <code>None</code> in
 the event of an I/O error. Blocks until either an event or error
 arrive, or an I/O error occurs.</p>
-</div><h4 id='method.poll_for_event' class='method'><code>fn <a href='#method.poll_for_event' class='fnname'>poll_for_event</a>(&amp;self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../xcb/base/type.GenericEvent.html' title='xcb::base::GenericEvent'>GenericEvent</a>&gt;</code></h4>
+</div><h4 id='method.poll_for_event' class="method"><span id='poll_for_event.v' class='invisible'><code>pub fn <a href='#method.poll_for_event' class='fnname'>poll_for_event</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../../xcb/base/type.GenericEvent.html" title="type xcb::base::GenericEvent">GenericEvent</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/base.rs.html#394-403' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Returns the next event or error from the server.</p>
 
 <p>Returns the next event or error from the server, if one is
@@ -100,7 +104,7 @@ available, or returns <code>None</code> otherwise. If no event is available, tha
 might be because an I/O error like connection close occurred while
 attempting to read the next event, in which case the connection is
 shut down when this function returns.</p>
-</div><h4 id='method.poll_for_queued_event' class='method'><code>fn <a href='#method.poll_for_queued_event' class='fnname'>poll_for_queued_event</a>(&amp;self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../xcb/base/type.GenericEvent.html' title='xcb::base::GenericEvent'>GenericEvent</a>&gt;</code></h4>
+</div><h4 id='method.poll_for_queued_event' class="method"><span id='poll_for_queued_event.v' class='invisible'><code>pub fn <a href='#method.poll_for_queued_event' class='fnname'>poll_for_queued_event</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../../xcb/base/type.GenericEvent.html" title="type xcb::base::GenericEvent">GenericEvent</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/base.rs.html#415-424' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Returns the next event without reading from the connection.</p>
 
 <p>This is a version of <code>poll_for_event</code> that only examines the
@@ -111,7 +115,7 @@ events from the connection if no queued events are found.</p>
 interesting events have already been read from the connection. For
 example, callers might use <code>wait_for_reply</code> and be interested
 only of events that preceded a specific reply.</p>
-</div><h4 id='method.get_setup' class='method'><code>fn <a href='#method.get_setup' class='fnname'>get_setup</a>(&amp;self) -&gt; <a class='type' href='../../xcb/xproto/type.Setup.html' title='xcb::xproto::Setup'>Setup</a></code></h4>
+</div><h4 id='method.get_setup' class="method"><span id='get_setup.v' class='invisible'><code>pub fn <a href='#method.get_setup' class='fnname'>get_setup</a>(&amp;self) -&gt; <a class="type" href="../../xcb/xproto/type.Setup.html" title="type xcb::xproto::Setup">Setup</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/base.rs.html#438-447' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Access the data returned by the server.</p>
 
 <p>Accessor for the data returned by the server when the <code>Connection</code>
@@ -124,7 +128,7 @@ BIG-REQUESTS extension),
 - and other assorted information.</p>
 
 <p>See the X protocol specification for more details.</p>
-</div><h4 id='method.has_error' class='method'><code>fn <a href='#method.has_error' class='fnname'>has_error</a>(&amp;self) -&gt; <a class='type' href='../../xcb/base/type.ConnResult.html' title='xcb::base::ConnResult'>ConnResult</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></h4>
+</div><h4 id='method.has_error' class="method"><span id='has_error.v' class='invisible'><code>pub fn <a href='#method.has_error' class='fnname'>has_error</a>(&amp;self) -&gt; <a class="type" href="../../xcb/base/type.ConnResult.html" title="type xcb::base::ConnResult">ConnResult</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/base.rs.html#456-480' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Test whether the connection has shut down due to a fatal error.</p>
 
 <p>Some errors that occur in the context of a <code>Connection</code>
@@ -132,14 +136,16 @@ are unrecoverable. When such an error occurs, the
 connection is shut down and further operations on the
 <code>Connection</code> have no effect, but memory will not be freed until
 the <code>Connection</code> is dropped.</p>
-</div><h4 id='method.generate_id' class='method'><code>fn <a href='#method.generate_id' class='fnname'>generate_id</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></h4>
+</div><h4 id='method.generate_id' class="method"><span id='generate_id.v' class='invisible'><code>pub fn <a href='#method.generate_id' class='fnname'>generate_id</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/base.rs.html#486-490' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Allocates an XID for a new object.</p>
 
 <p>Allocates an XID for a new object. Typically used just prior to
 various object creation functions, such as <code>xcb::create_window</code>.</p>
-</div><h4 id='method.get_raw_conn' class='method'><code>fn <a href='#method.get_raw_conn' class='fnname'>get_raw_conn</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../xcb/ffi/base/enum.xcb_connection_t.html' title='xcb::ffi::base::xcb_connection_t'>xcb_connection_t</a></code></h4>
+</div><h4 id='method.get_raw_conn' class="method"><span id='get_raw_conn.v' class='invisible'><code>pub fn <a href='#method.get_raw_conn' class='fnname'>get_raw_conn</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="../../xcb/ffi/base/enum.xcb_connection_t.html" title="enum xcb::ffi::base::xcb_connection_t">xcb_connection_t</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/base.rs.html#493-495' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Returns the inner ffi <code>xcb_connection_t</code> pointer</p>
-</div><h4 id='method.prefetch_extension_data' class='method'><code>fn <a href='#method.prefetch_extension_data' class='fnname'>prefetch_extension_data</a>(&amp;self, ext: &amp;mut <a class='type' href='../../xcb/base/type.Extension.html' title='xcb::base::Extension'>Extension</a>)</code></h4>
+</div><h4 id='method.into_raw_conn' class="method"><span id='into_raw_conn.v' class='invisible'><code>pub fn <a href='#method.into_raw_conn' class='fnname'>into_raw_conn</a>(self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="../../xcb/ffi/base/enum.xcb_connection_t.html" title="enum xcb::ffi::base::xcb_connection_t">xcb_connection_t</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/base.rs.html#498-502' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Consumes this object, returning the inner ffi <code>xcb_connection_t</code> pointer</p>
+</div><h4 id='method.prefetch_extension_data' class="method"><span id='prefetch_extension_data.v' class='invisible'><code>pub fn <a href='#method.prefetch_extension_data' class='fnname'>prefetch_extension_data</a>(&amp;self, ext: &amp;mut <a class="type" href="../../xcb/base/type.Extension.html" title="type xcb::base::Extension">Extension</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/base.rs.html#517-521' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Prefetch of extension data into the extension cache</p>
 
 <p>This function allows a &quot;prefetch&quot; of extension data into the
@@ -147,7 +153,7 @@ extension cache. Invoking the function may cause a call to
 xcb_query_extension, but will not block waiting for the
 reply. xcb_get_extension_data will return the prefetched data after
 possibly blocking while it is retrieved.</p>
-</div><h4 id='method.get_extension_data' class='method'><code>fn <a href='#method.get_extension_data' class='fnname'>get_extension_data</a>(&amp;self, ext: &amp;mut <a class='type' href='../../xcb/base/type.Extension.html' title='xcb::base::Extension'>Extension</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../xcb/base/struct.QueryExtensionData.html' title='xcb::base::QueryExtensionData'>QueryExtensionData</a>&gt;</code></h4>
+</div><h4 id='method.get_extension_data' class="method"><span id='get_extension_data.v' class='invisible'><code>pub fn <a href='#method.get_extension_data' class='fnname'>get_extension_data</a>&lt;'a&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;'a self, <br>&nbsp;&nbsp;&nbsp;&nbsp;ext: &amp;mut <a class="type" href="../../xcb/base/type.Extension.html" title="type xcb::base::Extension">Extension</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../xcb/base/struct.QueryExtensionData.html" title="struct xcb::base::QueryExtensionData">QueryExtensionData</a>&lt;'a&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/base.rs.html#531-538' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Caches reply information from QueryExtension requests.</p>
 
 <p>This function is the primary interface to the &quot;extension cache&quot;,
@@ -156,7 +162,7 @@ requests. Invoking this function may cause a call to
 xcb_query_extension to retrieve extension information from the
 server, and may block until extension data is received from the
 server.</p>
-</div><h4 id='method.connect' class='method'><code>fn <a href='#method.connect' class='fnname'>connect</a>(displayname: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;) -&gt; <a class='type' href='../../xcb/base/type.ConnResult.html' title='xcb::base::ConnResult'>ConnResult</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='struct' href='../../xcb/base/struct.Connection.html' title='xcb::base::Connection'>Connection</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>&gt;</code></h4>
+</div><h4 id='method.connect' class="method"><span id='connect.v' class='invisible'><code>pub fn <a href='#method.connect' class='fnname'>connect</a>(displayname: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;) -&gt; <a class="type" href="../../xcb/base/type.ConnResult.html" title="type xcb::base::ConnResult">ConnResult</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="struct" href="../../xcb/base/struct.Connection.html" title="struct xcb::base::Connection">Connection</a>, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/base.rs.html#565-584' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Connects to the X server.
 <code>displayname:</code> The name of the display.</p>
 
@@ -167,7 +173,7 @@ variable.</p>
 <p>Returns Ok(connection object, preferred screen) in case of success, or
 Err(ConnError) in case of error. If no screen is preferred, the second
 member of the tuple is set to 0.</p>
-</div><h4 id='method.connect_with_auth_info' class='method'><code>fn <a href='#method.connect_with_auth_info' class='fnname'>connect_with_auth_info</a>(display: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;, auth_info: &amp;<a class='type' href='../../xcb/base/type.AuthInfo.html' title='xcb::base::AuthInfo'>AuthInfo</a>) -&gt; <a class='type' href='../../xcb/base/type.ConnResult.html' title='xcb::base::ConnResult'>ConnResult</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='struct' href='../../xcb/base/struct.Connection.html' title='xcb::base::Connection'>Connection</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>&gt;</code></h4>
+</div><h4 id='method.connect_with_auth_info' class="method"><span id='connect_with_auth_info.v' class='invisible'><code>pub fn <a href='#method.connect_with_auth_info' class='fnname'>connect_with_auth_info</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;display: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;auth_info: &amp;<a class="type" href="../../xcb/base/type.AuthInfo.html" title="type xcb::base::AuthInfo">AuthInfo</a><br>) -&gt; <a class="type" href="../../xcb/base/type.ConnResult.html" title="type xcb::base::ConnResult">ConnResult</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="struct" href="../../xcb/base/struct.Connection.html" title="struct xcb::base::Connection">Connection</a>, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/base.rs.html#628-649' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Connects to the X server, using an authorization information.
 display: The name of the display.
 auth_info: The authorization information.
@@ -177,11 +183,18 @@ Returns A newly allocated <code>Connection</code> structure.</p>
 <p>Connects to the X server specified by displayname, using the
 authorization auth.
 The second member of the returned tuple is the preferred screen, or 0</p>
-</div><h4 id='method.from_raw_conn' class='method'><code>unsafe fn <a href='#method.from_raw_conn' class='fnname'>from_raw_conn</a>(conn: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../xcb/ffi/base/enum.xcb_connection_t.html' title='xcb::ffi::base::xcb_connection_t'>xcb_connection_t</a>) -&gt; <a class='struct' href='../../xcb/base/struct.Connection.html' title='xcb::base::Connection'>Connection</a></code></h4>
+</div><h4 id='method.from_raw_conn' class="method"><span id='from_raw_conn.v' class='invisible'><code>pub unsafe fn <a href='#method.from_raw_conn' class='fnname'>from_raw_conn</a>(conn: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="../../xcb/ffi/base/enum.xcb_connection_t.html" title="enum xcb::ffi::base::xcb_connection_t">xcb_connection_t</a>) -&gt; <a class="struct" href="../../xcb/base/struct.Connection.html" title="struct xcb::base::Connection">Connection</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/base.rs.html#652-665' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>builds a new Connection object from an available connection</p>
-</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../xcb/base/struct.Connection.html' title='xcb::base::Connection'>Connection</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-195' class='srclink' href='../../src/xcb/base.rs.html#621-640' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
-<div class='docblock'><p>A method called when the value goes out of scope. <a href="https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop">Read more</a></p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-AsRawFd' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/std/sys/unix/ext/io/trait.AsRawFd.html" title="trait std::sys::unix::ext::io::AsRawFd">AsRawFd</a> for <a class="struct" href="../../xcb/base/struct.Connection.html" title="struct xcb::base::Connection">Connection</a></code><a href='#impl-AsRawFd' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/base.rs.html#668-674' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.as_raw_fd' class="method"><span id='as_raw_fd.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/std/sys/unix/ext/io/trait.AsRawFd.html#tymethod.as_raw_fd' class='fnname'>as_raw_fd</a>(&amp;self) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/std/sys/unix/ext/io/type.RawFd.html" title="type std::sys::unix::ext::io::RawFd">RawFd</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/base.rs.html#669-673' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Extracts the raw file descriptor. <a href="https://doc.rust-lang.org/nightly/std/sys/unix/ext/io/trait.AsRawFd.html#tymethod.as_raw_fd">Read more</a></p>
+</div></div><h3 id='impl-Drop' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/drop/trait.Drop.html" title="trait core::ops::drop::Drop">Drop</a> for <a class="struct" href="../../xcb/base/struct.Connection.html" title="struct xcb::base::Connection">Connection</a></code><a href='#impl-Drop' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/base.rs.html#676-693' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class="method"><span id='drop.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/drop/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/base.rs.html#677-692' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Executes the destructor for this type. <a href="https://doc.rust-lang.org/nightly/core/ops/drop/trait.Drop.html#tymethod.drop">Read more</a></p>
 </div></div></section>
     <section id='search' class="content hidden"></section>
 
@@ -199,13 +212,15 @@ The second member of the returned tuple is the preferred screen, or 0</p>
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -238,11 +253,8 @@ The second member of the returned tuple is the preferred screen, or 0</p>
     <script>
         window.rootPath = "../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

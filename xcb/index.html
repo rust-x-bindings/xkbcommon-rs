@@ -9,6 +9,7 @@
 
     <title>xcb - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
     <link rel="stylesheet" type="text/css" href="../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc mod">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'></p><script>window.sidebarCurrent = {name: 'xcb', ty: 'mod', relpath: '../'};</script>
+        <p class='location'>Crate xcb</p><div class="sidebar-elems"><div class="block items"><ul><li><a href="#reexports">Reexports</a></li><li><a href="#modules">Modules</a></li></ul></div><p class='location'></p><script>window.sidebarCurrent = {name: 'xcb', ty: 'mod', relpath: '../'};</script></div>
     </nav>
 
     <nav class="sub">
@@ -42,12 +44,12 @@
         </form>
     </nav>
 
-    <section id='main' class="content mod">
-<h1 class='fqn'><span class='in-band'>Crate <a class='mod' href=''>xcb</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Crate <a class="mod" href=''>xcb</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-0' class='srclink' href='../src/xcb/lib.rs.html#32-272' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../src/xcb/lib.rs.html#32-272' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'><p>Rust bindings to the XCB library.</p>
 
 <p>The X protocol C-language Binding (XCB - <a href="https://xcb.freedesktop.org/">https://xcb.freedesktop.org/</a>) is a
@@ -89,47 +91,47 @@ The client listens to events with calls such as <code>Connection::wait_for_event
 
 <p>X protocol extensions are activated with cargo features</p>
 </div><h2 id='reexports' class='section-header'><a href="#reexports">Reexports</a></h2>
-<table><tr><td><code>pub use <a class='mod' href='../xcb/base/index.html' title='xcb::base'>base</a>::*;</code></td></tr><tr><td><code>pub use <a class='mod' href='../xcb/xproto/index.html' title='xcb::xproto'>xproto</a>::*;</code></td></tr></table><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table><tr><td><code>pub use <a class="mod" href="../xcb/base/index.html" title="mod xcb::base">base</a>::*;</code></td></tr><tr><td><code>pub use <a class="mod" href="../xcb/xproto/index.html" title="mod xcb::xproto">xproto</a>::*;</code></td></tr></table><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
 <table>
                        <tr class=' module-item'>
-                           <td><a class='mod' href='base/index.html'
-                                  title='xcb::base'>base</a></td>
-                           <td class='docblock short'>
+                           <td><a class="mod" href="base/index.html"
+                                  title='mod xcb::base'>base</a></td>
+                           <td class='docblock-short'>
                                 
                            </td>
                        </tr>
                        <tr class=' module-item'>
-                           <td><a class='mod' href='big_requests/index.html'
-                                  title='xcb::big_requests'>big_requests</a></td>
-                           <td class='docblock short'>
+                           <td><a class="mod" href="big_requests/index.html"
+                                  title='mod xcb::big_requests'>big_requests</a></td>
+                           <td class='docblock-short'>
                                 
                            </td>
                        </tr>
                        <tr class=' module-item'>
-                           <td><a class='mod' href='ffi/index.html'
-                                  title='xcb::ffi'>ffi</a></td>
-                           <td class='docblock short'>
+                           <td><a class="mod" href="ffi/index.html"
+                                  title='mod xcb::ffi'>ffi</a></td>
+                           <td class='docblock-short'>
                                 
                            </td>
                        </tr>
                        <tr class=' module-item'>
-                           <td><a class='mod' href='xc_misc/index.html'
-                                  title='xcb::xc_misc'>xc_misc</a></td>
-                           <td class='docblock short'>
+                           <td><a class="mod" href="xc_misc/index.html"
+                                  title='mod xcb::xc_misc'>xc_misc</a></td>
+                           <td class='docblock-short'>
                                 
                            </td>
                        </tr>
                        <tr class=' module-item'>
-                           <td><a class='mod' href='xkb/index.html'
-                                  title='xcb::xkb'>xkb</a></td>
-                           <td class='docblock short'>
+                           <td><a class="mod" href="xkb/index.html"
+                                  title='mod xcb::xkb'>xkb</a></td>
+                           <td class='docblock-short'>
                                 
                            </td>
                        </tr>
                        <tr class=' module-item'>
-                           <td><a class='mod' href='xproto/index.html'
-                                  title='xcb::xproto'>xproto</a></td>
-                           <td class='docblock short'>
+                           <td><a class="mod" href="xproto/index.html"
+                                  title='mod xcb::xproto'>xproto</a></td>
+                           <td class='docblock-short'>
                                 
                            </td>
                        </tr></table></section>
@@ -149,13 +151,15 @@ The client listens to events with calls such as <code>Connection::wait_for_event
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -188,11 +192,8 @@ The client listens to events with calls such as <code>Connection::wait_for_event
     <script>
         window.rootPath = "../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../jquery.js"></script>
     <script src="../main.js"></script>
-    
     <script defer src="../search-index.js"></script>
 </body>
 </html>

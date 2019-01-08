@@ -9,6 +9,7 @@
 
     <title>xcb::xproto::SetupRequest - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc type">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xproto</a></p><script>window.sidebarCurrent = {name: 'SetupRequest', ty: 'type', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Type Definition SetupRequest</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.byte_order">byte_order</a><a href="#method.protocol_major_version">protocol_major_version</a><a href="#method.protocol_minor_version">protocol_minor_version</a><a href="#method.authorization_protocol_name_len">authorization_protocol_name_len</a><a href="#method.authorization_protocol_data_len">authorization_protocol_data_len</a><a href="#method.authorization_protocol_name">authorization_protocol_name</a><a href="#method.authorization_protocol_data">authorization_protocol_data</a></div></div><p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xproto</a></p><script>window.sidebarCurrent = {name: 'SetupRequest', ty: 'type', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -42,13 +44,25 @@
         </form>
     </nav>
 
-    <section id='main' class="content type">
-<h1 class='fqn'><span class='in-band'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xproto</a>::<wbr><a class='type' href=''>SetupRequest</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Type Definition <a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xproto</a>::<wbr><a class="type" href=''>SetupRequest</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-948' class='srclink' href='../../src/xcb/xproto.rs.html#1350' title='goto source code'>[src]</a></span></h1>
-<pre class='rust typedef'>type SetupRequest&lt;'a&gt; = <a class='struct' href='../../xcb/base/struct.StructPtr.html' title='xcb::base::StructPtr'>StructPtr</a>&lt;'a,&nbsp;<a class='struct' href='../../xcb/ffi/xproto/struct.xcb_setup_request_t.html' title='xcb::ffi::xproto::xcb_setup_request_t'>xcb_setup_request_t</a>&gt;;</pre></section>
+               </span><a class='srclink' href='../../src/xcb/xproto.rs.html#1400' title='goto source code'>[src]</a></span></h1>
+<pre class='rust typedef'>type SetupRequest&lt;'a&gt; = <a class="struct" href="../../xcb/base/struct.StructPtr.html" title="struct xcb::base::StructPtr">StructPtr</a>&lt;'a, <a class="struct" href="../../xcb/ffi/xproto/struct.xcb_setup_request_t.html" title="struct xcb::ffi::xproto::xcb_setup_request_t">xcb_setup_request_t</a>&gt;;</pre>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="type" href="../../xcb/xproto/type.SetupRequest.html" title="type xcb::xproto::SetupRequest">SetupRequest</a>&lt;'a&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1402-1448' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.byte_order' class="method"><span id='byte_order.v' class='invisible'><code>pub fn <a href='#method.byte_order' class='fnname'>byte_order</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1403-1407' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.protocol_major_version' class="method"><span id='protocol_major_version.v' class='invisible'><code>pub fn <a href='#method.protocol_major_version' class='fnname'>protocol_major_version</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1408-1412' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.protocol_minor_version' class="method"><span id='protocol_minor_version.v' class='invisible'><code>pub fn <a href='#method.protocol_minor_version' class='fnname'>protocol_minor_version</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1413-1417' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.authorization_protocol_name_len' class="method"><span id='authorization_protocol_name_len.v' class='invisible'><code>pub fn <a href='#method.authorization_protocol_name_len' class='fnname'>authorization_protocol_name_len</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1418-1422' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.authorization_protocol_data_len' class="method"><span id='authorization_protocol_data_len.v' class='invisible'><code>pub fn <a href='#method.authorization_protocol_data_len' class='fnname'>authorization_protocol_data_len</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1423-1427' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.authorization_protocol_name' class="method"><span id='authorization_protocol_name.v' class='invisible'><code>pub fn <a href='#method.authorization_protocol_name' class='fnname'>authorization_protocol_name</a>(&amp;self) -&gt; &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1428-1437' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.authorization_protocol_data' class="method"><span id='authorization_protocol_data.v' class='invisible'><code>pub fn <a href='#method.authorization_protocol_data' class='fnname'>authorization_protocol_data</a>(&amp;self) -&gt; &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1438-1447' title='goto source code'>[src]</a></span></h4>
+</div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
@@ -65,13 +79,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -104,11 +120,8 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

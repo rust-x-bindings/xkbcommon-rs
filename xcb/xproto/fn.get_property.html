@@ -9,6 +9,7 @@
 
     <title>xcb::xproto::get_property - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc fn">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,6 +28,7 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
         <p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xproto</a></p><script>window.sidebarCurrent = {name: 'get_property', ty: 'fn', relpath: ''};</script><script defer src="sidebar-items.js"></script>
     </nav>
@@ -42,13 +44,13 @@
         </form>
     </nav>
 
-    <section id='main' class="content fn">
-<h1 class='fqn'><span class='in-band'>Function <a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xproto</a>::<wbr><a class='fn' href=''>get_property</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Function <a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xproto</a>::<wbr><a class="fn" href=''>get_property</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-2194' class='srclink' href='../../src/xcb/xproto.rs.html#5189-5211' title='goto source code'>[src]</a></span></h1>
-<pre class='rust fn'>pub fn get_property&lt;'a&gt;(c: &amp;'a <a class='struct' href='../../xcb/base/struct.Connection.html' title='xcb::base::Connection'>Connection</a>, delete: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>, window: <a class='type' href='../../xcb/xproto/type.Window.html' title='xcb::xproto::Window'>Window</a>, property: <a class='type' href='../../xcb/xproto/type.Atom.html' title='xcb::xproto::Atom'>Atom</a>, type_: <a class='type' href='../../xcb/xproto/type.Atom.html' title='xcb::xproto::Atom'>Atom</a>, long_offset: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, long_length: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>) -&gt; <a class='type' href='../../xcb/xproto/type.GetPropertyCookie.html' title='xcb::xproto::GetPropertyCookie'>GetPropertyCookie</a>&lt;'a&gt;</pre><div class='docblock'><p>Gets a window property</p>
+               </span><a class='srclink' href='../../src/xcb/xproto.rs.html#5239-5261' title='goto source code'>[src]</a></span></h1>
+<pre class='rust fn'>pub fn get_property&lt;'a&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;c: &amp;'a <a class="struct" href="../../xcb/base/struct.Connection.html" title="struct xcb::base::Connection">Connection</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;delete: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;window: <a class="type" href="../../xcb/xproto/type.Window.html" title="type xcb::xproto::Window">Window</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;property: <a class="type" href="../../xcb/xproto/type.Atom.html" title="type xcb::xproto::Atom">Atom</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;type_: <a class="type" href="../../xcb/xproto/type.Atom.html" title="type xcb::xproto::Atom">Atom</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;long_offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;long_length: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a><br>) -&gt; <a class="type" href="../../xcb/xproto/type.GetPropertyCookie.html" title="type xcb::xproto::GetPropertyCookie">GetPropertyCookie</a>&lt;'a&gt;</pre><div class='docblock'><p>Gets a window property</p>
 
 <p>Gets the specified <code>property</code> from the specified <code>window</code>. Properties are for
 example the window title (<code>WM_NAME</code>) or its minimum size (<code>WM_NORMAL_HINTS</code>).
@@ -99,13 +101,15 @@ window title, encoded as UTF-8 string, in the <code>_NET_WM_NAME</code> property
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -138,11 +142,8 @@ window title, encoded as UTF-8 string, in the <code>_NET_WM_NAME</code> property
     <script>
         window.rootPath = "../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

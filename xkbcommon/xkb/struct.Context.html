@@ -9,6 +9,7 @@
 
     <title>xkbcommon::xkb::Context - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc struct">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'><a href='../index.html'>xkbcommon</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'Context', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Struct Context</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.from_raw_ptr">from_raw_ptr</a><a href="#method.get_raw_ptr">get_raw_ptr</a><a href="#method.new">new</a><a href="#method.include_path_append">include_path_append</a><a href="#method.include_path_append_default">include_path_append_default</a><a href="#method.include_path_reset_defaults">include_path_reset_defaults</a><a href="#method.include_path_clear">include_path_clear</a><a href="#method.include_paths">include_paths</a><a href="#method.set_log_level">set_log_level</a><a href="#method.get_log_level">get_log_level</a><a href="#method.set_log_verbosity">set_log_verbosity</a><a href="#method.get_log_verbosity">get_log_verbosity</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-Drop">Drop</a></div></div><p class='location'><a href='../index.html'>xkbcommon</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'Context', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -42,15 +44,13 @@
         </form>
     </nav>
 
-    <section id='main' class="content struct">
-<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>xkbcommon</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class='struct' href=''>Context</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>xkbcommon</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class="struct" href=''>Context</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-2865' class='srclink' href='../../src/xkbcommon/src/xkb/mod.rs.html#377-379' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct Context {
-    // some fields omitted
-}</pre><div class='docblock'><p>Top level library context object.</p>
+               </span><a class='srclink' href='../../src/xkbcommon/xkb/mod.rs.html#386-388' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Context { /* fields omitted */ }</pre><div class='docblock'><p>Top level library context object.</p>
 
 <p>The context contains various general library data and state, like
 logging level and include paths.</p>
@@ -58,46 +58,50 @@ logging level and include paths.</p>
 <p>Objects are created in a specific context, and multiple contexts may
 coexist simultaneously.  Objects from different contexts are completely
 separated and do not share any memory or state.</p>
-</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../xkbcommon/xkb/struct.Context.html' title='xkbcommon::xkb::Context'>Context</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-2867' class='srclink' href='../../src/xkbcommon/src/xkb/mod.rs.html#382-533' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.from_raw_ptr' class='method'><code>unsafe fn <a href='#method.from_raw_ptr' class='fnname'>from_raw_ptr</a>(ptr: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../xkbcommon/xkb/ffi/enum.xkb_context.html' title='xkbcommon::xkb::ffi::xkb_context'>xkb_context</a>) -&gt; <a class='struct' href='../../xkbcommon/xkb/struct.Context.html' title='xkbcommon::xkb::Context'>Context</a></code></h4>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../xkbcommon/xkb/struct.Context.html" title="struct xkbcommon::xkb::Context">Context</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xkbcommon/xkb/mod.rs.html#391-542' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from_raw_ptr' class="method"><span id='from_raw_ptr.v' class='invisible'><code>pub unsafe fn <a href='#method.from_raw_ptr' class='fnname'>from_raw_ptr</a>(ptr: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="../../xkbcommon/xkb/ffi/enum.xkb_context.html" title="enum xkbcommon::xkb::ffi::xkb_context">xkb_context</a>) -&gt; <a class="struct" href="../../xkbcommon/xkb/struct.Context.html" title="struct xkbcommon::xkb::Context">Context</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xkbcommon/xkb/mod.rs.html#395-399' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>contruct a context from a raw ffi pointer. This context must already been
 referenced as xkb_context_unref will be called at drop time</p>
-</div><h4 id='method.get_raw_ptr' class='method'><code>fn <a href='#method.get_raw_ptr' class='fnname'>get_raw_ptr</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../xkbcommon/xkb/ffi/enum.xkb_context.html' title='xkbcommon::xkb::ffi::xkb_context'>xkb_context</a></code></h4>
+</div><h4 id='method.get_raw_ptr' class="method"><span id='get_raw_ptr.v' class='invisible'><code>pub fn <a href='#method.get_raw_ptr' class='fnname'>get_raw_ptr</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="../../xkbcommon/xkb/ffi/enum.xkb_context.html" title="enum xkbcommon::xkb::ffi::xkb_context">xkb_context</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xkbcommon/xkb/mod.rs.html#402-404' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>get the raw pointer from this context</p>
-</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(flags: <a class='type' href='../../xkbcommon/xkb/type.ContextFlags.html' title='xkbcommon::xkb::ContextFlags'>ContextFlags</a>) -&gt; <a class='struct' href='../../xkbcommon/xkb/struct.Context.html' title='xkbcommon::xkb::Context'>Context</a></code></h4>
+</div><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>(flags: <a class="type" href="../../xkbcommon/xkb/type.ContextFlags.html" title="type xkbcommon::xkb::ContextFlags">ContextFlags</a>) -&gt; <a class="struct" href="../../xkbcommon/xkb/struct.Context.html" title="struct xkbcommon::xkb::Context">Context</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xkbcommon/xkb/mod.rs.html#413-419' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Create a new context.</p>
 
 <p>flags Optional flags for the context, or 0.</p>
 
 <p>The user may set some environment variables to affect default values in
 the context.</p>
-</div><h4 id='method.include_path_append' class='method'><code>fn <a href='#method.include_path_append' class='fnname'>include_path_append</a>(&amp;mut self, path: &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/std/path/struct.Path.html' title='std::path::Path'>Path</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h4 id='method.include_path_append' class="method"><span id='include_path_append.v' class='invisible'><code>pub fn <a href='#method.include_path_append' class='fnname'>include_path_append</a>(&amp;mut self, path: &amp;<a class="struct" href="https://doc.rust-lang.org/nightly/std/path/struct.Path.html" title="struct std::path::Path">Path</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xkbcommon/xkb/mod.rs.html#424-442' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>append a new entry to the context&#39;s include path
 returns true on success, or false if the include path could not be added
 or is inaccessible</p>
-</div><h4 id='method.include_path_append_default' class='method'><code>fn <a href='#method.include_path_append_default' class='fnname'>include_path_append_default</a>(&amp;mut self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h4 id='method.include_path_append_default' class="method"><span id='include_path_append_default.v' class='invisible'><code>pub fn <a href='#method.include_path_append_default' class='fnname'>include_path_append_default</a>(&amp;mut self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xkbcommon/xkb/mod.rs.html#448-457' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Append the default include paths to the context&#39;s include path.</p>
 
 <p>Returns true on success.</p>
-</div><h4 id='method.include_path_reset_defaults' class='method'><code>fn <a href='#method.include_path_reset_defaults' class='fnname'>include_path_reset_defaults</a>(&amp;mut self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h4 id='method.include_path_reset_defaults' class="method"><span id='include_path_reset_defaults.v' class='invisible'><code>pub fn <a href='#method.include_path_reset_defaults' class='fnname'>include_path_reset_defaults</a>(&amp;mut self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xkbcommon/xkb/mod.rs.html#466-475' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Reset the context&#39;s include path to the default.</p>
 
 <p>Removes all entries from the context&#39;s include path, and inserts the
 default paths.</p>
 
 <p>Returns true on success.yy</p>
-</div><h4 id='method.include_path_clear' class='method'><code>fn <a href='#method.include_path_clear' class='fnname'>include_path_clear</a>(&amp;mut self)</code></h4>
+</div><h4 id='method.include_path_clear' class="method"><span id='include_path_clear.v' class='invisible'><code>pub fn <a href='#method.include_path_clear' class='fnname'>include_path_clear</a>(&amp;mut self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xkbcommon/xkb/mod.rs.html#479-483' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Remove all entries from the context&#39;s include path.</p>
-</div><h4 id='method.include_paths' class='method'><code>fn <a href='#method.include_paths' class='fnname'>include_paths</a>&lt;'a&gt;(&amp;'a self) -&gt; <a class='struct' href='../../xkbcommon/xkb/struct.ContextIncludePaths.html' title='xkbcommon::xkb::ContextIncludePaths'>ContextIncludePaths</a>&lt;'a&gt;</code></h4>
+</div><h4 id='method.include_paths' class="method"><div class="important-traits"><div class='tooltip'>ⓘ<span class='tooltiptext'>Important traits for <a class="struct" href="../../xkbcommon/xkb/struct.ContextIncludePaths.html" title="struct xkbcommon::xkb::ContextIncludePaths">ContextIncludePaths</a>&lt;'a&gt;</span></div><div class="content hidden"><h3 class="important">Important traits for <a class="struct" href="../../xkbcommon/xkb/struct.ContextIncludePaths.html" title="struct xkbcommon::xkb::ContextIncludePaths">ContextIncludePaths</a>&lt;'a&gt;</h3><code class="content"><span class="where fmt-newline">impl&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html" title="trait core::iter::iterator::Iterator">Iterator</a> for <a class="struct" href="../../xkbcommon/xkb/struct.ContextIncludePaths.html" title="struct xkbcommon::xkb::ContextIncludePaths">ContextIncludePaths</a>&lt;'a&gt;</span><span class="where fmt-newline">    type <a href='https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html#associatedtype.Item' class="type">Item</a> = &amp;'a <a class="struct" href="https://doc.rust-lang.org/nightly/std/path/struct.Path.html" title="struct std::path::Path">Path</a>;</span></code></div></div><span id='include_paths.v' class='invisible'><code>pub fn <a href='#method.include_paths' class='fnname'>include_paths</a>&lt;'a&gt;(&amp;'a self) -&gt; <a class="struct" href="../../xkbcommon/xkb/struct.ContextIncludePaths.html" title="struct xkbcommon::xkb::ContextIncludePaths">ContextIncludePaths</a>&lt;'a&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xkbcommon/xkb/mod.rs.html#486-494' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>get an iterator on the include paths of this context</p>
-</div><h4 id='method.set_log_level' class='method'><code>fn <a href='#method.set_log_level' class='fnname'>set_log_level</a>(&amp;mut self, level: <a class='enum' href='../../xkbcommon/xkb/enum.LogLevel.html' title='xkbcommon::xkb::LogLevel'>LogLevel</a>)</code></h4>
+</div><h4 id='method.set_log_level' class="method"><span id='set_log_level.v' class='invisible'><code>pub fn <a href='#method.set_log_level' class='fnname'>set_log_level</a>(&amp;mut self, level: <a class="enum" href="../../xkbcommon/xkb/enum.LogLevel.html" title="enum xkbcommon::xkb::LogLevel">LogLevel</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xkbcommon/xkb/mod.rs.html#502-507' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Set the current logging level.</p>
 
 <p>The default level is xkb::LogLevel::Error.  The environment variable
 XKB_LOG_LEVEL, if set in the time the context was created, overrides the
 default value.  It may be specified as a level number or name.</p>
-</div><h4 id='method.get_log_level' class='method'><code>fn <a href='#method.get_log_level' class='fnname'>get_log_level</a>(&amp;self) -&gt; <a class='enum' href='../../xkbcommon/xkb/enum.LogLevel.html' title='xkbcommon::xkb::LogLevel'>LogLevel</a></code></h4>
-<h4 id='method.set_log_verbosity' class='method'><code>fn <a href='#method.set_log_verbosity' class='fnname'>set_log_verbosity</a>(&amp;mut self, verbosity: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>)</code></h4>
+</div><h4 id='method.get_log_level' class="method"><span id='get_log_level.v' class='invisible'><code>pub fn <a href='#method.get_log_level' class='fnname'>get_log_level</a>(&amp;self) -&gt; <a class="enum" href="../../xkbcommon/xkb/enum.LogLevel.html" title="enum xkbcommon::xkb::LogLevel">LogLevel</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xkbcommon/xkb/mod.rs.html#509-513' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.set_log_verbosity' class="method"><span id='set_log_verbosity.v' class='invisible'><code>pub fn <a href='#method.set_log_verbosity' class='fnname'>set_log_verbosity</a>(&amp;mut self, verbosity: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xkbcommon/xkb/mod.rs.html#529-534' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Sets the current logging verbosity.</p>
 
 <p>The library can generate a number of warnings which are not helpful to
@@ -111,15 +115,19 @@ if set in the time the context was created, overrides the default value.</p>
 0 would result in no verbose messages being logged.</p>
 
 <p>Most verbose messages are of level xkb::LogLevel::Warning or lower.</p>
-</div><h4 id='method.get_log_verbosity' class='method'><code>fn <a href='#method.get_log_verbosity' class='fnname'>get_log_verbosity</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code></h4>
-</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../xkbcommon/xkb/struct.Context.html' title='xkbcommon::xkb::Context'>Context</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-2898' class='srclink' href='../../src/xkbcommon/src/xkb/mod.rs.html#535-543' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../xkbcommon/xkb/struct.Context.html' title='xkbcommon::xkb::Context'>Context</a></code></h4>
+</div><h4 id='method.get_log_verbosity' class="method"><span id='get_log_verbosity.v' class='invisible'><code>pub fn <a href='#method.get_log_verbosity' class='fnname'>get_log_verbosity</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xkbcommon/xkb/mod.rs.html#536-540' title='goto source code'>[src]</a></span></h4>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../xkbcommon/xkb/struct.Context.html" title="struct xkbcommon::xkb::Context">Context</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xkbcommon/xkb/mod.rs.html#544-552' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../xkbcommon/xkb/struct.Context.html" title="struct xkbcommon::xkb::Context">Context</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xkbcommon/xkb/mod.rs.html#545-551' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
-</div><h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
-</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../xkbcommon/xkb/struct.Context.html' title='xkbcommon::xkb::Context'>Context</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-2901' class='srclink' href='../../src/xkbcommon/src/xkb/mod.rs.html#545-551' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
-<div class='docblock'><p>A method called when the value goes out of scope. <a href="https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop">Read more</a></p>
+</div></div><h3 id='impl-Drop' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/drop/trait.Drop.html" title="trait core::ops::drop::Drop">Drop</a> for <a class="struct" href="../../xkbcommon/xkb/struct.Context.html" title="struct xkbcommon::xkb::Context">Context</a></code><a href='#impl-Drop' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xkbcommon/xkb/mod.rs.html#554-560' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class="method"><span id='drop.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/drop/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xkbcommon/xkb/mod.rs.html#555-559' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Executes the destructor for this type. <a href="https://doc.rust-lang.org/nightly/core/ops/drop/trait.Drop.html#tymethod.drop">Read more</a></p>
 </div></div></section>
     <section id='search' class="content hidden"></section>
 
@@ -137,13 +145,15 @@ if set in the time the context was created, overrides the default value.</p>
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -176,11 +186,8 @@ if set in the time the context was created, overrides the default value.</p>
     <script>
         window.rootPath = "../../";
         window.currentCrate = "xkbcommon";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

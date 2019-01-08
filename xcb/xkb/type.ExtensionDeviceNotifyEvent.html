@@ -9,6 +9,7 @@
 
     <title>xcb::xkb::ExtensionDeviceNotifyEvent - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc type">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'ExtensionDeviceNotifyEvent', ty: 'type', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Type Definition ExtensionDeviceNotifyEvent</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.xkb_type">xkb_type</a><a href="#method.time">time</a><a href="#method.device_i_d">device_i_d</a><a href="#method.reason">reason</a><a href="#method.led_class">led_class</a><a href="#method.led_i_d">led_i_d</a><a href="#method.leds_defined">leds_defined</a><a href="#method.led_state">led_state</a><a href="#method.first_button">first_button</a><a href="#method.n_buttons">n_buttons</a><a href="#method.supported">supported</a><a href="#method.unsupported">unsupported</a><a href="#method.new">new</a></div></div><p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'ExtensionDeviceNotifyEvent', ty: 'type', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -42,13 +44,33 @@
         </form>
     </nav>
 
-    <section id='main' class="content type">
-<h1 class='fqn'><span class='in-band'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class='type' href=''>ExtensionDeviceNotifyEvent</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Type Definition <a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class="type" href=''>ExtensionDeviceNotifyEvent</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-7902' class='srclink' href='../../src/xcb/xkb.rs.html#6666' title='goto source code'>[src]</a></span></h1>
-<pre class='rust typedef'>type ExtensionDeviceNotifyEvent = <a class='struct' href='../../xcb/base/struct.Event.html' title='xcb::base::Event'>Event</a>&lt;<a class='struct' href='../../xcb/ffi/xkb/struct.xcb_xkb_extension_device_notify_event_t.html' title='xcb::ffi::xkb::xcb_xkb_extension_device_notify_event_t'>xcb_xkb_extension_device_notify_event_t</a>&gt;;</pre></section>
+               </span><a class='srclink' href='../../src/xcb/xkb.rs.html#7542' title='goto source code'>[src]</a></span></h1>
+<pre class='rust typedef'>type ExtensionDeviceNotifyEvent = <a class="struct" href="../../xcb/base/struct.Event.html" title="struct xcb::base::Event">Event</a>&lt;<a class="struct" href="../../xcb/ffi/xkb/struct.xcb_xkb_extension_device_notify_event_t.html" title="struct xcb::ffi::xkb::xcb_xkb_extension_device_notify_event_t">xcb_xkb_extension_device_notify_event_t</a>&gt;;</pre>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="type" href="../../xcb/xkb/type.ExtensionDeviceNotifyEvent.html" title="type xcb::xkb::ExtensionDeviceNotifyEvent">ExtensionDeviceNotifyEvent</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7544-7640' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.xkb_type' class="method"><span id='xkb_type.v' class='invisible'><code>pub fn <a href='#method.xkb_type' class='fnname'>xkb_type</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7545-7549' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.time' class="method"><span id='time.v' class='invisible'><code>pub fn <a href='#method.time' class='fnname'>time</a>(&amp;self) -&gt; <a class="type" href="../../xcb/xproto/type.Timestamp.html" title="type xcb::xproto::Timestamp">Timestamp</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7550-7554' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.device_i_d' class="method"><span id='device_i_d.v' class='invisible'><code>pub fn <a href='#method.device_i_d' class='fnname'>device_i_d</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7555-7559' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.reason' class="method"><span id='reason.v' class='invisible'><code>pub fn <a href='#method.reason' class='fnname'>reason</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7560-7564' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.led_class' class="method"><span id='led_class.v' class='invisible'><code>pub fn <a href='#method.led_class' class='fnname'>led_class</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7565-7569' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.led_i_d' class="method"><span id='led_i_d.v' class='invisible'><code>pub fn <a href='#method.led_i_d' class='fnname'>led_i_d</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7570-7574' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.leds_defined' class="method"><span id='leds_defined.v' class='invisible'><code>pub fn <a href='#method.leds_defined' class='fnname'>leds_defined</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7575-7579' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.led_state' class="method"><span id='led_state.v' class='invisible'><code>pub fn <a href='#method.led_state' class='fnname'>led_state</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7580-7584' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.first_button' class="method"><span id='first_button.v' class='invisible'><code>pub fn <a href='#method.first_button' class='fnname'>first_button</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7585-7589' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.n_buttons' class="method"><span id='n_buttons.v' class='invisible'><code>pub fn <a href='#method.n_buttons' class='fnname'>n_buttons</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7590-7594' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.supported' class="method"><span id='supported.v' class='invisible'><code>pub fn <a href='#method.supported' class='fnname'>supported</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7595-7599' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.unsupported' class="method"><span id='unsupported.v' class='invisible'><code>pub fn <a href='#method.unsupported' class='fnname'>unsupported</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7600-7604' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;xkb_type: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;time: <a class="type" href="../../xcb/xproto/type.Timestamp.html" title="type xcb::xproto::Timestamp">Timestamp</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;device_i_d: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;reason: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;led_class: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;led_i_d: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;leds_defined: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;led_state: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;first_button: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;n_buttons: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;supported: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;unsupported: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a><br>) -&gt; <a class="type" href="../../xcb/xkb/type.ExtensionDeviceNotifyEvent.html" title="type xcb::xkb::ExtensionDeviceNotifyEvent">ExtensionDeviceNotifyEvent</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7607-7639' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Constructs a new ExtensionDeviceNotifyEvent
+<code>response_type</code> will be set automatically to EXTENSION_DEVICE_NOTIFY</p>
+</div></div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
@@ -65,13 +87,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -104,11 +128,8 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

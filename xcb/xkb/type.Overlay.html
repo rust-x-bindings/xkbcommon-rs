@@ -9,6 +9,7 @@
 
     <title>xcb::xkb::Overlay - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc type">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'Overlay', ty: 'type', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Type Definition Overlay</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.name">name</a><a href="#method.n_rows">n_rows</a><a href="#method.rows">rows</a></div></div><p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'Overlay', ty: 'type', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -42,13 +44,21 @@
         </form>
     </nav>
 
-    <section id='main' class="content type">
-<h1 class='fqn'><span class='in-band'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class='type' href=''>Overlay</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Type Definition <a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class="type" href=''>Overlay</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-5730' class='srclink' href='../../src/xcb/xkb.rs.html#1654' title='goto source code'>[src]</a></span></h1>
-<pre class='rust typedef'>type Overlay&lt;'a&gt; = <a class='struct' href='../../xcb/base/struct.StructPtr.html' title='xcb::base::StructPtr'>StructPtr</a>&lt;'a,&nbsp;<a class='struct' href='../../xcb/ffi/xkb/struct.xcb_xkb_overlay_t.html' title='xcb::ffi::xkb::xcb_xkb_overlay_t'>xcb_xkb_overlay_t</a>&gt;;</pre></section>
+               </span><a class='srclink' href='../../src/xcb/xkb.rs.html#1889' title='goto source code'>[src]</a></span></h1>
+<pre class='rust typedef'>type Overlay&lt;'a&gt; = <a class="struct" href="../../xcb/base/struct.StructPtr.html" title="struct xcb::base::StructPtr">StructPtr</a>&lt;'a, <a class="struct" href="../../xcb/ffi/xkb/struct.xcb_xkb_overlay_t.html" title="struct xcb::ffi::xkb::xcb_xkb_overlay_t">xcb_xkb_overlay_t</a>&gt;;</pre>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="type" href="../../xcb/xkb/type.Overlay.html" title="type xcb::xkb::Overlay">Overlay</a>&lt;'a&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#1891-1907' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.name' class="method"><span id='name.v' class='invisible'><code>pub fn <a href='#method.name' class='fnname'>name</a>(&amp;self) -&gt; <a class="type" href="../../xcb/xproto/type.Atom.html" title="type xcb::xproto::Atom">Atom</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#1892-1896' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.n_rows' class="method"><span id='n_rows.v' class='invisible'><code>pub fn <a href='#method.n_rows' class='fnname'>n_rows</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#1897-1901' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.rows' class="method"><div class="important-traits"><div class='tooltip'>ⓘ<span class='tooltiptext'>Important traits for <a class="type" href="../../xcb/xkb/type.OverlayRowIterator.html" title="type xcb::xkb::OverlayRowIterator">OverlayRowIterator</a>&lt;'a&gt;</span></div><div class="content hidden"><h3 class="important">Important traits for <a class="type" href="../../xcb/xkb/type.OverlayRowIterator.html" title="type xcb::xkb::OverlayRowIterator">OverlayRowIterator</a>&lt;'a&gt;</h3><code class="content"><span class="where fmt-newline">impl&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html" title="trait core::iter::iterator::Iterator">Iterator</a> for <a class="type" href="../../xcb/xkb/type.OverlayRowIterator.html" title="type xcb::xkb::OverlayRowIterator">OverlayRowIterator</a>&lt;'a&gt;</span><span class="where fmt-newline">    type <a href='https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html#associatedtype.Item' class="type">Item</a> = <a class="type" href="../../xcb/xkb/type.OverlayRow.html" title="type xcb::xkb::OverlayRow">OverlayRow</a>&lt;'a&gt;;</span></code></div></div><span id='rows.v' class='invisible'><code>pub fn <a href='#method.rows' class='fnname'>rows</a>(&amp;self) -&gt; <a class="type" href="../../xcb/xkb/type.OverlayRowIterator.html" title="type xcb::xkb::OverlayRowIterator">OverlayRowIterator</a>&lt;'a&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#1902-1906' title='goto source code'>[src]</a></span></h4>
+</div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
@@ -65,13 +75,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -104,11 +116,8 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

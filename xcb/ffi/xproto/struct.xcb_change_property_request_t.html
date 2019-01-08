@@ -9,6 +9,7 @@
 
     <title>xcb::ffi::xproto::xcb_change_property_request_t - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc struct">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'><a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xproto</a></p><script>window.sidebarCurrent = {name: 'xcb_change_property_request_t', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Struct xcb_change_property_request_t</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.major_opcode">major_opcode</a><a href="#structfield.mode">mode</a><a href="#structfield.length">length</a><a href="#structfield.window">window</a><a href="#structfield.property">property</a><a href="#structfield.type_">type_</a><a href="#structfield.format">format</a><a href="#structfield.pad0">pad0</a><a href="#structfield.data_len">data_len</a></div></div><p class='location'><a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xproto</a></p><script>window.sidebarCurrent = {name: 'xcb_change_property_request_t', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -42,44 +44,73 @@
         </form>
     </nav>
 
-    <section id='main' class="content struct">
-<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xproto</a>::<wbr><a class='struct' href=''>xcb_change_property_request_t</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xproto</a>::<wbr><a class="struct" href=''>xcb_change_property_request_t</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-9410' class='srclink' href='../../../src/xcb/ffi/xproto.rs.html#2128-2146' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct xcb_change_property_request_t {
-    pub major_opcode: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub mode: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub length: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub window: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_window_t.html' title='xcb::ffi::xproto::xcb_window_t'>xcb_window_t</a>,
-    pub property: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_atom_t.html' title='xcb::ffi::xproto::xcb_atom_t'>xcb_atom_t</a>,
-    pub type_: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_atom_t.html' title='xcb::ffi::xproto::xcb_atom_t'>xcb_atom_t</a>,
-    pub format: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub pad0: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 3]</a>,
-    pub data_len: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+               </span><a class='srclink' href='../../../src/xcb/ffi/xproto.rs.html#2126-2144' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct xcb_change_property_request_t {
+    pub major_opcode: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub mode: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub length: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub window: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_window_t.html" title="type xcb::ffi::xproto::xcb_window_t">xcb_window_t</a>,
+    pub property: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_atom_t.html" title="type xcb::ffi::xproto::xcb_atom_t">xcb_atom_t</a>,
+    pub type_: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_atom_t.html" title="type xcb::ffi::xproto::xcb_atom_t">xcb_atom_t</a>,
+    pub format: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub pad0: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 3]</a>,
+    pub data_len: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
 }</pre><div class='docblock'><p>Changes a window property</p>
 
 <p>Sets or updates a property on the specified <code>window</code>. Properties are for
 example the window title (<code>WM_NAME</code>) or its minimum size (<code>WM_NORMAL_HINTS</code>).
 Protocols such as EWMH also use properties - for example EWMH defines the
 window title, encoded as UTF-8 string, in the <code>_NET_WM_NAME</code> property.</p>
-</div><h2 class='fields'>Fields</h2><span id='structfield.major_opcode' class='structfield'><code>major_opcode: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.mode' class='structfield'><code>mode: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><div class='docblock'></div><span id='structfield.length' class='structfield'><code>length: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.window' class='structfield'><code>window: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_window_t.html' title='xcb::ffi::xproto::xcb_window_t'>xcb_window_t</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>The window whose property you want to change.</p>
-</div><span id='structfield.property' class='structfield'><code>property: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_atom_t.html' title='xcb::ffi::xproto::xcb_atom_t'>xcb_atom_t</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>The property you want to change (an atom).</p>
-</div><span id='structfield.type_' class='structfield'><code>type_: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_atom_t.html' title='xcb::ffi::xproto::xcb_atom_t'>xcb_atom_t</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>The type of the property you want to change (an atom).</p>
-</div><span id='structfield.format' class='structfield'><code>format: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>Specifies whether the data should be viewed as a list of 8-bit, 16-bit or
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.major_opcode" class="structfield small-section-header">
+                           <a href="#structfield.major_opcode" class="anchor field"></a>
+                           <span id="major_opcode.v" class='invisible'>
+                           <code>major_opcode: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.mode" class="structfield small-section-header">
+                           <a href="#structfield.mode" class="anchor field"></a>
+                           <span id="mode.v" class='invisible'>
+                           <code>mode: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><div class='docblock'></div><span id="structfield.length" class="structfield small-section-header">
+                           <a href="#structfield.length" class="anchor field"></a>
+                           <span id="length.v" class='invisible'>
+                           <code>length: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.window" class="structfield small-section-header">
+                           <a href="#structfield.window" class="anchor field"></a>
+                           <span id="window.v" class='invisible'>
+                           <code>window: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_window_t.html" title="type xcb::ffi::xproto::xcb_window_t">xcb_window_t</a></code>
+                           </span></span><div class='docblock'><p>The window whose property you want to change.</p>
+</div><span id="structfield.property" class="structfield small-section-header">
+                           <a href="#structfield.property" class="anchor field"></a>
+                           <span id="property.v" class='invisible'>
+                           <code>property: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_atom_t.html" title="type xcb::ffi::xproto::xcb_atom_t">xcb_atom_t</a></code>
+                           </span></span><div class='docblock'><p>The property you want to change (an atom).</p>
+</div><span id="structfield.type_" class="structfield small-section-header">
+                           <a href="#structfield.type_" class="anchor field"></a>
+                           <span id="type_.v" class='invisible'>
+                           <code>type_: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_atom_t.html" title="type xcb::ffi::xproto::xcb_atom_t">xcb_atom_t</a></code>
+                           </span></span><div class='docblock'><p>The type of the property you want to change (an atom).</p>
+</div><span id="structfield.format" class="structfield small-section-header">
+                           <a href="#structfield.format" class="anchor field"></a>
+                           <span id="format.v" class='invisible'>
+                           <code>format: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><div class='docblock'><p>Specifies whether the data should be viewed as a list of 8-bit, 16-bit or
 32-bit quantities. Possible values are 8, 16 and 32. This information allows
 the X server to correctly perform byte-swap operations as necessary.</p>
-</div><span id='structfield.pad0' class='structfield'><code>pad0: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 3]</a></code>
-                           </span><span class='stab '></span><span id='structfield.data_len' class='structfield'><code>data_len: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>Specifies the number of elements (see <code>format</code>).</p>
+</div><span id="structfield.pad0" class="structfield small-section-header">
+                           <a href="#structfield.pad0" class="anchor field"></a>
+                           <span id="pad0.v" class='invisible'>
+                           <code>pad0: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 3]</a></code>
+                           </span></span><span id="structfield.data_len" class="structfield small-section-header">
+                           <a href="#structfield.data_len" class="anchor field"></a>
+                           <span id="data_len.v" class='invisible'>
+                           <code>data_len: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><div class='docblock'><p>Specifies the number of elements (see <code>format</code>).</p>
 </div></section>
     <section id='search' class="content hidden"></section>
 
@@ -97,13 +128,15 @@ the X server to correctly perform byte-swap operations as necessary.</p>
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -136,11 +169,8 @@ the X server to correctly perform byte-swap operations as necessary.</p>
     <script>
         window.rootPath = "../../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../../jquery.js"></script>
     <script src="../../../main.js"></script>
-    
     <script defer src="../../../search-index.js"></script>
 </body>
 </html>

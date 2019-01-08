@@ -9,6 +9,7 @@
 
     <title>xcb::ffi::xkb::xcb_xkb_set_compat_map_request_t - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc struct">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'><a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'xcb_xkb_set_compat_map_request_t', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Struct xcb_xkb_set_compat_map_request_t</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.major_opcode">major_opcode</a><a href="#structfield.minor_opcode">minor_opcode</a><a href="#structfield.length">length</a><a href="#structfield.deviceSpec">deviceSpec</a><a href="#structfield.pad0">pad0</a><a href="#structfield.recomputeActions">recomputeActions</a><a href="#structfield.truncateSI">truncateSI</a><a href="#structfield.groups">groups</a><a href="#structfield.firstSI">firstSI</a><a href="#structfield.nSI">nSI</a><a href="#structfield.pad1">pad1</a></div></div><p class='location'><a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'xcb_xkb_set_compat_map_request_t', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -42,36 +44,71 @@
         </form>
     </nav>
 
-    <section id='main' class="content struct">
-<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class='struct' href=''>xcb_xkb_set_compat_map_request_t</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class="struct" href=''>xcb_xkb_set_compat_map_request_t</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-14941' class='srclink' href='../../../src/xcb/ffi/xkb.rs.html#2041-2053' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct xcb_xkb_set_compat_map_request_t {
-    pub major_opcode: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub minor_opcode: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub length: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub deviceSpec: <a class='type' href='../../../xcb/ffi/xkb/type.xcb_xkb_device_spec_t.html' title='xcb::ffi::xkb::xcb_xkb_device_spec_t'>xcb_xkb_device_spec_t</a>,
-    pub pad0: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub recomputeActions: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub truncateSI: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub groups: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub firstSI: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub nSI: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub pad1: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 2]</a>,
-}</pre><h2 class='fields'>Fields</h2><span id='structfield.major_opcode' class='structfield'><code>major_opcode: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.minor_opcode' class='structfield'><code>minor_opcode: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.length' class='structfield'><code>length: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.deviceSpec' class='structfield'><code>deviceSpec: <a class='type' href='../../../xcb/ffi/xkb/type.xcb_xkb_device_spec_t.html' title='xcb::ffi::xkb::xcb_xkb_device_spec_t'>xcb_xkb_device_spec_t</a></code>
-                           </span><span class='stab '></span><span id='structfield.pad0' class='structfield'><code>pad0: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.recomputeActions' class='structfield'><code>recomputeActions: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.truncateSI' class='structfield'><code>truncateSI: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.groups' class='structfield'><code>groups: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.firstSI' class='structfield'><code>firstSI: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.nSI' class='structfield'><code>nSI: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.pad1' class='structfield'><code>pad1: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 2]</a></code>
-                           </span><span class='stab '></span></section>
+               </span><a class='srclink' href='../../../src/xcb/ffi/xkb.rs.html#2019-2031' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct xcb_xkb_set_compat_map_request_t {
+    pub major_opcode: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub minor_opcode: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub length: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub deviceSpec: <a class="type" href="../../../xcb/ffi/xkb/type.xcb_xkb_device_spec_t.html" title="type xcb::ffi::xkb::xcb_xkb_device_spec_t">xcb_xkb_device_spec_t</a>,
+    pub pad0: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub recomputeActions: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub truncateSI: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub groups: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub firstSI: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub nSI: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub pad1: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 2]</a>,
+}</pre><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.major_opcode" class="structfield small-section-header">
+                           <a href="#structfield.major_opcode" class="anchor field"></a>
+                           <span id="major_opcode.v" class='invisible'>
+                           <code>major_opcode: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.minor_opcode" class="structfield small-section-header">
+                           <a href="#structfield.minor_opcode" class="anchor field"></a>
+                           <span id="minor_opcode.v" class='invisible'>
+                           <code>minor_opcode: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.length" class="structfield small-section-header">
+                           <a href="#structfield.length" class="anchor field"></a>
+                           <span id="length.v" class='invisible'>
+                           <code>length: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.deviceSpec" class="structfield small-section-header">
+                           <a href="#structfield.deviceSpec" class="anchor field"></a>
+                           <span id="deviceSpec.v" class='invisible'>
+                           <code>deviceSpec: <a class="type" href="../../../xcb/ffi/xkb/type.xcb_xkb_device_spec_t.html" title="type xcb::ffi::xkb::xcb_xkb_device_spec_t">xcb_xkb_device_spec_t</a></code>
+                           </span></span><span id="structfield.pad0" class="structfield small-section-header">
+                           <a href="#structfield.pad0" class="anchor field"></a>
+                           <span id="pad0.v" class='invisible'>
+                           <code>pad0: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.recomputeActions" class="structfield small-section-header">
+                           <a href="#structfield.recomputeActions" class="anchor field"></a>
+                           <span id="recomputeActions.v" class='invisible'>
+                           <code>recomputeActions: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.truncateSI" class="structfield small-section-header">
+                           <a href="#structfield.truncateSI" class="anchor field"></a>
+                           <span id="truncateSI.v" class='invisible'>
+                           <code>truncateSI: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.groups" class="structfield small-section-header">
+                           <a href="#structfield.groups" class="anchor field"></a>
+                           <span id="groups.v" class='invisible'>
+                           <code>groups: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.firstSI" class="structfield small-section-header">
+                           <a href="#structfield.firstSI" class="anchor field"></a>
+                           <span id="firstSI.v" class='invisible'>
+                           <code>firstSI: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.nSI" class="structfield small-section-header">
+                           <a href="#structfield.nSI" class="anchor field"></a>
+                           <span id="nSI.v" class='invisible'>
+                           <code>nSI: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.pad1" class="structfield small-section-header">
+                           <a href="#structfield.pad1" class="anchor field"></a>
+                           <span id="pad1.v" class='invisible'>
+                           <code>pad1: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 2]</a></code>
+                           </span></span></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
@@ -88,13 +125,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -127,11 +166,8 @@
     <script>
         window.rootPath = "../../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../../jquery.js"></script>
     <script src="../../../main.js"></script>
-    
     <script defer src="../../../search-index.js"></script>
 </body>
 </html>

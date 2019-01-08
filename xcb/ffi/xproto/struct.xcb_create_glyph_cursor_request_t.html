@@ -9,6 +9,7 @@
 
     <title>xcb::ffi::xproto::xcb_create_glyph_cursor_request_t - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc struct">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'><a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xproto</a></p><script>window.sidebarCurrent = {name: 'xcb_create_glyph_cursor_request_t', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Struct xcb_create_glyph_cursor_request_t</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.major_opcode">major_opcode</a><a href="#structfield.pad0">pad0</a><a href="#structfield.length">length</a><a href="#structfield.cid">cid</a><a href="#structfield.source_font">source_font</a><a href="#structfield.mask_font">mask_font</a><a href="#structfield.source_char">source_char</a><a href="#structfield.mask_char">mask_char</a><a href="#structfield.fore_red">fore_red</a><a href="#structfield.fore_green">fore_green</a><a href="#structfield.fore_blue">fore_blue</a><a href="#structfield.back_red">back_red</a><a href="#structfield.back_green">back_green</a><a href="#structfield.back_blue">back_blue</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Copy">Copy</a><a href="#impl-Clone">Clone</a></div></div><p class='location'><a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xproto</a></p><script>window.sidebarCurrent = {name: 'xcb_create_glyph_cursor_request_t', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -42,27 +44,28 @@
         </form>
     </nav>
 
-    <section id='main' class="content struct">
-<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xproto</a>::<wbr><a class='struct' href=''>xcb_create_glyph_cursor_request_t</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xproto</a>::<wbr><a class="struct" href=''>xcb_create_glyph_cursor_request_t</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-10893' class='srclink' href='../../../src/xcb/ffi/xproto.rs.html#4786-4814' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct xcb_create_glyph_cursor_request_t {
-    pub major_opcode: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub pad0: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub length: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub cid: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_cursor_t.html' title='xcb::ffi::xproto::xcb_cursor_t'>xcb_cursor_t</a>,
-    pub source_font: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_font_t.html' title='xcb::ffi::xproto::xcb_font_t'>xcb_font_t</a>,
-    pub mask_font: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_font_t.html' title='xcb::ffi::xproto::xcb_font_t'>xcb_font_t</a>,
-    pub source_char: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub mask_char: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub fore_red: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub fore_green: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub fore_blue: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub back_red: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub back_green: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub back_blue: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
+               </span><a class='srclink' href='../../../src/xcb/ffi/xproto.rs.html#4782-4810' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct xcb_create_glyph_cursor_request_t {
+    pub major_opcode: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub pad0: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub length: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub cid: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_cursor_t.html" title="type xcb::ffi::xproto::xcb_cursor_t">xcb_cursor_t</a>,
+    pub source_font: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_font_t.html" title="type xcb::ffi::xproto::xcb_font_t">xcb_font_t</a>,
+    pub mask_font: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_font_t.html" title="type xcb::ffi::xproto::xcb_font_t">xcb_font_t</a>,
+    pub source_char: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub mask_char: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub fore_red: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub fore_green: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub fore_blue: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub back_red: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub back_green: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub back_blue: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
 }</pre><div class='docblock'><p>create cursor</p>
 
 <p>Creates a cursor from a font glyph. X provides a set of standard cursor shapes
@@ -74,38 +77,85 @@ individual display type.</p>
 specified by <code>fore_red</code>, <code>fore_green</code> and <code>fore_blue</code>). All pixels set to 0
 will use the background color (as specified by <code>back_red</code>, <code>back_green</code> and
 <code>back_blue</code>).</p>
-</div><h2 class='fields'>Fields</h2><span id='structfield.major_opcode' class='structfield'><code>major_opcode: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.pad0' class='structfield'><code>pad0: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.length' class='structfield'><code>length: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.cid' class='structfield'><code>cid: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_cursor_t.html' title='xcb::ffi::xproto::xcb_cursor_t'>xcb_cursor_t</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>The ID with which you will refer to the cursor, created by <code>xcb_generate_id</code>.</p>
-</div><span id='structfield.source_font' class='structfield'><code>source_font: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_font_t.html' title='xcb::ffi::xproto::xcb_font_t'>xcb_font_t</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>In which font to look for the cursor glyph.</p>
-</div><span id='structfield.mask_font' class='structfield'><code>mask_font: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_font_t.html' title='xcb::ffi::xproto::xcb_font_t'>xcb_font_t</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>In which font to look for the mask glyph.</p>
-</div><span id='structfield.source_char' class='structfield'><code>source_char: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>The glyph of <code>source_font</code> to use.</p>
-</div><span id='structfield.mask_char' class='structfield'><code>mask_char: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>The glyph of <code>mask_font</code> to use as a mask: Pixels which are set to 1 define
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.major_opcode" class="structfield small-section-header">
+                           <a href="#structfield.major_opcode" class="anchor field"></a>
+                           <span id="major_opcode.v" class='invisible'>
+                           <code>major_opcode: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.pad0" class="structfield small-section-header">
+                           <a href="#structfield.pad0" class="anchor field"></a>
+                           <span id="pad0.v" class='invisible'>
+                           <code>pad0: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.length" class="structfield small-section-header">
+                           <a href="#structfield.length" class="anchor field"></a>
+                           <span id="length.v" class='invisible'>
+                           <code>length: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.cid" class="structfield small-section-header">
+                           <a href="#structfield.cid" class="anchor field"></a>
+                           <span id="cid.v" class='invisible'>
+                           <code>cid: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_cursor_t.html" title="type xcb::ffi::xproto::xcb_cursor_t">xcb_cursor_t</a></code>
+                           </span></span><div class='docblock'><p>The ID with which you will refer to the cursor, created by <code>xcb_generate_id</code>.</p>
+</div><span id="structfield.source_font" class="structfield small-section-header">
+                           <a href="#structfield.source_font" class="anchor field"></a>
+                           <span id="source_font.v" class='invisible'>
+                           <code>source_font: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_font_t.html" title="type xcb::ffi::xproto::xcb_font_t">xcb_font_t</a></code>
+                           </span></span><div class='docblock'><p>In which font to look for the cursor glyph.</p>
+</div><span id="structfield.mask_font" class="structfield small-section-header">
+                           <a href="#structfield.mask_font" class="anchor field"></a>
+                           <span id="mask_font.v" class='invisible'>
+                           <code>mask_font: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_font_t.html" title="type xcb::ffi::xproto::xcb_font_t">xcb_font_t</a></code>
+                           </span></span><div class='docblock'><p>In which font to look for the mask glyph.</p>
+</div><span id="structfield.source_char" class="structfield small-section-header">
+                           <a href="#structfield.source_char" class="anchor field"></a>
+                           <span id="source_char.v" class='invisible'>
+                           <code>source_char: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><div class='docblock'><p>The glyph of <code>source_font</code> to use.</p>
+</div><span id="structfield.mask_char" class="structfield small-section-header">
+                           <a href="#structfield.mask_char" class="anchor field"></a>
+                           <span id="mask_char.v" class='invisible'>
+                           <code>mask_char: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><div class='docblock'><p>The glyph of <code>mask_font</code> to use as a mask: Pixels which are set to 1 define
 which source pixels are displayed. All pixels which are set to 0 are not
 displayed.</p>
-</div><span id='structfield.fore_red' class='structfield'><code>fore_red: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>The red value of the foreground color.</p>
-</div><span id='structfield.fore_green' class='structfield'><code>fore_green: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>The green value of the foreground color.</p>
-</div><span id='structfield.fore_blue' class='structfield'><code>fore_blue: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>The blue value of the foreground color.</p>
-</div><span id='structfield.back_red' class='structfield'><code>back_red: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>The red value of the background color.</p>
-</div><span id='structfield.back_green' class='structfield'><code>back_green: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>The green value of the background color.</p>
-</div><span id='structfield.back_blue' class='structfield'><code>back_blue: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>The blue value of the background color.</p>
-</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../../xcb/ffi/xproto/struct.xcb_create_glyph_cursor_request_t.html' title='xcb::ffi::xproto::xcb_create_glyph_cursor_request_t'>xcb_create_glyph_cursor_request_t</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-10908' class='srclink' href='../../../src/xcb/ffi/xproto.rs.html#4816' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../../xcb/ffi/xproto/struct.xcb_create_glyph_cursor_request_t.html' title='xcb::ffi::xproto::xcb_create_glyph_cursor_request_t'>xcb_create_glyph_cursor_request_t</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-10909' class='srclink' href='../../../src/xcb/ffi/xproto.rs.html#4817-4819' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../../xcb/ffi/xproto/struct.xcb_create_glyph_cursor_request_t.html' title='xcb::ffi::xproto::xcb_create_glyph_cursor_request_t'>xcb_create_glyph_cursor_request_t</a></code></h4>
+</div><span id="structfield.fore_red" class="structfield small-section-header">
+                           <a href="#structfield.fore_red" class="anchor field"></a>
+                           <span id="fore_red.v" class='invisible'>
+                           <code>fore_red: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><div class='docblock'><p>The red value of the foreground color.</p>
+</div><span id="structfield.fore_green" class="structfield small-section-header">
+                           <a href="#structfield.fore_green" class="anchor field"></a>
+                           <span id="fore_green.v" class='invisible'>
+                           <code>fore_green: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><div class='docblock'><p>The green value of the foreground color.</p>
+</div><span id="structfield.fore_blue" class="structfield small-section-header">
+                           <a href="#structfield.fore_blue" class="anchor field"></a>
+                           <span id="fore_blue.v" class='invisible'>
+                           <code>fore_blue: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><div class='docblock'><p>The blue value of the foreground color.</p>
+</div><span id="structfield.back_red" class="structfield small-section-header">
+                           <a href="#structfield.back_red" class="anchor field"></a>
+                           <span id="back_red.v" class='invisible'>
+                           <code>back_red: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><div class='docblock'><p>The red value of the background color.</p>
+</div><span id="structfield.back_green" class="structfield small-section-header">
+                           <a href="#structfield.back_green" class="anchor field"></a>
+                           <span id="back_green.v" class='invisible'>
+                           <code>back_green: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><div class='docblock'><p>The green value of the background color.</p>
+</div><span id="structfield.back_blue" class="structfield small-section-header">
+                           <a href="#structfield.back_blue" class="anchor field"></a>
+                           <span id="back_blue.v" class='invisible'>
+                           <code>back_blue: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><div class='docblock'><p>The blue value of the background color.</p>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Copy' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> for <a class="struct" href="../../../xcb/ffi/xproto/struct.xcb_create_glyph_cursor_request_t.html" title="struct xcb::ffi::xproto::xcb_create_glyph_cursor_request_t">xcb_create_glyph_cursor_request_t</a></code><a href='#impl-Copy' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/xcb/ffi/xproto.rs.html#4812' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../../xcb/ffi/xproto/struct.xcb_create_glyph_cursor_request_t.html" title="struct xcb::ffi::xproto::xcb_create_glyph_cursor_request_t">xcb_create_glyph_cursor_request_t</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/xcb/ffi/xproto.rs.html#4813-4815' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../../xcb/ffi/xproto/struct.xcb_create_glyph_cursor_request_t.html" title="struct xcb::ffi::xproto::xcb_create_glyph_cursor_request_t">xcb_create_glyph_cursor_request_t</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/xcb/ffi/xproto.rs.html#4814' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
-</div><h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
 </div></div></section>
     <section id='search' class="content hidden"></section>
@@ -124,13 +174,15 @@ displayed.</p>
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -163,11 +215,8 @@ displayed.</p>
     <script>
         window.rootPath = "../../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../../jquery.js"></script>
     <script src="../../../main.js"></script>
-    
     <script defer src="../../../search-index.js"></script>
 </body>
 </html>

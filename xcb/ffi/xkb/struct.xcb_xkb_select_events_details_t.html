@@ -9,6 +9,7 @@
 
     <title>xcb::ffi::xkb::xcb_xkb_select_events_details_t - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc struct">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'><a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'xcb_xkb_select_events_details_t', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Struct xcb_xkb_select_events_details_t</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.affectNewKeyboard">affectNewKeyboard</a><a href="#structfield.newKeyboardDetails">newKeyboardDetails</a><a href="#structfield.affectState">affectState</a><a href="#structfield.stateDetails">stateDetails</a><a href="#structfield.affectCtrls">affectCtrls</a><a href="#structfield.ctrlDetails">ctrlDetails</a><a href="#structfield.affectIndicatorState">affectIndicatorState</a><a href="#structfield.indicatorStateDetails">indicatorStateDetails</a><a href="#structfield.affectIndicatorMap">affectIndicatorMap</a><a href="#structfield.indicatorMapDetails">indicatorMapDetails</a><a href="#structfield.affectNames">affectNames</a><a href="#structfield.namesDetails">namesDetails</a><a href="#structfield.affectCompat">affectCompat</a><a href="#structfield.compatDetails">compatDetails</a><a href="#structfield.affectBell">affectBell</a><a href="#structfield.bellDetails">bellDetails</a><a href="#structfield.affectMsgDetails">affectMsgDetails</a><a href="#structfield.msgDetails">msgDetails</a><a href="#structfield.affectAccessX">affectAccessX</a><a href="#structfield.accessXDetails">accessXDetails</a><a href="#structfield.affectExtDev">affectExtDev</a><a href="#structfield.extdevDetails">extdevDetails</a></div></div><p class='location'><a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'xcb_xkb_select_events_details_t', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -42,58 +44,126 @@
         </form>
     </nav>
 
-    <section id='main' class="content struct">
-<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class='struct' href=''>xcb_xkb_select_events_details_t</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class="struct" href=''>xcb_xkb_select_events_details_t</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-14563' class='srclink' href='../../../src/xcb/ffi/xkb.rs.html#1611-1634' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct xcb_xkb_select_events_details_t {
-    pub affectNewKeyboard: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub newKeyboardDetails: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub affectState: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub stateDetails: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub affectCtrls: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
-    pub ctrlDetails: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
-    pub affectIndicatorState: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
-    pub indicatorStateDetails: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
-    pub affectIndicatorMap: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
-    pub indicatorMapDetails: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
-    pub affectNames: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub namesDetails: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub affectCompat: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub compatDetails: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub affectBell: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub bellDetails: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub affectMsgDetails: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub msgDetails: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub affectAccessX: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub accessXDetails: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub affectExtDev: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub extdevDetails: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-}</pre><h2 class='fields'>Fields</h2><span id='structfield.affectNewKeyboard' class='structfield'><code>affectNewKeyboard: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.newKeyboardDetails' class='structfield'><code>newKeyboardDetails: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.affectState' class='structfield'><code>affectState: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.stateDetails' class='structfield'><code>stateDetails: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.affectCtrls' class='structfield'><code>affectCtrls: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code>
-                           </span><span class='stab '></span><span id='structfield.ctrlDetails' class='structfield'><code>ctrlDetails: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code>
-                           </span><span class='stab '></span><span id='structfield.affectIndicatorState' class='structfield'><code>affectIndicatorState: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code>
-                           </span><span class='stab '></span><span id='structfield.indicatorStateDetails' class='structfield'><code>indicatorStateDetails: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code>
-                           </span><span class='stab '></span><span id='structfield.affectIndicatorMap' class='structfield'><code>affectIndicatorMap: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code>
-                           </span><span class='stab '></span><span id='structfield.indicatorMapDetails' class='structfield'><code>indicatorMapDetails: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code>
-                           </span><span class='stab '></span><span id='structfield.affectNames' class='structfield'><code>affectNames: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.namesDetails' class='structfield'><code>namesDetails: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.affectCompat' class='structfield'><code>affectCompat: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.compatDetails' class='structfield'><code>compatDetails: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.affectBell' class='structfield'><code>affectBell: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.bellDetails' class='structfield'><code>bellDetails: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.affectMsgDetails' class='structfield'><code>affectMsgDetails: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.msgDetails' class='structfield'><code>msgDetails: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.affectAccessX' class='structfield'><code>affectAccessX: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.accessXDetails' class='structfield'><code>accessXDetails: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.affectExtDev' class='structfield'><code>affectExtDev: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.extdevDetails' class='structfield'><code>extdevDetails: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span></section>
+               </span><a class='srclink' href='../../../src/xcb/ffi/xkb.rs.html#1589-1612' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct xcb_xkb_select_events_details_t {
+    pub affectNewKeyboard: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub newKeyboardDetails: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub affectState: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub stateDetails: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub affectCtrls: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub ctrlDetails: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub affectIndicatorState: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub indicatorStateDetails: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub affectIndicatorMap: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub indicatorMapDetails: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub affectNames: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub namesDetails: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub affectCompat: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub compatDetails: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub affectBell: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub bellDetails: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub affectMsgDetails: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub msgDetails: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub affectAccessX: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub accessXDetails: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub affectExtDev: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub extdevDetails: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+}</pre><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.affectNewKeyboard" class="structfield small-section-header">
+                           <a href="#structfield.affectNewKeyboard" class="anchor field"></a>
+                           <span id="affectNewKeyboard.v" class='invisible'>
+                           <code>affectNewKeyboard: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.newKeyboardDetails" class="structfield small-section-header">
+                           <a href="#structfield.newKeyboardDetails" class="anchor field"></a>
+                           <span id="newKeyboardDetails.v" class='invisible'>
+                           <code>newKeyboardDetails: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.affectState" class="structfield small-section-header">
+                           <a href="#structfield.affectState" class="anchor field"></a>
+                           <span id="affectState.v" class='invisible'>
+                           <code>affectState: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.stateDetails" class="structfield small-section-header">
+                           <a href="#structfield.stateDetails" class="anchor field"></a>
+                           <span id="stateDetails.v" class='invisible'>
+                           <code>stateDetails: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.affectCtrls" class="structfield small-section-header">
+                           <a href="#structfield.affectCtrls" class="anchor field"></a>
+                           <span id="affectCtrls.v" class='invisible'>
+                           <code>affectCtrls: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><span id="structfield.ctrlDetails" class="structfield small-section-header">
+                           <a href="#structfield.ctrlDetails" class="anchor field"></a>
+                           <span id="ctrlDetails.v" class='invisible'>
+                           <code>ctrlDetails: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><span id="structfield.affectIndicatorState" class="structfield small-section-header">
+                           <a href="#structfield.affectIndicatorState" class="anchor field"></a>
+                           <span id="affectIndicatorState.v" class='invisible'>
+                           <code>affectIndicatorState: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><span id="structfield.indicatorStateDetails" class="structfield small-section-header">
+                           <a href="#structfield.indicatorStateDetails" class="anchor field"></a>
+                           <span id="indicatorStateDetails.v" class='invisible'>
+                           <code>indicatorStateDetails: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><span id="structfield.affectIndicatorMap" class="structfield small-section-header">
+                           <a href="#structfield.affectIndicatorMap" class="anchor field"></a>
+                           <span id="affectIndicatorMap.v" class='invisible'>
+                           <code>affectIndicatorMap: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><span id="structfield.indicatorMapDetails" class="structfield small-section-header">
+                           <a href="#structfield.indicatorMapDetails" class="anchor field"></a>
+                           <span id="indicatorMapDetails.v" class='invisible'>
+                           <code>indicatorMapDetails: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><span id="structfield.affectNames" class="structfield small-section-header">
+                           <a href="#structfield.affectNames" class="anchor field"></a>
+                           <span id="affectNames.v" class='invisible'>
+                           <code>affectNames: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.namesDetails" class="structfield small-section-header">
+                           <a href="#structfield.namesDetails" class="anchor field"></a>
+                           <span id="namesDetails.v" class='invisible'>
+                           <code>namesDetails: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.affectCompat" class="structfield small-section-header">
+                           <a href="#structfield.affectCompat" class="anchor field"></a>
+                           <span id="affectCompat.v" class='invisible'>
+                           <code>affectCompat: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.compatDetails" class="structfield small-section-header">
+                           <a href="#structfield.compatDetails" class="anchor field"></a>
+                           <span id="compatDetails.v" class='invisible'>
+                           <code>compatDetails: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.affectBell" class="structfield small-section-header">
+                           <a href="#structfield.affectBell" class="anchor field"></a>
+                           <span id="affectBell.v" class='invisible'>
+                           <code>affectBell: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.bellDetails" class="structfield small-section-header">
+                           <a href="#structfield.bellDetails" class="anchor field"></a>
+                           <span id="bellDetails.v" class='invisible'>
+                           <code>bellDetails: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.affectMsgDetails" class="structfield small-section-header">
+                           <a href="#structfield.affectMsgDetails" class="anchor field"></a>
+                           <span id="affectMsgDetails.v" class='invisible'>
+                           <code>affectMsgDetails: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.msgDetails" class="structfield small-section-header">
+                           <a href="#structfield.msgDetails" class="anchor field"></a>
+                           <span id="msgDetails.v" class='invisible'>
+                           <code>msgDetails: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.affectAccessX" class="structfield small-section-header">
+                           <a href="#structfield.affectAccessX" class="anchor field"></a>
+                           <span id="affectAccessX.v" class='invisible'>
+                           <code>affectAccessX: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.accessXDetails" class="structfield small-section-header">
+                           <a href="#structfield.accessXDetails" class="anchor field"></a>
+                           <span id="accessXDetails.v" class='invisible'>
+                           <code>accessXDetails: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.affectExtDev" class="structfield small-section-header">
+                           <a href="#structfield.affectExtDev" class="anchor field"></a>
+                           <span id="affectExtDev.v" class='invisible'>
+                           <code>affectExtDev: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.extdevDetails" class="structfield small-section-header">
+                           <a href="#structfield.extdevDetails" class="anchor field"></a>
+                           <span id="extdevDetails.v" class='invisible'>
+                           <code>extdevDetails: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
@@ -110,13 +180,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -149,11 +221,8 @@
     <script>
         window.rootPath = "../../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../../jquery.js"></script>
     <script src="../../../main.js"></script>
-    
     <script defer src="../../../search-index.js"></script>
 </body>
 </html>

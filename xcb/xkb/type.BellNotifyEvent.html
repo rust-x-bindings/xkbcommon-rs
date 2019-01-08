@@ -9,6 +9,7 @@
 
     <title>xcb::xkb::BellNotifyEvent - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc type">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'BellNotifyEvent', ty: 'type', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Type Definition BellNotifyEvent</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.xkb_type">xkb_type</a><a href="#method.time">time</a><a href="#method.device_i_d">device_i_d</a><a href="#method.bell_class">bell_class</a><a href="#method.bell_i_d">bell_i_d</a><a href="#method.percent">percent</a><a href="#method.pitch">pitch</a><a href="#method.duration">duration</a><a href="#method.name">name</a><a href="#method.window">window</a><a href="#method.event_only">event_only</a><a href="#method.new">new</a></div></div><p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'BellNotifyEvent', ty: 'type', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -42,13 +44,32 @@
         </form>
     </nav>
 
-    <section id='main' class="content type">
-<h1 class='fqn'><span class='in-band'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class='type' href=''>BellNotifyEvent</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Type Definition <a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class="type" href=''>BellNotifyEvent</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-7805' class='srclink' href='../../src/xcb/xkb.rs.html#6423' title='goto source code'>[src]</a></span></h1>
-<pre class='rust typedef'>type BellNotifyEvent = <a class='struct' href='../../xcb/base/struct.Event.html' title='xcb::base::Event'>Event</a>&lt;<a class='struct' href='../../xcb/ffi/xkb/struct.xcb_xkb_bell_notify_event_t.html' title='xcb::ffi::xkb::xcb_xkb_bell_notify_event_t'>xcb_xkb_bell_notify_event_t</a>&gt;;</pre></section>
+               </span><a class='srclink' href='../../src/xcb/xkb.rs.html#7299' title='goto source code'>[src]</a></span></h1>
+<pre class='rust typedef'>type BellNotifyEvent = <a class="struct" href="../../xcb/base/struct.Event.html" title="struct xcb::base::Event">Event</a>&lt;<a class="struct" href="../../xcb/ffi/xkb/struct.xcb_xkb_bell_notify_event_t.html" title="struct xcb::ffi::xkb::xcb_xkb_bell_notify_event_t">xcb_xkb_bell_notify_event_t</a>&gt;;</pre>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="type" href="../../xcb/xkb/type.BellNotifyEvent.html" title="type xcb::xkb::BellNotifyEvent">BellNotifyEvent</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7301-7390' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.xkb_type' class="method"><span id='xkb_type.v' class='invisible'><code>pub fn <a href='#method.xkb_type' class='fnname'>xkb_type</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7302-7306' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.time' class="method"><span id='time.v' class='invisible'><code>pub fn <a href='#method.time' class='fnname'>time</a>(&amp;self) -&gt; <a class="type" href="../../xcb/xproto/type.Timestamp.html" title="type xcb::xproto::Timestamp">Timestamp</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7307-7311' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.device_i_d' class="method"><span id='device_i_d.v' class='invisible'><code>pub fn <a href='#method.device_i_d' class='fnname'>device_i_d</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7312-7316' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.bell_class' class="method"><span id='bell_class.v' class='invisible'><code>pub fn <a href='#method.bell_class' class='fnname'>bell_class</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7317-7321' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.bell_i_d' class="method"><span id='bell_i_d.v' class='invisible'><code>pub fn <a href='#method.bell_i_d' class='fnname'>bell_i_d</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7322-7326' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.percent' class="method"><span id='percent.v' class='invisible'><code>pub fn <a href='#method.percent' class='fnname'>percent</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7327-7331' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.pitch' class="method"><span id='pitch.v' class='invisible'><code>pub fn <a href='#method.pitch' class='fnname'>pitch</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7332-7336' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.duration' class="method"><span id='duration.v' class='invisible'><code>pub fn <a href='#method.duration' class='fnname'>duration</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7337-7341' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.name' class="method"><span id='name.v' class='invisible'><code>pub fn <a href='#method.name' class='fnname'>name</a>(&amp;self) -&gt; <a class="type" href="../../xcb/xproto/type.Atom.html" title="type xcb::xproto::Atom">Atom</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7342-7346' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.window' class="method"><span id='window.v' class='invisible'><code>pub fn <a href='#method.window' class='fnname'>window</a>(&amp;self) -&gt; <a class="type" href="../../xcb/xproto/type.Window.html" title="type xcb::xproto::Window">Window</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7347-7351' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.event_only' class="method"><span id='event_only.v' class='invisible'><code>pub fn <a href='#method.event_only' class='fnname'>event_only</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7352-7356' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;xkb_type: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;time: <a class="type" href="../../xcb/xproto/type.Timestamp.html" title="type xcb::xproto::Timestamp">Timestamp</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;device_i_d: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;bell_class: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;bell_i_d: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;percent: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;pitch: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;duration: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;name: <a class="type" href="../../xcb/xproto/type.Atom.html" title="type xcb::xproto::Atom">Atom</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;window: <a class="type" href="../../xcb/xproto/type.Window.html" title="type xcb::xproto::Window">Window</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;event_only: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a><br>) -&gt; <a class="type" href="../../xcb/xkb/type.BellNotifyEvent.html" title="type xcb::xkb::BellNotifyEvent">BellNotifyEvent</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7359-7389' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Constructs a new BellNotifyEvent
+<code>response_type</code> will be set automatically to BELL_NOTIFY</p>
+</div></div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
@@ -65,13 +86,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -104,11 +127,8 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

@@ -9,6 +9,7 @@
 
     <title>xcb::xproto::QueryFontReply - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc type">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xproto</a></p><script>window.sidebarCurrent = {name: 'QueryFontReply', ty: 'type', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Type Definition QueryFontReply</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.min_bounds">min_bounds</a><a href="#method.max_bounds">max_bounds</a><a href="#method.min_char_or_byte2">min_char_or_byte2</a><a href="#method.max_char_or_byte2">max_char_or_byte2</a><a href="#method.default_char">default_char</a><a href="#method.properties_len">properties_len</a><a href="#method.draw_direction">draw_direction</a><a href="#method.min_byte1">min_byte1</a><a href="#method.max_byte1">max_byte1</a><a href="#method.all_chars_exist">all_chars_exist</a><a href="#method.font_ascent">font_ascent</a><a href="#method.font_descent">font_descent</a><a href="#method.char_infos_len">char_infos_len</a><a href="#method.properties">properties</a><a href="#method.char_infos">char_infos</a></div></div><p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xproto</a></p><script>window.sidebarCurrent = {name: 'QueryFontReply', ty: 'type', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -42,13 +44,33 @@
         </form>
     </nav>
 
-    <section id='main' class="content type">
-<h1 class='fqn'><span class='in-band'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xproto</a>::<wbr><a class='type' href=''>QueryFontReply</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Type Definition <a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xproto</a>::<wbr><a class="type" href=''>QueryFontReply</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-2824' class='srclink' href='../../src/xcb/xproto.rs.html#7771' title='goto source code'>[src]</a></span></h1>
-<pre class='rust typedef'>type QueryFontReply = <a class='struct' href='../../xcb/base/struct.Reply.html' title='xcb::base::Reply'>Reply</a>&lt;<a class='struct' href='../../xcb/ffi/xproto/struct.xcb_query_font_reply_t.html' title='xcb::ffi::xproto::xcb_query_font_reply_t'>xcb_query_font_reply_t</a>&gt;;</pre></section>
+               </span><a class='srclink' href='../../src/xcb/xproto.rs.html#7824' title='goto source code'>[src]</a></span></h1>
+<pre class='rust typedef'>type QueryFontReply = <a class="struct" href="../../xcb/base/struct.Reply.html" title="struct xcb::base::Reply">Reply</a>&lt;<a class="struct" href="../../xcb/ffi/xproto/struct.xcb_query_font_reply_t.html" title="struct xcb::ffi::xproto::xcb_query_font_reply_t">xcb_query_font_reply_t</a>&gt;;</pre>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="type" href="../../xcb/xproto/type.QueryFontReply.html" title="type xcb::xproto::QueryFontReply">QueryFontReply</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#7826-7902' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.min_bounds' class="method"><span id='min_bounds.v' class='invisible'><code>pub fn <a href='#method.min_bounds' class='fnname'>min_bounds</a>(&amp;self) -&gt; <a class="struct" href="../../xcb/xproto/struct.Charinfo.html" title="struct xcb::xproto::Charinfo">Charinfo</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#7827-7831' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.max_bounds' class="method"><span id='max_bounds.v' class='invisible'><code>pub fn <a href='#method.max_bounds' class='fnname'>max_bounds</a>(&amp;self) -&gt; <a class="struct" href="../../xcb/xproto/struct.Charinfo.html" title="struct xcb::xproto::Charinfo">Charinfo</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#7832-7836' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.min_char_or_byte2' class="method"><span id='min_char_or_byte2.v' class='invisible'><code>pub fn <a href='#method.min_char_or_byte2' class='fnname'>min_char_or_byte2</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#7837-7841' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.max_char_or_byte2' class="method"><span id='max_char_or_byte2.v' class='invisible'><code>pub fn <a href='#method.max_char_or_byte2' class='fnname'>max_char_or_byte2</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#7842-7846' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.default_char' class="method"><span id='default_char.v' class='invisible'><code>pub fn <a href='#method.default_char' class='fnname'>default_char</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#7847-7851' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.properties_len' class="method"><span id='properties_len.v' class='invisible'><code>pub fn <a href='#method.properties_len' class='fnname'>properties_len</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#7852-7856' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.draw_direction' class="method"><span id='draw_direction.v' class='invisible'><code>pub fn <a href='#method.draw_direction' class='fnname'>draw_direction</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#7857-7861' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.min_byte1' class="method"><span id='min_byte1.v' class='invisible'><code>pub fn <a href='#method.min_byte1' class='fnname'>min_byte1</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#7862-7866' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.max_byte1' class="method"><span id='max_byte1.v' class='invisible'><code>pub fn <a href='#method.max_byte1' class='fnname'>max_byte1</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#7867-7871' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.all_chars_exist' class="method"><span id='all_chars_exist.v' class='invisible'><code>pub fn <a href='#method.all_chars_exist' class='fnname'>all_chars_exist</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#7872-7876' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.font_ascent' class="method"><span id='font_ascent.v' class='invisible'><code>pub fn <a href='#method.font_ascent' class='fnname'>font_ascent</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#7877-7881' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.font_descent' class="method"><span id='font_descent.v' class='invisible'><code>pub fn <a href='#method.font_descent' class='fnname'>font_descent</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#7882-7886' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.char_infos_len' class="method"><span id='char_infos_len.v' class='invisible'><code>pub fn <a href='#method.char_infos_len' class='fnname'>char_infos_len</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#7887-7891' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.properties' class="method"><div class="important-traits"><div class='tooltip'>ⓘ<span class='tooltiptext'>Important traits for <a class="type" href="../../xcb/xproto/type.FontpropIterator.html" title="type xcb::xproto::FontpropIterator">FontpropIterator</a></span></div><div class="content hidden"><h3 class="important">Important traits for <a class="type" href="../../xcb/xproto/type.FontpropIterator.html" title="type xcb::xproto::FontpropIterator">FontpropIterator</a></h3><code class="content"><span class="where fmt-newline">impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html" title="trait core::iter::iterator::Iterator">Iterator</a> for <a class="type" href="../../xcb/xproto/type.FontpropIterator.html" title="type xcb::xproto::FontpropIterator">FontpropIterator</a></span><span class="where fmt-newline">    type <a href='https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html#associatedtype.Item' class="type">Item</a> = <a class="struct" href="../../xcb/xproto/struct.Fontprop.html" title="struct xcb::xproto::Fontprop">Fontprop</a>;</span></code></div></div><span id='properties.v' class='invisible'><code>pub fn <a href='#method.properties' class='fnname'>properties</a>(&amp;self) -&gt; <a class="type" href="../../xcb/xproto/type.FontpropIterator.html" title="type xcb::xproto::FontpropIterator">FontpropIterator</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#7892-7896' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.char_infos' class="method"><div class="important-traits"><div class='tooltip'>ⓘ<span class='tooltiptext'>Important traits for <a class="type" href="../../xcb/xproto/type.CharinfoIterator.html" title="type xcb::xproto::CharinfoIterator">CharinfoIterator</a></span></div><div class="content hidden"><h3 class="important">Important traits for <a class="type" href="../../xcb/xproto/type.CharinfoIterator.html" title="type xcb::xproto::CharinfoIterator">CharinfoIterator</a></h3><code class="content"><span class="where fmt-newline">impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html" title="trait core::iter::iterator::Iterator">Iterator</a> for <a class="type" href="../../xcb/xproto/type.CharinfoIterator.html" title="type xcb::xproto::CharinfoIterator">CharinfoIterator</a></span><span class="where fmt-newline">    type <a href='https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html#associatedtype.Item' class="type">Item</a> = <a class="struct" href="../../xcb/xproto/struct.Charinfo.html" title="struct xcb::xproto::Charinfo">Charinfo</a>;</span></code></div></div><span id='char_infos.v' class='invisible'><code>pub fn <a href='#method.char_infos' class='fnname'>char_infos</a>(&amp;self) -&gt; <a class="type" href="../../xcb/xproto/type.CharinfoIterator.html" title="type xcb::xproto::CharinfoIterator">CharinfoIterator</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#7897-7901' title='goto source code'>[src]</a></span></h4>
+</div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
@@ -65,13 +87,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -104,11 +128,8 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

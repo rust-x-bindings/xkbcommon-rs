@@ -9,6 +9,7 @@
 
     <title>xcb::xkb::AccessXNotifyEvent - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc type">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'AccessXNotifyEvent', ty: 'type', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Type Definition AccessXNotifyEvent</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.xkb_type">xkb_type</a><a href="#method.time">time</a><a href="#method.device_i_d">device_i_d</a><a href="#method.keycode">keycode</a><a href="#method.detailt">detailt</a><a href="#method.slow_keys_delay">slow_keys_delay</a><a href="#method.debounce_delay">debounce_delay</a><a href="#method.new">new</a></div></div><p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'AccessXNotifyEvent', ty: 'type', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -42,13 +44,28 @@
         </form>
     </nav>
 
-    <section id='main' class="content type">
-<h1 class='fqn'><span class='in-band'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class='type' href=''>AccessXNotifyEvent</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Type Definition <a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class="type" href=''>AccessXNotifyEvent</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-7876' class='srclink' href='../../src/xcb/xkb.rs.html#6599' title='goto source code'>[src]</a></span></h1>
-<pre class='rust typedef'>type AccessXNotifyEvent = <a class='struct' href='../../xcb/base/struct.Event.html' title='xcb::base::Event'>Event</a>&lt;<a class='struct' href='../../xcb/ffi/xkb/struct.xcb_xkb_access_x_notify_event_t.html' title='xcb::ffi::xkb::xcb_xkb_access_x_notify_event_t'>xcb_xkb_access_x_notify_event_t</a>&gt;;</pre></section>
+               </span><a class='srclink' href='../../src/xcb/xkb.rs.html#7475' title='goto source code'>[src]</a></span></h1>
+<pre class='rust typedef'>type AccessXNotifyEvent = <a class="struct" href="../../xcb/base/struct.Event.html" title="struct xcb::base::Event">Event</a>&lt;<a class="struct" href="../../xcb/ffi/xkb/struct.xcb_xkb_access_x_notify_event_t.html" title="struct xcb::ffi::xkb::xcb_xkb_access_x_notify_event_t">xcb_xkb_access_x_notify_event_t</a>&gt;;</pre>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="type" href="../../xcb/xkb/type.AccessXNotifyEvent.html" title="type xcb::xkb::AccessXNotifyEvent">AccessXNotifyEvent</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7477-7538' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.xkb_type' class="method"><span id='xkb_type.v' class='invisible'><code>pub fn <a href='#method.xkb_type' class='fnname'>xkb_type</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7478-7482' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.time' class="method"><span id='time.v' class='invisible'><code>pub fn <a href='#method.time' class='fnname'>time</a>(&amp;self) -&gt; <a class="type" href="../../xcb/xproto/type.Timestamp.html" title="type xcb::xproto::Timestamp">Timestamp</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7483-7487' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.device_i_d' class="method"><span id='device_i_d.v' class='invisible'><code>pub fn <a href='#method.device_i_d' class='fnname'>device_i_d</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7488-7492' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.keycode' class="method"><span id='keycode.v' class='invisible'><code>pub fn <a href='#method.keycode' class='fnname'>keycode</a>(&amp;self) -&gt; <a class="type" href="../../xcb/xproto/type.Keycode.html" title="type xcb::xproto::Keycode">Keycode</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7493-7497' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.detailt' class="method"><span id='detailt.v' class='invisible'><code>pub fn <a href='#method.detailt' class='fnname'>detailt</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7498-7502' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.slow_keys_delay' class="method"><span id='slow_keys_delay.v' class='invisible'><code>pub fn <a href='#method.slow_keys_delay' class='fnname'>slow_keys_delay</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7503-7507' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.debounce_delay' class="method"><span id='debounce_delay.v' class='invisible'><code>pub fn <a href='#method.debounce_delay' class='fnname'>debounce_delay</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7508-7512' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;xkb_type: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;time: <a class="type" href="../../xcb/xproto/type.Timestamp.html" title="type xcb::xproto::Timestamp">Timestamp</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;device_i_d: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;keycode: <a class="type" href="../../xcb/xproto/type.Keycode.html" title="type xcb::xproto::Keycode">Keycode</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;detailt: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;slow_keys_delay: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;debounce_delay: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a><br>) -&gt; <a class="type" href="../../xcb/xkb/type.AccessXNotifyEvent.html" title="type xcb::xkb::AccessXNotifyEvent">AccessXNotifyEvent</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#7515-7537' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Constructs a new AccessXNotifyEvent
+<code>response_type</code> will be set automatically to ACCESS_X_NOTIFY</p>
+</div></div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
@@ -65,13 +82,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -104,11 +123,8 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

@@ -9,6 +9,7 @@
 
     <title>xcb::ffi::xkb::xcb_xkb_get_controls_reply_t - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc struct">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'><a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'xcb_xkb_get_controls_reply_t', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Struct xcb_xkb_get_controls_reply_t</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.response_type">response_type</a><a href="#structfield.deviceID">deviceID</a><a href="#structfield.sequence">sequence</a><a href="#structfield.length">length</a><a href="#structfield.mouseKeysDfltBtn">mouseKeysDfltBtn</a><a href="#structfield.numGroups">numGroups</a><a href="#structfield.groupsWrap">groupsWrap</a><a href="#structfield.internalModsMask">internalModsMask</a><a href="#structfield.ignoreLockModsMask">ignoreLockModsMask</a><a href="#structfield.internalModsRealMods">internalModsRealMods</a><a href="#structfield.ignoreLockModsRealMods">ignoreLockModsRealMods</a><a href="#structfield.pad0">pad0</a><a href="#structfield.internalModsVmods">internalModsVmods</a><a href="#structfield.ignoreLockModsVmods">ignoreLockModsVmods</a><a href="#structfield.repeatDelay">repeatDelay</a><a href="#structfield.repeatInterval">repeatInterval</a><a href="#structfield.slowKeysDelay">slowKeysDelay</a><a href="#structfield.debounceDelay">debounceDelay</a><a href="#structfield.mouseKeysDelay">mouseKeysDelay</a><a href="#structfield.mouseKeysInterval">mouseKeysInterval</a><a href="#structfield.mouseKeysTimeToMax">mouseKeysTimeToMax</a><a href="#structfield.mouseKeysMaxSpeed">mouseKeysMaxSpeed</a><a href="#structfield.mouseKeysCurve">mouseKeysCurve</a><a href="#structfield.accessXOption">accessXOption</a><a href="#structfield.accessXTimeout">accessXTimeout</a><a href="#structfield.accessXTimeoutOptionsMask">accessXTimeoutOptionsMask</a><a href="#structfield.accessXTimeoutOptionsValues">accessXTimeoutOptionsValues</a><a href="#structfield.pad1">pad1</a><a href="#structfield.accessXTimeoutMask">accessXTimeoutMask</a><a href="#structfield.accessXTimeoutValues">accessXTimeoutValues</a><a href="#structfield.enabledControls">enabledControls</a><a href="#structfield.perKeyRepeat">perKeyRepeat</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Copy">Copy</a><a href="#impl-Clone">Clone</a></div></div><p class='location'><a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'xcb_xkb_get_controls_reply_t', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -42,82 +44,184 @@
         </form>
     </nav>
 
-    <section id='main' class="content struct">
-<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class='struct' href=''>xcb_xkb_get_controls_reply_t</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class="struct" href=''>xcb_xkb_get_controls_reply_t</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-14702' class='srclink' href='../../../src/xcb/ffi/xkb.rs.html#1775-1808' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct xcb_xkb_get_controls_reply_t {
-    pub response_type: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub deviceID: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub sequence: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub length: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
-    pub mouseKeysDfltBtn: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub numGroups: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub groupsWrap: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub internalModsMask: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub ignoreLockModsMask: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub internalModsRealMods: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub ignoreLockModsRealMods: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub pad0: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub internalModsVmods: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub ignoreLockModsVmods: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub repeatDelay: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub repeatInterval: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub slowKeysDelay: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub debounceDelay: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub mouseKeysDelay: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub mouseKeysInterval: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub mouseKeysTimeToMax: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub mouseKeysMaxSpeed: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub mouseKeysCurve: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i16.html'>i16</a>,
-    pub accessXOption: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub accessXTimeout: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub accessXTimeoutOptionsMask: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub accessXTimeoutOptionsValues: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub pad1: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 2]</a>,
-    pub accessXTimeoutMask: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
-    pub accessXTimeoutValues: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
-    pub enabledControls: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
-    pub perKeyRepeat: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 32]</a>,
-}</pre><h2 class='fields'>Fields</h2><span id='structfield.response_type' class='structfield'><code>response_type: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.deviceID' class='structfield'><code>deviceID: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.sequence' class='structfield'><code>sequence: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.length' class='structfield'><code>length: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code>
-                           </span><span class='stab '></span><span id='structfield.mouseKeysDfltBtn' class='structfield'><code>mouseKeysDfltBtn: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.numGroups' class='structfield'><code>numGroups: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.groupsWrap' class='structfield'><code>groupsWrap: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.internalModsMask' class='structfield'><code>internalModsMask: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.ignoreLockModsMask' class='structfield'><code>ignoreLockModsMask: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.internalModsRealMods' class='structfield'><code>internalModsRealMods: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.ignoreLockModsRealMods' class='structfield'><code>ignoreLockModsRealMods: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.pad0' class='structfield'><code>pad0: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.internalModsVmods' class='structfield'><code>internalModsVmods: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.ignoreLockModsVmods' class='structfield'><code>ignoreLockModsVmods: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.repeatDelay' class='structfield'><code>repeatDelay: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.repeatInterval' class='structfield'><code>repeatInterval: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.slowKeysDelay' class='structfield'><code>slowKeysDelay: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.debounceDelay' class='structfield'><code>debounceDelay: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.mouseKeysDelay' class='structfield'><code>mouseKeysDelay: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.mouseKeysInterval' class='structfield'><code>mouseKeysInterval: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.mouseKeysTimeToMax' class='structfield'><code>mouseKeysTimeToMax: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.mouseKeysMaxSpeed' class='structfield'><code>mouseKeysMaxSpeed: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.mouseKeysCurve' class='structfield'><code>mouseKeysCurve: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i16.html'>i16</a></code>
-                           </span><span class='stab '></span><span id='structfield.accessXOption' class='structfield'><code>accessXOption: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.accessXTimeout' class='structfield'><code>accessXTimeout: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.accessXTimeoutOptionsMask' class='structfield'><code>accessXTimeoutOptionsMask: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.accessXTimeoutOptionsValues' class='structfield'><code>accessXTimeoutOptionsValues: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.pad1' class='structfield'><code>pad1: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 2]</a></code>
-                           </span><span class='stab '></span><span id='structfield.accessXTimeoutMask' class='structfield'><code>accessXTimeoutMask: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code>
-                           </span><span class='stab '></span><span id='structfield.accessXTimeoutValues' class='structfield'><code>accessXTimeoutValues: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code>
-                           </span><span class='stab '></span><span id='structfield.enabledControls' class='structfield'><code>enabledControls: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code>
-                           </span><span class='stab '></span><span id='structfield.perKeyRepeat' class='structfield'><code>perKeyRepeat: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 32]</a></code>
-                           </span><span class='stab '></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../../xcb/ffi/xkb/struct.xcb_xkb_get_controls_reply_t.html' title='xcb::ffi::xkb::xcb_xkb_get_controls_reply_t'>xcb_xkb_get_controls_reply_t</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-14737' class='srclink' href='../../../src/xcb/ffi/xkb.rs.html#1810' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../../xcb/ffi/xkb/struct.xcb_xkb_get_controls_reply_t.html' title='xcb::ffi::xkb::xcb_xkb_get_controls_reply_t'>xcb_xkb_get_controls_reply_t</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-14738' class='srclink' href='../../../src/xcb/ffi/xkb.rs.html#1811-1813' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../../xcb/ffi/xkb/struct.xcb_xkb_get_controls_reply_t.html' title='xcb::ffi::xkb::xcb_xkb_get_controls_reply_t'>xcb_xkb_get_controls_reply_t</a></code></h4>
+               </span><a class='srclink' href='../../../src/xcb/ffi/xkb.rs.html#1753-1786' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct xcb_xkb_get_controls_reply_t {
+    pub response_type: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub deviceID: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub sequence: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub length: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub mouseKeysDfltBtn: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub numGroups: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub groupsWrap: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub internalModsMask: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub ignoreLockModsMask: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub internalModsRealMods: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub ignoreLockModsRealMods: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub pad0: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub internalModsVmods: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub ignoreLockModsVmods: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub repeatDelay: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub repeatInterval: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub slowKeysDelay: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub debounceDelay: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub mouseKeysDelay: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub mouseKeysInterval: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub mouseKeysTimeToMax: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub mouseKeysMaxSpeed: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub mouseKeysCurve: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a>,
+    pub accessXOption: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub accessXTimeout: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub accessXTimeoutOptionsMask: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub accessXTimeoutOptionsValues: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub pad1: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 2]</a>,
+    pub accessXTimeoutMask: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub accessXTimeoutValues: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub enabledControls: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub perKeyRepeat: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 32]</a>,
+}</pre><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.response_type" class="structfield small-section-header">
+                           <a href="#structfield.response_type" class="anchor field"></a>
+                           <span id="response_type.v" class='invisible'>
+                           <code>response_type: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.deviceID" class="structfield small-section-header">
+                           <a href="#structfield.deviceID" class="anchor field"></a>
+                           <span id="deviceID.v" class='invisible'>
+                           <code>deviceID: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.sequence" class="structfield small-section-header">
+                           <a href="#structfield.sequence" class="anchor field"></a>
+                           <span id="sequence.v" class='invisible'>
+                           <code>sequence: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.length" class="structfield small-section-header">
+                           <a href="#structfield.length" class="anchor field"></a>
+                           <span id="length.v" class='invisible'>
+                           <code>length: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><span id="structfield.mouseKeysDfltBtn" class="structfield small-section-header">
+                           <a href="#structfield.mouseKeysDfltBtn" class="anchor field"></a>
+                           <span id="mouseKeysDfltBtn.v" class='invisible'>
+                           <code>mouseKeysDfltBtn: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.numGroups" class="structfield small-section-header">
+                           <a href="#structfield.numGroups" class="anchor field"></a>
+                           <span id="numGroups.v" class='invisible'>
+                           <code>numGroups: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.groupsWrap" class="structfield small-section-header">
+                           <a href="#structfield.groupsWrap" class="anchor field"></a>
+                           <span id="groupsWrap.v" class='invisible'>
+                           <code>groupsWrap: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.internalModsMask" class="structfield small-section-header">
+                           <a href="#structfield.internalModsMask" class="anchor field"></a>
+                           <span id="internalModsMask.v" class='invisible'>
+                           <code>internalModsMask: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.ignoreLockModsMask" class="structfield small-section-header">
+                           <a href="#structfield.ignoreLockModsMask" class="anchor field"></a>
+                           <span id="ignoreLockModsMask.v" class='invisible'>
+                           <code>ignoreLockModsMask: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.internalModsRealMods" class="structfield small-section-header">
+                           <a href="#structfield.internalModsRealMods" class="anchor field"></a>
+                           <span id="internalModsRealMods.v" class='invisible'>
+                           <code>internalModsRealMods: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.ignoreLockModsRealMods" class="structfield small-section-header">
+                           <a href="#structfield.ignoreLockModsRealMods" class="anchor field"></a>
+                           <span id="ignoreLockModsRealMods.v" class='invisible'>
+                           <code>ignoreLockModsRealMods: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.pad0" class="structfield small-section-header">
+                           <a href="#structfield.pad0" class="anchor field"></a>
+                           <span id="pad0.v" class='invisible'>
+                           <code>pad0: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.internalModsVmods" class="structfield small-section-header">
+                           <a href="#structfield.internalModsVmods" class="anchor field"></a>
+                           <span id="internalModsVmods.v" class='invisible'>
+                           <code>internalModsVmods: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.ignoreLockModsVmods" class="structfield small-section-header">
+                           <a href="#structfield.ignoreLockModsVmods" class="anchor field"></a>
+                           <span id="ignoreLockModsVmods.v" class='invisible'>
+                           <code>ignoreLockModsVmods: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.repeatDelay" class="structfield small-section-header">
+                           <a href="#structfield.repeatDelay" class="anchor field"></a>
+                           <span id="repeatDelay.v" class='invisible'>
+                           <code>repeatDelay: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.repeatInterval" class="structfield small-section-header">
+                           <a href="#structfield.repeatInterval" class="anchor field"></a>
+                           <span id="repeatInterval.v" class='invisible'>
+                           <code>repeatInterval: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.slowKeysDelay" class="structfield small-section-header">
+                           <a href="#structfield.slowKeysDelay" class="anchor field"></a>
+                           <span id="slowKeysDelay.v" class='invisible'>
+                           <code>slowKeysDelay: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.debounceDelay" class="structfield small-section-header">
+                           <a href="#structfield.debounceDelay" class="anchor field"></a>
+                           <span id="debounceDelay.v" class='invisible'>
+                           <code>debounceDelay: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.mouseKeysDelay" class="structfield small-section-header">
+                           <a href="#structfield.mouseKeysDelay" class="anchor field"></a>
+                           <span id="mouseKeysDelay.v" class='invisible'>
+                           <code>mouseKeysDelay: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.mouseKeysInterval" class="structfield small-section-header">
+                           <a href="#structfield.mouseKeysInterval" class="anchor field"></a>
+                           <span id="mouseKeysInterval.v" class='invisible'>
+                           <code>mouseKeysInterval: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.mouseKeysTimeToMax" class="structfield small-section-header">
+                           <a href="#structfield.mouseKeysTimeToMax" class="anchor field"></a>
+                           <span id="mouseKeysTimeToMax.v" class='invisible'>
+                           <code>mouseKeysTimeToMax: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.mouseKeysMaxSpeed" class="structfield small-section-header">
+                           <a href="#structfield.mouseKeysMaxSpeed" class="anchor field"></a>
+                           <span id="mouseKeysMaxSpeed.v" class='invisible'>
+                           <code>mouseKeysMaxSpeed: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.mouseKeysCurve" class="structfield small-section-header">
+                           <a href="#structfield.mouseKeysCurve" class="anchor field"></a>
+                           <span id="mouseKeysCurve.v" class='invisible'>
+                           <code>mouseKeysCurve: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a></code>
+                           </span></span><span id="structfield.accessXOption" class="structfield small-section-header">
+                           <a href="#structfield.accessXOption" class="anchor field"></a>
+                           <span id="accessXOption.v" class='invisible'>
+                           <code>accessXOption: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.accessXTimeout" class="structfield small-section-header">
+                           <a href="#structfield.accessXTimeout" class="anchor field"></a>
+                           <span id="accessXTimeout.v" class='invisible'>
+                           <code>accessXTimeout: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.accessXTimeoutOptionsMask" class="structfield small-section-header">
+                           <a href="#structfield.accessXTimeoutOptionsMask" class="anchor field"></a>
+                           <span id="accessXTimeoutOptionsMask.v" class='invisible'>
+                           <code>accessXTimeoutOptionsMask: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.accessXTimeoutOptionsValues" class="structfield small-section-header">
+                           <a href="#structfield.accessXTimeoutOptionsValues" class="anchor field"></a>
+                           <span id="accessXTimeoutOptionsValues.v" class='invisible'>
+                           <code>accessXTimeoutOptionsValues: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.pad1" class="structfield small-section-header">
+                           <a href="#structfield.pad1" class="anchor field"></a>
+                           <span id="pad1.v" class='invisible'>
+                           <code>pad1: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 2]</a></code>
+                           </span></span><span id="structfield.accessXTimeoutMask" class="structfield small-section-header">
+                           <a href="#structfield.accessXTimeoutMask" class="anchor field"></a>
+                           <span id="accessXTimeoutMask.v" class='invisible'>
+                           <code>accessXTimeoutMask: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><span id="structfield.accessXTimeoutValues" class="structfield small-section-header">
+                           <a href="#structfield.accessXTimeoutValues" class="anchor field"></a>
+                           <span id="accessXTimeoutValues.v" class='invisible'>
+                           <code>accessXTimeoutValues: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><span id="structfield.enabledControls" class="structfield small-section-header">
+                           <a href="#structfield.enabledControls" class="anchor field"></a>
+                           <span id="enabledControls.v" class='invisible'>
+                           <code>enabledControls: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><span id="structfield.perKeyRepeat" class="structfield small-section-header">
+                           <a href="#structfield.perKeyRepeat" class="anchor field"></a>
+                           <span id="perKeyRepeat.v" class='invisible'>
+                           <code>perKeyRepeat: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 32]</a></code>
+                           </span></span>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Copy' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> for <a class="struct" href="../../../xcb/ffi/xkb/struct.xcb_xkb_get_controls_reply_t.html" title="struct xcb::ffi::xkb::xcb_xkb_get_controls_reply_t">xcb_xkb_get_controls_reply_t</a></code><a href='#impl-Copy' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/xcb/ffi/xkb.rs.html#1788' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../../xcb/ffi/xkb/struct.xcb_xkb_get_controls_reply_t.html" title="struct xcb::ffi::xkb::xcb_xkb_get_controls_reply_t">xcb_xkb_get_controls_reply_t</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/xcb/ffi/xkb.rs.html#1789-1791' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../../xcb/ffi/xkb/struct.xcb_xkb_get_controls_reply_t.html" title="struct xcb::ffi::xkb::xcb_xkb_get_controls_reply_t">xcb_xkb_get_controls_reply_t</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/xcb/ffi/xkb.rs.html#1790' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
-</div><h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
 </div></div></section>
     <section id='search' class="content hidden"></section>
@@ -136,13 +240,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -175,11 +281,8 @@
     <script>
         window.rootPath = "../../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../../jquery.js"></script>
     <script src="../../../main.js"></script>
-    
     <script defer src="../../../search-index.js"></script>
 </body>
 </html>

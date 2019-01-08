@@ -9,6 +9,7 @@
 
     <title>xcb::ffi::xkb::xcb_xkb_get_names_value_list_t - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc struct">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'><a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'xcb_xkb_get_names_value_list_t', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Struct xcb_xkb_get_names_value_list_t</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.keycodesName">keycodesName</a><a href="#structfield.geometryName">geometryName</a><a href="#structfield.symbolsName">symbolsName</a><a href="#structfield.physSymbolsName">physSymbolsName</a><a href="#structfield.typesName">typesName</a><a href="#structfield.compatName">compatName</a><a href="#structfield.typeNames">typeNames</a><a href="#structfield.nLevelsPerType">nLevelsPerType</a><a href="#structfield.alignment_pad">alignment_pad</a><a href="#structfield.ktLevelNames">ktLevelNames</a><a href="#structfield.indicatorNames">indicatorNames</a><a href="#structfield.virtualModNames">virtualModNames</a><a href="#structfield.groups">groups</a><a href="#structfield.keyNames">keyNames</a><a href="#structfield.keyAliases">keyAliases</a><a href="#structfield.radioGroupNames">radioGroupNames</a></div></div><p class='location'><a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'xcb_xkb_get_names_value_list_t', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -42,46 +44,96 @@
         </form>
     </nav>
 
-    <section id='main' class="content struct">
-<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class='struct' href=''>xcb_xkb_get_names_value_list_t</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class="struct" href=''>xcb_xkb_get_names_value_list_t</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-15118' class='srclink' href='../../../src/xcb/ffi/xkb.rs.html#2247-2264' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct xcb_xkb_get_names_value_list_t {
-    pub keycodesName: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_atom_t.html' title='xcb::ffi::xproto::xcb_atom_t'>xcb_atom_t</a>,
-    pub geometryName: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_atom_t.html' title='xcb::ffi::xproto::xcb_atom_t'>xcb_atom_t</a>,
-    pub symbolsName: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_atom_t.html' title='xcb::ffi::xproto::xcb_atom_t'>xcb_atom_t</a>,
-    pub physSymbolsName: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_atom_t.html' title='xcb::ffi::xproto::xcb_atom_t'>xcb_atom_t</a>,
-    pub typesName: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_atom_t.html' title='xcb::ffi::xproto::xcb_atom_t'>xcb_atom_t</a>,
-    pub compatName: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_atom_t.html' title='xcb::ffi::xproto::xcb_atom_t'>xcb_atom_t</a>,
-    pub typeNames: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../../xcb/ffi/xproto/type.xcb_atom_t.html' title='xcb::ffi::xproto::xcb_atom_t'>xcb_atom_t</a>,
-    pub nLevelsPerType: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub alignment_pad: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub ktLevelNames: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../../xcb/ffi/xproto/type.xcb_atom_t.html' title='xcb::ffi::xproto::xcb_atom_t'>xcb_atom_t</a>,
-    pub indicatorNames: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../../xcb/ffi/xproto/type.xcb_atom_t.html' title='xcb::ffi::xproto::xcb_atom_t'>xcb_atom_t</a>,
-    pub virtualModNames: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../../xcb/ffi/xproto/type.xcb_atom_t.html' title='xcb::ffi::xproto::xcb_atom_t'>xcb_atom_t</a>,
-    pub groups: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../../xcb/ffi/xproto/type.xcb_atom_t.html' title='xcb::ffi::xproto::xcb_atom_t'>xcb_atom_t</a>,
-    pub keyNames: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../../xcb/ffi/xkb/struct.xcb_xkb_key_name_t.html' title='xcb::ffi::xkb::xcb_xkb_key_name_t'>xcb_xkb_key_name_t</a>,
-    pub keyAliases: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../../xcb/ffi/xkb/struct.xcb_xkb_key_alias_t.html' title='xcb::ffi::xkb::xcb_xkb_key_alias_t'>xcb_xkb_key_alias_t</a>,
-    pub radioGroupNames: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../../xcb/ffi/xproto/type.xcb_atom_t.html' title='xcb::ffi::xproto::xcb_atom_t'>xcb_atom_t</a>,
-}</pre><h2 class='fields'>Fields</h2><span id='structfield.keycodesName' class='structfield'><code>keycodesName: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_atom_t.html' title='xcb::ffi::xproto::xcb_atom_t'>xcb_atom_t</a></code>
-                           </span><span class='stab '></span><span id='structfield.geometryName' class='structfield'><code>geometryName: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_atom_t.html' title='xcb::ffi::xproto::xcb_atom_t'>xcb_atom_t</a></code>
-                           </span><span class='stab '></span><span id='structfield.symbolsName' class='structfield'><code>symbolsName: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_atom_t.html' title='xcb::ffi::xproto::xcb_atom_t'>xcb_atom_t</a></code>
-                           </span><span class='stab '></span><span id='structfield.physSymbolsName' class='structfield'><code>physSymbolsName: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_atom_t.html' title='xcb::ffi::xproto::xcb_atom_t'>xcb_atom_t</a></code>
-                           </span><span class='stab '></span><span id='structfield.typesName' class='structfield'><code>typesName: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_atom_t.html' title='xcb::ffi::xproto::xcb_atom_t'>xcb_atom_t</a></code>
-                           </span><span class='stab '></span><span id='structfield.compatName' class='structfield'><code>compatName: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_atom_t.html' title='xcb::ffi::xproto::xcb_atom_t'>xcb_atom_t</a></code>
-                           </span><span class='stab '></span><span id='structfield.typeNames' class='structfield'><code>typeNames: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../../xcb/ffi/xproto/type.xcb_atom_t.html' title='xcb::ffi::xproto::xcb_atom_t'>xcb_atom_t</a></code>
-                           </span><span class='stab '></span><span id='structfield.nLevelsPerType' class='structfield'><code>nLevelsPerType: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.alignment_pad' class='structfield'><code>alignment_pad: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.ktLevelNames' class='structfield'><code>ktLevelNames: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../../xcb/ffi/xproto/type.xcb_atom_t.html' title='xcb::ffi::xproto::xcb_atom_t'>xcb_atom_t</a></code>
-                           </span><span class='stab '></span><span id='structfield.indicatorNames' class='structfield'><code>indicatorNames: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../../xcb/ffi/xproto/type.xcb_atom_t.html' title='xcb::ffi::xproto::xcb_atom_t'>xcb_atom_t</a></code>
-                           </span><span class='stab '></span><span id='structfield.virtualModNames' class='structfield'><code>virtualModNames: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../../xcb/ffi/xproto/type.xcb_atom_t.html' title='xcb::ffi::xproto::xcb_atom_t'>xcb_atom_t</a></code>
-                           </span><span class='stab '></span><span id='structfield.groups' class='structfield'><code>groups: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../../xcb/ffi/xproto/type.xcb_atom_t.html' title='xcb::ffi::xproto::xcb_atom_t'>xcb_atom_t</a></code>
-                           </span><span class='stab '></span><span id='structfield.keyNames' class='structfield'><code>keyNames: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../../xcb/ffi/xkb/struct.xcb_xkb_key_name_t.html' title='xcb::ffi::xkb::xcb_xkb_key_name_t'>xcb_xkb_key_name_t</a></code>
-                           </span><span class='stab '></span><span id='structfield.keyAliases' class='structfield'><code>keyAliases: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../../xcb/ffi/xkb/struct.xcb_xkb_key_alias_t.html' title='xcb::ffi::xkb::xcb_xkb_key_alias_t'>xcb_xkb_key_alias_t</a></code>
-                           </span><span class='stab '></span><span id='structfield.radioGroupNames' class='structfield'><code>radioGroupNames: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../../xcb/ffi/xproto/type.xcb_atom_t.html' title='xcb::ffi::xproto::xcb_atom_t'>xcb_atom_t</a></code>
-                           </span><span class='stab '></span></section>
+               </span><a class='srclink' href='../../../src/xcb/ffi/xkb.rs.html#2225-2242' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct xcb_xkb_get_names_value_list_t {
+    pub keycodesName: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_atom_t.html" title="type xcb::ffi::xproto::xcb_atom_t">xcb_atom_t</a>,
+    pub geometryName: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_atom_t.html" title="type xcb::ffi::xproto::xcb_atom_t">xcb_atom_t</a>,
+    pub symbolsName: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_atom_t.html" title="type xcb::ffi::xproto::xcb_atom_t">xcb_atom_t</a>,
+    pub physSymbolsName: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_atom_t.html" title="type xcb::ffi::xproto::xcb_atom_t">xcb_atom_t</a>,
+    pub typesName: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_atom_t.html" title="type xcb::ffi::xproto::xcb_atom_t">xcb_atom_t</a>,
+    pub compatName: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_atom_t.html" title="type xcb::ffi::xproto::xcb_atom_t">xcb_atom_t</a>,
+    pub typeNames: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="type" href="../../../xcb/ffi/xproto/type.xcb_atom_t.html" title="type xcb::ffi::xproto::xcb_atom_t">xcb_atom_t</a>,
+    pub nLevelsPerType: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub alignment_pad: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub ktLevelNames: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="type" href="../../../xcb/ffi/xproto/type.xcb_atom_t.html" title="type xcb::ffi::xproto::xcb_atom_t">xcb_atom_t</a>,
+    pub indicatorNames: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="type" href="../../../xcb/ffi/xproto/type.xcb_atom_t.html" title="type xcb::ffi::xproto::xcb_atom_t">xcb_atom_t</a>,
+    pub virtualModNames: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="type" href="../../../xcb/ffi/xproto/type.xcb_atom_t.html" title="type xcb::ffi::xproto::xcb_atom_t">xcb_atom_t</a>,
+    pub groups: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="type" href="../../../xcb/ffi/xproto/type.xcb_atom_t.html" title="type xcb::ffi::xproto::xcb_atom_t">xcb_atom_t</a>,
+    pub keyNames: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../../xcb/ffi/xkb/struct.xcb_xkb_key_name_t.html" title="struct xcb::ffi::xkb::xcb_xkb_key_name_t">xcb_xkb_key_name_t</a>,
+    pub keyAliases: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../../xcb/ffi/xkb/struct.xcb_xkb_key_alias_t.html" title="struct xcb::ffi::xkb::xcb_xkb_key_alias_t">xcb_xkb_key_alias_t</a>,
+    pub radioGroupNames: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="type" href="../../../xcb/ffi/xproto/type.xcb_atom_t.html" title="type xcb::ffi::xproto::xcb_atom_t">xcb_atom_t</a>,
+}</pre><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.keycodesName" class="structfield small-section-header">
+                           <a href="#structfield.keycodesName" class="anchor field"></a>
+                           <span id="keycodesName.v" class='invisible'>
+                           <code>keycodesName: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_atom_t.html" title="type xcb::ffi::xproto::xcb_atom_t">xcb_atom_t</a></code>
+                           </span></span><span id="structfield.geometryName" class="structfield small-section-header">
+                           <a href="#structfield.geometryName" class="anchor field"></a>
+                           <span id="geometryName.v" class='invisible'>
+                           <code>geometryName: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_atom_t.html" title="type xcb::ffi::xproto::xcb_atom_t">xcb_atom_t</a></code>
+                           </span></span><span id="structfield.symbolsName" class="structfield small-section-header">
+                           <a href="#structfield.symbolsName" class="anchor field"></a>
+                           <span id="symbolsName.v" class='invisible'>
+                           <code>symbolsName: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_atom_t.html" title="type xcb::ffi::xproto::xcb_atom_t">xcb_atom_t</a></code>
+                           </span></span><span id="structfield.physSymbolsName" class="structfield small-section-header">
+                           <a href="#structfield.physSymbolsName" class="anchor field"></a>
+                           <span id="physSymbolsName.v" class='invisible'>
+                           <code>physSymbolsName: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_atom_t.html" title="type xcb::ffi::xproto::xcb_atom_t">xcb_atom_t</a></code>
+                           </span></span><span id="structfield.typesName" class="structfield small-section-header">
+                           <a href="#structfield.typesName" class="anchor field"></a>
+                           <span id="typesName.v" class='invisible'>
+                           <code>typesName: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_atom_t.html" title="type xcb::ffi::xproto::xcb_atom_t">xcb_atom_t</a></code>
+                           </span></span><span id="structfield.compatName" class="structfield small-section-header">
+                           <a href="#structfield.compatName" class="anchor field"></a>
+                           <span id="compatName.v" class='invisible'>
+                           <code>compatName: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_atom_t.html" title="type xcb::ffi::xproto::xcb_atom_t">xcb_atom_t</a></code>
+                           </span></span><span id="structfield.typeNames" class="structfield small-section-header">
+                           <a href="#structfield.typeNames" class="anchor field"></a>
+                           <span id="typeNames.v" class='invisible'>
+                           <code>typeNames: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="type" href="../../../xcb/ffi/xproto/type.xcb_atom_t.html" title="type xcb::ffi::xproto::xcb_atom_t">xcb_atom_t</a></code>
+                           </span></span><span id="structfield.nLevelsPerType" class="structfield small-section-header">
+                           <a href="#structfield.nLevelsPerType" class="anchor field"></a>
+                           <span id="nLevelsPerType.v" class='invisible'>
+                           <code>nLevelsPerType: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.alignment_pad" class="structfield small-section-header">
+                           <a href="#structfield.alignment_pad" class="anchor field"></a>
+                           <span id="alignment_pad.v" class='invisible'>
+                           <code>alignment_pad: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.ktLevelNames" class="structfield small-section-header">
+                           <a href="#structfield.ktLevelNames" class="anchor field"></a>
+                           <span id="ktLevelNames.v" class='invisible'>
+                           <code>ktLevelNames: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="type" href="../../../xcb/ffi/xproto/type.xcb_atom_t.html" title="type xcb::ffi::xproto::xcb_atom_t">xcb_atom_t</a></code>
+                           </span></span><span id="structfield.indicatorNames" class="structfield small-section-header">
+                           <a href="#structfield.indicatorNames" class="anchor field"></a>
+                           <span id="indicatorNames.v" class='invisible'>
+                           <code>indicatorNames: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="type" href="../../../xcb/ffi/xproto/type.xcb_atom_t.html" title="type xcb::ffi::xproto::xcb_atom_t">xcb_atom_t</a></code>
+                           </span></span><span id="structfield.virtualModNames" class="structfield small-section-header">
+                           <a href="#structfield.virtualModNames" class="anchor field"></a>
+                           <span id="virtualModNames.v" class='invisible'>
+                           <code>virtualModNames: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="type" href="../../../xcb/ffi/xproto/type.xcb_atom_t.html" title="type xcb::ffi::xproto::xcb_atom_t">xcb_atom_t</a></code>
+                           </span></span><span id="structfield.groups" class="structfield small-section-header">
+                           <a href="#structfield.groups" class="anchor field"></a>
+                           <span id="groups.v" class='invisible'>
+                           <code>groups: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="type" href="../../../xcb/ffi/xproto/type.xcb_atom_t.html" title="type xcb::ffi::xproto::xcb_atom_t">xcb_atom_t</a></code>
+                           </span></span><span id="structfield.keyNames" class="structfield small-section-header">
+                           <a href="#structfield.keyNames" class="anchor field"></a>
+                           <span id="keyNames.v" class='invisible'>
+                           <code>keyNames: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../../xcb/ffi/xkb/struct.xcb_xkb_key_name_t.html" title="struct xcb::ffi::xkb::xcb_xkb_key_name_t">xcb_xkb_key_name_t</a></code>
+                           </span></span><span id="structfield.keyAliases" class="structfield small-section-header">
+                           <a href="#structfield.keyAliases" class="anchor field"></a>
+                           <span id="keyAliases.v" class='invisible'>
+                           <code>keyAliases: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../../xcb/ffi/xkb/struct.xcb_xkb_key_alias_t.html" title="struct xcb::ffi::xkb::xcb_xkb_key_alias_t">xcb_xkb_key_alias_t</a></code>
+                           </span></span><span id="structfield.radioGroupNames" class="structfield small-section-header">
+                           <a href="#structfield.radioGroupNames" class="anchor field"></a>
+                           <span id="radioGroupNames.v" class='invisible'>
+                           <code>radioGroupNames: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="type" href="../../../xcb/ffi/xproto/type.xcb_atom_t.html" title="type xcb::ffi::xproto::xcb_atom_t">xcb_atom_t</a></code>
+                           </span></span></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
@@ -98,13 +150,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -137,11 +191,8 @@
     <script>
         window.rootPath = "../../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../../jquery.js"></script>
     <script src="../../../main.js"></script>
-    
     <script defer src="../../../search-index.js"></script>
 </body>
 </html>

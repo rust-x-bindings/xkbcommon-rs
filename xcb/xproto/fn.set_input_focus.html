@@ -9,6 +9,7 @@
 
     <title>xcb::xproto::set_input_focus - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc fn">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,6 +28,7 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
         <p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xproto</a></p><script>window.sidebarCurrent = {name: 'set_input_focus', ty: 'fn', relpath: ''};</script><script defer src="sidebar-items.js"></script>
     </nav>
@@ -42,13 +44,13 @@
         </form>
     </nav>
 
-    <section id='main' class="content fn">
-<h1 class='fqn'><span class='in-band'>Function <a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xproto</a>::<wbr><a class='fn' href=''>set_input_focus</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Function <a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xproto</a>::<wbr><a class="fn" href=''>set_input_focus</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-2681' class='srclink' href='../../src/xcb/xproto.rs.html#7330-7346' title='goto source code'>[src]</a></span></h1>
-<pre class='rust fn'>pub fn set_input_focus&lt;'a&gt;(c: &amp;'a <a class='struct' href='../../xcb/base/struct.Connection.html' title='xcb::base::Connection'>Connection</a>, revert_to: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>, focus: <a class='type' href='../../xcb/xproto/type.Window.html' title='xcb::xproto::Window'>Window</a>, time: <a class='type' href='../../xcb/xproto/type.Timestamp.html' title='xcb::xproto::Timestamp'>Timestamp</a>) -&gt; <a class='type' href='../../xcb/base/type.VoidCookie.html' title='xcb::base::VoidCookie'>VoidCookie</a>&lt;'a&gt;</pre><div class='docblock'><p>Sets input focus</p>
+               </span><a class='srclink' href='../../src/xcb/xproto.rs.html#7381-7397' title='goto source code'>[src]</a></span></h1>
+<pre class='rust fn'>pub fn set_input_focus&lt;'a&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;c: &amp;'a <a class="struct" href="../../xcb/base/struct.Connection.html" title="struct xcb::base::Connection">Connection</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;revert_to: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;focus: <a class="type" href="../../xcb/xproto/type.Window.html" title="type xcb::xproto::Window">Window</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;time: <a class="type" href="../../xcb/xproto/type.Timestamp.html" title="type xcb::xproto::Timestamp">Timestamp</a><br>) -&gt; <a class="type" href="../../xcb/base/type.VoidCookie.html" title="type xcb::base::VoidCookie">VoidCookie</a>&lt;'a&gt;</pre><div class='docblock'><p>Sets input focus</p>
 
 <p>Changes the input focus and the last-focus-change time. If the specified <code>time</code>
 is earlier than the current last-focus-change time, the request is ignored (to
@@ -96,13 +98,15 @@ avoid race conditions when running X over the network).</p>
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -135,11 +139,8 @@ avoid race conditions when running X over the network).</p>
     <script>
         window.rootPath = "../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

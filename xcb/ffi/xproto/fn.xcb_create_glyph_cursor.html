@@ -9,6 +9,7 @@
 
     <title>xcb::ffi::xproto::xcb_create_glyph_cursor - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc fn">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,6 +28,7 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
         <p class='location'><a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xproto</a></p><script>window.sidebarCurrent = {name: 'xcb_create_glyph_cursor', ty: 'fn', relpath: ''};</script><script defer src="sidebar-items.js"></script>
     </nav>
@@ -42,13 +44,13 @@
         </form>
     </nav>
 
-    <section id='main' class="content fn">
-<h1 class='fqn'><span class='in-band'><a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xproto</a>::<wbr><a class='fn' href=''>xcb_create_glyph_cursor</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Function <a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xproto</a>::<wbr><a class="fn" href=''>xcb_create_glyph_cursor</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-12871' class='srclink' href='../../../src/xcb/ffi/xproto.rs.html#8084-8096' title='goto source code'>[src]</a></span></h1>
-<pre class='rust fn'>pub unsafe extern fn xcb_create_glyph_cursor(c: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../../xcb/ffi/base/enum.xcb_connection_t.html' title='xcb::ffi::base::xcb_connection_t'>xcb_connection_t</a>, cid: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_cursor_t.html' title='xcb::ffi::xproto::xcb_cursor_t'>xcb_cursor_t</a>, source_font: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_font_t.html' title='xcb::ffi::xproto::xcb_font_t'>xcb_font_t</a>, mask_font: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_font_t.html' title='xcb::ffi::xproto::xcb_font_t'>xcb_font_t</a>, source_char: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>, mask_char: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>, fore_red: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>, fore_green: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>, fore_blue: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>, back_red: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>, back_green: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>, back_blue: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>) -&gt; <a class='struct' href='../../../xcb/ffi/base/struct.xcb_void_cookie_t.html' title='xcb::ffi::base::xcb_void_cookie_t'>xcb_void_cookie_t</a></pre><div class='docblock'><p>create cursor</p>
+               </span><a class='srclink' href='../../../src/xcb/ffi/xproto.rs.html#8080-8092' title='goto source code'>[src]</a></span></h1>
+<pre class='rust fn'>pub unsafe extern &quot;C&quot; fn xcb_create_glyph_cursor(<br>&nbsp;&nbsp;&nbsp;&nbsp;c: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="../../../xcb/ffi/base/enum.xcb_connection_t.html" title="enum xcb::ffi::base::xcb_connection_t">xcb_connection_t</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;cid: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_cursor_t.html" title="type xcb::ffi::xproto::xcb_cursor_t">xcb_cursor_t</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;source_font: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_font_t.html" title="type xcb::ffi::xproto::xcb_font_t">xcb_font_t</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;mask_font: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_font_t.html" title="type xcb::ffi::xproto::xcb_font_t">xcb_font_t</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;source_char: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;mask_char: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;fore_red: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;fore_green: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;fore_blue: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;back_red: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;back_green: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;back_blue: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a><br>) -&gt; <a class="struct" href="../../../xcb/ffi/base/struct.xcb_void_cookie_t.html" title="struct xcb::ffi::base::xcb_void_cookie_t">xcb_void_cookie_t</a></pre><div class='docblock'><p>create cursor</p>
 
 <p>Creates a cursor from a font glyph. X provides a set of standard cursor shapes
 in a special font named cursor. Applications are encouraged to use this
@@ -76,13 +78,15 @@ will use the background color (as specified by <code>back_red</code>, <code>back
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -115,11 +119,8 @@ will use the background color (as specified by <code>back_red</code>, <code>back
     <script>
         window.rootPath = "../../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../../jquery.js"></script>
     <script src="../../../main.js"></script>
-    
     <script defer src="../../../search-index.js"></script>
 </body>
 </html>

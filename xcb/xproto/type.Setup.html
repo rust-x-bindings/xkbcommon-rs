@@ -9,6 +9,7 @@
 
     <title>xcb::xproto::Setup - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc type">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xproto</a></p><script>window.sidebarCurrent = {name: 'Setup', ty: 'type', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Type Definition Setup</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.status">status</a><a href="#method.protocol_major_version">protocol_major_version</a><a href="#method.protocol_minor_version">protocol_minor_version</a><a href="#method.length">length</a><a href="#method.release_number">release_number</a><a href="#method.resource_id_base">resource_id_base</a><a href="#method.resource_id_mask">resource_id_mask</a><a href="#method.motion_buffer_size">motion_buffer_size</a><a href="#method.vendor_len">vendor_len</a><a href="#method.maximum_request_length">maximum_request_length</a><a href="#method.roots_len">roots_len</a><a href="#method.pixmap_formats_len">pixmap_formats_len</a><a href="#method.image_byte_order">image_byte_order</a><a href="#method.bitmap_format_bit_order">bitmap_format_bit_order</a><a href="#method.bitmap_format_scanline_unit">bitmap_format_scanline_unit</a><a href="#method.bitmap_format_scanline_pad">bitmap_format_scanline_pad</a><a href="#method.min_keycode">min_keycode</a><a href="#method.max_keycode">max_keycode</a><a href="#method.vendor">vendor</a><a href="#method.pixmap_formats">pixmap_formats</a><a href="#method.roots">roots</a></div></div><p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xproto</a></p><script>window.sidebarCurrent = {name: 'Setup', ty: 'type', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -42,13 +44,39 @@
         </form>
     </nav>
 
-    <section id='main' class="content type">
-<h1 class='fqn'><span class='in-band'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xproto</a>::<wbr><a class='type' href=''>Setup</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Type Definition <a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xproto</a>::<wbr><a class="type" href=''>Setup</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-1035' class='srclink' href='../../src/xcb/xproto.rs.html#1516' title='goto source code'>[src]</a></span></h1>
-<pre class='rust typedef'>type Setup&lt;'a&gt; = <a class='struct' href='../../xcb/base/struct.StructPtr.html' title='xcb::base::StructPtr'>StructPtr</a>&lt;'a,&nbsp;<a class='struct' href='../../xcb/ffi/xproto/struct.xcb_setup_t.html' title='xcb::ffi::xproto::xcb_setup_t'>xcb_setup_t</a>&gt;;</pre></section>
+               </span><a class='srclink' href='../../src/xcb/xproto.rs.html#1566' title='goto source code'>[src]</a></span></h1>
+<pre class='rust typedef'>type Setup&lt;'a&gt; = <a class="struct" href="../../xcb/base/struct.StructPtr.html" title="struct xcb::base::StructPtr">StructPtr</a>&lt;'a, <a class="struct" href="../../xcb/ffi/xproto/struct.xcb_setup_t.html" title="struct xcb::ffi::xproto::xcb_setup_t">xcb_setup_t</a>&gt;;</pre>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="type" href="../../xcb/xproto/type.Setup.html" title="type xcb::xproto::Setup">Setup</a>&lt;'a&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1568-1679' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.status' class="method"><span id='status.v' class='invisible'><code>pub fn <a href='#method.status' class='fnname'>status</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1569-1573' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.protocol_major_version' class="method"><span id='protocol_major_version.v' class='invisible'><code>pub fn <a href='#method.protocol_major_version' class='fnname'>protocol_major_version</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1574-1578' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.protocol_minor_version' class="method"><span id='protocol_minor_version.v' class='invisible'><code>pub fn <a href='#method.protocol_minor_version' class='fnname'>protocol_minor_version</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1579-1583' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.length' class="method"><span id='length.v' class='invisible'><code>pub fn <a href='#method.length' class='fnname'>length</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1584-1588' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.release_number' class="method"><span id='release_number.v' class='invisible'><code>pub fn <a href='#method.release_number' class='fnname'>release_number</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1589-1593' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.resource_id_base' class="method"><span id='resource_id_base.v' class='invisible'><code>pub fn <a href='#method.resource_id_base' class='fnname'>resource_id_base</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1594-1598' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.resource_id_mask' class="method"><span id='resource_id_mask.v' class='invisible'><code>pub fn <a href='#method.resource_id_mask' class='fnname'>resource_id_mask</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1599-1603' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.motion_buffer_size' class="method"><span id='motion_buffer_size.v' class='invisible'><code>pub fn <a href='#method.motion_buffer_size' class='fnname'>motion_buffer_size</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1604-1608' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.vendor_len' class="method"><span id='vendor_len.v' class='invisible'><code>pub fn <a href='#method.vendor_len' class='fnname'>vendor_len</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1609-1613' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.maximum_request_length' class="method"><span id='maximum_request_length.v' class='invisible'><code>pub fn <a href='#method.maximum_request_length' class='fnname'>maximum_request_length</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1614-1618' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.roots_len' class="method"><span id='roots_len.v' class='invisible'><code>pub fn <a href='#method.roots_len' class='fnname'>roots_len</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1619-1623' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.pixmap_formats_len' class="method"><span id='pixmap_formats_len.v' class='invisible'><code>pub fn <a href='#method.pixmap_formats_len' class='fnname'>pixmap_formats_len</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1624-1628' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.image_byte_order' class="method"><span id='image_byte_order.v' class='invisible'><code>pub fn <a href='#method.image_byte_order' class='fnname'>image_byte_order</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1629-1633' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.bitmap_format_bit_order' class="method"><span id='bitmap_format_bit_order.v' class='invisible'><code>pub fn <a href='#method.bitmap_format_bit_order' class='fnname'>bitmap_format_bit_order</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1634-1638' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.bitmap_format_scanline_unit' class="method"><span id='bitmap_format_scanline_unit.v' class='invisible'><code>pub fn <a href='#method.bitmap_format_scanline_unit' class='fnname'>bitmap_format_scanline_unit</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1639-1643' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.bitmap_format_scanline_pad' class="method"><span id='bitmap_format_scanline_pad.v' class='invisible'><code>pub fn <a href='#method.bitmap_format_scanline_pad' class='fnname'>bitmap_format_scanline_pad</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1644-1648' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.min_keycode' class="method"><span id='min_keycode.v' class='invisible'><code>pub fn <a href='#method.min_keycode' class='fnname'>min_keycode</a>(&amp;self) -&gt; <a class="type" href="../../xcb/xproto/type.Keycode.html" title="type xcb::xproto::Keycode">Keycode</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1649-1653' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.max_keycode' class="method"><span id='max_keycode.v' class='invisible'><code>pub fn <a href='#method.max_keycode' class='fnname'>max_keycode</a>(&amp;self) -&gt; <a class="type" href="../../xcb/xproto/type.Keycode.html" title="type xcb::xproto::Keycode">Keycode</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1654-1658' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.vendor' class="method"><span id='vendor.v' class='invisible'><code>pub fn <a href='#method.vendor' class='fnname'>vendor</a>(&amp;self) -&gt; &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1659-1668' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.pixmap_formats' class="method"><div class="important-traits"><div class='tooltip'>ⓘ<span class='tooltiptext'>Important traits for <a class="type" href="../../xcb/xproto/type.FormatIterator.html" title="type xcb::xproto::FormatIterator">FormatIterator</a></span></div><div class="content hidden"><h3 class="important">Important traits for <a class="type" href="../../xcb/xproto/type.FormatIterator.html" title="type xcb::xproto::FormatIterator">FormatIterator</a></h3><code class="content"><span class="where fmt-newline">impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html" title="trait core::iter::iterator::Iterator">Iterator</a> for <a class="type" href="../../xcb/xproto/type.FormatIterator.html" title="type xcb::xproto::FormatIterator">FormatIterator</a></span><span class="where fmt-newline">    type <a href='https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html#associatedtype.Item' class="type">Item</a> = <a class="struct" href="../../xcb/xproto/struct.Format.html" title="struct xcb::xproto::Format">Format</a>;</span></code></div></div><span id='pixmap_formats.v' class='invisible'><code>pub fn <a href='#method.pixmap_formats' class='fnname'>pixmap_formats</a>(&amp;self) -&gt; <a class="type" href="../../xcb/xproto/type.FormatIterator.html" title="type xcb::xproto::FormatIterator">FormatIterator</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1669-1673' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.roots' class="method"><div class="important-traits"><div class='tooltip'>ⓘ<span class='tooltiptext'>Important traits for <a class="type" href="../../xcb/xproto/type.ScreenIterator.html" title="type xcb::xproto::ScreenIterator">ScreenIterator</a>&lt;'a&gt;</span></div><div class="content hidden"><h3 class="important">Important traits for <a class="type" href="../../xcb/xproto/type.ScreenIterator.html" title="type xcb::xproto::ScreenIterator">ScreenIterator</a>&lt;'a&gt;</h3><code class="content"><span class="where fmt-newline">impl&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html" title="trait core::iter::iterator::Iterator">Iterator</a> for <a class="type" href="../../xcb/xproto/type.ScreenIterator.html" title="type xcb::xproto::ScreenIterator">ScreenIterator</a>&lt;'a&gt;</span><span class="where fmt-newline">    type <a href='https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html#associatedtype.Item' class="type">Item</a> = <a class="type" href="../../xcb/xproto/type.Screen.html" title="type xcb::xproto::Screen">Screen</a>&lt;'a&gt;;</span></code></div></div><span id='roots.v' class='invisible'><code>pub fn <a href='#method.roots' class='fnname'>roots</a>(&amp;self) -&gt; <a class="type" href="../../xcb/xproto/type.ScreenIterator.html" title="type xcb::xproto::ScreenIterator">ScreenIterator</a>&lt;'a&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#1674-1678' title='goto source code'>[src]</a></span></h4>
+</div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
@@ -65,13 +93,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -104,11 +134,8 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

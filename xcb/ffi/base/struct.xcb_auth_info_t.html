@@ -9,6 +9,7 @@
 
     <title>xcb::ffi::base::xcb_auth_info_t - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc struct">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'><a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>base</a></p><script>window.sidebarCurrent = {name: 'xcb_auth_info_t', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Struct xcb_auth_info_t</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.namelen">namelen</a><a href="#structfield.name">name</a><a href="#structfield.datalen">datalen</a><a href="#structfield.data">data</a></div></div><p class='location'><a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>base</a></p><script>window.sidebarCurrent = {name: 'xcb_auth_info_t', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -42,28 +44,42 @@
         </form>
     </nav>
 
-    <section id='main' class="content struct">
-<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>base</a>::<wbr><a class='struct' href=''>xcb_auth_info_t</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>base</a>::<wbr><a class="struct" href=''>xcb_auth_info_t</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-8038' class='srclink' href='../../../src/xcb/ffi/base.rs.html#165-175' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct xcb_auth_info_t {
-    pub namelen: <a class='type' href='../../../libc/type.c_int.html' title='libc::c_int'>c_int</a>,
-    pub name: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>,
-    pub datalen: <a class='type' href='../../../libc/type.c_int.html' title='libc::c_int'>c_int</a>,
-    pub data: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>,
+               </span><a class='srclink' href='../../../src/xcb/ffi/base.rs.html#165-175' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct xcb_auth_info_t {
+    pub namelen: <a class="type" href="../../../libc/unix/type.c_int.html" title="type libc::unix::c_int">c_int</a>,
+    pub name: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="type" href="../../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html" title="type libc::unix::notbsd::linux::other::b64::x86_64::c_char">c_char</a>,
+    pub datalen: <a class="type" href="../../../libc/unix/type.c_int.html" title="type libc::unix::c_int">c_int</a>,
+    pub data: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="type" href="../../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html" title="type libc::unix::notbsd::linux::other::b64::x86_64::c_char">c_char</a>,
 }</pre><div class='docblock'><p>Container for authorization information.
 A container for authorization information to be sent to the X server</p>
-</div><h2 class='fields'>Fields</h2><span id='structfield.namelen' class='structfield'><code>namelen: <a class='type' href='../../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>length of the string name (as returned by strlen)</p>
-</div><span id='structfield.name' class='structfield'><code>name: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>String containing the authentication protocol name,
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.namelen" class="structfield small-section-header">
+                           <a href="#structfield.namelen" class="anchor field"></a>
+                           <span id="namelen.v" class='invisible'>
+                           <code>namelen: <a class="type" href="../../../libc/unix/type.c_int.html" title="type libc::unix::c_int">c_int</a></code>
+                           </span></span><div class='docblock'><p>length of the string name (as returned by strlen)</p>
+</div><span id="structfield.name" class="structfield small-section-header">
+                           <a href="#structfield.name" class="anchor field"></a>
+                           <span id="name.v" class='invisible'>
+                           <code>name: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="type" href="../../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html" title="type libc::unix::notbsd::linux::other::b64::x86_64::c_char">c_char</a></code>
+                           </span></span><div class='docblock'><p>String containing the authentication protocol name,
 such as &quot;MIT-MAGIC-COOKIE-1&quot; or &quot;XDM-AUTHORIZATION-1&quot;.</p>
-</div><span id='structfield.datalen' class='structfield'><code>datalen: <a class='type' href='../../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>length of the data member</p>
-</div><span id='structfield.data' class='structfield'><code>data: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>data interpreted in a protocol specific manner</p>
+</div><span id="structfield.datalen" class="structfield small-section-header">
+                           <a href="#structfield.datalen" class="anchor field"></a>
+                           <span id="datalen.v" class='invisible'>
+                           <code>datalen: <a class="type" href="../../../libc/unix/type.c_int.html" title="type libc::unix::c_int">c_int</a></code>
+                           </span></span><div class='docblock'><p>length of the data member</p>
+</div><span id="structfield.data" class="structfield small-section-header">
+                           <a href="#structfield.data" class="anchor field"></a>
+                           <span id="data.v" class='invisible'>
+                           <code>data: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="type" href="../../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html" title="type libc::unix::notbsd::linux::other::b64::x86_64::c_char">c_char</a></code>
+                           </span></span><div class='docblock'><p>data interpreted in a protocol specific manner</p>
 </div></section>
     <section id='search' class="content hidden"></section>
 
@@ -81,13 +97,15 @@ such as &quot;MIT-MAGIC-COOKIE-1&quot; or &quot;XDM-AUTHORIZATION-1&quot;.</p>
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -120,11 +138,8 @@ such as &quot;MIT-MAGIC-COOKIE-1&quot; or &quot;XDM-AUTHORIZATION-1&quot;.</p>
     <script>
         window.rootPath = "../../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../../jquery.js"></script>
     <script src="../../../main.js"></script>
-    
     <script defer src="../../../search-index.js"></script>
 </body>
 </html>

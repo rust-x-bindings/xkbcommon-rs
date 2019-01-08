@@ -9,6 +9,7 @@
 
     <title>xkbcommon::xkb::LogLevel - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc enum">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'><a href='../index.html'>xkbcommon</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'LogLevel', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Enum LogLevel</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#variants">Variants</a><div class="sidebar-links"><a href="#variant.Critical">Critical</a><a href="#variant.Error">Error</a><a href="#variant.Warning">Warning</a><a href="#variant.Info">Info</a><a href="#variant.Debug">Debug</a></div></div><p class='location'><a href='../index.html'>xkbcommon</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'LogLevel', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -42,20 +44,22 @@
         </form>
     </nav>
 
-    <section id='main' class="content enum">
-<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>xkbcommon</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class='enum' href=''>LogLevel</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>xkbcommon</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class="enum" href=''>LogLevel</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-2799' class='srclink' href='../../src/xkbcommon/src/xkb/mod.rs.html#184-190' title='goto source code'>[src]</a></span></h1>
-<pre class='rust enum'>pub enum LogLevel {
+               </span><a class='srclink' href='../../src/xkbcommon/xkb/mod.rs.html#193-199' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'><div class="docblock attributes">#[repr(C)]
+</div>pub enum LogLevel {
     Critical,
     Error,
     Warning,
     Info,
     Debug,
-}</pre><h2 class='variants'>Variants</h2>
-<span id='variant.Critical' class='variant'><code>Critical</code></span><span id='variant.Error' class='variant'><code>Error</code></span><span id='variant.Warning' class='variant'><code>Warning</code></span><span id='variant.Info' class='variant'><code>Info</code></span><span id='variant.Debug' class='variant'><code>Debug</code></span></section>
+}</pre><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id="variant.Critical" class="variant small-section-header"><a href="#variant.Critical" class="anchor field"></a><span id='Critical.v' class='invisible'><code>Critical</code></span></span><span id="variant.Error" class="variant small-section-header"><a href="#variant.Error" class="anchor field"></a><span id='Error.v' class='invisible'><code>Error</code></span></span><span id="variant.Warning" class="variant small-section-header"><a href="#variant.Warning" class="anchor field"></a><span id='Warning.v' class='invisible'><code>Warning</code></span></span><span id="variant.Info" class="variant small-section-header"><a href="#variant.Info" class="anchor field"></a><span id='Info.v' class='invisible'><code>Info</code></span></span><span id="variant.Debug" class="variant small-section-header"><a href="#variant.Debug" class="anchor field"></a><span id='Debug.v' class='invisible'><code>Debug</code></span></span></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
@@ -72,13 +76,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -111,11 +117,8 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "xkbcommon";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

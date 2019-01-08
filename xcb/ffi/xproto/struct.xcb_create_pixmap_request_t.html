@@ -9,6 +9,7 @@
 
     <title>xcb::ffi::xproto::xcb_create_pixmap_request_t - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc struct">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'><a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xproto</a></p><script>window.sidebarCurrent = {name: 'xcb_create_pixmap_request_t', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Struct xcb_create_pixmap_request_t</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.major_opcode">major_opcode</a><a href="#structfield.depth">depth</a><a href="#structfield.length">length</a><a href="#structfield.pid">pid</a><a href="#structfield.drawable">drawable</a><a href="#structfield.width">width</a><a href="#structfield.height">height</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Copy">Copy</a><a href="#impl-Clone">Clone</a></div></div><p class='location'><a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xproto</a></p><script>window.sidebarCurrent = {name: 'xcb_create_pixmap_request_t', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -42,42 +44,69 @@
         </form>
     </nav>
 
-    <section id='main' class="content struct">
-<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xproto</a>::<wbr><a class='struct' href=''>xcb_create_pixmap_request_t</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xproto</a>::<wbr><a class="struct" href=''>xcb_create_pixmap_request_t</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-10180' class='srclink' href='../../../src/xcb/ffi/xproto.rs.html#3608-3622' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct xcb_create_pixmap_request_t {
-    pub major_opcode: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub depth: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub length: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub pid: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_pixmap_t.html' title='xcb::ffi::xproto::xcb_pixmap_t'>xcb_pixmap_t</a>,
-    pub drawable: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_drawable_t.html' title='xcb::ffi::xproto::xcb_drawable_t'>xcb_drawable_t</a>,
-    pub width: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub height: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
+               </span><a class='srclink' href='../../../src/xcb/ffi/xproto.rs.html#3606-3620' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct xcb_create_pixmap_request_t {
+    pub major_opcode: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub depth: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub length: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub pid: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_pixmap_t.html" title="type xcb::ffi::xproto::xcb_pixmap_t">xcb_pixmap_t</a>,
+    pub drawable: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_drawable_t.html" title="type xcb::ffi::xproto::xcb_drawable_t">xcb_drawable_t</a>,
+    pub width: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub height: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
 }</pre><div class='docblock'><p>Creates a pixmap</p>
 
 <p>Creates a pixmap. The pixmap can only be used on the same screen as <code>drawable</code>
 is on and only with drawables of the same <code>depth</code>.</p>
-</div><h2 class='fields'>Fields</h2><span id='structfield.major_opcode' class='structfield'><code>major_opcode: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.depth' class='structfield'><code>depth: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>TODO</p>
-</div><span id='structfield.length' class='structfield'><code>length: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.pid' class='structfield'><code>pid: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_pixmap_t.html' title='xcb::ffi::xproto::xcb_pixmap_t'>xcb_pixmap_t</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>The ID with which you will refer to the new pixmap, created by
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.major_opcode" class="structfield small-section-header">
+                           <a href="#structfield.major_opcode" class="anchor field"></a>
+                           <span id="major_opcode.v" class='invisible'>
+                           <code>major_opcode: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.depth" class="structfield small-section-header">
+                           <a href="#structfield.depth" class="anchor field"></a>
+                           <span id="depth.v" class='invisible'>
+                           <code>depth: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><div class='docblock'><p>TODO</p>
+</div><span id="structfield.length" class="structfield small-section-header">
+                           <a href="#structfield.length" class="anchor field"></a>
+                           <span id="length.v" class='invisible'>
+                           <code>length: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.pid" class="structfield small-section-header">
+                           <a href="#structfield.pid" class="anchor field"></a>
+                           <span id="pid.v" class='invisible'>
+                           <code>pid: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_pixmap_t.html" title="type xcb::ffi::xproto::xcb_pixmap_t">xcb_pixmap_t</a></code>
+                           </span></span><div class='docblock'><p>The ID with which you will refer to the new pixmap, created by
 <code>xcb_generate_id</code>.</p>
-</div><span id='structfield.drawable' class='structfield'><code>drawable: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_drawable_t.html' title='xcb::ffi::xproto::xcb_drawable_t'>xcb_drawable_t</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>Drawable to get the screen from.</p>
-</div><span id='structfield.width' class='structfield'><code>width: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>The width of the new pixmap.</p>
-</div><span id='structfield.height' class='structfield'><code>height: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>The height of the new pixmap.</p>
-</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../../xcb/ffi/xproto/struct.xcb_create_pixmap_request_t.html' title='xcb::ffi::xproto::xcb_create_pixmap_request_t'>xcb_create_pixmap_request_t</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-10188' class='srclink' href='../../../src/xcb/ffi/xproto.rs.html#3624' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../../xcb/ffi/xproto/struct.xcb_create_pixmap_request_t.html' title='xcb::ffi::xproto::xcb_create_pixmap_request_t'>xcb_create_pixmap_request_t</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-10189' class='srclink' href='../../../src/xcb/ffi/xproto.rs.html#3625-3627' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../../xcb/ffi/xproto/struct.xcb_create_pixmap_request_t.html' title='xcb::ffi::xproto::xcb_create_pixmap_request_t'>xcb_create_pixmap_request_t</a></code></h4>
+</div><span id="structfield.drawable" class="structfield small-section-header">
+                           <a href="#structfield.drawable" class="anchor field"></a>
+                           <span id="drawable.v" class='invisible'>
+                           <code>drawable: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_drawable_t.html" title="type xcb::ffi::xproto::xcb_drawable_t">xcb_drawable_t</a></code>
+                           </span></span><div class='docblock'><p>Drawable to get the screen from.</p>
+</div><span id="structfield.width" class="structfield small-section-header">
+                           <a href="#structfield.width" class="anchor field"></a>
+                           <span id="width.v" class='invisible'>
+                           <code>width: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><div class='docblock'><p>The width of the new pixmap.</p>
+</div><span id="structfield.height" class="structfield small-section-header">
+                           <a href="#structfield.height" class="anchor field"></a>
+                           <span id="height.v" class='invisible'>
+                           <code>height: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><div class='docblock'><p>The height of the new pixmap.</p>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Copy' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> for <a class="struct" href="../../../xcb/ffi/xproto/struct.xcb_create_pixmap_request_t.html" title="struct xcb::ffi::xproto::xcb_create_pixmap_request_t">xcb_create_pixmap_request_t</a></code><a href='#impl-Copy' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/xcb/ffi/xproto.rs.html#3622' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../../xcb/ffi/xproto/struct.xcb_create_pixmap_request_t.html" title="struct xcb::ffi::xproto::xcb_create_pixmap_request_t">xcb_create_pixmap_request_t</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/xcb/ffi/xproto.rs.html#3623-3625' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../../xcb/ffi/xproto/struct.xcb_create_pixmap_request_t.html" title="struct xcb::ffi::xproto::xcb_create_pixmap_request_t">xcb_create_pixmap_request_t</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/xcb/ffi/xproto.rs.html#3624' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
-</div><h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
 </div></div></section>
     <section id='search' class="content hidden"></section>
@@ -96,13 +125,15 @@ is on and only with drawables of the same <code>depth</code>.</p>
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -135,11 +166,8 @@ is on and only with drawables of the same <code>depth</code>.</p>
     <script>
         window.rootPath = "../../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../../jquery.js"></script>
     <script src="../../../main.js"></script>
-    
     <script defer src="../../../search-index.js"></script>
 </body>
 </html>

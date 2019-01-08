@@ -9,6 +9,7 @@
 
     <title>xcb::xkb::GetControlsReply - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc type">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'GetControlsReply', ty: 'type', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Type Definition GetControlsReply</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.device_i_d">device_i_d</a><a href="#method.mouse_keys_dflt_btn">mouse_keys_dflt_btn</a><a href="#method.num_groups">num_groups</a><a href="#method.groups_wrap">groups_wrap</a><a href="#method.internal_mods_mask">internal_mods_mask</a><a href="#method.ignore_lock_mods_mask">ignore_lock_mods_mask</a><a href="#method.internal_mods_real_mods">internal_mods_real_mods</a><a href="#method.ignore_lock_mods_real_mods">ignore_lock_mods_real_mods</a><a href="#method.internal_mods_vmods">internal_mods_vmods</a><a href="#method.ignore_lock_mods_vmods">ignore_lock_mods_vmods</a><a href="#method.repeat_delay">repeat_delay</a><a href="#method.repeat_interval">repeat_interval</a><a href="#method.slow_keys_delay">slow_keys_delay</a><a href="#method.debounce_delay">debounce_delay</a><a href="#method.mouse_keys_delay">mouse_keys_delay</a><a href="#method.mouse_keys_interval">mouse_keys_interval</a><a href="#method.mouse_keys_time_to_max">mouse_keys_time_to_max</a><a href="#method.mouse_keys_max_speed">mouse_keys_max_speed</a><a href="#method.mouse_keys_curve">mouse_keys_curve</a><a href="#method.access_x_option">access_x_option</a><a href="#method.access_x_timeout">access_x_timeout</a><a href="#method.access_x_timeout_options_mask">access_x_timeout_options_mask</a><a href="#method.access_x_timeout_options_values">access_x_timeout_options_values</a><a href="#method.access_x_timeout_mask">access_x_timeout_mask</a><a href="#method.access_x_timeout_values">access_x_timeout_values</a><a href="#method.enabled_controls">enabled_controls</a><a href="#method.per_key_repeat">per_key_repeat</a></div></div><p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'GetControlsReply', ty: 'type', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -42,13 +44,45 @@
         </form>
     </nav>
 
-    <section id='main' class="content type">
-<h1 class='fqn'><span class='in-band'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class='type' href=''>GetControlsReply</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Type Definition <a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class="type" href=''>GetControlsReply</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-6533' class='srclink' href='../../src/xcb/xkb.rs.html#3383' title='goto source code'>[src]</a></span></h1>
-<pre class='rust typedef'>type GetControlsReply = <a class='struct' href='../../xcb/base/struct.Reply.html' title='xcb::base::Reply'>Reply</a>&lt;<a class='struct' href='../../xcb/ffi/xkb/struct.xcb_xkb_get_controls_reply_t.html' title='xcb::ffi::xkb::xcb_xkb_get_controls_reply_t'>xcb_xkb_get_controls_reply_t</a>&gt;;</pre></section>
+               </span><a class='srclink' href='../../src/xcb/xkb.rs.html#4259' title='goto source code'>[src]</a></span></h1>
+<pre class='rust typedef'>type GetControlsReply = <a class="struct" href="../../xcb/base/struct.Reply.html" title="struct xcb::base::Reply">Reply</a>&lt;<a class="struct" href="../../xcb/ffi/xkb/struct.xcb_xkb_get_controls_reply_t.html" title="struct xcb::ffi::xkb::xcb_xkb_get_controls_reply_t">xcb_xkb_get_controls_reply_t</a>&gt;;</pre>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="type" href="../../xcb/xkb/type.GetControlsReply.html" title="type xcb::xkb::GetControlsReply">GetControlsReply</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4261-4397' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.device_i_d' class="method"><span id='device_i_d.v' class='invisible'><code>pub fn <a href='#method.device_i_d' class='fnname'>device_i_d</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4262-4266' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.mouse_keys_dflt_btn' class="method"><span id='mouse_keys_dflt_btn.v' class='invisible'><code>pub fn <a href='#method.mouse_keys_dflt_btn' class='fnname'>mouse_keys_dflt_btn</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4267-4271' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.num_groups' class="method"><span id='num_groups.v' class='invisible'><code>pub fn <a href='#method.num_groups' class='fnname'>num_groups</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4272-4276' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.groups_wrap' class="method"><span id='groups_wrap.v' class='invisible'><code>pub fn <a href='#method.groups_wrap' class='fnname'>groups_wrap</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4277-4281' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.internal_mods_mask' class="method"><span id='internal_mods_mask.v' class='invisible'><code>pub fn <a href='#method.internal_mods_mask' class='fnname'>internal_mods_mask</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4282-4286' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.ignore_lock_mods_mask' class="method"><span id='ignore_lock_mods_mask.v' class='invisible'><code>pub fn <a href='#method.ignore_lock_mods_mask' class='fnname'>ignore_lock_mods_mask</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4287-4291' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.internal_mods_real_mods' class="method"><span id='internal_mods_real_mods.v' class='invisible'><code>pub fn <a href='#method.internal_mods_real_mods' class='fnname'>internal_mods_real_mods</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4292-4296' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.ignore_lock_mods_real_mods' class="method"><span id='ignore_lock_mods_real_mods.v' class='invisible'><code>pub fn <a href='#method.ignore_lock_mods_real_mods' class='fnname'>ignore_lock_mods_real_mods</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4297-4301' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.internal_mods_vmods' class="method"><span id='internal_mods_vmods.v' class='invisible'><code>pub fn <a href='#method.internal_mods_vmods' class='fnname'>internal_mods_vmods</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4302-4306' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.ignore_lock_mods_vmods' class="method"><span id='ignore_lock_mods_vmods.v' class='invisible'><code>pub fn <a href='#method.ignore_lock_mods_vmods' class='fnname'>ignore_lock_mods_vmods</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4307-4311' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.repeat_delay' class="method"><span id='repeat_delay.v' class='invisible'><code>pub fn <a href='#method.repeat_delay' class='fnname'>repeat_delay</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4312-4316' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.repeat_interval' class="method"><span id='repeat_interval.v' class='invisible'><code>pub fn <a href='#method.repeat_interval' class='fnname'>repeat_interval</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4317-4321' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.slow_keys_delay' class="method"><span id='slow_keys_delay.v' class='invisible'><code>pub fn <a href='#method.slow_keys_delay' class='fnname'>slow_keys_delay</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4322-4326' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.debounce_delay' class="method"><span id='debounce_delay.v' class='invisible'><code>pub fn <a href='#method.debounce_delay' class='fnname'>debounce_delay</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4327-4331' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.mouse_keys_delay' class="method"><span id='mouse_keys_delay.v' class='invisible'><code>pub fn <a href='#method.mouse_keys_delay' class='fnname'>mouse_keys_delay</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4332-4336' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.mouse_keys_interval' class="method"><span id='mouse_keys_interval.v' class='invisible'><code>pub fn <a href='#method.mouse_keys_interval' class='fnname'>mouse_keys_interval</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4337-4341' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.mouse_keys_time_to_max' class="method"><span id='mouse_keys_time_to_max.v' class='invisible'><code>pub fn <a href='#method.mouse_keys_time_to_max' class='fnname'>mouse_keys_time_to_max</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4342-4346' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.mouse_keys_max_speed' class="method"><span id='mouse_keys_max_speed.v' class='invisible'><code>pub fn <a href='#method.mouse_keys_max_speed' class='fnname'>mouse_keys_max_speed</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4347-4351' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.mouse_keys_curve' class="method"><span id='mouse_keys_curve.v' class='invisible'><code>pub fn <a href='#method.mouse_keys_curve' class='fnname'>mouse_keys_curve</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4352-4356' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.access_x_option' class="method"><span id='access_x_option.v' class='invisible'><code>pub fn <a href='#method.access_x_option' class='fnname'>access_x_option</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4357-4361' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.access_x_timeout' class="method"><span id='access_x_timeout.v' class='invisible'><code>pub fn <a href='#method.access_x_timeout' class='fnname'>access_x_timeout</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4362-4366' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.access_x_timeout_options_mask' class="method"><span id='access_x_timeout_options_mask.v' class='invisible'><code>pub fn <a href='#method.access_x_timeout_options_mask' class='fnname'>access_x_timeout_options_mask</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4367-4371' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.access_x_timeout_options_values' class="method"><span id='access_x_timeout_options_values.v' class='invisible'><code>pub fn <a href='#method.access_x_timeout_options_values' class='fnname'>access_x_timeout_options_values</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4372-4376' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.access_x_timeout_mask' class="method"><span id='access_x_timeout_mask.v' class='invisible'><code>pub fn <a href='#method.access_x_timeout_mask' class='fnname'>access_x_timeout_mask</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4377-4381' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.access_x_timeout_values' class="method"><span id='access_x_timeout_values.v' class='invisible'><code>pub fn <a href='#method.access_x_timeout_values' class='fnname'>access_x_timeout_values</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4382-4386' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.enabled_controls' class="method"><span id='enabled_controls.v' class='invisible'><code>pub fn <a href='#method.enabled_controls' class='fnname'>enabled_controls</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4387-4391' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.per_key_repeat' class="method"><span id='per_key_repeat.v' class='invisible'><code>pub fn <a href='#method.per_key_repeat' class='fnname'>per_key_repeat</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4392-4396' title='goto source code'>[src]</a></span></h4>
+</div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
@@ -65,13 +99,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -104,11 +140,8 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

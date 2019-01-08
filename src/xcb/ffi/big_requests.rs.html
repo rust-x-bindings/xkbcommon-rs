@@ -4,11 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="rustdoc">
-    <meta name="description" content="Source to the Rust file `/home/remi/.cargo/registry/src/github.com-1ecc6299db9ec823/xcb-0.7.5/src/ffi/big_requests.rs`.">
+    <meta name="description" content="Source to the Rust file `/home/remi/.cargo/registry/src/github.com-1ecc6299db9ec823/xcb-0.8.2/src/ffi/big_requests.rs`.">
     <meta name="keywords" content="rust, rustlang, rust-lang">
 
     <title>big_requests.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc source">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,6 +28,7 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
         
     </nav>
@@ -42,7 +44,7 @@
         </form>
     </nav>
 
-    <section id='main' class="content source"><pre class="line-numbers"><span id="1"> 1</span>
+    <section id='main' class="content"><pre class="line-numbers"><span id="1"> 1</span>
 <span id="2"> 2</span>
 <span id="3"> 3</span>
 <span id="4"> 4</span>
@@ -110,75 +112,75 @@
 <span id="66">66</span>
 <span id="67">67</span>
 <span id="68">68</span>
-</pre><pre class='rust '>
-<span class='comment'>// edited from bigreq.xml by rs_client.py on Tue Nov  1 17:04:30 2016</span>
-<span class='comment'>// do not edit!</span>
+</pre><pre class="rust ">
+<span class="comment">// Generated automatically from bigreq.xml by rs_client.py version 0.8.2.</span>
+<span class="comment">// Do not edit!</span>
 
 
-<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>allow</span>(<span class='ident'>improper_ctypes</span>)]</span>
+<span class="attribute">#![<span class="ident">allow</span>(<span class="ident">improper_ctypes</span>)]</span>
 
-<span class='kw'>use</span> <span class='ident'>ffi</span>::<span class='ident'>base</span>::<span class='op'>*</span>;
+<span class="kw">use</span> <span class="ident">ffi</span>::<span class="ident">base</span>::<span class="kw-2">*</span>;
 
-<span class='kw'>use</span> <span class='ident'>libc</span>::{<span class='ident'>c_char</span>, <span class='ident'>c_int</span>, <span class='ident'>c_uint</span>, <span class='ident'>c_void</span>};
-<span class='kw'>use</span> <span class='ident'>std</span>;
+<span class="kw">use</span> <span class="ident">libc</span>::{<span class="ident">c_char</span>, <span class="ident">c_int</span>, <span class="ident">c_uint</span>, <span class="ident">c_void</span>};
+<span class="kw">use</span> <span class="ident">std</span>;
 
 
-<span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>XCB_BIG_REQUESTS_MAJOR_VERSION</span>: <span class='ident'>u32</span> <span class='op'>=</span> <span class='number'>0</span>;
-<span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>XCB_BIG_REQUESTS_MINOR_VERSION</span>: <span class='ident'>u32</span> <span class='op'>=</span> <span class='number'>0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">XCB_BIG_REQUESTS_MAJOR_VERSION</span>: <span class="ident">u32</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">XCB_BIG_REQUESTS_MINOR_VERSION</span>: <span class="ident">u32</span> <span class="op">=</span> <span class="number">0</span>;
 
-<span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>XCB_BIG_REQUESTS_ENABLE</span>: <span class='ident'>u8</span> <span class='op'>=</span> <span class='number'>0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">XCB_BIG_REQUESTS_ENABLE</span>: <span class="ident">u8</span> <span class="op">=</span> <span class="number">0</span>;
 
-<span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>xcb_big_requests_enable_request_t</span> {
-    <span class='kw'>pub</span> <span class='ident'>major_opcode</span>: <span class='ident'>u8</span>,
-    <span class='kw'>pub</span> <span class='ident'>minor_opcode</span>: <span class='ident'>u8</span>,
-    <span class='kw'>pub</span> <span class='ident'>length</span>:       <span class='ident'>u16</span>,
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">xcb_big_requests_enable_request_t</span> {
+    <span class="kw">pub</span> <span class="ident">major_opcode</span>: <span class="ident">u8</span>,
+    <span class="kw">pub</span> <span class="ident">minor_opcode</span>: <span class="ident">u8</span>,
+    <span class="kw">pub</span> <span class="ident">length</span>:       <span class="ident">u16</span>,
 }
 
-<span class='kw'>impl</span> <span class='ident'>Copy</span> <span class='kw'>for</span> <span class='ident'>xcb_big_requests_enable_request_t</span> {}
-<span class='kw'>impl</span> <span class='ident'>Clone</span> <span class='kw'>for</span> <span class='ident'>xcb_big_requests_enable_request_t</span> {
-    <span class='kw'>fn</span> <span class='ident'>clone</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>xcb_big_requests_enable_request_t</span> { <span class='op'>*</span><span class='self'>self</span> }
+<span class="kw">impl</span> <span class="ident">Copy</span> <span class="kw">for</span> <span class="ident">xcb_big_requests_enable_request_t</span> {}
+<span class="kw">impl</span> <span class="ident">Clone</span> <span class="kw">for</span> <span class="ident">xcb_big_requests_enable_request_t</span> {
+    <span class="kw">fn</span> <span class="ident">clone</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">xcb_big_requests_enable_request_t</span> { <span class="kw-2">*</span><span class="self">self</span> }
 }
 
-<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Copy</span>, <span class='ident'>Clone</span>)]</span>
-<span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>xcb_big_requests_enable_cookie_t</span> {
-    <span class='ident'>sequence</span>: <span class='ident'>c_uint</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">xcb_big_requests_enable_cookie_t</span> {
+    <span class="ident">sequence</span>: <span class="ident">c_uint</span>
 }
 
-<span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>xcb_big_requests_enable_reply_t</span> {
-    <span class='kw'>pub</span> <span class='ident'>response_type</span>:          <span class='ident'>u8</span>,
-    <span class='kw'>pub</span> <span class='ident'>pad0</span>:                   <span class='ident'>u8</span>,
-    <span class='kw'>pub</span> <span class='ident'>sequence</span>:               <span class='ident'>u16</span>,
-    <span class='kw'>pub</span> <span class='ident'>length</span>:                 <span class='ident'>u32</span>,
-    <span class='kw'>pub</span> <span class='ident'>maximum_request_length</span>: <span class='ident'>u32</span>,
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">xcb_big_requests_enable_reply_t</span> {
+    <span class="kw">pub</span> <span class="ident">response_type</span>:          <span class="ident">u8</span>,
+    <span class="kw">pub</span> <span class="ident">pad0</span>:                   <span class="ident">u8</span>,
+    <span class="kw">pub</span> <span class="ident">sequence</span>:               <span class="ident">u16</span>,
+    <span class="kw">pub</span> <span class="ident">length</span>:                 <span class="ident">u32</span>,
+    <span class="kw">pub</span> <span class="ident">maximum_request_length</span>: <span class="ident">u32</span>,
 }
 
-<span class='kw'>impl</span> <span class='ident'>Copy</span> <span class='kw'>for</span> <span class='ident'>xcb_big_requests_enable_reply_t</span> {}
-<span class='kw'>impl</span> <span class='ident'>Clone</span> <span class='kw'>for</span> <span class='ident'>xcb_big_requests_enable_reply_t</span> {
-    <span class='kw'>fn</span> <span class='ident'>clone</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>xcb_big_requests_enable_reply_t</span> { <span class='op'>*</span><span class='self'>self</span> }
+<span class="kw">impl</span> <span class="ident">Copy</span> <span class="kw">for</span> <span class="ident">xcb_big_requests_enable_reply_t</span> {}
+<span class="kw">impl</span> <span class="ident">Clone</span> <span class="kw">for</span> <span class="ident">xcb_big_requests_enable_reply_t</span> {
+    <span class="kw">fn</span> <span class="ident">clone</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">xcb_big_requests_enable_reply_t</span> { <span class="kw-2">*</span><span class="self">self</span> }
 }
 
 
-<span class='attribute'>#[<span class='ident'>link</span>(<span class='ident'>name</span><span class='op'>=</span><span class='string'>&quot;xcb&quot;</span>)]</span>
-<span class='kw'>extern</span> {
+<span class="attribute">#[<span class="ident">link</span>(<span class="ident">name</span><span class="op">=</span><span class="string">&quot;xcb&quot;</span>)]</span>
+<span class="kw">extern</span> {
 
-    <span class='kw'>pub</span> <span class='kw'>static</span> <span class='kw-2'>mut</span> <span class='ident'>xcb_big_requests_id</span>: <span class='ident'>xcb_extension_t</span>;
+    <span class="kw">pub</span> <span class="kw">static</span> <span class="kw-2">mut</span> <span class="ident">xcb_big_requests_id</span>: <span class="ident">xcb_extension_t</span>;
 
-    <span class='doccomment'>/// the returned value must be freed by the caller using libc::free().</span>
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>xcb_big_requests_enable_reply</span> (<span class='ident'>c</span>:      <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>xcb_connection_t</span>,
-                                          <span class='ident'>cookie</span>: <span class='ident'>xcb_big_requests_enable_cookie_t</span>,
-                                          <span class='ident'>error</span>:  <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>xcb_generic_error_t</span>)
-            <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>xcb_big_requests_enable_reply_t</span>;
+    <span class="doccomment">/// the returned value must be freed by the caller using libc::free().</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">xcb_big_requests_enable_reply</span> (<span class="ident">c</span>:      <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">xcb_connection_t</span>,
+                                          <span class="ident">cookie</span>: <span class="ident">xcb_big_requests_enable_cookie_t</span>,
+                                          <span class="ident">error</span>:  <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">xcb_generic_error_t</span>)
+            <span class="op">-&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">xcb_big_requests_enable_reply_t</span>;
 
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>xcb_big_requests_enable</span> (<span class='ident'>c</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>xcb_connection_t</span>)
-            <span class='op'>-&gt;</span> <span class='ident'>xcb_big_requests_enable_cookie_t</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">xcb_big_requests_enable</span> (<span class="ident">c</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">xcb_connection_t</span>)
+            <span class="op">-&gt;</span> <span class="ident">xcb_big_requests_enable_cookie_t</span>;
 
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>xcb_big_requests_enable_unchecked</span> (<span class='ident'>c</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>xcb_connection_t</span>)
-            <span class='op'>-&gt;</span> <span class='ident'>xcb_big_requests_enable_cookie_t</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">xcb_big_requests_enable_unchecked</span> (<span class="ident">c</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">xcb_connection_t</span>)
+            <span class="op">-&gt;</span> <span class="ident">xcb_big_requests_enable_cookie_t</span>;
 
-} <span class='comment'>// extern</span>
+} <span class="comment">// extern</span>
 </pre>
 </section>
     <section id='search' class="content hidden"></section>
@@ -197,13 +199,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -236,11 +240,8 @@
     <script>
         window.rootPath = "../../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../../jquery.js"></script>
     <script src="../../../main.js"></script>
-    
     <script defer src="../../../search-index.js"></script>
 </body>
 </html>

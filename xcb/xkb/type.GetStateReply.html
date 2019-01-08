@@ -9,6 +9,7 @@
 
     <title>xcb::xkb::GetStateReply - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc type">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'GetStateReply', ty: 'type', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Type Definition GetStateReply</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.device_i_d">device_i_d</a><a href="#method.mods">mods</a><a href="#method.base_mods">base_mods</a><a href="#method.latched_mods">latched_mods</a><a href="#method.locked_mods">locked_mods</a><a href="#method.group">group</a><a href="#method.locked_group">locked_group</a><a href="#method.base_group">base_group</a><a href="#method.latched_group">latched_group</a><a href="#method.compat_state">compat_state</a><a href="#method.grab_mods">grab_mods</a><a href="#method.compat_grab_mods">compat_grab_mods</a><a href="#method.lookup_mods">lookup_mods</a><a href="#method.compat_lookup_mods">compat_lookup_mods</a><a href="#method.ptr_btn_state">ptr_btn_state</a></div></div><p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'GetStateReply', ty: 'type', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -42,13 +44,33 @@
         </form>
     </nav>
 
-    <section id='main' class="content type">
-<h1 class='fqn'><span class='in-band'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class='type' href=''>GetStateReply</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Type Definition <a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class="type" href=''>GetStateReply</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-6457' class='srclink' href='../../src/xcb/xkb.rs.html#3193' title='goto source code'>[src]</a></span></h1>
-<pre class='rust typedef'>type GetStateReply = <a class='struct' href='../../xcb/base/struct.Reply.html' title='xcb::base::Reply'>Reply</a>&lt;<a class='struct' href='../../xcb/ffi/xkb/struct.xcb_xkb_get_state_reply_t.html' title='xcb::ffi::xkb::xcb_xkb_get_state_reply_t'>xcb_xkb_get_state_reply_t</a>&gt;;</pre></section>
+               </span><a class='srclink' href='../../src/xcb/xkb.rs.html#4069' title='goto source code'>[src]</a></span></h1>
+<pre class='rust typedef'>type GetStateReply = <a class="struct" href="../../xcb/base/struct.Reply.html" title="struct xcb::base::Reply">Reply</a>&lt;<a class="struct" href="../../xcb/ffi/xkb/struct.xcb_xkb_get_state_reply_t.html" title="struct xcb::ffi::xkb::xcb_xkb_get_state_reply_t">xcb_xkb_get_state_reply_t</a>&gt;;</pre>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="type" href="../../xcb/xkb/type.GetStateReply.html" title="type xcb::xkb::GetStateReply">GetStateReply</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4071-4147' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.device_i_d' class="method"><span id='device_i_d.v' class='invisible'><code>pub fn <a href='#method.device_i_d' class='fnname'>device_i_d</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4072-4076' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.mods' class="method"><span id='mods.v' class='invisible'><code>pub fn <a href='#method.mods' class='fnname'>mods</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4077-4081' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.base_mods' class="method"><span id='base_mods.v' class='invisible'><code>pub fn <a href='#method.base_mods' class='fnname'>base_mods</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4082-4086' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.latched_mods' class="method"><span id='latched_mods.v' class='invisible'><code>pub fn <a href='#method.latched_mods' class='fnname'>latched_mods</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4087-4091' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.locked_mods' class="method"><span id='locked_mods.v' class='invisible'><code>pub fn <a href='#method.locked_mods' class='fnname'>locked_mods</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4092-4096' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.group' class="method"><span id='group.v' class='invisible'><code>pub fn <a href='#method.group' class='fnname'>group</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4097-4101' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.locked_group' class="method"><span id='locked_group.v' class='invisible'><code>pub fn <a href='#method.locked_group' class='fnname'>locked_group</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4102-4106' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.base_group' class="method"><span id='base_group.v' class='invisible'><code>pub fn <a href='#method.base_group' class='fnname'>base_group</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4107-4111' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.latched_group' class="method"><span id='latched_group.v' class='invisible'><code>pub fn <a href='#method.latched_group' class='fnname'>latched_group</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4112-4116' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.compat_state' class="method"><span id='compat_state.v' class='invisible'><code>pub fn <a href='#method.compat_state' class='fnname'>compat_state</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4117-4121' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.grab_mods' class="method"><span id='grab_mods.v' class='invisible'><code>pub fn <a href='#method.grab_mods' class='fnname'>grab_mods</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4122-4126' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.compat_grab_mods' class="method"><span id='compat_grab_mods.v' class='invisible'><code>pub fn <a href='#method.compat_grab_mods' class='fnname'>compat_grab_mods</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4127-4131' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.lookup_mods' class="method"><span id='lookup_mods.v' class='invisible'><code>pub fn <a href='#method.lookup_mods' class='fnname'>lookup_mods</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4132-4136' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.compat_lookup_mods' class="method"><span id='compat_lookup_mods.v' class='invisible'><code>pub fn <a href='#method.compat_lookup_mods' class='fnname'>compat_lookup_mods</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4137-4141' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.ptr_btn_state' class="method"><span id='ptr_btn_state.v' class='invisible'><code>pub fn <a href='#method.ptr_btn_state' class='fnname'>ptr_btn_state</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#4142-4146' title='goto source code'>[src]</a></span></h4>
+</div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
@@ -65,13 +87,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -104,11 +128,8 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

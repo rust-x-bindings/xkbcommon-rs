@@ -9,6 +9,7 @@
 
     <title>xcb::ffi::xproto::xcb_screen_t - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc struct">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'><a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xproto</a></p><script>window.sidebarCurrent = {name: 'xcb_screen_t', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Struct xcb_screen_t</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.root">root</a><a href="#structfield.default_colormap">default_colormap</a><a href="#structfield.white_pixel">white_pixel</a><a href="#structfield.black_pixel">black_pixel</a><a href="#structfield.current_input_masks">current_input_masks</a><a href="#structfield.width_in_pixels">width_in_pixels</a><a href="#structfield.height_in_pixels">height_in_pixels</a><a href="#structfield.width_in_millimeters">width_in_millimeters</a><a href="#structfield.height_in_millimeters">height_in_millimeters</a><a href="#structfield.min_installed_maps">min_installed_maps</a><a href="#structfield.max_installed_maps">max_installed_maps</a><a href="#structfield.root_visual">root_visual</a><a href="#structfield.backing_stores">backing_stores</a><a href="#structfield.save_unders">save_unders</a><a href="#structfield.root_depth">root_depth</a><a href="#structfield.allowed_depths_len">allowed_depths_len</a></div></div><p class='location'><a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xproto</a></p><script>window.sidebarCurrent = {name: 'xcb_screen_t', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -42,46 +44,96 @@
         </form>
     </nav>
 
-    <section id='main' class="content struct">
-<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xproto</a>::<wbr><a class='struct' href=''>xcb_screen_t</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xproto</a>::<wbr><a class="struct" href=''>xcb_screen_t</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-8320' class='srclink' href='../../../src/xcb/ffi/xproto.rs.html#320-337' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct xcb_screen_t {
-    pub root: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_window_t.html' title='xcb::ffi::xproto::xcb_window_t'>xcb_window_t</a>,
-    pub default_colormap: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_colormap_t.html' title='xcb::ffi::xproto::xcb_colormap_t'>xcb_colormap_t</a>,
-    pub white_pixel: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
-    pub black_pixel: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
-    pub current_input_masks: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
-    pub width_in_pixels: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub height_in_pixels: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub width_in_millimeters: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub height_in_millimeters: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub min_installed_maps: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub max_installed_maps: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub root_visual: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_visualid_t.html' title='xcb::ffi::xproto::xcb_visualid_t'>xcb_visualid_t</a>,
-    pub backing_stores: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub save_unders: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub root_depth: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub allowed_depths_len: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-}</pre><h2 class='fields'>Fields</h2><span id='structfield.root' class='structfield'><code>root: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_window_t.html' title='xcb::ffi::xproto::xcb_window_t'>xcb_window_t</a></code>
-                           </span><span class='stab '></span><span id='structfield.default_colormap' class='structfield'><code>default_colormap: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_colormap_t.html' title='xcb::ffi::xproto::xcb_colormap_t'>xcb_colormap_t</a></code>
-                           </span><span class='stab '></span><span id='structfield.white_pixel' class='structfield'><code>white_pixel: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code>
-                           </span><span class='stab '></span><span id='structfield.black_pixel' class='structfield'><code>black_pixel: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code>
-                           </span><span class='stab '></span><span id='structfield.current_input_masks' class='structfield'><code>current_input_masks: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code>
-                           </span><span class='stab '></span><span id='structfield.width_in_pixels' class='structfield'><code>width_in_pixels: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.height_in_pixels' class='structfield'><code>height_in_pixels: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.width_in_millimeters' class='structfield'><code>width_in_millimeters: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.height_in_millimeters' class='structfield'><code>height_in_millimeters: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.min_installed_maps' class='structfield'><code>min_installed_maps: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.max_installed_maps' class='structfield'><code>max_installed_maps: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.root_visual' class='structfield'><code>root_visual: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_visualid_t.html' title='xcb::ffi::xproto::xcb_visualid_t'>xcb_visualid_t</a></code>
-                           </span><span class='stab '></span><span id='structfield.backing_stores' class='structfield'><code>backing_stores: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.save_unders' class='structfield'><code>save_unders: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.root_depth' class='structfield'><code>root_depth: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.allowed_depths_len' class='structfield'><code>allowed_depths_len: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span></section>
+               </span><a class='srclink' href='../../../src/xcb/ffi/xproto.rs.html#318-335' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct xcb_screen_t {
+    pub root: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_window_t.html" title="type xcb::ffi::xproto::xcb_window_t">xcb_window_t</a>,
+    pub default_colormap: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_colormap_t.html" title="type xcb::ffi::xproto::xcb_colormap_t">xcb_colormap_t</a>,
+    pub white_pixel: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub black_pixel: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub current_input_masks: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub width_in_pixels: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub height_in_pixels: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub width_in_millimeters: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub height_in_millimeters: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub min_installed_maps: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub max_installed_maps: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub root_visual: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_visualid_t.html" title="type xcb::ffi::xproto::xcb_visualid_t">xcb_visualid_t</a>,
+    pub backing_stores: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub save_unders: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub root_depth: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub allowed_depths_len: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+}</pre><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.root" class="structfield small-section-header">
+                           <a href="#structfield.root" class="anchor field"></a>
+                           <span id="root.v" class='invisible'>
+                           <code>root: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_window_t.html" title="type xcb::ffi::xproto::xcb_window_t">xcb_window_t</a></code>
+                           </span></span><span id="structfield.default_colormap" class="structfield small-section-header">
+                           <a href="#structfield.default_colormap" class="anchor field"></a>
+                           <span id="default_colormap.v" class='invisible'>
+                           <code>default_colormap: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_colormap_t.html" title="type xcb::ffi::xproto::xcb_colormap_t">xcb_colormap_t</a></code>
+                           </span></span><span id="structfield.white_pixel" class="structfield small-section-header">
+                           <a href="#structfield.white_pixel" class="anchor field"></a>
+                           <span id="white_pixel.v" class='invisible'>
+                           <code>white_pixel: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><span id="structfield.black_pixel" class="structfield small-section-header">
+                           <a href="#structfield.black_pixel" class="anchor field"></a>
+                           <span id="black_pixel.v" class='invisible'>
+                           <code>black_pixel: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><span id="structfield.current_input_masks" class="structfield small-section-header">
+                           <a href="#structfield.current_input_masks" class="anchor field"></a>
+                           <span id="current_input_masks.v" class='invisible'>
+                           <code>current_input_masks: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><span id="structfield.width_in_pixels" class="structfield small-section-header">
+                           <a href="#structfield.width_in_pixels" class="anchor field"></a>
+                           <span id="width_in_pixels.v" class='invisible'>
+                           <code>width_in_pixels: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.height_in_pixels" class="structfield small-section-header">
+                           <a href="#structfield.height_in_pixels" class="anchor field"></a>
+                           <span id="height_in_pixels.v" class='invisible'>
+                           <code>height_in_pixels: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.width_in_millimeters" class="structfield small-section-header">
+                           <a href="#structfield.width_in_millimeters" class="anchor field"></a>
+                           <span id="width_in_millimeters.v" class='invisible'>
+                           <code>width_in_millimeters: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.height_in_millimeters" class="structfield small-section-header">
+                           <a href="#structfield.height_in_millimeters" class="anchor field"></a>
+                           <span id="height_in_millimeters.v" class='invisible'>
+                           <code>height_in_millimeters: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.min_installed_maps" class="structfield small-section-header">
+                           <a href="#structfield.min_installed_maps" class="anchor field"></a>
+                           <span id="min_installed_maps.v" class='invisible'>
+                           <code>min_installed_maps: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.max_installed_maps" class="structfield small-section-header">
+                           <a href="#structfield.max_installed_maps" class="anchor field"></a>
+                           <span id="max_installed_maps.v" class='invisible'>
+                           <code>max_installed_maps: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.root_visual" class="structfield small-section-header">
+                           <a href="#structfield.root_visual" class="anchor field"></a>
+                           <span id="root_visual.v" class='invisible'>
+                           <code>root_visual: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_visualid_t.html" title="type xcb::ffi::xproto::xcb_visualid_t">xcb_visualid_t</a></code>
+                           </span></span><span id="structfield.backing_stores" class="structfield small-section-header">
+                           <a href="#structfield.backing_stores" class="anchor field"></a>
+                           <span id="backing_stores.v" class='invisible'>
+                           <code>backing_stores: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.save_unders" class="structfield small-section-header">
+                           <a href="#structfield.save_unders" class="anchor field"></a>
+                           <span id="save_unders.v" class='invisible'>
+                           <code>save_unders: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.root_depth" class="structfield small-section-header">
+                           <a href="#structfield.root_depth" class="anchor field"></a>
+                           <span id="root_depth.v" class='invisible'>
+                           <code>root_depth: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.allowed_depths_len" class="structfield small-section-header">
+                           <a href="#structfield.allowed_depths_len" class="anchor field"></a>
+                           <span id="allowed_depths_len.v" class='invisible'>
+                           <code>allowed_depths_len: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
@@ -98,13 +150,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -137,11 +191,8 @@
     <script>
         window.rootPath = "../../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../../jquery.js"></script>
     <script src="../../../main.js"></script>
-    
     <script defer src="../../../search-index.js"></script>
 </body>
 </html>

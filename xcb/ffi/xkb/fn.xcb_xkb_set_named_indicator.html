@@ -9,6 +9,7 @@
 
     <title>xcb::ffi::xkb::xcb_xkb_set_named_indicator - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc fn">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,6 +28,7 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
         <p class='location'><a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'xcb_xkb_set_named_indicator', ty: 'fn', relpath: ''};</script><script defer src="sidebar-items.js"></script>
     </nav>
@@ -42,13 +44,13 @@
         </form>
     </nav>
 
-    <section id='main' class="content fn">
-<h1 class='fqn'><span class='in-band'><a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class='fn' href=''>xcb_xkb_set_named_indicator</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Function <a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class="fn" href=''>xcb_xkb_set_named_indicator</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-16613' class='srclink' href='../../../src/xcb/ffi/xkb.rs.html#4065-4081' title='goto source code'>[src]</a></span></h1>
-<pre class='rust fn'>pub unsafe extern fn xcb_xkb_set_named_indicator(c: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../../xcb/ffi/base/enum.xcb_connection_t.html' title='xcb::ffi::base::xcb_connection_t'>xcb_connection_t</a>, deviceSpec: <a class='type' href='../../../xcb/ffi/xkb/type.xcb_xkb_device_spec_t.html' title='xcb::ffi::xkb::xcb_xkb_device_spec_t'>xcb_xkb_device_spec_t</a>, ledClass: <a class='type' href='../../../xcb/ffi/xkb/type.xcb_xkb_led_class_spec_t.html' title='xcb::ffi::xkb::xcb_xkb_led_class_spec_t'>xcb_xkb_led_class_spec_t</a>, ledID: <a class='type' href='../../../xcb/ffi/xkb/type.xcb_xkb_id_spec_t.html' title='xcb::ffi::xkb::xcb_xkb_id_spec_t'>xcb_xkb_id_spec_t</a>, indicator: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_atom_t.html' title='xcb::ffi::xproto::xcb_atom_t'>xcb_atom_t</a>, setState: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>, on: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>, setMap: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>, createMap: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>, map_flags: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>, map_whichGroups: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>, map_groups: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>, map_whichMods: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>, map_realMods: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>, map_vmods: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>, map_ctrls: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>) -&gt; <a class='struct' href='../../../xcb/ffi/base/struct.xcb_void_cookie_t.html' title='xcb::ffi::base::xcb_void_cookie_t'>xcb_void_cookie_t</a></pre></section>
+               </span><a class='srclink' href='../../../src/xcb/ffi/xkb.rs.html#4043-4059' title='goto source code'>[src]</a></span></h1>
+<pre class='rust fn'>pub unsafe extern &quot;C&quot; fn xcb_xkb_set_named_indicator(<br>&nbsp;&nbsp;&nbsp;&nbsp;c: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="../../../xcb/ffi/base/enum.xcb_connection_t.html" title="enum xcb::ffi::base::xcb_connection_t">xcb_connection_t</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;deviceSpec: <a class="type" href="../../../xcb/ffi/xkb/type.xcb_xkb_device_spec_t.html" title="type xcb::ffi::xkb::xcb_xkb_device_spec_t">xcb_xkb_device_spec_t</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;ledClass: <a class="type" href="../../../xcb/ffi/xkb/type.xcb_xkb_led_class_spec_t.html" title="type xcb::ffi::xkb::xcb_xkb_led_class_spec_t">xcb_xkb_led_class_spec_t</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;ledID: <a class="type" href="../../../xcb/ffi/xkb/type.xcb_xkb_id_spec_t.html" title="type xcb::ffi::xkb::xcb_xkb_id_spec_t">xcb_xkb_id_spec_t</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;indicator: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_atom_t.html" title="type xcb::ffi::xproto::xcb_atom_t">xcb_atom_t</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;setState: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;on: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;setMap: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;createMap: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;map_flags: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;map_whichGroups: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;map_groups: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;map_whichMods: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;map_realMods: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;map_vmods: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;map_ctrls: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a><br>) -&gt; <a class="struct" href="../../../xcb/ffi/base/struct.xcb_void_cookie_t.html" title="struct xcb::ffi::base::xcb_void_cookie_t">xcb_void_cookie_t</a></pre></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
@@ -65,13 +67,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -104,11 +108,8 @@
     <script>
         window.rootPath = "../../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../../jquery.js"></script>
     <script src="../../../main.js"></script>
-    
     <script defer src="../../../search-index.js"></script>
 </body>
 </html>

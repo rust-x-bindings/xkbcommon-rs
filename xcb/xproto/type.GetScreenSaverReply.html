@@ -9,6 +9,7 @@
 
     <title>xcb::xproto::GetScreenSaverReply - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc type">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xproto</a></p><script>window.sidebarCurrent = {name: 'GetScreenSaverReply', ty: 'type', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Type Definition GetScreenSaverReply</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.timeout">timeout</a><a href="#method.interval">interval</a><a href="#method.prefer_blanking">prefer_blanking</a><a href="#method.allow_exposures">allow_exposures</a></div></div><p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xproto</a></p><script>window.sidebarCurrent = {name: 'GetScreenSaverReply', ty: 'type', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -42,13 +44,22 @@
         </form>
     </nav>
 
-    <section id='main' class="content type">
-<h1 class='fqn'><span class='in-band'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xproto</a>::<wbr><a class='type' href=''>GetScreenSaverReply</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Type Definition <a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xproto</a>::<wbr><a class="type" href=''>GetScreenSaverReply</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-4431' class='srclink' href='../../src/xcb/xproto.rs.html#12507' title='goto source code'>[src]</a></span></h1>
-<pre class='rust typedef'>type GetScreenSaverReply = <a class='struct' href='../../xcb/base/struct.Reply.html' title='xcb::base::Reply'>Reply</a>&lt;<a class='struct' href='../../xcb/ffi/xproto/struct.xcb_get_screen_saver_reply_t.html' title='xcb::ffi::xproto::xcb_get_screen_saver_reply_t'>xcb_get_screen_saver_reply_t</a>&gt;;</pre></section>
+               </span><a class='srclink' href='../../src/xcb/xproto.rs.html#12603' title='goto source code'>[src]</a></span></h1>
+<pre class='rust typedef'>type GetScreenSaverReply = <a class="struct" href="../../xcb/base/struct.Reply.html" title="struct xcb::base::Reply">Reply</a>&lt;<a class="struct" href="../../xcb/ffi/xproto/struct.xcb_get_screen_saver_reply_t.html" title="struct xcb::ffi::xproto::xcb_get_screen_saver_reply_t">xcb_get_screen_saver_reply_t</a>&gt;;</pre>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="type" href="../../xcb/xproto/type.GetScreenSaverReply.html" title="type xcb::xproto::GetScreenSaverReply">GetScreenSaverReply</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#12605-12626' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.timeout' class="method"><span id='timeout.v' class='invisible'><code>pub fn <a href='#method.timeout' class='fnname'>timeout</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#12606-12610' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.interval' class="method"><span id='interval.v' class='invisible'><code>pub fn <a href='#method.interval' class='fnname'>interval</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#12611-12615' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.prefer_blanking' class="method"><span id='prefer_blanking.v' class='invisible'><code>pub fn <a href='#method.prefer_blanking' class='fnname'>prefer_blanking</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#12616-12620' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.allow_exposures' class="method"><span id='allow_exposures.v' class='invisible'><code>pub fn <a href='#method.allow_exposures' class='fnname'>allow_exposures</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xproto.rs.html#12621-12625' title='goto source code'>[src]</a></span></h4>
+</div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
@@ -65,13 +76,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -104,11 +117,8 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

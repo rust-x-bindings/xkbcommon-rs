@@ -9,6 +9,7 @@
 
     <title>xcb::ffi::xproto::xcb_get_window_attributes_reply_t - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc struct">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'><a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xproto</a></p><script>window.sidebarCurrent = {name: 'xcb_get_window_attributes_reply_t', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Struct xcb_get_window_attributes_reply_t</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.response_type">response_type</a><a href="#structfield.backing_store">backing_store</a><a href="#structfield.sequence">sequence</a><a href="#structfield.length">length</a><a href="#structfield.visual">visual</a><a href="#structfield.class">class</a><a href="#structfield.bit_gravity">bit_gravity</a><a href="#structfield.win_gravity">win_gravity</a><a href="#structfield.backing_planes">backing_planes</a><a href="#structfield.backing_pixel">backing_pixel</a><a href="#structfield.save_under">save_under</a><a href="#structfield.map_is_installed">map_is_installed</a><a href="#structfield.map_state">map_state</a><a href="#structfield.override_redirect">override_redirect</a><a href="#structfield.colormap">colormap</a><a href="#structfield.all_event_masks">all_event_masks</a><a href="#structfield.your_event_mask">your_event_mask</a><a href="#structfield.do_not_propagate_mask">do_not_propagate_mask</a><a href="#structfield.pad0">pad0</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Copy">Copy</a><a href="#impl-Clone">Clone</a></div></div><p class='location'><a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xproto</a></p><script>window.sidebarCurrent = {name: 'xcb_get_window_attributes_reply_t', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -42,65 +44,128 @@
         </form>
     </nav>
 
-    <section id='main' class="content struct">
-<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xproto</a>::<wbr><a class='struct' href=''>xcb_get_window_attributes_reply_t</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>xcb</a>::<wbr><a href='../index.html'>ffi</a>::<wbr><a href='index.html'>xproto</a>::<wbr><a class="struct" href=''>xcb_get_window_attributes_reply_t</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-9147' class='srclink' href='../../../src/xcb/ffi/xproto.rs.html#1649-1683' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct xcb_get_window_attributes_reply_t {
-    pub response_type: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub backing_store: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub sequence: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub length: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
-    pub visual: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_visualid_t.html' title='xcb::ffi::xproto::xcb_visualid_t'>xcb_visualid_t</a>,
-    pub class: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub bit_gravity: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub win_gravity: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub backing_planes: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
-    pub backing_pixel: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
-    pub save_under: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub map_is_installed: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub map_state: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub override_redirect: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>,
-    pub colormap: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_colormap_t.html' title='xcb::ffi::xproto::xcb_colormap_t'>xcb_colormap_t</a>,
-    pub all_event_masks: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
-    pub your_event_mask: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
-    pub do_not_propagate_mask: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
-    pub pad0: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 2]</a>,
-}</pre><h2 class='fields'>Fields</h2><span id='structfield.response_type' class='structfield'><code>response_type: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.backing_store' class='structfield'><code>backing_store: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><div class='docblock'></div><span id='structfield.sequence' class='structfield'><code>sequence: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><span id='structfield.length' class='structfield'><code>length: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code>
-                           </span><span class='stab '></span><span id='structfield.visual' class='structfield'><code>visual: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_visualid_t.html' title='xcb::ffi::xproto::xcb_visualid_t'>xcb_visualid_t</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>The associated visual structure of <code>window</code>.</p>
-</div><span id='structfield.class' class='structfield'><code>class: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><div class='docblock'></div><span id='structfield.bit_gravity' class='structfield'><code>bit_gravity: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><div class='docblock'></div><span id='structfield.win_gravity' class='structfield'><code>win_gravity: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><div class='docblock'></div><span id='structfield.backing_planes' class='structfield'><code>backing_planes: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>Planes to be preserved if possible.</p>
-</div><span id='structfield.backing_pixel' class='structfield'><code>backing_pixel: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>Value to be used when restoring planes.</p>
-</div><span id='structfield.save_under' class='structfield'><code>save_under: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>Boolean, should bits under be saved?</p>
-</div><span id='structfield.map_is_installed' class='structfield'><code>map_is_installed: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><span id='structfield.map_state' class='structfield'><code>map_state: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><div class='docblock'></div><span id='structfield.override_redirect' class='structfield'><code>override_redirect: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>Window managers should ignore this window if <code>override_redirect</code> is 1.</p>
-</div><span id='structfield.colormap' class='structfield'><code>colormap: <a class='type' href='../../../xcb/ffi/xproto/type.xcb_colormap_t.html' title='xcb::ffi::xproto::xcb_colormap_t'>xcb_colormap_t</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>Color map to be associated with window.</p>
-</div><span id='structfield.all_event_masks' class='structfield'><code>all_event_masks: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>Set of events all people have interest in.</p>
-</div><span id='structfield.your_event_mask' class='structfield'><code>your_event_mask: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>My event mask.</p>
-</div><span id='structfield.do_not_propagate_mask' class='structfield'><code>do_not_propagate_mask: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code>
-                           </span><span class='stab '></span><div class='docblock'><p>Set of events that should not propagate.</p>
-</div><span id='structfield.pad0' class='structfield'><code>pad0: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 2]</a></code>
-                           </span><span class='stab '></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../../xcb/ffi/xproto/struct.xcb_get_window_attributes_reply_t.html' title='xcb::ffi::xproto::xcb_get_window_attributes_reply_t'>xcb_get_window_attributes_reply_t</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-9168' class='srclink' href='../../../src/xcb/ffi/xproto.rs.html#1685' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../../xcb/ffi/xproto/struct.xcb_get_window_attributes_reply_t.html' title='xcb::ffi::xproto::xcb_get_window_attributes_reply_t'>xcb_get_window_attributes_reply_t</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-9169' class='srclink' href='../../../src/xcb/ffi/xproto.rs.html#1686-1688' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../../xcb/ffi/xproto/struct.xcb_get_window_attributes_reply_t.html' title='xcb::ffi::xproto::xcb_get_window_attributes_reply_t'>xcb_get_window_attributes_reply_t</a></code></h4>
+               </span><a class='srclink' href='../../../src/xcb/ffi/xproto.rs.html#1647-1681' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct xcb_get_window_attributes_reply_t {
+    pub response_type: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub backing_store: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub sequence: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub length: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub visual: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_visualid_t.html" title="type xcb::ffi::xproto::xcb_visualid_t">xcb_visualid_t</a>,
+    pub class: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub bit_gravity: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub win_gravity: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub backing_planes: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub backing_pixel: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub save_under: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub map_is_installed: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub map_state: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub override_redirect: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub colormap: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_colormap_t.html" title="type xcb::ffi::xproto::xcb_colormap_t">xcb_colormap_t</a>,
+    pub all_event_masks: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub your_event_mask: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub do_not_propagate_mask: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub pad0: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 2]</a>,
+}</pre><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.response_type" class="structfield small-section-header">
+                           <a href="#structfield.response_type" class="anchor field"></a>
+                           <span id="response_type.v" class='invisible'>
+                           <code>response_type: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.backing_store" class="structfield small-section-header">
+                           <a href="#structfield.backing_store" class="anchor field"></a>
+                           <span id="backing_store.v" class='invisible'>
+                           <code>backing_store: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><div class='docblock'></div><span id="structfield.sequence" class="structfield small-section-header">
+                           <a href="#structfield.sequence" class="anchor field"></a>
+                           <span id="sequence.v" class='invisible'>
+                           <code>sequence: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><span id="structfield.length" class="structfield small-section-header">
+                           <a href="#structfield.length" class="anchor field"></a>
+                           <span id="length.v" class='invisible'>
+                           <code>length: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><span id="structfield.visual" class="structfield small-section-header">
+                           <a href="#structfield.visual" class="anchor field"></a>
+                           <span id="visual.v" class='invisible'>
+                           <code>visual: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_visualid_t.html" title="type xcb::ffi::xproto::xcb_visualid_t">xcb_visualid_t</a></code>
+                           </span></span><div class='docblock'><p>The associated visual structure of <code>window</code>.</p>
+</div><span id="structfield.class" class="structfield small-section-header">
+                           <a href="#structfield.class" class="anchor field"></a>
+                           <span id="class.v" class='invisible'>
+                           <code>class: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><div class='docblock'></div><span id="structfield.bit_gravity" class="structfield small-section-header">
+                           <a href="#structfield.bit_gravity" class="anchor field"></a>
+                           <span id="bit_gravity.v" class='invisible'>
+                           <code>bit_gravity: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><div class='docblock'></div><span id="structfield.win_gravity" class="structfield small-section-header">
+                           <a href="#structfield.win_gravity" class="anchor field"></a>
+                           <span id="win_gravity.v" class='invisible'>
+                           <code>win_gravity: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><div class='docblock'></div><span id="structfield.backing_planes" class="structfield small-section-header">
+                           <a href="#structfield.backing_planes" class="anchor field"></a>
+                           <span id="backing_planes.v" class='invisible'>
+                           <code>backing_planes: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><div class='docblock'><p>Planes to be preserved if possible.</p>
+</div><span id="structfield.backing_pixel" class="structfield small-section-header">
+                           <a href="#structfield.backing_pixel" class="anchor field"></a>
+                           <span id="backing_pixel.v" class='invisible'>
+                           <code>backing_pixel: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><div class='docblock'><p>Value to be used when restoring planes.</p>
+</div><span id="structfield.save_under" class="structfield small-section-header">
+                           <a href="#structfield.save_under" class="anchor field"></a>
+                           <span id="save_under.v" class='invisible'>
+                           <code>save_under: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><div class='docblock'><p>Boolean, should bits under be saved?</p>
+</div><span id="structfield.map_is_installed" class="structfield small-section-header">
+                           <a href="#structfield.map_is_installed" class="anchor field"></a>
+                           <span id="map_is_installed.v" class='invisible'>
+                           <code>map_is_installed: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id="structfield.map_state" class="structfield small-section-header">
+                           <a href="#structfield.map_state" class="anchor field"></a>
+                           <span id="map_state.v" class='invisible'>
+                           <code>map_state: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><div class='docblock'></div><span id="structfield.override_redirect" class="structfield small-section-header">
+                           <a href="#structfield.override_redirect" class="anchor field"></a>
+                           <span id="override_redirect.v" class='invisible'>
+                           <code>override_redirect: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><div class='docblock'><p>Window managers should ignore this window if <code>override_redirect</code> is 1.</p>
+</div><span id="structfield.colormap" class="structfield small-section-header">
+                           <a href="#structfield.colormap" class="anchor field"></a>
+                           <span id="colormap.v" class='invisible'>
+                           <code>colormap: <a class="type" href="../../../xcb/ffi/xproto/type.xcb_colormap_t.html" title="type xcb::ffi::xproto::xcb_colormap_t">xcb_colormap_t</a></code>
+                           </span></span><div class='docblock'><p>Color map to be associated with window.</p>
+</div><span id="structfield.all_event_masks" class="structfield small-section-header">
+                           <a href="#structfield.all_event_masks" class="anchor field"></a>
+                           <span id="all_event_masks.v" class='invisible'>
+                           <code>all_event_masks: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><div class='docblock'><p>Set of events all people have interest in.</p>
+</div><span id="structfield.your_event_mask" class="structfield small-section-header">
+                           <a href="#structfield.your_event_mask" class="anchor field"></a>
+                           <span id="your_event_mask.v" class='invisible'>
+                           <code>your_event_mask: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><div class='docblock'><p>My event mask.</p>
+</div><span id="structfield.do_not_propagate_mask" class="structfield small-section-header">
+                           <a href="#structfield.do_not_propagate_mask" class="anchor field"></a>
+                           <span id="do_not_propagate_mask.v" class='invisible'>
+                           <code>do_not_propagate_mask: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><div class='docblock'><p>Set of events that should not propagate.</p>
+</div><span id="structfield.pad0" class="structfield small-section-header">
+                           <a href="#structfield.pad0" class="anchor field"></a>
+                           <span id="pad0.v" class='invisible'>
+                           <code>pad0: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 2]</a></code>
+                           </span></span>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Copy' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> for <a class="struct" href="../../../xcb/ffi/xproto/struct.xcb_get_window_attributes_reply_t.html" title="struct xcb::ffi::xproto::xcb_get_window_attributes_reply_t">xcb_get_window_attributes_reply_t</a></code><a href='#impl-Copy' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/xcb/ffi/xproto.rs.html#1683' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../../xcb/ffi/xproto/struct.xcb_get_window_attributes_reply_t.html" title="struct xcb::ffi::xproto::xcb_get_window_attributes_reply_t">xcb_get_window_attributes_reply_t</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/xcb/ffi/xproto.rs.html#1684-1686' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../../xcb/ffi/xproto/struct.xcb_get_window_attributes_reply_t.html" title="struct xcb::ffi::xproto::xcb_get_window_attributes_reply_t">xcb_get_window_attributes_reply_t</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/xcb/ffi/xproto.rs.html#1685' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
-</div><h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
 </div></div></section>
     <section id='search' class="content hidden"></section>
@@ -119,13 +184,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -158,11 +225,8 @@
     <script>
         window.rootPath = "../../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../../jquery.js"></script>
     <script src="../../../main.js"></script>
-    
     <script defer src="../../../search-index.js"></script>
 </body>
 </html>

@@ -9,6 +9,7 @@
 
     <title>xcb::xkb::GetDeviceInfoReply - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -16,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc type">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -27,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'GetDeviceInfoReply', ty: 'type', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Type Definition GetDeviceInfoReply</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.device_i_d">device_i_d</a><a href="#method.present">present</a><a href="#method.supported">supported</a><a href="#method.unsupported">unsupported</a><a href="#method.n_device_led_f_bs">n_device_led_f_bs</a><a href="#method.first_btn_wanted">first_btn_wanted</a><a href="#method.n_btns_wanted">n_btns_wanted</a><a href="#method.first_btn_rtrn">first_btn_rtrn</a><a href="#method.n_btns_rtrn">n_btns_rtrn</a><a href="#method.total_btns">total_btns</a><a href="#method.has_own_state">has_own_state</a><a href="#method.dflt_kbd_f_b">dflt_kbd_f_b</a><a href="#method.dflt_led_f_b">dflt_led_f_b</a><a href="#method.dev_type">dev_type</a><a href="#method.name_len">name_len</a><a href="#method.name">name</a><a href="#method.btn_actions">btn_actions</a><a href="#method.leds">leds</a></div></div><p class='location'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a></p><script>window.sidebarCurrent = {name: 'GetDeviceInfoReply', ty: 'type', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -42,13 +44,36 @@
         </form>
     </nav>
 
-    <section id='main' class="content type">
-<h1 class='fqn'><span class='in-band'><a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class='type' href=''>GetDeviceInfoReply</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Type Definition <a href='../index.html'>xcb</a>::<wbr><a href='index.html'>xkb</a>::<wbr><a class="type" href=''>GetDeviceInfoReply</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-7339' class='srclink' href='../../src/xcb/xkb.rs.html#5284' title='goto source code'>[src]</a></span></h1>
-<pre class='rust typedef'>type GetDeviceInfoReply = <a class='struct' href='../../xcb/base/struct.Reply.html' title='xcb::base::Reply'>Reply</a>&lt;<a class='struct' href='../../xcb/ffi/xkb/struct.xcb_xkb_get_device_info_reply_t.html' title='xcb::ffi::xkb::xcb_xkb_get_device_info_reply_t'>xcb_xkb_get_device_info_reply_t</a>&gt;;</pre></section>
+               </span><a class='srclink' href='../../src/xcb/xkb.rs.html#6160' title='goto source code'>[src]</a></span></h1>
+<pre class='rust typedef'>type GetDeviceInfoReply = <a class="struct" href="../../xcb/base/struct.Reply.html" title="struct xcb::base::Reply">Reply</a>&lt;<a class="struct" href="../../xcb/ffi/xkb/struct.xcb_xkb_get_device_info_reply_t.html" title="struct xcb::ffi::xkb::xcb_xkb_get_device_info_reply_t">xcb_xkb_get_device_info_reply_t</a>&gt;;</pre>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="type" href="../../xcb/xkb/type.GetDeviceInfoReply.html" title="type xcb::xkb::GetDeviceInfoReply">GetDeviceInfoReply</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#6162-6256' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.device_i_d' class="method"><span id='device_i_d.v' class='invisible'><code>pub fn <a href='#method.device_i_d' class='fnname'>device_i_d</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#6163-6167' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.present' class="method"><span id='present.v' class='invisible'><code>pub fn <a href='#method.present' class='fnname'>present</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#6168-6172' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.supported' class="method"><span id='supported.v' class='invisible'><code>pub fn <a href='#method.supported' class='fnname'>supported</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#6173-6177' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.unsupported' class="method"><span id='unsupported.v' class='invisible'><code>pub fn <a href='#method.unsupported' class='fnname'>unsupported</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#6178-6182' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.n_device_led_f_bs' class="method"><span id='n_device_led_f_bs.v' class='invisible'><code>pub fn <a href='#method.n_device_led_f_bs' class='fnname'>n_device_led_f_bs</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#6183-6187' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.first_btn_wanted' class="method"><span id='first_btn_wanted.v' class='invisible'><code>pub fn <a href='#method.first_btn_wanted' class='fnname'>first_btn_wanted</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#6188-6192' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.n_btns_wanted' class="method"><span id='n_btns_wanted.v' class='invisible'><code>pub fn <a href='#method.n_btns_wanted' class='fnname'>n_btns_wanted</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#6193-6197' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.first_btn_rtrn' class="method"><span id='first_btn_rtrn.v' class='invisible'><code>pub fn <a href='#method.first_btn_rtrn' class='fnname'>first_btn_rtrn</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#6198-6202' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.n_btns_rtrn' class="method"><span id='n_btns_rtrn.v' class='invisible'><code>pub fn <a href='#method.n_btns_rtrn' class='fnname'>n_btns_rtrn</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#6203-6207' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.total_btns' class="method"><span id='total_btns.v' class='invisible'><code>pub fn <a href='#method.total_btns' class='fnname'>total_btns</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#6208-6212' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.has_own_state' class="method"><span id='has_own_state.v' class='invisible'><code>pub fn <a href='#method.has_own_state' class='fnname'>has_own_state</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#6213-6217' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.dflt_kbd_f_b' class="method"><span id='dflt_kbd_f_b.v' class='invisible'><code>pub fn <a href='#method.dflt_kbd_f_b' class='fnname'>dflt_kbd_f_b</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#6218-6222' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.dflt_led_f_b' class="method"><span id='dflt_led_f_b.v' class='invisible'><code>pub fn <a href='#method.dflt_led_f_b' class='fnname'>dflt_led_f_b</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#6223-6227' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.dev_type' class="method"><span id='dev_type.v' class='invisible'><code>pub fn <a href='#method.dev_type' class='fnname'>dev_type</a>(&amp;self) -&gt; <a class="type" href="../../xcb/xproto/type.Atom.html" title="type xcb::xproto::Atom">Atom</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#6228-6232' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.name_len' class="method"><span id='name_len.v' class='invisible'><code>pub fn <a href='#method.name_len' class='fnname'>name_len</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#6233-6237' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.name' class="method"><span id='name.v' class='invisible'><code>pub fn <a href='#method.name' class='fnname'>name</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="type" href="../../xcb/xkb/type.String8.html" title="type xcb::xkb::String8">String8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#6238-6245' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.btn_actions' class="method"><div class="important-traits"><div class='tooltip'>ⓘ<span class='tooltiptext'>Important traits for <a class="type" href="../../xcb/xkb/type.ActionIterator.html" title="type xcb::xkb::ActionIterator">ActionIterator</a></span></div><div class="content hidden"><h3 class="important">Important traits for <a class="type" href="../../xcb/xkb/type.ActionIterator.html" title="type xcb::xkb::ActionIterator">ActionIterator</a></h3><code class="content"><span class="where fmt-newline">impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html" title="trait core::iter::iterator::Iterator">Iterator</a> for <a class="type" href="../../xcb/xkb/type.ActionIterator.html" title="type xcb::xkb::ActionIterator">ActionIterator</a></span><span class="where fmt-newline">    type <a href='https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html#associatedtype.Item' class="type">Item</a> = <a class="type" href="../../xcb/xkb/type.Action.html" title="type xcb::xkb::Action">Action</a>;</span></code></div></div><span id='btn_actions.v' class='invisible'><code>pub fn <a href='#method.btn_actions' class='fnname'>btn_actions</a>(&amp;self) -&gt; <a class="type" href="../../xcb/xkb/type.ActionIterator.html" title="type xcb::xkb::ActionIterator">ActionIterator</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#6246-6250' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.leds' class="method"><div class="important-traits"><div class='tooltip'>ⓘ<span class='tooltiptext'>Important traits for <a class="type" href="../../xcb/xkb/type.DeviceLedInfoIterator.html" title="type xcb::xkb::DeviceLedInfoIterator">DeviceLedInfoIterator</a>&lt;'a&gt;</span></div><div class="content hidden"><h3 class="important">Important traits for <a class="type" href="../../xcb/xkb/type.DeviceLedInfoIterator.html" title="type xcb::xkb::DeviceLedInfoIterator">DeviceLedInfoIterator</a>&lt;'a&gt;</h3><code class="content"><span class="where fmt-newline">impl&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html" title="trait core::iter::iterator::Iterator">Iterator</a> for <a class="type" href="../../xcb/xkb/type.DeviceLedInfoIterator.html" title="type xcb::xkb::DeviceLedInfoIterator">DeviceLedInfoIterator</a>&lt;'a&gt;</span><span class="where fmt-newline">    type <a href='https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html#associatedtype.Item' class="type">Item</a> = <a class="type" href="../../xcb/xkb/type.DeviceLedInfo.html" title="type xcb::xkb::DeviceLedInfo">DeviceLedInfo</a>&lt;'a&gt;;</span></code></div></div><span id='leds.v' class='invisible'><code>pub fn <a href='#method.leds' class='fnname'>leds</a>(&amp;self) -&gt; <a class="type" href="../../xcb/xkb/type.DeviceLedInfoIterator.html" title="type xcb::xkb::DeviceLedInfoIterator">DeviceLedInfoIterator</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/xcb/xkb.rs.html#6251-6255' title='goto source code'>[src]</a></span></h4>
+</div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
@@ -65,13 +90,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
@@ -104,11 +131,8 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "xcb";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    
     <script defer src="../../search-index.js"></script>
 </body>
 </html>
