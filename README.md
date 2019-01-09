@@ -10,7 +10,7 @@ xkbcommon = { version = "0.2.3", features = ["wayland"] }
 For use with X11:
 ```toml
 [dependencies]
-xkbcommon = { version = "0.2", features = ["x11"] }
+xkbcommon = { version = "0.3", features = ["x11"] }
 ```
 
 # documentation
