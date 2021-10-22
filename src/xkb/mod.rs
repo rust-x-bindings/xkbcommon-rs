@@ -627,7 +627,7 @@ impl Keymap {
         let cmodel = CString::new(model.borrow().as_bytes()).unwrap();
         let clayout = CString::new(layout.borrow().as_bytes()).unwrap();
         let cvariant = CString::new(variant.borrow().as_bytes()).unwrap();
-        let (_, poptions) = match options {
+        let (_coptions, poptions) = match options {
             None => (CString::new(Vec::new()).unwrap(), null()),
             Some(s) => {
                 let coptions = CString::new(s.into_bytes()).unwrap();
