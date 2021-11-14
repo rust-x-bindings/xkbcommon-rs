@@ -53,6 +53,8 @@ use std::str;
 /// and Linux evdev scan codes (see linux/input.h), a fixed offset is used:
 ///
 /// ```no_run
+/// # use xkbcommon::xkb::keysyms::KEY_A;
+/// # use xkbcommon::xkb::Keycode;
 /// let keycode_A: Keycode = KEY_A + 8;
 /// ```
 ///
