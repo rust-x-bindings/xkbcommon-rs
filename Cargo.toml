@@ -20,6 +20,7 @@ xcb = { version = "1.0.0-beta", features = ["xkb"], optional = true }
 evdev = "0.11.0"
 
 [features]
+default = ["wayland"]
 x11 = ["xcb"]
 wayland = ["memmap2"]
 
