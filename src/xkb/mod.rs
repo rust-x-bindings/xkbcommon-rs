@@ -17,7 +17,7 @@ use xkb::ffi::*;
 pub use xkb::keysyms::*;
 
 #[cfg(feature = "wayland")]
-use memmap::MmapOptions;
+use memmap2::MmapOptions;
 #[cfg(feature = "wayland")]
 use std::os::unix::io::{FromRawFd, RawFd};
 
