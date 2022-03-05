@@ -701,34 +701,37 @@ impl Keymap {
     }
 
     #[cfg(feature = "wayland")]
-    /// Create a keymap from a file descriptor
+    /// Create a keymap from a file descriptor.
+    /// The file is mapped to memory and the keymap is created from the mapped memory buffer.
+    ///
+    /// # Safety
+    /// The file descriptor must be valid and all safety concerns of mapping files to memory
+    /// apply here.
     #[allow(clippy::missing_panics_doc)]
     #[must_use]
-    pub fn new_from_fd(
+    pub unsafe fn new_from_fd(
         context: &Context,
         fd: RawFd,
         size: usize,
         format: KeymapFormat,
         flags: KeymapCompileFlags,
     ) -> Option<Keymap> {
-        unsafe {
-            let map = MmapOptions::new()
-                .len(size as usize)
-                // Starting in version 7 of the wl_keyboard protocol, the keymap must be mapped using MAP_PRIVATE.
-                .map_copy_read_only(&fs::File::from_raw_fd(fd))
-                .unwrap();
-            let ptr = xkb_keymap_new_from_buffer(
-                context.ptr,
-                map.as_ptr().cast(),
-                size - 1,
-                format,
-                flags,
-            );
-            if ptr.is_null() {
-                None
-            } else {
-                Some(Keymap { ptr })
-            }
+        let map = MmapOptions::new()
+            .len(size as usize)
+            // Starting in version 7 of the wl_keyboard protocol, the keymap must be mapped using MAP_PRIVATE.
+            .map_copy_read_only(&fs::File::from_raw_fd(fd))
+            .unwrap();
+        let ptr = xkb_keymap_new_from_buffer(
+            context.ptr,
+            map.as_ptr().cast(),
+            size - 1,
+            format,
+            flags,
+        );
+        if ptr.is_null() {
+            None
+        } else {
+            Some(Keymap { ptr })
         }
     }
 
