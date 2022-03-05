@@ -1,5 +1,8 @@
 use super::{Context, Keysym};
+use std::borrow::Cow;
+use std::ffi::CStr;
 use std::ffi::CString;
+use std::ffi::OsStr;
 use std::mem;
 use std::str;
 use xkb::ffi::compose::*;
@@ -34,19 +37,27 @@ pub struct Table {
 }
 
 impl Table {
-    #[allow(
-        clippy::result_unit_err,
-        clippy::missing_panics_doc,
-        clippy::missing_errors_doc
-    )]
+    /// Build a table from a locale.
+    /// The locale is typically obtained from environment variables.
+    ///
+    /// # Panics
+    /// May panic if the locale contain inner null characters.
+    #[allow(clippy::result_unit_err, clippy::missing_errors_doc)]
     pub fn new_from_locale(
         context: &Context,
-        locale: &str,
+        locale: &OsStr,
         flags: CompileFlags,
     ) -> Result<Table, ()> {
-        let locale = CString::new(locale).unwrap();
+        use std::os::unix::ffi::OsStrExt;
+
+        let locale_cstr = CStr::from_bytes_with_nul(locale.as_bytes());
+        let locale_cstr = match locale_cstr {
+            Ok(loc) => Cow::from(loc),
+            Err(_) => Cow::from(CString::new(locale.as_bytes().to_vec()).unwrap()),
+        };
+
         let ptr = unsafe {
-            xkb_compose_table_new_from_locale(context.get_raw_ptr(), locale.as_ptr(), flags)
+            xkb_compose_table_new_from_locale(context.get_raw_ptr(), locale_cstr.as_ptr(), flags)
         };
         if ptr.is_null() {
             Err(())
