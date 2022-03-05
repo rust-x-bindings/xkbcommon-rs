@@ -1,11 +1,11 @@
 use super::{Context, Keysym};
+use crate::xkb::ffi::compose::*;
 use std::borrow::Cow;
 use std::ffi::CStr;
 use std::ffi::CString;
 use std::ffi::OsStr;
 use std::mem;
 use std::str;
-use xkb::ffi::compose::*;
 
 pub type CompileFlags = u32;
 pub const COMPILE_NO_FLAGS: CompileFlags = 0;
