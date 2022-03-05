@@ -17,7 +17,7 @@ use xkb::ffi::*;
 pub use xkb::keysyms::*;
 
 #[cfg(feature = "wayland")]
-use memmap::MmapOptions;
+use memmap2::MmapOptions;
 #[cfg(feature = "wayland")]
 use std::os::unix::io::{FromRawFd, RawFd};
 
@@ -714,7 +714,8 @@ impl Keymap {
         unsafe {
             let map = MmapOptions::new()
                 .len(size as usize)
-                .map(&fs::File::from_raw_fd(fd))
+                // Starting in version 7 of the wl_keyboard protocol, the keymap must be mapped using MAP_PRIVATE.
+                .map_copy_read_only(&fs::File::from_raw_fd(fd))
                 .unwrap();
             let ptr = xkb_keymap_new_from_buffer(
                 context.ptr,

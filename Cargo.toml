@@ -13,15 +13,16 @@ all-features = true
 
 [dependencies]
 libc = "0.2.102"
-memmap = { version = "0.7.0", optional = true }
+memmap2 = { version = "0.5.3", optional = true }
 xcb = { version = "1.0.0-beta", features = ["xkb"], optional = true }
 
 [dev-dependencies]
 evdev = "0.11.0"
 
 [features]
+default = ["wayland"]
 x11 = ["xcb"]
-wayland = ["memmap"]
+wayland = ["memmap2"]
 
 [[example]]
 name = "quick-evdev"
