@@ -1,4 +1,4 @@
-use xkb::ffi::{xkb_context, xkb_keymap, xkb_keymap_compile_flags, xkb_state};
+use crate::xkb::ffi::{xkb_context, xkb_keymap, xkb_keymap_compile_flags, xkb_state};
 
 use std::os::raw::c_int;
 use xcb::ffi::xcb_connection_t;

@@ -5,7 +5,7 @@ use std::ffi::CString;
 use std::ffi::OsStr;
 use std::mem;
 use std::str;
-use xkb::ffi::compose::*;
+use crate::xkb::ffi::compose::*;
 
 pub type CompileFlags = u32;
 pub const COMPILE_NO_FLAGS: CompileFlags = 0;

@@ -13,8 +13,8 @@ pub mod keysyms;
 pub mod x11;
 
 pub use self::compose::*;
-use xkb::ffi::*;
-pub use xkb::keysyms::*;
+use crate::xkb::ffi::*;
+pub use crate::xkb::keysyms::*;
 
 #[cfg(feature = "wayland")]
 use memmap2::MmapOptions;
