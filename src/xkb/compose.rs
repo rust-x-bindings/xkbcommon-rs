@@ -109,9 +109,7 @@ pub struct State {
 
 impl State {
     pub unsafe fn from_raw_ptr(ptr: *mut xkb_compose_state) -> State {
-        State {
-            ptr: ptr
-        }
+        State { ptr: ptr }
     }
 
     pub fn get_raw_ptr(&self) -> *mut xkb_compose_state {
