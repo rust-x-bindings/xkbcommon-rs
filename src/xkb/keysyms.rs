@@ -114,7 +114,7 @@ SOFTWARE.
 
 #![allow(non_upper_case_globals)]
 
-/// Special KeySym
+/// Special ``KeySym``
 pub const KEY_NoSymbol: u32 = 0x0000_0000;
 /// Void symbol
 pub const KEY_VoidSymbol: u32 = 0x00ff_ffff;
@@ -158,7 +158,7 @@ pub const KEY_Kanji: u32 = 0xff21;
 pub const KEY_Muhenkan: u32 = 0xff22;
 /// Start/Stop Conversion
 pub const KEY_Henkan_Mode: u32 = 0xff23;
-/// Alias for Henkan_Mode
+/// Alias for ``Henkan_Mode``
 pub const KEY_Henkan: u32 = 0xff23;
 /// to Romaji
 pub const KEY_Romaji: u32 = 0xff24;
@@ -239,7 +239,7 @@ pub const KEY_Help: u32 = 0xff6a;
 pub const KEY_Break: u32 = 0xff6b;
 /// Character set switch
 pub const KEY_Mode_switch: u32 = 0xff7e;
-/// Alias for mode_switch
+/// Alias for ``mode_switch``
 pub const KEY_script_switch: u32 = 0xff7e;
 pub const KEY_Num_Lock: u32 = 0xff7f;
 
@@ -250,7 +250,6 @@ pub const KEY_KP_Space: u32 = 0xff80;
 pub const KEY_KP_Tab: u32 = 0xff89;
 /// Enter
 pub const KEY_KP_Enter: u32 = 0xff8d;
-/// PF1, KP_A, ...
 pub const KEY_KP_F1: u32 = 0xff91;
 pub const KEY_KP_F2: u32 = 0xff92;
 pub const KEY_KP_F3: u32 = 0xff93;
@@ -403,7 +402,7 @@ pub const KEY_ISO_Level3_Lock: u32 = 0xfe05;
 pub const KEY_ISO_Level5_Shift: u32 = 0xfe11;
 pub const KEY_ISO_Level5_Latch: u32 = 0xfe12;
 pub const KEY_ISO_Level5_Lock: u32 = 0xfe13;
-/// Alias for mode_switch
+/// Alias for ``mode_switch``
 pub const KEY_ISO_Group_Shift: u32 = 0xff7e;
 pub const KEY_ISO_Group_Latch: u32 = 0xfe06;
 pub const KEY_ISO_Group_Lock: u32 = 0xfe07;
@@ -442,7 +441,7 @@ pub const KEY_dead_grave: u32 = 0xfe50;
 pub const KEY_dead_acute: u32 = 0xfe51;
 pub const KEY_dead_circumflex: u32 = 0xfe52;
 pub const KEY_dead_tilde: u32 = 0xfe53;
-/// alias for dead_tilde
+/// alias for ``dead_tilde``
 pub const KEY_dead_perispomeni: u32 = 0xfe53;
 pub const KEY_dead_macron: u32 = 0xfe54;
 pub const KEY_dead_breve: u32 = 0xfe55;
@@ -461,10 +460,10 @@ pub const KEY_dead_hook: u32 = 0xfe61;
 pub const KEY_dead_horn: u32 = 0xfe62;
 pub const KEY_dead_stroke: u32 = 0xfe63;
 pub const KEY_dead_abovecomma: u32 = 0xfe64;
-/// alias for dead_abovecomma
+/// alias for ``dead_abovecomma``
 pub const KEY_dead_psili: u32 = 0xfe64;
 pub const KEY_dead_abovereversedcomma: u32 = 0xfe65;
-/// alias for dead_abovereversedcomma
+/// alias for ``dead_abovereversedcomma``
 pub const KEY_dead_dasia: u32 = 0xfe65;
 pub const KEY_dead_doublegrave: u32 = 0xfe66;
 pub const KEY_dead_belowring: u32 = 0xfe67;
@@ -1454,7 +1453,7 @@ pub const KEY_kana_N: u32 = 0x04dd;
 pub const KEY_voicedsound: u32 = 0x04de;
 /// U+309C KATAKANA-HIRAGANA SEMI-VOICED SOUND MARK
 pub const KEY_semivoicedsound: u32 = 0x04df;
-/// Alias for mode_switch
+/// Alias for ``mode_switch``
 pub const KEY_kana_switch: u32 = 0xff7e;
 
 /*
@@ -1642,7 +1641,7 @@ pub const KEY_Arabic_farsi_yeh: u32 = 0x0100_06cc;
 pub const KEY_Arabic_yeh_baree: u32 = 0x0100_06d2;
 /// U+06C1 ARABIC LETTER HEH GOAL
 pub const KEY_Arabic_heh_goal: u32 = 0x0100_06c1;
-/// Alias for mode_switch
+/// Alias for ``mode_switch``
 pub const KEY_Arabic_switch: u32 = 0xff7e;
 
 /*
@@ -2084,7 +2083,7 @@ pub const KEY_Greek_chi: u32 = 0x07f7;
 pub const KEY_Greek_psi: u32 = 0x07f8;
 /// U+03C9 GREEK SMALL LETTER OMEGA
 pub const KEY_Greek_omega: u32 = 0x07f9;
-/// Alias for mode_switch
+/// Alias for ``mode_switch``
 pub const KEY_Greek_switch: u32 = 0xff7e;
 
 /*
@@ -2538,7 +2537,7 @@ pub const KEY_hebrew_shin: u32 = 0x0cf9;
 pub const KEY_hebrew_taw: u32 = 0x0cfa;
 /// deprecated
 pub const KEY_hebrew_taf: u32 = 0x0cfa;
-/// Alias for mode_switch
+/// Alias for ``mode_switch``
 pub const KEY_Hebrew_switch: u32 = 0xff7e;
 
 /*
@@ -2749,7 +2748,7 @@ pub const KEY_Hangul_MultipleCandidate: u32 = 0xff3d;
 pub const KEY_Hangul_PreviousCandidate: u32 = 0xff3e;
 /// Special symbols
 pub const KEY_Hangul_Special: u32 = 0xff3f;
-/// Alias for mode_switch
+/// Alias for ``mode_switch``
 pub const KEY_Hangul_switch: u32 = 0xff7e;
 
 /* Hangul Consonant Characters */
@@ -4603,38 +4602,38 @@ pub const KEY_SunF36: u32 = 0x1005_FF10;
 pub const KEY_SunF37: u32 = 0x1005_FF11;
 
 pub const KEY_SunSys_Req: u32 = 0x1005_FF60;
-/// Same as XK_Print
+/// Same as ``XK_Print``
 pub const KEY_SunPrint_Screen: u32 = 0x0000_FF61;
 
 /*
  * International & Multi-Key Character Composition
  */
 
-/// Same as XK_Multi_key
+/// Same as ``XK_Multi_key``
 pub const KEY_SunCompose: u32 = 0x0000_FF20;
-/// Same as XK_Mode_switch
+/// Same as ``XK_Mode_switch``
 pub const KEY_SunAltGraph: u32 = 0x0000_FF7E;
 
 /*
  * Cursor Control
  */
 
-/// Same as XK_Prior
+/// Same as ``XK_Prior``
 pub const KEY_SunPageUp: u32 = 0x0000_FF55;
-/// Same as XK_Next
+/// Same as ``XK_Next``
 pub const KEY_SunPageDown: u32 = 0x0000_FF56;
 
 /*
  * Open Look Functions
  */
 
-/// Same as XK_Undo
+/// Same as ``XK_Undo``
 pub const KEY_SunUndo: u32 = 0x0000_FF65;
-/// Same as XK_Redo
+/// Same as ``XK_Redo``
 pub const KEY_SunAgain: u32 = 0x0000_FF66;
-/// Same as XK_Find
+/// Same as ``XK_Find``
 pub const KEY_SunFind: u32 = 0x0000_FF68;
-/// Same as XK_Cancel
+/// Same as ``XK_Cancel``
 pub const KEY_SunStop: u32 = 0x0000_FF69;
 pub const KEY_SunProps: u32 = 0x1005_FF70;
 pub const KEY_SunFront: u32 = 0x1005_FF71;
