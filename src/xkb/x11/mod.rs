@@ -8,6 +8,7 @@ use xcb;
 pub const MIN_MAJOR_XKB_VERSION: u16 = 1;
 pub const MIN_MINOR_XKB_VERSION: u16 = 0;
 
+#[derive(Eq, PartialEq, Copy, Clone, Debug)]
 #[repr(C)]
 pub enum SetupXkbExtensionFlags {
     /** Do not apply any flags. */

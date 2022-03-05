@@ -189,6 +189,7 @@ pub const CONTEXT_NO_DEFAULT_INCLUDES: u32 = 1 << 0;
 /// Don't take RMLVO names from the environment.
 pub const CONTEXT_NO_ENVIRONMENT_NAMES: u32 = 1 << 1;
 
+#[derive(Eq, PartialEq, Copy, Clone, Debug)]
 #[repr(C)]
 pub enum LogLevel {
     Critical = 10,
@@ -211,6 +212,7 @@ pub const KEYMAP_FORMAT_TEXT_V1: u32 = 1;
 pub const KEYMAP_FORMAT_USE_ORIGINAL: u32 = 0xffff_ffff;
 
 /// Specifies the direction of the key (press / release).
+#[derive(Eq, PartialEq, Copy, Clone, Debug)]
 #[repr(C)]
 pub enum KeyDirection {
     /// the key was released
