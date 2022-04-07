@@ -708,25 +708,23 @@ impl Keymap {
     /// The file descriptor must be valid and all safety concerns of mapping files to memory
     /// apply here.
     #[allow(clippy::missing_panics_doc)]
-    #[must_use]
     pub unsafe fn new_from_fd(
         context: &Context,
         fd: RawFd,
         size: usize,
         format: KeymapFormat,
         flags: KeymapCompileFlags,
-    ) -> Option<Keymap> {
+    ) -> std::io::Result<Option<Keymap>> {
         let map = MmapOptions::new()
             .len(size as usize)
             // Starting in version 7 of the wl_keyboard protocol, the keymap must be mapped using MAP_PRIVATE.
-            .map_copy_read_only(&fs::File::from_raw_fd(fd))
-            .unwrap();
+            .map_copy_read_only(&fs::File::from_raw_fd(fd))?;
         let ptr =
             xkb_keymap_new_from_buffer(context.ptr, map.as_ptr().cast(), size - 1, format, flags);
         if ptr.is_null() {
-            None
+            Ok(None)
         } else {
-            Some(Keymap { ptr })
+            Ok(Some(Keymap { ptr }))
         }
     }
 
