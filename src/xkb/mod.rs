@@ -622,19 +622,18 @@ impl Keymap {
         model: &S,
         layout: &S,
         variant: &S,
-        options: Option<String>,
+        mut options: Option<String>,
         flags: KeymapCompileFlags,
     ) -> Option<Keymap> {
         let crules = CString::new(rules.borrow().as_bytes()).unwrap();
         let cmodel = CString::new(model.borrow().as_bytes()).unwrap();
         let clayout = CString::new(layout.borrow().as_bytes()).unwrap();
         let cvariant = CString::new(variant.borrow().as_bytes()).unwrap();
-        let (_coptions, poptions) = match options {
-            None => (CString::new(Vec::new()).unwrap(), null()),
+        let poptions = match &mut options {
+            None => null(),
             Some(s) => {
-                let coptions = CString::new(s.into_bytes()).unwrap();
-                let poptions = coptions.as_ptr();
-                (coptions, poptions)
+                s.push('\0');
+                s.as_ptr().cast()
             }
         };
         let rule_names = xkb_rule_names {
