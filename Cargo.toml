@@ -13,12 +13,12 @@ edition = "2021"
 all-features = true
 
 [dependencies]
-libc = "0.2.102"
+libc = "0.2.125"
 memmap2 = { version = "0.5.3", optional = true }
-xcb = { version = "1.0.0-beta", features = ["xkb"], optional = true }
+xcb = { version = "1.1.1", features = ["xkb"], optional = true }
 
 [dev-dependencies]
-evdev = "0.11.0"
+evdev = "0.11.4"
 
 [features]
 default = ["wayland"]
