@@ -627,6 +627,7 @@ impl Keymap {
         let cmodel = CString::new(model.borrow().as_bytes()).unwrap();
         let clayout = CString::new(layout.borrow().as_bytes()).unwrap();
         let cvariant = CString::new(variant.borrow().as_bytes()).unwrap();
+        // "_coptions" (as opposed to "_") avoids use-after-free for any option passed to this function
         let (_coptions, poptions) = match options {
             None => (CString::new(Vec::new()).unwrap(), null()),
             Some(s) => {
