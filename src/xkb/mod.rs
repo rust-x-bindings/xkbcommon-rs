@@ -875,6 +875,20 @@ impl Keymap {
         }
     }
 
+    /// Find the keycode of the key with the given name.
+    /// The name can be either a canonical name or an alias.
+    pub fn key_by_name<S: Borrow<str> + ?Sized>(&self, name: &S) -> Option<Keycode> {
+        unsafe {
+            let cstr = CString::new(name.borrow().as_bytes()).unwrap();
+            let code = xkb_keymap_key_by_name(self.ptr, cstr.as_ptr());
+            if code == XKB_KEYCODE_INVALID {
+                None
+            } else {
+                Some(code)
+            }
+        }
+    }
+
     /// Get the index of a layout by name.
     ///
     /// Returns The index. If no layout exists with this name, returns
