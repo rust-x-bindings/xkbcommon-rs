@@ -875,6 +875,20 @@ impl Keymap {
         }
     }
 
+    /// Find the name of the key with the given keycode.
+    /// This function always returns the canonical name of the key (see description in [Keycode]).
+    pub fn key_get_name(&self, key: Keycode) -> Option<&str> {
+        unsafe {
+            let ptr = xkb_keymap_key_get_name(self.ptr, key);
+            if ptr.is_null() {
+                None
+            } else {
+                let cstr = CStr::from_ptr(ptr);
+                Some(str::from_utf8_unchecked(cstr.to_bytes()))
+            }
+        }
+    }
+
     /// Find the keycode of the key with the given name.
     /// The name can be either a canonical name or an alias.
     pub fn key_by_name<S: Borrow<str> + ?Sized>(&self, name: &S) -> Option<Keycode> {
