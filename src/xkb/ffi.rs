@@ -253,6 +253,8 @@ extern "C" {
 
     pub fn xkb_keymap_key_by_name(keymap: *mut xkb_keymap, name: *const c_char) -> xkb_keycode_t;
 
+    pub fn xkb_keymap_key_get_name(keymap: *mut xkb_keymap, key: xkb_keycode_t) -> *const c_char;
+
     pub fn xkb_keymap_key_repeats(keymap: *mut xkb_keymap, key: xkb_keycode_t) -> c_int;
 
     pub fn xkb_state_ref(state: *mut xkb_state) -> *mut xkb_state;
