@@ -360,6 +360,26 @@ pub fn keysym_to_utf32(keysym: Keysym) -> u32 {
     unsafe { xkb_keysym_to_utf32(keysym) }
 }
 
+/// Get the keysym corresponding to a Unicode/UTF-32 codepoint.
+///
+/// Returns the keysym corresponding to the specified Unicode codepoint,
+/// or `KEY_NoSymbol` if there is none.
+///
+/// This function is the inverse of `keysym_to_utf32`. In cases where a
+/// single codepoint corresponds to multiple keysyms, returns the keysym
+/// with the lowest value.
+///
+/// Unicode codepoints which do not have a special (legacy) keysym
+/// encoding use a direct encoding scheme. These keysyms don't usually
+/// have an associated keysym constant (`XKB_KEY_*`).
+///
+/// For noncharacter Unicode codepoints and codepoints outside of the
+/// defined Unicode planes this function returns `KEY_NoSymbol`.
+#[must_use]
+pub fn utf32_to_keysym(ucs: u32) -> Keysym {
+    unsafe { xkb_utf32_to_keysym(ucs) }
+}
+
 /// Top level library context object.
 ///
 /// The context contains various general library data and state, like
