@@ -122,6 +122,8 @@ extern "C" {
 
     pub fn xkb_keysym_to_utf32(keysym: xkb_keysym_t) -> u32;
 
+    pub fn xkb_utf32_to_keysym(ucs: u32) -> xkb_keysym_t;
+
     pub fn xkb_context_new(flags: xkb_context_flags) -> *mut xkb_context;
 
     pub fn xkb_context_ref(context: *mut xkb_context) -> *mut xkb_context;
