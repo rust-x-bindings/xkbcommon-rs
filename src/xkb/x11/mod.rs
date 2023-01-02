@@ -2,8 +2,8 @@ pub mod ffi;
 
 use self::ffi::*;
 use super::{Context, Keymap, KeymapCompileFlags, State};
+use as_raw_xcb_connection::AsRawXcbConnection;
 use std::mem;
-use xcb;
 
 pub const MIN_MAJOR_XKB_VERSION: u16 = 1;
 pub const MIN_MINOR_XKB_VERSION: u16 = 0;
@@ -15,7 +15,7 @@ pub enum SetupXkbExtensionFlags {
 }
 
 pub fn setup_xkb_extension(
-    connection: &xcb::Connection,
+    connection: impl AsRawXcbConnection,
     major_xkb_version: u16,
     minor_xkb_version: u16,
     flags: SetupXkbExtensionFlags,
@@ -26,7 +26,7 @@ pub fn setup_xkb_extension(
 ) -> bool {
     unsafe {
         xkb_x11_setup_xkb_extension(
-            connection.get_raw_conn(),
+            connection.as_raw_xcb_connection(),
             major_xkb_version,
             minor_xkb_version,
             mem::transmute(flags),
@@ -39,21 +39,21 @@ pub fn setup_xkb_extension(
 }
 
 #[must_use]
-pub fn get_core_keyboard_device_id(connection: &xcb::Connection) -> i32 {
-    unsafe { xkb_x11_get_core_keyboard_device_id(connection.get_raw_conn()) as i32 }
+pub fn get_core_keyboard_device_id(connection: impl AsRawXcbConnection) -> i32 {
+    unsafe { xkb_x11_get_core_keyboard_device_id(connection.as_raw_xcb_connection()) as i32 }
 }
 
 #[must_use]
 pub fn keymap_new_from_device(
     context: &Context,
-    connection: &xcb::Connection,
+    connection: impl AsRawXcbConnection,
     device_id: i32,
     flags: KeymapCompileFlags,
 ) -> Keymap {
     unsafe {
         Keymap::from_raw_ptr(xkb_x11_keymap_new_from_device(
             context.get_raw_ptr(),
-            connection.get_raw_conn(),
+            connection.as_raw_xcb_connection(),
             device_id,
             flags,
         ))
@@ -63,13 +63,13 @@ pub fn keymap_new_from_device(
 #[must_use]
 pub fn state_new_from_device(
     keymap: &Keymap,
-    connection: &xcb::Connection,
+    connection: impl AsRawXcbConnection,
     device_id: i32,
 ) -> State {
     unsafe {
         State::from_raw_ptr(xkb_x11_state_new_from_device(
             keymap.get_raw_ptr(),
-            connection.get_raw_conn(),
+            connection.as_raw_xcb_connection(),
             device_id,
         ))
     }
