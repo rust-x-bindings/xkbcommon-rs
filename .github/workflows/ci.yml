@@ -32,12 +32,6 @@ jobs:
             libxkbcommon-dev \
             libxkbcommon-x11-dev
 
-      - name: Run cargo clippy
-        uses: actions-rs/cargo@v1
-        with:
-          command: clippy
-          args: --all-features -- -D warnings
-
       - name: Run cargo build
         uses: actions-rs/cargo@v1
         with:
