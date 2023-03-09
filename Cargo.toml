@@ -15,14 +15,14 @@ all-features = true
 [dependencies]
 libc = "0.2.125"
 memmap2 = { version = "0.5.3", optional = true }
-xcb = { version = "1.1.1", features = ["xkb"], optional = true }
+as-raw-xcb-connection = { version = "1.0", optional = true }
 
 [dev-dependencies]
 evdev = "0.11.4"
 
 [features]
 default = ["wayland"]
-x11 = ["xcb"]
+x11 = ["as-raw-xcb-connection"]
 wayland = ["memmap2"]
 
 [[example]]
