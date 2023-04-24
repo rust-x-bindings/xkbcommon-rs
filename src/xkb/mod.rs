@@ -1027,7 +1027,13 @@ impl Keymap {
     ) -> &[Keysym] {
         unsafe {
             let mut syms_out: *const Keysym = null_mut();
-            let len = xkb_keymap_key_get_syms_by_level(self.ptr, key.raw(), layout, level, &mut syms_out as *mut *const Keysym as *mut *const xkeysym::RawKeysym);
+            let len = xkb_keymap_key_get_syms_by_level(
+                self.ptr,
+                key.raw(),
+                layout,
+                level,
+                &mut syms_out as *mut *const Keysym as *mut *const xkeysym::RawKeysym,
+            );
             if syms_out.is_null() {
                 &[]
             } else {
@@ -1276,8 +1282,11 @@ impl State {
     pub fn key_get_syms(&self, key: Keycode) -> &[Keysym] {
         unsafe {
             let mut syms_out: *const Keysym = null_mut();
-            let len = xkb_state_key_get_syms(self.ptr, key.into(), &mut syms_out
-                as *mut *const Keysym as *mut *const xkeysym::RawKeysym);
+            let len = xkb_state_key_get_syms(
+                self.ptr,
+                key.into(),
+                &mut syms_out as *mut *const Keysym as *mut *const xkeysym::RawKeysym,
+            );
             if syms_out.is_null() {
                 &[]
             } else {
