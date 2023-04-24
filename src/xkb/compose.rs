@@ -145,7 +145,7 @@ impl State {
     }
 
     pub fn feed(&mut self, keysym: Keysym) -> FeedResult {
-        unsafe { mem::transmute(xkb_compose_state_feed(self.ptr, keysym)) }
+        unsafe { mem::transmute(xkb_compose_state_feed(self.ptr, keysym.raw())) }
     }
 
     pub fn reset(&mut self) {
@@ -174,8 +174,8 @@ impl State {
     #[must_use]
     pub fn keysym(&self) -> Option<Keysym> {
         unsafe {
-            match xkb_compose_state_get_one_sym(self.ptr) {
-                super::KEY_NoSymbol => None,
+            match Keysym::new(xkb_compose_state_get_one_sym(self.ptr)) {
+                xkeysym::NO_SYMBOL => None,
                 value => Some(value),
             }
         }
