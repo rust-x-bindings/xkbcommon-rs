@@ -54,7 +54,7 @@ use std::str;
 /// ```no_run
 /// # use xkbcommon::xkb::keysyms::KEY_A;
 /// # use xkbcommon::xkb::Keycode;
-/// let keycode_A: Keycode = KEY_A + 8;
+/// let keycode_A: Keycode = Keycode::new(KEY_A as u32 + 8);
 /// ```
 ///
 /// See `xkb::keycode_is_legal_ext()` and `xkb::keycode_is_legal_x11()`
