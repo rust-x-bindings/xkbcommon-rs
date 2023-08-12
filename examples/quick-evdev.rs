@@ -47,7 +47,7 @@ fn main() {
                 if event.value() == KEY_STATE_REPEAT && !keymap.key_repeats(keycode) {
                     continue;
                 }
-                print!("keycode {} ", keycode);
+                print!("keycode {:?} ", keycode);
 
                 // Get keysym
                 let keysym = state.key_get_one_sym(keycode);
