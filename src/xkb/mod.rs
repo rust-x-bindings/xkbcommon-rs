@@ -18,7 +18,7 @@ use crate::xkb::ffi::*;
 #[cfg(feature = "wayland")]
 use memmap2::MmapOptions;
 #[cfg(feature = "wayland")]
-use std::os::unix::io::{FromRawFd, RawFd};
+use std::os::unix::io::OwnedFd;
 
 use libc::{self, c_char, c_int, c_uint};
 use std::borrow::Borrow;
@@ -729,7 +729,7 @@ impl Keymap {
     #[allow(clippy::missing_panics_doc)]
     pub unsafe fn new_from_fd(
         context: &Context,
-        fd: RawFd,
+        fd: OwnedFd,
         size: usize,
         format: KeymapFormat,
         flags: KeymapCompileFlags,
@@ -737,7 +737,7 @@ impl Keymap {
         let map = MmapOptions::new()
             .len(size as usize)
             // Starting in version 7 of the wl_keyboard protocol, the keymap must be mapped using MAP_PRIVATE.
-            .map_copy_read_only(&fs::File::from_raw_fd(fd))?;
+            .map_copy_read_only(&fs::File::from(fd))?;
         let ptr =
             xkb_keymap_new_from_buffer(context.ptr, map.as_ptr().cast(), size - 1, format, flags);
         if ptr.is_null() {
