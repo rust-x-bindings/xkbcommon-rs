@@ -13,8 +13,8 @@ edition = "2021"
 all-features = true
 
 [dependencies]
-libc = "0.2.125"
-memmap2 = { version = "0.7.0", optional = true }
+libc = "0.2.148"
+memmap2 = { version = "0.8.0", optional = true }
 as-raw-xcb-connection = { version = "1.0", optional = true }
 xkeysym = "0.2.0"
 
