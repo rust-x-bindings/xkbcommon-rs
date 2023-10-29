@@ -792,12 +792,8 @@ impl Keymap {
     ) where
         F: FnMut(&Keymap, Keycode),
     {
-        let mut data_box: Box<(&Keymap, F)> = mem::transmute(Box::from_raw(data));
-        {
-            let (keymap, ref mut closure) = *data_box;
-            closure(keymap, key.into());
-        }
-        let _ = Box::into_raw(data_box);
+        let (keymap, closure) = &mut *data.cast::<(&Keymap, F)>();
+        closure(keymap, key.into());
     }
 
     /// Run a specified closure for every valid keycode in the keymap.
@@ -805,12 +801,13 @@ impl Keymap {
     where
         F: FnMut(&Keymap, Keycode),
     {
-        let data_box = Box::new((self, closure));
-        let data_ptr = Box::into_raw(data_box).cast();
-
+        let mut data = (self, closure);
         unsafe {
-            ffi::xkb_keymap_key_for_each(self.get_raw_ptr(), Self::callback::<F>, data_ptr);
-            mem::drop(Box::from_raw(data_ptr.cast::<(&Keymap, F)>()));
+            ffi::xkb_keymap_key_for_each(
+                self.get_raw_ptr(),
+                Self::callback::<F>,
+                &mut data as *mut _ as *mut _,
+            );
         }
     }
 
