@@ -349,7 +349,7 @@ pub fn keysym_to_utf8(keysym: Keysym) -> String {
                 panic!("Key doesn't fit in buffer")
             }
             len=>{
-                let slice: &[u8] = slice::from_raw_parts(ptr as *const _, len as usize);
+                let slice: &[u8] = slice::from_raw_parts(ptr as *const _, len-1 as usize);
                 String::from_utf8_unchecked(slice.to_owned())
             }
         }
