@@ -341,9 +341,16 @@ pub fn keysym_to_utf8(keysym: Keysym) -> String {
     unsafe {
         let buf: &mut [c_char] = &mut [0; 8];
         let ptr = &mut buf[0] as *mut c_char;
-        let len = xkb_keysym_to_utf8(keysym.raw(), ptr, 8);
-        let slice: &[u8] = slice::from_raw_parts(ptr as *const _, len as usize);
-        String::from_utf8_unchecked(slice.to_owned())
+        match xkb_keysym_to_utf8(keysym.raw(), ptr, 8) {
+            0 => String::from(""),
+            -1 => {
+                panic!("Key doesn't fit in buffer")
+            }
+            len => {
+                let slice: &[u8] = slice::from_raw_parts(ptr as *const _, len as usize - 1);
+                String::from_utf8_unchecked(slice.to_owned())
+            }
+        }
     }
 }
 
