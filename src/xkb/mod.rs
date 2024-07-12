@@ -1313,8 +1313,8 @@ impl State {
             let ret = xkb_state_key_get_utf8(self.ptr, key.into(), ptr, BUF_LEN);
             // len is similar to the rerurn value of snprintf.
             // it may be negative on unspecified errors, or >64 if the buffer is too small.
-            let len = (ret as usize).max(0).min(BUF_LEN);
-            let slice: &[u8] = slice::from_raw_parts(ptr as *const _, len);
+            let len = ret.max(0).min(BUF_LEN as i32);
+            let slice: &[u8] = slice::from_raw_parts(ptr as *const _, len as usize);
             String::from_utf8_unchecked(slice.to_owned())
         }
     }
