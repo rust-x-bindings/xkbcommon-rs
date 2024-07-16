@@ -299,10 +299,14 @@ pub fn keycode_is_legal_x11(key: u32) -> bool {
 #[must_use]
 pub fn keysym_get_name(keysym: Keysym) -> String {
     unsafe {
-        let buf: &mut [c_char] = &mut [0; 64];
+        const BUF_LEN: usize = 64;
+        let buf: &mut [c_char] = &mut [0; BUF_LEN];
         let ptr = &mut buf[0] as *mut c_char;
-        let len = xkb_keysym_get_name(keysym.raw(), ptr, 64);
-        let slice: &[u8] = slice::from_raw_parts(ptr as *const _, len as usize);
+        let len = xkb_keysym_get_name(keysym.raw(), ptr, BUF_LEN);
+        if len <= 0 {
+            return String::new();
+        }
+        let slice: &[u8] = slice::from_raw_parts(ptr as *const _, (len as usize).min(BUF_LEN));
         String::from_utf8_unchecked(slice.to_owned())
     }
 }
@@ -1311,7 +1315,7 @@ impl State {
             let buf: &mut [c_char] = &mut [0; BUF_LEN];
             let ptr = &mut buf[0] as *mut c_char;
             let ret = xkb_state_key_get_utf8(self.ptr, key.into(), ptr, BUF_LEN);
-            // len is similar to the rerurn value of snprintf.
+            // ret is similar to the return value of snprintf.
             // it may be negative on unspecified errors, or >64 if the buffer is too small.
             let len = ret.max(0).min(BUF_LEN as i32);
             let slice: &[u8] = slice::from_raw_parts(ptr as *const _, len as usize);
