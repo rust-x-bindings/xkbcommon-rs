@@ -720,8 +720,9 @@ impl Keymap {
         flags: KeymapCompileFlags,
     ) -> Option<Keymap> {
         unsafe {
-            let cstr = CString::new(string.into_bytes()).unwrap();
-            let ptr = xkb_keymap_new_from_string(context.ptr, cstr.as_ptr(), format, flags);
+            let buffer = string.as_ptr() as *const c_char;
+            let length = string.len();
+            let ptr = xkb_keymap_new_from_buffer(context.ptr, buffer, length, format, flags);
             if ptr.is_null() {
                 None
             } else {
