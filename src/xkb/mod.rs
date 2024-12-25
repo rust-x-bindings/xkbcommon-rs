@@ -749,8 +749,7 @@ impl Keymap {
             .len(size as usize)
             // Starting in version 7 of the wl_keyboard protocol, the keymap must be mapped using MAP_PRIVATE.
             .map_copy_read_only(&fs::File::from(fd))?;
-        let ptr =
-            xkb_keymap_new_from_buffer(context.ptr, map.as_ptr().cast(), size - 1, format, flags);
+        let ptr = xkb_keymap_new_from_buffer(context.ptr, map.as_ptr().cast(), size, format, flags);
         if ptr.is_null() {
             Ok(None)
         } else {
