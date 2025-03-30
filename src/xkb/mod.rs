@@ -519,6 +519,12 @@ impl Context {
     }
 }
 
+impl Default for Context {
+    fn default() -> Self {
+        Self::new(CONTEXT_NO_FLAGS)
+    }
+}
+
 impl Clone for Context {
     fn clone(&self) -> Context {
         unsafe {
