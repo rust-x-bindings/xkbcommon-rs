@@ -251,7 +251,7 @@ extern "C" {
         layout: xkb_layout_index_t,
         level: xkb_level_index_t,
         masks_out: *mut xkb_mod_mask_t,
-        masks_size: size_t
+        masks_size: size_t,
     ) -> size_t;
 
     pub fn xkb_keymap_key_get_syms_by_level(

@@ -102,7 +102,11 @@ fn main() -> ExitCode {
     )
     .unwrap();
 
-    println!("keysym: {} ({:#06x})", target_keysym.name().expect("failed to get name of keysym"), target_keysym.raw());
+    println!(
+        "keysym: {} ({:#06x})",
+        target_keysym.name().expect("failed to get name of keysym"),
+        target_keysym.raw()
+    );
     println!(
         "{:<8} {:<9} {:<8} {:<20} {:<7} MODIFIERS",
         "KEYCODE", "KEY NAME", "LAYOUT", "LAYOUT NAME", "LEVEL#"
@@ -138,19 +142,19 @@ fn main() -> ExitCode {
                 };
 
                 let mut masks = [xkb::ModMask::default(); 100];
-                let num_masks = keymap.key_get_mods_for_level(
-                    keycode,
-                    layout_index,
-                    level_index,
-                    &mut masks
-                );
+                let num_masks =
+                    keymap.key_get_mods_for_level(keycode, layout_index, level_index, &mut masks);
 
                 let masks = &masks[0..num_masks];
 
                 for mod_mask in masks {
                     print!(
                         "{:<8} {:<9} {:<8} {:<20} {:<7} [ ",
-                        keycode.raw(), key_name, layout_index + 1, layout_name, level_index + 1
+                        keycode.raw(),
+                        key_name,
+                        layout_index + 1,
+                        layout_name,
+                        level_index + 1
                     );
 
                     for mod_index in 0..num_mods {

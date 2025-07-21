@@ -1125,7 +1125,7 @@ impl Keymap {
         key: Keycode,
         layout: LayoutIndex,
         level: LevelIndex,
-        masks_out: &mut [ModMask]
+        masks_out: &mut [ModMask],
     ) -> usize {
         unsafe {
             xkb_keymap_key_get_mods_for_level(
@@ -1134,7 +1134,7 @@ impl Keymap {
                 layout,
                 level,
                 masks_out.as_mut_ptr(),
-                masks_out.len()
+                masks_out.len(),
             )
         }
     }
