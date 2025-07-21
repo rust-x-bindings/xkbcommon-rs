@@ -1066,6 +1066,78 @@ impl Keymap {
     pub fn key_repeats(&self, key: Keycode) -> bool {
         unsafe { xkb_keymap_key_repeats(self.ptr, key.into()) != 0 }
     }
+
+    /// Retrieves every possible modifier mask that produces the specified shift level for
+    /// a specific key and layout.
+    ///
+    /// This API is useful for inverse key transformation; i.e. finding out which modifiers
+    /// need to be active in order to be able to type the keysym(s) corresponding to the
+    /// specific key code, layout and level.
+    ///
+    /// **Warning:** If the buffer passed is too small, some of the possible modifier combinations
+    /// will not be returned.
+    ///
+    /// # Example
+    ///
+    /// ```
+    /// use xkbcommon::xkb;
+    ///
+    /// let context = xkb::Context::new(xkb::CONTEXT_NO_FLAGS);
+    /// let keymap = xkb::Keymap::new_from_names(
+    ///     &context,
+    ///     "",
+    ///     "",
+    ///     "us",
+    ///     "",
+    ///     None,
+    ///     xkb::COMPILE_NO_FLAGS
+    /// ).unwrap();
+    ///
+    /// /// Evdev keycode, from `input-event-codes.h`
+    /// const KEY_A: u32 = 30;
+    ///
+    /// let keycode = xkb::Keycode::new(KEY_A + 8);
+    ///
+    /// // Index of the specific layout in the keymap.
+    /// // For a single layout, like in this example, it can safely be hardcoded to 0.
+    /// let layout_index: xkb::LayoutIndex = 0;
+    ///
+    /// // The level index at which a given keysym is output for a keycode.
+    /// // A level index is mapped to modifier masks using the below function.
+    /// let level_index: xkb::LevelIndex = 0;
+    ///
+    /// let mut masks = [xkb::ModMask::default(); 100];
+    /// let num_masks = keymap.key_get_mods_for_level(
+    ///     keycode,
+    ///     layout_index,
+    ///     level_index,
+    ///     &mut masks
+    /// );
+    ///
+    /// let masks = &masks[0..num_masks];
+    ///
+    /// // By convention, the lowest level corresponds to no modifiers being active.
+    /// assert!(masks.iter().any(|mask| *mask == 0));
+    /// ```
+    #[must_use]
+    pub fn key_get_mods_for_level(
+        &self,
+        key: Keycode,
+        layout: LayoutIndex,
+        level: LevelIndex,
+        masks_out: &mut [ModMask],
+    ) -> usize {
+        unsafe {
+            xkb_keymap_key_get_mods_for_level(
+                self.ptr,
+                key.raw(),
+                layout,
+                level,
+                masks_out.as_mut_ptr(),
+                masks_out.len(),
+            )
+        }
+    }
 }
 
 impl Clone for Keymap {

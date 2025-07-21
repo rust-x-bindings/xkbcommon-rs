@@ -1,6 +1,6 @@
 #![allow(non_camel_case_types)]
 
-use libc::FILE;
+use libc::{size_t, FILE};
 use std::os::raw::{c_char, c_int, c_uint, c_void};
 
 pub enum xkb_context {}
@@ -244,6 +244,15 @@ extern "C" {
         key: xkb_keycode_t,
         layout: xkb_layout_index_t,
     ) -> xkb_level_index_t;
+
+    pub fn xkb_keymap_key_get_mods_for_level(
+        keymap: *mut xkb_keymap,
+        key: xkb_keycode_t,
+        layout: xkb_layout_index_t,
+        level: xkb_level_index_t,
+        masks_out: *mut xkb_mod_mask_t,
+        masks_size: size_t,
+    ) -> size_t;
 
     pub fn xkb_keymap_key_get_syms_by_level(
         keymap: *mut xkb_keymap,

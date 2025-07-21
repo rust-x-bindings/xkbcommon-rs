@@ -28,3 +28,6 @@ wayland = ["memmap2"]
 
 [[example]]
 name = "quick-evdev"
+
+[[example]]
+name = "how-to-type"
