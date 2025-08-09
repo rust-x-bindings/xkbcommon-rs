@@ -1,6 +1,6 @@
 [package]
 name = "xkbcommon"
-version = "0.8.0"
+version = "0.9.0"
 authors = ["Remi THEBAULT <remi.thebault@gmail.com>"]
 description = "Rust bindings and wrappers for libxkbcommon"
 repository = "https://github.com/rust-x-bindings/xkbcommon-rs"
