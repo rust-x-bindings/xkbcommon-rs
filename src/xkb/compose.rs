@@ -1,11 +1,11 @@
 use super::{Context, Keysym};
 use crate::xkb::ffi::compose::*;
-use std::borrow::Cow;
-use std::ffi::CStr;
-use std::ffi::CString;
-use std::ffi::OsStr;
-use std::mem;
-use std::str;
+use ::alloc::borrow::Cow;
+use ::alloc::ffi::CString;
+use ::alloc::string::String;
+use core::ffi::CStr;
+use core::mem;
+use core::str;
 
 pub type CompileFlags = u32;
 pub const COMPILE_NO_FLAGS: CompileFlags = 0;
@@ -45,15 +45,24 @@ impl Table {
     #[allow(clippy::result_unit_err, clippy::missing_errors_doc)]
     pub fn new_from_locale(
         context: &Context,
-        locale: &OsStr,
+        #[cfg(feature = "std")] locale: &std::ffi::OsStr,
+        #[cfg(not(feature = "std"))] locale: &CStr,
         flags: CompileFlags,
     ) -> Result<Table, ()> {
-        use std::os::unix::ffi::OsStrExt;
-
-        let locale_cstr = CStr::from_bytes_with_nul(locale.as_bytes());
-        let locale_cstr = match locale_cstr {
-            Ok(loc) => Cow::from(loc),
-            Err(_) => Cow::from(CString::new(locale.as_bytes().to_vec()).unwrap()),
+        let locale_cstr = {
+            #[cfg(feature = "std")]
+            {
+                use std::os::unix::ffi::OsStrExt;
+                let locale_cstr = CStr::from_bytes_with_nul(locale.as_bytes());
+                match locale_cstr {
+                    Ok(loc) => Cow::from(loc),
+                    Err(_) => Cow::from(CString::new(locale.as_bytes().to_vec()).unwrap()),
+                }
+            }
+            #[cfg(not(feature = "std"))]
+            {
+                locale
+            }
         };
 
         let ptr = unsafe {
