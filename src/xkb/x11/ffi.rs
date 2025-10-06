@@ -1,7 +1,7 @@
 use crate::xkb::ffi::{xkb_context, xkb_keymap, xkb_keymap_compile_flags, xkb_state};
 
 use as_raw_xcb_connection::xcb_connection_t;
-use std::os::raw::c_int;
+use core::ffi::c_int;
 
 pub const XKB_X11_MIN_MAJOR_XKB_VERSION: u16 = 1;
 pub const XKB_X11_MIN_MINOR_XKB_VERSION: u16 = 0;

@@ -3,7 +3,7 @@ pub mod ffi;
 use self::ffi::*;
 use super::{Context, Keymap, KeymapCompileFlags, State};
 use as_raw_xcb_connection::AsRawXcbConnection;
-use std::mem;
+use core::mem;
 
 pub const MIN_MAJOR_XKB_VERSION: u16 = 1;
 pub const MIN_MINOR_XKB_VERSION: u16 = 0;
