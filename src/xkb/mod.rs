@@ -264,17 +264,41 @@ pub const STATE_MATCH_ALL: u32 = 1 << 1;
 ///  modifier not specified in the arguments is active.
 pub const STATE_MATCH_NON_EXCLUSIVE: u32 = 1 << 16;
 
+// Real modifiers names
 pub const MOD_NAME_SHIFT: &str = "Shift";
 pub const MOD_NAME_CAPS: &str = "Lock";
 pub const MOD_NAME_CTRL: &str = "Control";
-pub const MOD_NAME_ALT: &str = "Mod1";
-pub const MOD_NAME_NUM: &str = "Mod2";
+pub const MOD_NAME_MOD1: &str = "Mod1";
+pub const MOD_NAME_MOD2: &str = "Mod2";
 pub const MOD_NAME_MOD3: &str = "Mod3";
+pub const MOD_NAME_MOD4: &str = "Mod4";
+pub const MOD_NAME_MOD5: &str = "Mod5";
+
+// Virtual modifiers names
+pub const VMOD_NAME_ALT: &str = "Alt";
+pub const VMOD_NAME_HYPER: &str = "Hyper";
+pub const VMOD_NAME_LEVEL3: &str = "LevelThree";
+pub const VMOD_NAME_LEVEL5: &str = "LevelFive";
+pub const VMOD_NAME_META: &str = "Meta";
+pub const VMOD_NAME_NUM: &str = "NumLock";
+pub const VMOD_NAME_SCROLL: &str = "ScrollLock";
+pub const VMOD_NAME_SUPER: &str = "Super";
+
+/// deprecated
+pub const MOD_NAME_ALT: &str = "Mod1";
+/// deprecated
 pub const MOD_NAME_LOGO: &str = "Mod4";
+/// deprecated
+pub const MOD_NAME_NUM: &str = "Mod2";
+/// deprecated
 pub const MOD_NAME_ISO_LEVEL3_SHIFT: &str = "Mod5";
-pub const LED_NAME_CAPS: &str = "Caps Lock";
+
+// LEDs names
 pub const LED_NAME_NUM: &str = "Num Lock";
+pub const LED_NAME_CAPS: &str = "Caps Lock";
 pub const LED_NAME_SCROLL: &str = "Scroll Lock";
+pub const LED_NAME_COMPOSE: &str = "Compose";
+pub const LED_NAME_KANA: &str = "Kana";
 
 /// Test whether a value is a valid extended keycode.
 /// See `xkb_keycode_t`.
