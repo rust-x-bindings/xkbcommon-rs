@@ -1,7 +1,7 @@
 #![allow(non_camel_case_types)]
 
+use core::ffi::{c_char, c_int, c_uint, c_void};
 use libc::{size_t, FILE};
-use std::os::raw::{c_char, c_int, c_uint, c_void};
 
 pub enum xkb_context {}
 

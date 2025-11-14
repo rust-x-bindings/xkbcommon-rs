@@ -15,23 +15,24 @@ pub mod x11;
 pub use self::compose::*;
 use crate::xkb::ffi::*;
 
-#[cfg(feature = "wayland")]
+#[cfg(all(feature = "wayland", feature = "std"))]
 use memmap2::MmapOptions;
-#[cfg(feature = "wayland")]
+#[cfg(all(feature = "wayland", feature = "std"))]
 use std::os::unix::io::OwnedFd;
 
+use ::alloc::borrow::ToOwned;
+use ::alloc::boxed::Box;
+use ::alloc::ffi::CString;
+use ::alloc::string::String;
+
+use core::borrow::Borrow;
+use core::ffi::CStr;
+use core::iter::Iterator;
+use core::mem;
+use core::ptr::{null, null_mut};
+use core::slice;
+use core::str;
 use libc::{self, c_char, c_int, c_uint};
-use std::borrow::Borrow;
-use std::ffi::{CStr, CString};
-use std::fs;
-use std::io::Read;
-use std::iter::Iterator;
-use std::mem;
-use std::os::raw;
-use std::path::Path;
-use std::ptr::{null, null_mut};
-use std::slice;
-use std::str;
 
 /// A number used to represent a physical key on a keyboard.
 ///
@@ -459,7 +460,8 @@ impl Context {
     /// append a new entry to the context's include path
     /// returns true on success, or false if the include path could not be added
     /// or is inaccessible
-    pub fn include_path_append(&mut self, path: &Path) -> bool {
+    #[cfg(feature = "std")]
+    pub fn include_path_append(&mut self, path: &std::path::Path) -> bool {
         path.to_str().map_or(false, |s| unsafe {
             let cstr = CString::from_vec_unchecked(s.as_bytes().to_owned());
             xkb_context_include_path_append(self.ptr, cstr.as_ptr()) == 1
@@ -569,8 +571,11 @@ pub struct ContextIncludePaths<'a> {
 }
 
 impl<'a> Iterator for ContextIncludePaths<'a> {
-    type Item = &'a Path;
-    fn next(&mut self) -> Option<&'a Path> {
+    #[cfg(feature = "std")]
+    type Item = &'a std::path::Path;
+    #[cfg(not(feature = "std"))]
+    type Item = &'a CStr;
+    fn next(&mut self) -> Option<Self::Item> {
         if self.ind == self.len {
             None
         } else {
@@ -578,7 +583,16 @@ impl<'a> Iterator for ContextIncludePaths<'a> {
                 let ptr = xkb_context_include_path_get(self.context.ptr, self.ind);
                 self.ind += 1;
                 let cstr = CStr::from_ptr(ptr);
-                Some(Path::new(str::from_utf8_unchecked(cstr.to_bytes())))
+                #[cfg(feature = "std")]
+                {
+                    Some(std::path::Path::new(str::from_utf8_unchecked(
+                        cstr.to_bytes(),
+                    )))
+                }
+                #[cfg(not(feature = "std"))]
+                {
+                    Some(cstr)
+                }
             }
         }
     }
@@ -586,8 +600,9 @@ impl<'a> Iterator for ContextIncludePaths<'a> {
 
 #[test]
 fn check_include_paths() {
+    extern crate std;
     let mut c = Context::new(CONTEXT_NO_DEFAULT_INCLUDES);
-    let test_path = Path::new("/");
+    let test_path = std::path::Path::new("/");
     assert_eq!(true, c.include_path_append(&test_path));
     assert_eq!(test_path, c.include_paths().nth(0).unwrap());
 }
@@ -719,12 +734,14 @@ impl Keymap {
     ///
     ///  bindings implementation get the content in a `String`
     ///  and call `new_from_string()`.
+    #[cfg(feature = "std")]
     pub fn new_from_file(
         context: &Context,
-        file: &mut fs::File,
+        file: &mut std::fs::File,
         format: KeymapFormat,
         flags: KeymapCompileFlags,
     ) -> Option<Keymap> {
+        use std::io::Read;
         let mut string = String::new();
         file.read_to_string(&mut string)
             .ok()
@@ -755,7 +772,7 @@ impl Keymap {
         }
     }
 
-    #[cfg(feature = "wayland")]
+    #[cfg(all(feature = "wayland", feature = "std"))]
     /// Create a keymap from a file descriptor.
     /// The file is mapped to memory and the keymap is created from the mapped memory buffer.
     ///
@@ -773,7 +790,7 @@ impl Keymap {
         let map = MmapOptions::new()
             .len(size as usize)
             // Starting in version 7 of the wl_keyboard protocol, the keymap must be mapped using MAP_PRIVATE.
-            .map_copy_read_only(&fs::File::from(fd))?;
+            .map_copy_read_only(&std::fs::File::from(fd))?;
         let ptr = xkb_keymap_new_from_buffer(context.ptr, map.as_ptr().cast(), size, format, flags);
         if ptr.is_null() {
             Ok(None)
@@ -823,7 +840,7 @@ impl Keymap {
     unsafe extern "C" fn callback<F>(
         pkeymap: *mut ffi::xkb_keymap,
         key: ffi::xkb_keycode_t,
-        data: *mut raw::c_void,
+        data: *mut core::ffi::c_void,
     ) where
         F: FnMut(&Keymap, Keycode),
     {

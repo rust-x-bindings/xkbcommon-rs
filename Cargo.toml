@@ -22,7 +22,8 @@ xkeysym = "0.2.0"
 evdev = "0.11.4"
 
 [features]
-default = ["wayland"]
+default = ["wayland", "std" ]
+std = []
 x11 = ["as-raw-xcb-connection"]
 wayland = ["memmap2"]
 
