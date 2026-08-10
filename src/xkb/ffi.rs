@@ -77,6 +77,7 @@ pub const XKB_KEYMAP_COMPILE_NO_FLAGS: u32 = 0;
 
 pub type xkb_keymap_format = u32;
 pub const XKB_KEYMAP_FORMAT_TEXT_V1: u32 = 1;
+pub const XKB_KEYMAP_FORMAT_TEXT_V2: u32 = 2;
 pub const XKB_KEYMAP_FORMAT_USE_ORIGINAL: u32 = 0xffff_ffff;
 
 #[repr(C)]
