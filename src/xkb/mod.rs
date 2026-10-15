@@ -728,7 +728,7 @@ impl Keymap {
         let mut string = String::new();
         file.read_to_string(&mut string)
             .ok()
-            .and_then(|_| Keymap::new_from_string(context, string, format, flags))
+            .and_then(|_| Keymap::new_from_string(context, &string, format, flags))
     }
 
     ///  Create a keymap from a keymap string.
@@ -739,7 +739,7 @@ impl Keymap {
     #[must_use]
     pub fn new_from_string(
         context: &Context,
-        string: String,
+        string: &str,
         format: KeymapFormat,
         flags: KeymapCompileFlags,
     ) -> Option<Keymap> {
