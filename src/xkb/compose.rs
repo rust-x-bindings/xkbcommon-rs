@@ -48,12 +48,10 @@ impl Table {
         locale: &OsStr,
         flags: CompileFlags,
     ) -> Result<Table, ()> {
-        use std::os::unix::ffi::OsStrExt;
-
-        let locale_cstr = CStr::from_bytes_with_nul(locale.as_bytes());
+        let locale_cstr = CStr::from_bytes_with_nul(locale.as_encoded_bytes());
         let locale_cstr = match locale_cstr {
             Ok(loc) => Cow::from(loc),
-            Err(_) => Cow::from(CString::new(locale.as_bytes().to_vec()).unwrap()),
+            Err(_) => Cow::from(CString::new(locale.as_encoded_bytes().to_vec()).unwrap()),
         };
 
         let ptr = unsafe {
