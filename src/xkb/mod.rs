@@ -577,8 +577,13 @@ impl<'a> Iterator for ContextIncludePaths<'a> {
             unsafe {
                 let ptr = xkb_context_include_path_get(self.context.ptr, self.ind);
                 self.ind += 1;
-                let cstr = CStr::from_ptr(ptr);
-                Some(Path::new(str::from_utf8_unchecked(cstr.to_bytes())))
+                if ptr.is_null() {
+                    // Past the end: a clone sharing this xkb_context shrank the list.
+                    None
+                } else {
+                    let cstr = CStr::from_ptr(ptr);
+                    Some(Path::new(str::from_utf8_unchecked(cstr.to_bytes())))
+                }
             }
         }
     }
@@ -590,6 +595,18 @@ fn check_include_paths() {
     let test_path = Path::new("/");
     assert_eq!(true, c.include_path_append(&test_path));
     assert_eq!(test_path, c.include_paths().nth(0).unwrap());
+}
+
+#[test]
+fn include_paths_end_when_a_clone_clears_them() {
+    let mut c = Context::new(CONTEXT_NO_DEFAULT_INCLUDES);
+    assert!(c.include_path_append(Path::new("/")));
+    // A clone shares the underlying xkb_context, so clearing it shrinks the
+    // include path under an iterator that was sized before the clear.
+    let mut clone = c.clone();
+    let mut paths = c.include_paths();
+    clone.include_path_clear();
+    assert_eq!(paths.next(), None);
 }
 
 /// Compiled keymap object.
@@ -784,22 +801,22 @@ impl Keymap {
 
     /// Get the compiled keymap as a string.
     ///
-    ///  keymap The keymap to get as a string.
-    ///  format The keymap format to use for the string. You can pass
-    /// in the special value `xkb::KEYMAP_USE_ORIGINAL_FORMAT` to use the format
+    /// `format` is the keymap format to use for the string. You can pass
+    /// in the special value `xkb::KEYMAP_FORMAT_USE_ORIGINAL` to use the format
     /// from which the keymap was originally created.
     ///
-    /// Returns The keymap as a NUL-terminated string, or `NULL` if unsuccessful.
+    /// Returns an empty string if the keymap could not be serialized, for
+    /// example because `format` is not supported.
     ///
-    /// The returned string may be fed back into `xkb_map_new_from_string()` to get
-    /// the exact same keymap (possibly in another process, etc).
-    ///
-    /// The returned string is dynamically allocated and should be freed by the
-    /// caller.
+    /// The returned string may be fed back into `Keymap::new_from_string()` to
+    /// get the exact same keymap (possibly in another process, etc).
     #[must_use]
     pub fn get_as_string(&self, format: KeymapFormat) -> String {
         unsafe {
             let ffistr = xkb_keymap_get_as_string(self.ptr, format);
+            if ffistr.is_null() {
+                return String::new();
+            }
             let cstr = CStr::from_ptr(ffistr);
             let res = String::from_utf8_unchecked(cstr.to_bytes().to_owned());
             libc::free(ffistr.cast());
@@ -850,6 +867,8 @@ impl Keymap {
     }
 
     /// Get an iterator to the modifiers of this keymap
+    ///
+    /// The n-th item is `mod_get_name(n)`.
     #[must_use]
     pub fn mods(&self) -> KeymapMods {
         unsafe {
@@ -896,6 +915,9 @@ impl Keymap {
     }
 
     /// Returns an iterator to the layouts in this keymap
+    ///
+    /// The n-th item is `layout_get_name(n)`, so a layout without a name
+    /// yields `""` rather than being skipped.
     #[must_use]
     pub fn layouts(&self) -> KeymapLayouts {
         unsafe {
@@ -972,6 +994,9 @@ impl Keymap {
     }
 
     /// Returns an iterator to the leds in this keymap
+    ///
+    /// The n-th item is `led_get_name(n)`, so an inactive LED index (see
+    /// `num_leds()`) yields `""` rather than being skipped.
     #[must_use]
     pub fn leds(&self) -> KeymapLeds {
         unsafe {
@@ -1195,12 +1220,9 @@ impl<'a> Iterator for KeymapMods<'a> {
         if self.ind == self.len {
             None
         } else {
-            unsafe {
-                let ptr = xkb_keymap_mod_get_name(self.keymap.ptr, self.ind);
-                self.ind += 1;
-                let cstr = CStr::from_ptr(ptr);
-                Some(str::from_utf8_unchecked(cstr.to_bytes()))
-            }
+            let name = self.keymap.mod_get_name(self.ind);
+            self.ind += 1;
+            Some(name)
         }
     }
 }
@@ -1218,12 +1240,9 @@ impl<'a> Iterator for KeymapLayouts<'a> {
         if self.ind == self.len {
             None
         } else {
-            unsafe {
-                let ptr = xkb_keymap_layout_get_name(self.keymap.ptr, self.ind);
-                self.ind += 1;
-                let cstr = CStr::from_ptr(ptr);
-                Some(str::from_utf8_unchecked(cstr.to_bytes()))
-            }
+            let name = self.keymap.layout_get_name(self.ind);
+            self.ind += 1;
+            Some(name)
         }
     }
 }
@@ -1241,14 +1260,66 @@ impl<'a> Iterator for KeymapLeds<'a> {
         if self.ind == self.len {
             None
         } else {
-            unsafe {
-                let ptr = xkb_keymap_led_get_name(self.keymap.ptr, self.ind);
-                self.ind += 1;
-                let cstr = CStr::from_ptr(ptr);
-                Some(str::from_utf8_unchecked(cstr.to_bytes()))
-            }
+            let name = self.keymap.led_get_name(self.ind);
+            self.ind += 1;
+            Some(name)
         }
     }
+}
+
+/// A keymap with a gap in each name table: layout 2 of 3 has no name, and
+/// LED slot 2 of 3 is unused. libxkbcommon returns `NULL` for both names.
+#[cfg(test)]
+const KEYMAP_WITH_GAPS: &str = r#"xkb_keymap {
+    xkb_keycodes {
+        <ESC> = 9;
+        indicator 1 = "Caps Lock";
+        indicator 3 = "Scroll Lock";
+    };
+    xkb_types { };
+    xkb_compat { };
+    xkb_symbols {
+        name[Group1] = "First";
+        name[Group3] = "Third";
+        key <ESC> { [ Escape ], [ Escape ], [ Escape ] };
+    };
+};"#;
+
+#[cfg(test)]
+fn keymap_with_gaps() -> Keymap {
+    let context = Context::new(CONTEXT_NO_DEFAULT_INCLUDES | CONTEXT_NO_ENVIRONMENT_NAMES);
+    Keymap::new_from_string(
+        &context,
+        KEYMAP_WITH_GAPS.to_owned(),
+        KEYMAP_FORMAT_TEXT_V1,
+        KEYMAP_COMPILE_NO_FLAGS,
+    )
+    .expect("test keymap compiles")
+}
+
+#[test]
+fn layouts_yield_empty_name_for_unnamed_layout() {
+    let keymap = keymap_with_gaps();
+    assert_eq!(keymap.layout_get_name(1), "");
+    assert_eq!(keymap.layouts().collect::<Vec<_>>(), ["First", "", "Third"]);
+}
+
+#[test]
+fn leds_yield_empty_name_for_inactive_slot() {
+    let keymap = keymap_with_gaps();
+    assert_eq!(keymap.led_get_name(1), "");
+    assert_eq!(
+        keymap.leds().collect::<Vec<_>>(),
+        ["Caps Lock", "", "Scroll Lock"]
+    );
+}
+
+#[test]
+fn get_as_string_is_empty_for_unsupported_format() {
+    let keymap = keymap_with_gaps();
+    let unsupported: KeymapFormat = 1000;
+    assert_eq!(keymap.get_as_string(unsupported), "");
+    assert!(!keymap.get_as_string(KEYMAP_FORMAT_TEXT_V1).is_empty());
 }
 
 /// Keyboard state object.
